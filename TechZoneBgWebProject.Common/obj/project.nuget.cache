@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "YI3j5P7BDtNpvqAEOXTu57DOl3aKe3l63guYTklQnCdfz5xX/sg8sLH+7IDyN8UFotoPjQQvesZ16jLRzPpuCg==",
+  "success": true,
+  "projectFilePath": "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512"
+  ],
+  "logs": []
+}

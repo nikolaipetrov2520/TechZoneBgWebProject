@@ -1,0 +1,16 @@
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.deps.json
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.csprojAssemblyReference.cache
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.AssemblyInfoInputs.cache
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.AssemblyInfo.cs
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.csproj.CoreCompileInputs.cache
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.csproj.CopyComplete
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Data\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Data.pdb

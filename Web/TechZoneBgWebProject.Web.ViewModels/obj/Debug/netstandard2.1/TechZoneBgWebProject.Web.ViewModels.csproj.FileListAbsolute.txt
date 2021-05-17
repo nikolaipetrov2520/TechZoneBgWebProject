@@ -1,0 +1,16 @@
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.deps.json
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.pdb
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.pdb
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.csprojAssemblyReference.cache
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.AssemblyInfoInputs.cache
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.AssemblyInfo.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.csproj.CoreCompileInputs.cache
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.csproj.CopyComplete
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.pdb

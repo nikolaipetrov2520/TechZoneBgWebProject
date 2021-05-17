@@ -1,0 +1,9 @@
+D:\TechZoneBG\TechZoneBgWebProject.Common\bin\Debug\netstandard2.1\TechZoneBgWebProject.Common.deps.json
+D:\TechZoneBG\TechZoneBgWebProject.Common\bin\Debug\netstandard2.1\TechZoneBgWebProject.Common.dll
+D:\TechZoneBG\TechZoneBgWebProject.Common\bin\Debug\netstandard2.1\TechZoneBgWebProject.Common.pdb
+D:\TechZoneBG\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.csprojAssemblyReference.cache
+D:\TechZoneBG\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.AssemblyInfoInputs.cache
+D:\TechZoneBG\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.AssemblyInfo.cs
+D:\TechZoneBG\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.csproj.CoreCompileInputs.cache
+D:\TechZoneBG\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.dll
+D:\TechZoneBG\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.pdb

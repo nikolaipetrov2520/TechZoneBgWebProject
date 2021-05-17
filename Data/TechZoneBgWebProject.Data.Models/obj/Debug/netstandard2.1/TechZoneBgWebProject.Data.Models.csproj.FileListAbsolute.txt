@@ -1,0 +1,12 @@
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.deps.json
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.dll
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.pdb
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.csprojAssemblyReference.cache
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.AssemblyInfoInputs.cache
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.AssemblyInfo.cs
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.csproj.CoreCompileInputs.cache
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.csproj.CopyComplete
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
+D:\TechZoneBG\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb

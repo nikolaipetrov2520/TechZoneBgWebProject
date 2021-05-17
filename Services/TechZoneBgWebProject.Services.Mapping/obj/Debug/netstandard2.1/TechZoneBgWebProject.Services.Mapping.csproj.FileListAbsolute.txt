@@ -1,0 +1,9 @@
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.deps.json
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.csprojAssemblyReference.cache
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.AssemblyInfoInputs.cache
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.AssemblyInfo.cs
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.csproj.CoreCompileInputs.cache
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
