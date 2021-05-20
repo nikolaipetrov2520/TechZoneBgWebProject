@@ -7,3 +7,12 @@ D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstan
 D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.csproj.CoreCompileInputs.cache
 D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.dll
 D:\TechZoneBG\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.deps.json
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Messaging\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Messaging.pdb

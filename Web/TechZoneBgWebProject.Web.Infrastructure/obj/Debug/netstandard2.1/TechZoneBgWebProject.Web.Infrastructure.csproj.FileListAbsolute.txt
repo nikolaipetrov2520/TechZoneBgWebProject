@@ -7,3 +7,12 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.csproj.CoreCompileInputs.cache
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.deps.json
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.pdb

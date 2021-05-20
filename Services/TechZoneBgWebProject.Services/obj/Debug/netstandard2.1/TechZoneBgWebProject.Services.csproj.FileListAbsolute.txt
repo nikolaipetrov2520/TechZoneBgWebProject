@@ -7,3 +7,12 @@ D:\TechZoneBG\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\Te
 D:\TechZoneBG\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.csproj.CoreCompileInputs.cache
 D:\TechZoneBG\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.dll
 D:\TechZoneBG\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.deps.json
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.pdb

@@ -1,0 +1,16 @@
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.deps.json
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Data.Common.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\bin\Release\netstandard2.1\TechZoneBgWebProject.Data.Common.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.pdb

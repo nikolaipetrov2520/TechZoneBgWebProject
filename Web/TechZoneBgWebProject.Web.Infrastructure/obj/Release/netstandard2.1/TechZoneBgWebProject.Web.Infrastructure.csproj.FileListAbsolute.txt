@@ -1,0 +1,9 @@
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.deps.json
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Release\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.pdb

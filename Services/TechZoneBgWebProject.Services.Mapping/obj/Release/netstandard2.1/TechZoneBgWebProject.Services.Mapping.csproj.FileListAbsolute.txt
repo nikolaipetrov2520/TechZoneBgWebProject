@@ -1,0 +1,9 @@
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\bin\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.deps.json
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\bin\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\bin\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Release\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
