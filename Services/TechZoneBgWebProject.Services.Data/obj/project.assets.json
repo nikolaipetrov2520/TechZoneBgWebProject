@@ -1201,20 +1201,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Data\\TechZoneBgWebProject.Services.Data.csproj",
+      "projectUniqueName": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Data\\TechZoneBgWebProject.Services.Data.csproj",
       "projectName": "TechZoneBgWebProject.Services.Data",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Data\\TechZoneBgWebProject.Services.Data.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Data\\obj\\",
+      "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Data\\TechZoneBgWebProject.Services.Data.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Data\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -1227,14 +1235,14 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj"
+            "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj": {
+              "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj"
             },
-            "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
+            "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
+              "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
             },
-            "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"
+            "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
+              "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"
             }
           }
         }
@@ -1271,7 +1279,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

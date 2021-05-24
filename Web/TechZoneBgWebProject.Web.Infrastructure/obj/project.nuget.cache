@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nUwKm16CjnVAeoHYpL3Rih0moLI/XhK/JGtu3IwpVYUkhtwfm9Z7uBDIu3clNDc5rWT85eiKZtXAhszTK0klRg==",
+  "dgSpecHash": "nWXIhP4RA7Z7uLAnlRKa2bcBg8PUT+R/znRQKe2v+WXkaym5V2W6OQRFo8Ox6VMF2SsboU/yz09AzCqqJvCifQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Documents\\GitHub\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.Infrastructure\\TechZoneBgWebProject.Web.Infrastructure.csproj",
+  "projectFilePath": "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web.Infrastructure\\TechZoneBgWebProject.Web.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Administrator\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512"
   ],
   "logs": []
 }

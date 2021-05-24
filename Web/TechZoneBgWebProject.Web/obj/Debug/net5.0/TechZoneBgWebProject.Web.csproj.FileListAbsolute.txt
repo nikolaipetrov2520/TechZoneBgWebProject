@@ -154,7 +154,6 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\refs\System.Data.Dat
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\refs\System.Data.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\refs\System.Diagnostics.Contracts.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\refs\System.Diagnostics.Debug.dll
-D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\refs\System.Diagnostics.DiagnosticSource.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\refs\System.Diagnostics.EventLog.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\refs\System.Diagnostics.FileVersionInfo.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\refs\System.Diagnostics.Process.dll
@@ -931,3 +930,5 @@ C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebPr
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\TechZoneBgWebProject.Web.genruntimeconfig.cache
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
