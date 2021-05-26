@@ -167,7 +167,6 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\refs\System.
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\refs\System.Data.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\refs\System.Diagnostics.Contracts.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\refs\System.Diagnostics.Debug.dll
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\refs\System.Diagnostics.DiagnosticSource.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\refs\System.Diagnostics.EventLog.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\refs\System.Diagnostics.FileVersionInfo.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\refs\System.Diagnostics.Process.dll
@@ -537,3 +536,4 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\TechZoneBgWe
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\ref\TechZoneBgWebProject.Web.Tests.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Web.Tests.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Web.Tests.genruntimeconfig.cache
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll

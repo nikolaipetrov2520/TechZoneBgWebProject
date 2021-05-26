@@ -79,3 +79,27 @@ body {
 a.white-text {
     color: #fff !important;
 }
+a.white-text:hover {
+    color: gray !important;
+}
+button.white-text {
+    color: #fff !important;
+}
+button.white-text:hover {
+    color: gray !important;
+}
+p.d {
+    display: inline;
+    text-align: right;
+    padding-right: 10px;
+}
+a.c {
+    overflow: hidden;
+    color: #fff !important;
+    font-size: 25px;
+    text-decoration: none;
+    transition: transform .2s ease;
+}
+a.c:hover {
+    color: gray !important;
+}

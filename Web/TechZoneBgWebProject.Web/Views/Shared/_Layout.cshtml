@@ -7,10 +7,12 @@
     <title>@this.ViewData["Title"] - TechZoneBG</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">           
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand white_text" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/TechZone Logo.png" width="272" height="48"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -29,6 +31,33 @@
                     </ul>
                 </div>
             </div>
+            <div>
+                <p class="d">
+                    <a class="c" href="viber://chat?number=359878432079" target="_blank" title="Viber">
+                        <i class="fab fa-viber"></i>
+                    </a>
+                </p>
+                <p class="d">
+                    <a class="c" href="https://www.facebook.com/messages/t/iTech.Computers" target="_blank" title="Messenger">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </a>
+                </p>
+                <p class="d">
+                    <a class="c" href="https://www.facebook.com/TechZoneBG11/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </p>
+                <p class="d">
+                    <a class="c" href="https://www.instagram.com/itechcomputers1/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </p>
+                <p class="d">
+                    <a class="c" href="https://www.youtube.com/channel/UCr_JWBo47P0706JHxWmoNAw/" target="_blank" title="Youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </p>
+            </div>
         </nav>
     </header>
     <style>
@@ -43,7 +72,7 @@
             @this.RenderBody()
         </main>
     </div>
-    
+
     <footer class="border-top footer white-text">
         <div class="container">
             &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a class="white-text" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -55,6 +84,7 @@
     <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
     <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/48ab6649dd.js" crossorigin="anonymous"></script>
     @await this.RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
