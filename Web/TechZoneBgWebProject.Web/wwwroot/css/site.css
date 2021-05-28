@@ -96,10 +96,13 @@ p.d {
 a.c {
     overflow: hidden;
     color: #fff !important;
-    font-size: 25px;
+    font-size: 30px;
     text-decoration: none;
     transition: transform .2s ease;
 }
 a.c:hover {
     color: gray !important;
+}
+i.layout {
+    font-size: 28px
 }

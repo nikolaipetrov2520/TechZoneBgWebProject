@@ -8,7 +8,7 @@
     @if (this.SignInManager.IsSignedIn(this.User))
     {
         <li class="nav-item">
-            <a class="nav-link white-text" asp-area="Identity" asp-page="/Account/Manage/Index" title="НАСТРОЙКИ НА @this.User.Identity.Name!"><i class="fas fa-user" style="font-size: 20px"></i></a>
+            <a class="nav-link white-text" asp-area="Identity" asp-page="/Account/Manage/Index" title="@this.User.Identity.Name!"><i class="fas fa-user layout"></i></a>
         </li>
         if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
         {
@@ -18,17 +18,17 @@
         }
         <li class="nav-item">
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@this.Url.Action("Index", "Home", new { area = string.Empty })">
-                <button type="submit" class="nav-link btn btn-link white-text">ИЗХОД</button>
+                <button type="submit" class="nav-link btn btn-link white-text"  title="Изход"><i class="fas fa-sign-out-alt layout"></i></button>
             </form>
         </li>
     }
     else
     {
         <li class="nav-item">
-            <a class="nav-link white-text" asp-area="Identity" asp-page="/Account/Register">РЕГИСТРАЦИЯ</a>
+            <a class="nav-link white-text" asp-area="Identity" asp-page="/Account/Register"  title="Регистрация">РЕГИСТРАЦИЯ</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link white-text" asp-area="Identity" asp-page="/Account/Login">ВХОД</a>
+            <a class="nav-link white-text" asp-area="Identity" asp-page="/Account/Login" title="Вход"><i class="fas fa-sign-in-alt layout"></i></a>
         </li>
     }
 </ul>
