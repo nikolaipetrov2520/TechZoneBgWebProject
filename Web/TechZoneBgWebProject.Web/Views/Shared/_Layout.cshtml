@@ -66,11 +66,21 @@
             background-position: center;
         }
     </style>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @this.RenderBody()
-        </main>
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-lg-9">
+                <partial name="_CookieConsentPartial" />
+                <main role="main" class="pb-3">
+                    @this.RenderBody()
+                </main>
+            </div>
+            <aside  class="col-lg-3">
+                <h2>
+                    This is aside
+                </h2>
+            </aside>
+        </div>
+        
     </div>
 
     <footer class="border-top footer white-text">
