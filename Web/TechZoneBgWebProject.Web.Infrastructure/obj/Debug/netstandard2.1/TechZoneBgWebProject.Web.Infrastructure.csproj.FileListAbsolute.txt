@@ -1,7 +1,6 @@
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.deps.json
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.pdb
-D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.csprojAssemblyReference.cache
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.AssemblyInfoInputs.cache
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.AssemblyInfo.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.Infrastructure.csproj.CoreCompileInputs.cache
