@@ -5,21 +5,20 @@
     using System.IO;
     using System.Threading.Tasks;
 
-    using TechZoneBgWebProject.Data;
-    using TechZoneBgWebProject.Data.Common;
-    using TechZoneBgWebProject.Data.Common.Repositories;
-    using TechZoneBgWebProject.Data.Models;
-    using TechZoneBgWebProject.Data.Repositories;
-    using TechZoneBgWebProject.Data.Seeding;
-    using TechZoneBgWebProject.Services.Data;
-    using TechZoneBgWebProject.Services.Messaging;
-
     using CommandLine;
 
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
+
+    using TechZoneBgWebProject.Data;
+    using TechZoneBgWebProject.Data.Common;
+    using TechZoneBgWebProject.Data.Common.Repositories;
+    using TechZoneBgWebProject.Data.Models;
+    using TechZoneBgWebProject.Data.Repositories;
+    using TechZoneBgWebProject.Data.Seeding;
+    using TechZoneBgWebProject.Services.Messaging;
 
     public static class Program
     {
@@ -52,9 +51,6 @@
         {
             var sw = Stopwatch.StartNew();
 
-            var settingsService = serviceProvider.GetService<ISettingsService>();
-            Console.WriteLine($"Count of settings: {settingsService.GetCount()}");
-
             Console.WriteLine(sw.Elapsed);
             return await Task.FromResult(0);
         }
@@ -81,7 +77,6 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
         }
     }
 }

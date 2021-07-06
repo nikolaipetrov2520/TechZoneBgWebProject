@@ -6,11 +6,11 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using TechZoneBgWebProject.Data.Common.Models;
-    using TechZoneBgWebProject.Data.Models;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+
+    using TechZoneBgWebProject.Data.Common.Models;
+    using TechZoneBgWebProject.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -24,7 +24,27 @@
         {
         }
 
-        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Message> Messages { get; set; }
+
+        public DbSet<Post> Posts { get; set; }
+
+        public DbSet<PostReaction> PostReactions { get; set; }
+
+        public DbSet<PostReport> PostReports { get; set; }
+
+        public DbSet<PostTag> PostsTags { get; set; }
+
+        public DbSet<Reply> Replies { get; set; }
+
+        public DbSet<ReplyReaction> ReplyReactions { get; set; }
+
+        public DbSet<ReplyReport> ReplyReports { get; set; }
+
+        public DbSet<Tag> Tags { get; set; }
+
+        public DbSet<UserFollower> UsersFollowers { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -49,6 +69,8 @@
         {
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
+
+            builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
 
             this.ConfigureUserIdentityRelations(builder);
 
