@@ -9,12 +9,12 @@
         public const string AdministratorAreaName = "Administration";
         public const string AdministratorRoleName = "Administrator";
         public const string AdministratorUserName = "Admin";
-        public const string AdministratorEmail = "admin@forum.net";
+        public const string AdministratorEmail = "admin@techzone-bg.com";
         public const string AdministratorPassword = "admin123456";
         public const string AdministratorProfilePicture = "#icon-ava-a";
 
         public const string TestUserUserName = "testuser";
-        public const string TestUserEmail = "testuser@forum.net";
+        public const string TestUserEmail = "testuser@techzone-bg.com";
         public const string TestUserPassword = "user123456";
         public const string TestUserProfilePicture = "#icon-ava-t";
 
@@ -32,7 +32,6 @@
         public const string UserConfirmNewPasswordDisplayName = "Confirm new password";
         public const string UserNewEmailDisplayName = "New email";
         public const string UserBirthDateDisplayName = "Birthday";
-        public const string UserGenderDisplayName = "Gender";
         public const int UserUsernameMaxLength = 25;
         public const int UserUsernameMinLength = 4;
         public const int UserPasswordMaxLength = 100;
@@ -55,7 +54,6 @@
         public const int PostReportDescriptionMaxLength = 30000;
         public const int PostReportDescriptionMinLength = 3;
         public const string PostTypeDisplayName = "Post Type";
-
 
         public const int ReplyDescriptionMaxLength = 30000;
         public const int ReplyReportDescriptionMaxLength = 30000;

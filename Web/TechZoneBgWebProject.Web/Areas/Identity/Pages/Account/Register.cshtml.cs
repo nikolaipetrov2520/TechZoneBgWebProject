@@ -48,7 +48,15 @@
         public class InputModel
         {
             [Required]
+            [Display(Name = "Телефонен номер")]
             public string Username { get; set; }
+
+            [Required]
+            [Display(Name = "Име")]
+            public string FirstName { get; set; }
+
+            [Display(Name = "Фамилия")]
+            public string LastName { get; set; }
 
             [Required]
             [EmailAddress]
@@ -58,11 +66,11 @@
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Парола")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "Потвърдете паролата")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
@@ -82,7 +90,14 @@
 
                 var usernameFirstLetter = char.ToLower(this.Input.Username[0]);
 
-                var user = new ApplicationUser { UserName = this.Input.Username, Email = this.Input.Email };
+                var user = new ApplicationUser 
+                {
+                    UserName = this.Input.Username,
+                    Email = this.Input.Email,
+                    FirstName = this.Input.FirstName,
+                    LastName = this.Input.LastName,
+                    PhoneNumber = this.Input.Username,
+                };
                 var result = await this._userManager.CreateAsync(user, this.Input.Password);
                 if (result.Succeeded)
                 {

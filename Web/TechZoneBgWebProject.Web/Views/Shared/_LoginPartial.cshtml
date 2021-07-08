@@ -8,7 +8,7 @@
     @if (this.SignInManager.IsSignedIn(this.User))
     {
         <li class="nav-item">
-            <a class="nav-link white-text" asp-area="Identity" asp-page="/Account/Manage/Index" title="@this.User.Identity.Name!"><i class="fas fa-user layout"></i></a>
+            <a class="nav-link white-text" asp-area="Identity" asp-page="/Account/Manage/Index" title="@UserManager.GetUserAsync(this.User).Result.FirstName @UserManager.GetUserAsync(this.User).Result.LastName"><i class="fas fa-user layout"></i></a>
         </li>
         if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
         {

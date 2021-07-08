@@ -172,6 +172,10 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Biography")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -189,8 +193,14 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -217,6 +227,12 @@ namespace TechZoneBgWebProject.Data.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -272,86 +288,6 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.ForumUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Biography")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Points")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ProfilePicture")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.ToTable("ForumUser");
                 });
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Message", b =>
@@ -742,23 +678,11 @@ namespace TechZoneBgWebProject.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", null)
-                        .WithMany("Claims")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", null)
-                        .WithMany("Logins")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", null)
                         .WithMany("Logins")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -778,12 +702,6 @@ namespace TechZoneBgWebProject.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", null)
-                        .WithMany("Roles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -797,13 +715,13 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Message", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Author")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Author")
                         .WithMany("SentMessages")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Receiver")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Receiver")
                         .WithMany("ReceivedMessages")
                         .HasForeignKey("ReceiverId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -816,7 +734,7 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Post", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Author")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Author")
                         .WithMany("Posts")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -835,7 +753,7 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.PostReaction", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Author")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Author")
                         .WithMany("PostReactions")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -854,7 +772,7 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.PostReport", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Author")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Author")
                         .WithMany("PostReports")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -892,7 +810,7 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Reply", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Author")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Author")
                         .WithMany("Replies")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -918,7 +836,7 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.ReplyReaction", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Author")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Author")
                         .WithMany("ReplyReactions")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -937,7 +855,7 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.ReplyReport", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Author")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Author")
                         .WithMany("ReplyReports")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -956,13 +874,13 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.UserFollower", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "Follower")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Follower")
                         .WithMany()
                         .HasForeignKey("FollowerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("TechZoneBgWebProject.Data.Models.ForumUser", "User")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "User")
                         .WithMany("Followers")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -974,20 +892,6 @@ namespace TechZoneBgWebProject.Data.Migrations
                 });
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.ApplicationUser", b =>
-                {
-                    b.Navigation("Claims");
-
-                    b.Navigation("Logins");
-
-                    b.Navigation("Roles");
-                });
-
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Category", b =>
-                {
-                    b.Navigation("Posts");
-                });
-
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.ForumUser", b =>
                 {
                     b.Navigation("Claims");
 
@@ -1012,6 +916,11 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Navigation("Roles");
 
                     b.Navigation("SentMessages");
+                });
+
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Category", b =>
+                {
+                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Post", b =>

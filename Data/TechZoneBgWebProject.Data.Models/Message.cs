@@ -12,11 +12,11 @@
 
         public string AuthorId { get; set; }
 
-        public ForumUser Author { get; set; }
+        public ApplicationUser Author { get; set; }
 
         public string ReceiverId { get; set; }
 
-        public ForumUser Receiver { get; set; }
+        public ApplicationUser Receiver { get; set; }
 
         public DateTime CreatedOn { get; set; }
 

@@ -1,4 +1,4 @@
-﻿// ReSharper disable VirtualMemberCallInConstructor
+﻿ // ReSharper disable VirtualMemberCallInConstructor
 namespace TechZoneBgWebProject.Data.Models
 {
     using System;

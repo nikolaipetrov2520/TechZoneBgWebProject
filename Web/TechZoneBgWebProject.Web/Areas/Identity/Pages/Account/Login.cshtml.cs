@@ -46,13 +46,15 @@
         public class InputModel
         {
             [Required]
+            [Display(Name = "Телефонен номер")]
             public string Username { get; set; }
 
             [Required]
+            [Display(Name = "Парола")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Запомни ме?")]
             public bool RememberMe { get; set; }
         }
 

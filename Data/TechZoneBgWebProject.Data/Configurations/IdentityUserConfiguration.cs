@@ -6,14 +6,10 @@
     using TechZoneBgWebProject.Common;
     using TechZoneBgWebProject.Data.Models;
 
-    public class IdentityUserConfiguration : IEntityTypeConfiguration<ForumUser>
+    public class IdentityUserConfiguration : IEntityTypeConfiguration<ApplicationUser>
     {
-        public void Configure(EntityTypeBuilder<ForumUser> user)
+        public void Configure(EntityTypeBuilder<ApplicationUser> user)
         {
-            user
-                .Property(u => u.ProfilePicture)
-                .IsRequired();
-
             user
                 .Property(u => u.Biography)
                 .HasMaxLength(GlobalConstants.UserBiographyMaxLength);
