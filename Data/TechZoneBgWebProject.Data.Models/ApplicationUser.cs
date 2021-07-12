@@ -38,6 +38,8 @@ namespace TechZoneBgWebProject.Data.Models
 
         public DateTime? DeletedOn { get; set; }
 
+        public bool IsModified { get; set; }
+
         public ICollection<Message> SentMessages { get; set; } = new HashSet<Message>();
 
         public ICollection<Message> ReceivedMessages { get; set; } = new HashSet<Message>();

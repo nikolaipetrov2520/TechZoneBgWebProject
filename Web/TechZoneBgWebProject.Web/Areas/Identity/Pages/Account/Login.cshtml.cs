@@ -4,16 +4,15 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
-    using System.Text.Encodings.Web;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authentication;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
+    using TechZoneBgWebProject.Data;
     using TechZoneBgWebProject.Data.Models;
 
     [AllowAnonymous]
@@ -89,12 +88,22 @@
                 if (result.Succeeded)
                 {
                     this._logger.LogInformation("User logged in.");
+
+                    var user = _userManager.Users.FirstOrDefault(u => u.UserName == this.Input.Username);
+
+                    if (!user.IsModified)
+                    {
+                        return this.RedirectToPage("./Manage/Email");
+                    }
+
                     return this.LocalRedirect(returnUrl);
                 }
+
                 if (result.RequiresTwoFactor)
                 {
                     return this.RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = this.Input.RememberMe });
                 }
+
                 if (result.IsLockedOut)
                 {
                     this._logger.LogWarning("User account locked out.");

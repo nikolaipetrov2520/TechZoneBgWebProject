@@ -97,6 +97,7 @@
                     FirstName = this.Input.FirstName,
                     LastName = this.Input.LastName,
                     PhoneNumber = this.Input.Username,
+                    IsModified = true,
                 };
                 var result = await this._userManager.CreateAsync(user, this.Input.Password);
                 if (result.Succeeded)
