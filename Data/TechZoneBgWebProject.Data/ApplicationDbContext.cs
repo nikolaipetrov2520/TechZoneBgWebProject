@@ -46,6 +46,10 @@
 
         public DbSet<UserFollower> UsersFollowers { get; set; }
 
+        public DbSet<MainNewsSource> MainNewsSources { get; set; }
+
+        public DbSet<MainNews> MainNews { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

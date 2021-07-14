@@ -1,0 +1,27 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.MainNews.MainNewsComponentViewModel
+
+<div class="u-heading-v2-3--bottom g-brd-primary g-mb-10">
+    <h3 class="h4 g-color-black mb-0">Водещи HiTech новини</h3>
+</div>
+@foreach (var news in this.Model.MainNews)
+{
+    <article class="media g-mb-10">
+        <a class="d-flex mr-3" href="@news.OriginalUrl" target="_blank">
+            <img class="rounded g-width-75 g-height-55" src="@news.LocalImageUrl?t=@news.CreatedOn.ToBinary()" title="@news.Title" alt="@news.Title">
+        </a>
+        <div class="media-body">
+            <h3 class="h6">
+                <a class="u-link-v5 g-color-black g-color-primary--hover" href="@news.OriginalUrl" target="_blank">@news.Title</a>
+            </h3>
+            <ul class="u-list-inline g-font-size-12 g-color-gray-dark-v4">
+                <li class="list-inline-item">
+                    <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="@news.SourceUrl" target="_blank">@news.SourceName</a>
+                </li>
+                <li class="list-inline-item">/</li>
+                <li class="list-inline-item">
+                    <time datetime="@news.CreatedOn.ToString("O")">@news.CreatedOn.ToString("dd/MM/yyyy HH:mm")</time>
+                </li>
+            </ul>
+        </div>
+    </article>
+}

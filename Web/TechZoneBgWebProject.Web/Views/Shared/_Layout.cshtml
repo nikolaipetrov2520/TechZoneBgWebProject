@@ -66,9 +66,11 @@
                 </main>
             </div>
             <aside class="col-xl-3">
-                <h2>
-                    This is aside
-                </h2>
+                <div class="g-mb-20">
+                    <cache expires-after="@TimeSpan.FromSeconds(10)">
+                        <vc:main-news></vc:main-news>
+                    </cache>
+                </div>
             </aside>
         </div>
         
