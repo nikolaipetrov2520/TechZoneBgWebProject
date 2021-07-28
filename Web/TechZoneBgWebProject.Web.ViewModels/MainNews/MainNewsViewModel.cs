@@ -11,7 +11,7 @@
 
         public string Title { get; set; }
 
-        public string LocalImageUrl => $"/images/mainnews/{this.SourceId}.png";
+        public string ImageUrl { get; set; }
 
         public string OriginalUrl { get; set; }
 

@@ -19,6 +19,7 @@
     using TechZoneBgWebProject.Data.Seeding;
     using TechZoneBgWebProject.Services.Mapping;
     using TechZoneBgWebProject.Services.Messaging;
+    using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.ViewModels;
 
     public class Startup
@@ -78,6 +79,8 @@
                 dbContext.Database.Migrate();
                 new ApplicationDbContextSeeder().SeedAsync(dbContext, serviceScope.ServiceProvider).GetAwaiter().GetResult();
             }
+
+            app.SeedData();
 
             if (env.IsDevelopment())
             {

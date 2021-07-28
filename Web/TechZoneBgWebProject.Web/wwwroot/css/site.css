@@ -7,11 +7,6 @@ a.navbar-brand {
     word-break: break-all;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-    color: #0366d6;
-}
-
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
@@ -73,26 +68,33 @@ body {
     line-height: 60px; /* Vertically center the text there */
     background-color: rgb(96, 163, 235) !important;
 }
+
 .navbar {
-    background-color: rgb(96, 163, 235) !important;   
+    background-color: rgb(96, 163, 235) !important;
 }
+
 a.white-text {
     color: #fff !important;
 }
-a.white-text:hover {
-    color: gray !important;
-}
+
+    a.white-text:hover {
+        color: gray !important;
+    }
+
 button.white-text {
     color: #fff !important;
 }
-button.white-text:hover {
-    color: gray !important;
-}
+
+    button.white-text:hover {
+        color: gray !important;
+    }
+
 p.d {
     display: inline;
     text-align: right;
     padding-right: 10px;
 }
+
 a.c {
     overflow: hidden;
     color: #fff !important;
@@ -100,22 +102,33 @@ a.c {
     text-decoration: none;
     transition: transform .2s ease;
 }
+
 a.c:hover {
     color: gray !important;
 }
+
 i.layout {
     font-size: 28px
 }
-.social{
+
+.social {
     min-width: 230px;
 }
-aside{
+
+aside {
     border-radius: 5px;
     background-color: white;
 }
-div.row{
+
+div.row {
     margin: 0px;
 }
+
 div.main {
     background-color: white;
+}
+
+a.news:hover, a.news:active {
+    color:coral !important;
+    text-decoration: none !important;
 }

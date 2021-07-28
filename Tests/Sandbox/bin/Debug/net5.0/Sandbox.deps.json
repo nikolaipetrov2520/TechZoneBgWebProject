@@ -1186,6 +1186,11 @@
         }
       },
       "TechZoneBgWebProject.Services/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "TechZoneBgWebProject.Common": "1.0.0",
+          "TechZoneBgWebProject.Data.Models": "1.0.0"
+        },
         "runtime": {
           "TechZoneBgWebProject.Services.dll": {}
         }

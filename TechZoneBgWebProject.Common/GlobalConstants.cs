@@ -8,10 +8,13 @@
 
         public const string AdministratorAreaName = "Administration";
         public const string AdministratorRoleName = "Administrator";
-        public const string AdministratorUserName = "Admin";
+        public const string AdministratorUserName = "0878432079";
         public const string AdministratorEmail = "admin@techzone-bg.com";
         public const string AdministratorPassword = "admin123456";
         public const string AdministratorProfilePicture = "#icon-ava-a";
+        public const string AdministratorPhoneNumber = "0878432079";
+        public const string AdministratorFirstName = "Nikolay";
+        public const string AdministratorLastName = "Petrov";
 
         public const string TestUserUserName = "testuser";
         public const string TestUserEmail = "testuser@techzone-bg.com";

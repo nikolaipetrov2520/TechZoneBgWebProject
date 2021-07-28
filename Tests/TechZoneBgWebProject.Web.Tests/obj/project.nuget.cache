@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a9w7b8v97YGnEuAVHPgnzUL9PiQh7qDYFk5wQVgSp1BeNDHxkrl1JBbhER2C+Vcno+/22J2ts9fLH5bKIB/npA==",
+  "dgSpecHash": "eZNMMe7B3micVVqfIhCdVw10VaLNrX3Vws3NgRDqgK5aV/b8wXxvL9Rbk62VObNDx5AGp6+0pnWz1PY1ybKsWA==",
   "success": true,
   "projectFilePath": "D:\\TechZoneBG\\Tests\\TechZoneBgWebProject.Web.Tests\\TechZoneBgWebProject.Web.Tests.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.6\\microsoft.aspnetcore.cryptography.keyderivation.5.0.6.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.1\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.6\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.6.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.6\\microsoft.aspnetcore.identity.ui.5.0.6.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.1\\microsoft.aspnetcore.mvc.razor.extensions.5.0.1.nupkg.sha512",
