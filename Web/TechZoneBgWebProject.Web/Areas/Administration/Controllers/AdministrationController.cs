@@ -5,7 +5,7 @@
     using TechZoneBgWebProject.Common;
     using TechZoneBgWebProject.Web.Controllers;
 
-    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+    [Authorize(Roles = GlobalConstants.Admin.AdministratorRoleName)]
     [Area("Administration")]
     public class AdministrationController : BaseController
     {

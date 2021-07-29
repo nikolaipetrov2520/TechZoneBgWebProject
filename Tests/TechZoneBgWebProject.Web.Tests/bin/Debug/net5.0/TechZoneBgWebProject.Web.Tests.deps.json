@@ -2966,6 +2966,9 @@
         }
       },
       "TechZoneBgWebProject.Services/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.6"
+        },
         "runtime": {
           "TechZoneBgWebProject.Services.dll": {}
         },
@@ -3038,7 +3041,8 @@
       "TechZoneBgWebProject.Web.Infrastructure/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "5.0.6"
+          "Microsoft.EntityFrameworkCore": "5.0.6",
+          "TechZoneBgWebProject.Data": "1.0.0"
         },
         "runtime": {
           "TechZoneBgWebProject.Web.Infrastructure.dll": {}

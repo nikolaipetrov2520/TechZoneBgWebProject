@@ -18,31 +18,31 @@
             var userManager = serviceProvider.GetService<UserManager<ApplicationUser>>();
             var roleManager = serviceProvider.GetService<RoleManager<ApplicationRole>>();
 
-            var isExisting = await userManager.Users.AnyAsync(u => u.UserName == GlobalConstants.AdministratorUserName);
+            var isExisting = await userManager.Users.AnyAsync(u => u.UserName == GlobalConstants.Admin.AdministratorUserName);
             if (!isExisting)
             {
                 var admin = new ApplicationUser
                 {
-                    UserName = GlobalConstants.AdministratorUserName,
-                    Email = GlobalConstants.AdministratorEmail,
-                    ProfilePicture = GlobalConstants.AdministratorProfilePicture,
+                    UserName = GlobalConstants.Admin.AdministratorUserName,
+                    Email = GlobalConstants.Admin.AdministratorEmail,
+                    ProfilePicture = GlobalConstants.Admin.AdministratorProfilePicture,
                     EmailConfirmed = false,
-                    PhoneNumber = GlobalConstants.AdministratorPhoneNumber,
+                    PhoneNumber = GlobalConstants.Admin.AdministratorPhoneNumber,
                     IsModified = true,
-                    FirstName = GlobalConstants.AdministratorFirstName,
-                    LastName = GlobalConstants.AdministratorLastName,
+                    FirstName = GlobalConstants.Admin.AdministratorFirstName,
+                    LastName = GlobalConstants.Admin.AdministratorLastName,
                 };
 
-                var result = await userManager.CreateAsync(admin, GlobalConstants.AdministratorPassword);
+                var result = await userManager.CreateAsync(admin, GlobalConstants.Admin.AdministratorPassword);
                 if (!result.Succeeded)
                 {
                     throw new Exception(string.Join(Environment.NewLine, result.Errors.Select(e => e.Description)));
                 }
 
-                var isRoleExists = await roleManager.RoleExistsAsync(GlobalConstants.AdministratorRoleName);
+                var isRoleExists = await roleManager.RoleExistsAsync(GlobalConstants.Admin.AdministratorRoleName);
                 if (isRoleExists)
                 {
-                    await userManager.AddToRoleAsync(admin, GlobalConstants.AdministratorRoleName);
+                    await userManager.AddToRoleAsync(admin, GlobalConstants.Admin.AdministratorRoleName);
                 }
             }
         }
