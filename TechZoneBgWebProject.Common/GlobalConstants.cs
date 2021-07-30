@@ -21,6 +21,18 @@ namespace TechZoneBgWebProject.Common
             public const string AdministratorLastName = "Petrov";
         }
 
+        public class User
+        {
+
+            public const string UserUserName = "0888888888";
+            public const string UserEmail = "testuser@techzone-bg.com";
+            public const string UserPassword = "user123456";
+            public const string UserProfilePicture = "#icon-ava-u";
+            public const string UserPhoneNumber = "0888888888";
+            public const string UserFirstName = "Николай";
+            public const string UserLastName = "Петров";
+        }
+
         public class NewsSource
         {
             public const string HiComm = "hicomm.bg";
@@ -69,11 +81,6 @@ namespace TechZoneBgWebProject.Common
                 "https://www.kaldata.com/it-%d0%bd%d0%be%d0%b2%d0%b8%d0%bd%d0%b8/%d0%bd%d1%8f%d0%ba%d0%be%d0%b8-%d0%b0%d0%bc%d0%b5%d1%80%d0%b8%d0%ba%d0%b0%d0%bd%d1%81%d0%ba%d0%b8-%d1%89%d0%b0%d1%82%d0%b8-%d0%b7%d0%b0%d0%b1%d1%80%d0%b0%d0%bd%d0%b8%d1%85%d0%b0-%d0%bf%d1%80%d0%be-365584.html",
                 };
         }
-
-        public const string TestUserUserName = "testuser";
-        public const string TestUserEmail = "testuser@techzone-bg.com";
-        public const string TestUserPassword = "user123456";
-        public const string TestUserProfilePicture = "#icon-ava-t";
 
         public const string DateTimeFormat = "dd/MM/yy HH:mm";
         public const string DateTimeShortFormat = "dd/MM/yy";

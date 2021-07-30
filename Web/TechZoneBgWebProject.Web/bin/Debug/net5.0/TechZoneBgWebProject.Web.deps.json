@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "TechZoneBgWebProject.Web/1.0.0": {
         "dependencies": {
+          "AutoMapper": "10.1.1",
           "BuildBundlerMinifier": "3.2.449",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.6",
@@ -2141,7 +2142,10 @@
       },
       "TechZoneBgWebProject.Services/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.6"
+          "Microsoft.EntityFrameworkCore": "5.0.6",
+          "TechZoneBgWebProject.Data": "1.0.0",
+          "TechZoneBgWebProject.Data.Models": "1.0.0",
+          "TechZoneBgWebProject.Services.Mapping": "1.0.0"
         },
         "runtime": {
           "TechZoneBgWebProject.Services.dll": {}
@@ -2189,7 +2193,9 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
-          "TechZoneBgWebProject.Data": "1.0.0"
+          "TechZoneBgWebProject.Data": "1.0.0",
+          "TechZoneBgWebProject.Services": "1.0.0",
+          "TechZoneBgWebProject.Services.Messaging": "1.0.0"
         },
         "runtime": {
           "TechZoneBgWebProject.Web.Infrastructure.dll": {}

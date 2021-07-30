@@ -1866,9 +1866,12 @@
       },
       "TechZoneBgWebProject.Services/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.1"
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "TechZoneBgWebProject.Data": "1.0.0",
+          "TechZoneBgWebProject.Data.Models": "1.0.0",
+          "TechZoneBgWebProject.Services.Mapping": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TechZoneBgWebProject.Services.dll": {}

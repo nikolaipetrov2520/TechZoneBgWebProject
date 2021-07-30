@@ -2,9 +2,9 @@
 {
     using System.Diagnostics;
 
-    using TechZoneBgWebProject.Web.ViewModels;
-
     using Microsoft.AspNetCore.Mvc;
+
+    using TechZoneBgWebProject.Web.ViewModels;
 
     public class HomeController : BaseController
     {

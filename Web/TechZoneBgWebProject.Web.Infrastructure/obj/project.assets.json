@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "AutoMapper/10.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Reflection.Emit": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.1": {
         "type": "package",
         "compile": {
@@ -61,7 +74,7 @@
           "lib/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -625,6 +638,28 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "SendGrid/9.22.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "starkbank-ecdsa": "[1.2.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
+      "starkbank-ecdsa/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        }
+      },
       "StyleCop.Analyzers/1.2.0-beta.312": {
         "type": "package",
         "dependencies": {
@@ -1127,20 +1162,13 @@
           "ref/netstandard1.5/System.Reflection.dll": {}
         }
       },
-      "System.Reflection.Emit/4.3.0": {
+      "System.Reflection.Emit/4.7.0": {
         "type": "package",
-        "dependencies": {
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Runtime": "4.3.0"
-        },
         "compile": {
-          "ref/netstandard1.1/_._": {}
+          "ref/netcoreapp2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.3/System.Reflection.Emit.dll": {}
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "System.Reflection.Emit.ILGeneration/4.3.0": {
@@ -1738,10 +1766,68 @@
         "runtime": {
           "bin/placeholder/TechZoneBgWebProject.Data.Models.dll": {}
         }
+      },
+      "TechZoneBgWebProject.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "TechZoneBgWebProject.Data": "1.0.0",
+          "TechZoneBgWebProject.Data.Models": "1.0.0",
+          "TechZoneBgWebProject.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TechZoneBgWebProject.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TechZoneBgWebProject.Services.dll": {}
+        }
+      },
+      "TechZoneBgWebProject.Services.Mapping/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "AutoMapper": "10.1.1"
+        },
+        "compile": {
+          "bin/placeholder/TechZoneBgWebProject.Services.Mapping.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TechZoneBgWebProject.Services.Mapping.dll": {}
+        }
+      },
+      "TechZoneBgWebProject.Services.Messaging/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Sendgrid": "9.22.0"
+        },
+        "compile": {
+          "bin/placeholder/TechZoneBgWebProject.Services.Messaging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TechZoneBgWebProject.Services.Messaging.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/10.1.1": {
+      "sha512": "uMgbqOdu9ZG5cIOty0C85hzzayBH2i9BthnS5FlMqKtMSHDv4ts81a2jS1VFaDBVhlBeIqJ/kQKjQY95BZde9w==",
+      "type": "package",
+      "path": "automapper/10.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.10.1.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.1": {
       "sha512": "VGfj77RBkyWpPxvX6oSghE3DPObvg171HRdwr/t3aJQ9Y5cgaZE8BUNLhHZ0yBFa218r7e9Qou+DLGfRtve4CQ==",
       "type": "package",
@@ -1823,10 +1909,10 @@
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1839,6 +1925,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -1848,7 +1935,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -2706,6 +2793,45 @@
         "lib/netstandard1.0/_._",
         "runtime.native.system.4.3.0.nupkg.sha512",
         "runtime.native.system.nuspec"
+      ]
+    },
+    "SendGrid/9.22.0": {
+      "sha512": "5vXkfOqPhi6W5/tEmRcTVJakT69SXiCGqVRERYF4ZAtJ4alylzlOqin6w8Xrog0Brf3RL+4BKXI+CwKbFLtteA==",
+      "type": "package",
+      "path": "sendgrid/9.22.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.dll",
+        "lib/net40/SendGrid.pdb",
+        "lib/net40/SendGrid.xml",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.22.0.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
+    "starkbank-ecdsa/1.2.0": {
+      "sha512": "hP53QPYOOEIR44EK9phz+DYliM6DEieDZxpb8GZzE+++qyrWqUscKcyHCC6L9yu/ehllYtqxtT4qrjWDsuQlUQ==",
+      "type": "package",
+      "path": "starkbank-ecdsa/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StarkbankEcdsa.dll",
+        "lib/net452/StarkbankEcdsa.dll",
+        "lib/netstandard1.3/StarkbankEcdsa.dll",
+        "lib/netstandard2.0/StarkbankEcdsa.dll",
+        "lib/netstandard2.1/StarkbankEcdsa.dll",
+        "starkbank-ecdsa.1.2.0.nupkg.sha512",
+        "starkbank-ecdsa.nuspec"
       ]
     },
     "StyleCop.Analyzers/1.2.0-beta.312": {
@@ -4350,26 +4476,34 @@
         "system.reflection.nuspec"
       ]
     },
-    "System.Reflection.Emit/4.3.0": {
-      "sha512": "228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
+    "System.Reflection.Emit/4.7.0": {
+      "sha512": "VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
       "type": "package",
-      "path": "system.reflection.emit/4.3.0",
+      "path": "system.reflection.emit/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
-        "lib/monotouch10/_._",
+        "lib/MonoTouch10/_._",
         "lib/net45/_._",
         "lib/netcore50/System.Reflection.Emit.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Reflection.Emit.dll",
+        "lib/netstandard1.1/System.Reflection.Emit.xml",
         "lib/netstandard1.3/System.Reflection.Emit.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.xml",
+        "lib/netstandard2.1/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
         "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
         "ref/net45/_._",
+        "ref/netcoreapp2.0/_._",
         "ref/netstandard1.1/System.Reflection.Emit.dll",
         "ref/netstandard1.1/System.Reflection.Emit.xml",
         "ref/netstandard1.1/de/System.Reflection.Emit.xml",
@@ -4381,9 +4515,19 @@
         "ref/netstandard1.1/ru/System.Reflection.Emit.xml",
         "ref/netstandard1.1/zh-hans/System.Reflection.Emit.xml",
         "ref/netstandard1.1/zh-hant/System.Reflection.Emit.xml",
+        "ref/netstandard2.0/System.Reflection.Emit.dll",
+        "ref/netstandard2.0/System.Reflection.Emit.xml",
+        "ref/netstandard2.1/_._",
+        "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "system.reflection.emit.4.3.0.nupkg.sha512",
-        "system.reflection.emit.nuspec"
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.dll",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.xml",
+        "system.reflection.emit.4.7.0.nupkg.sha512",
+        "system.reflection.emit.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
@@ -6291,6 +6435,21 @@
       "type": "project",
       "path": "../../Data/TechZoneBgWebProject.Data.Models/TechZoneBgWebProject.Data.Models.csproj",
       "msbuildProject": "../../Data/TechZoneBgWebProject.Data.Models/TechZoneBgWebProject.Data.Models.csproj"
+    },
+    "TechZoneBgWebProject.Services/1.0.0": {
+      "type": "project",
+      "path": "../../Services/TechZoneBgWebProject.Services/TechZoneBgWebProject.Services.csproj",
+      "msbuildProject": "../../Services/TechZoneBgWebProject.Services/TechZoneBgWebProject.Services.csproj"
+    },
+    "TechZoneBgWebProject.Services.Mapping/1.0.0": {
+      "type": "project",
+      "path": "../../Services/TechZoneBgWebProject.Services.Mapping/TechZoneBgWebProject.Services.Mapping.csproj",
+      "msbuildProject": "../../Services/TechZoneBgWebProject.Services.Mapping/TechZoneBgWebProject.Services.Mapping.csproj"
+    },
+    "TechZoneBgWebProject.Services.Messaging/1.0.0": {
+      "type": "project",
+      "path": "../../Services/TechZoneBgWebProject.Services.Messaging/TechZoneBgWebProject.Services.Messaging.csproj",
+      "msbuildProject": "../../Services/TechZoneBgWebProject.Services.Messaging/TechZoneBgWebProject.Services.Messaging.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6298,7 +6457,9 @@
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 5.0.1",
       "StyleCop.Analyzers >= 1.2.0-beta.312",
-      "TechZoneBgWebProject.Data >= 1.0.0"
+      "TechZoneBgWebProject.Data >= 1.0.0",
+      "TechZoneBgWebProject.Services >= 1.0.0",
+      "TechZoneBgWebProject.Services.Messaging >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6338,6 +6499,12 @@
           "projectReferences": {
             "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
               "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj"
+            },
+            "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj": {
+              "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj"
+            },
+            "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj": {
+              "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj"
             }
           }
         }

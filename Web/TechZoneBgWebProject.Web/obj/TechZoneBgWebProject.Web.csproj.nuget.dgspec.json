@@ -496,16 +496,26 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
+              },
+              "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj"
+              },
+              "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -515,8 +525,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -540,7 +550,7 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
@@ -648,6 +658,12 @@
             "projectReferences": {
               "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
                 "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj"
+              },
+              "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj"
+              },
+              "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj"
               }
             }
           }
@@ -841,6 +857,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
             "BuildBundlerMinifier": {
               "target": "Package",
               "version": "[3.2.449, )"

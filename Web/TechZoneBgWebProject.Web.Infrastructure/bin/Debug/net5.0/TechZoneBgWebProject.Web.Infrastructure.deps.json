@@ -11,10 +11,24 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.1",
           "StyleCop.Analyzers": "1.2.0-beta.312",
-          "TechZoneBgWebProject.Data": "1.0.0"
+          "TechZoneBgWebProject.Data": "1.0.0",
+          "TechZoneBgWebProject.Services": "1.0.0",
+          "TechZoneBgWebProject.Services.Messaging": "1.0.0"
         },
         "runtime": {
           "TechZoneBgWebProject.Web.Infrastructure.dll": {}
+        }
+      },
+      "AutoMapper/10.1.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Reflection.Emit": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.1.1.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.1": {
@@ -71,7 +85,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {},
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/2.0.1": {
         "dependencies": {
           "Microsoft.Data.SqlClient.SNI.runtime": "2.0.1",
@@ -414,7 +428,7 @@
       },
       "Microsoft.Identity.Client/4.14.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.7.0",
           "System.ComponentModel.TypeConverter": "4.3.0",
           "System.Net.NameResolution": "4.3.0",
           "System.Private.Uri": "4.3.2",
@@ -518,7 +532,7 @@
       },
       "Newtonsoft.Json/10.0.1": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.7.0",
           "System.Collections": "4.3.0",
           "System.ComponentModel.TypeConverter": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
@@ -556,6 +570,26 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.NETCore.Targets": "1.1.3"
+        }
+      },
+      "SendGrid/9.22.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "starkbank-ecdsa": "1.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.22.0.0",
+            "fileVersion": "9.22.0.0"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.2.0": {
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "StyleCop.Analyzers/1.2.0-beta.312": {
@@ -707,7 +741,7 @@
           "System.Linq.Expressions": "4.3.0",
           "System.ObjectModel": "4.3.0",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit": "4.7.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
           "System.Reflection.TypeExtensions": "4.3.0",
@@ -791,7 +825,7 @@
           "System.Linq": "4.3.0",
           "System.ObjectModel": "4.3.0",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit": "4.7.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
@@ -882,15 +916,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Reflection.Emit/4.3.0": {
-        "dependencies": {
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
+      "System.Reflection.Emit/4.7.0": {},
       "System.Reflection.Emit.ILGeneration/4.3.0": {
         "dependencies": {
           "System.Reflection": "4.3.0",
@@ -1195,7 +1221,7 @@
           "System.IO": "4.3.0",
           "System.Linq": "4.3.0",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit": "4.7.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
@@ -1243,6 +1269,33 @@
         "runtime": {
           "TechZoneBgWebProject.Data.Models.dll": {}
         }
+      },
+      "TechZoneBgWebProject.Services/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "TechZoneBgWebProject.Data": "1.0.0",
+          "TechZoneBgWebProject.Data.Models": "1.0.0",
+          "TechZoneBgWebProject.Services.Mapping": "1.0.0"
+        },
+        "runtime": {
+          "TechZoneBgWebProject.Services.dll": {}
+        }
+      },
+      "TechZoneBgWebProject.Services.Mapping/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "10.1.1"
+        },
+        "runtime": {
+          "TechZoneBgWebProject.Services.Mapping.dll": {}
+        }
+      },
+      "TechZoneBgWebProject.Services.Messaging/1.0.0": {
+        "dependencies": {
+          "SendGrid": "9.22.0"
+        },
+        "runtime": {
+          "TechZoneBgWebProject.Services.Messaging.dll": {}
+        }
       }
     }
   },
@@ -1251,6 +1304,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/10.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uMgbqOdu9ZG5cIOty0C85hzzayBH2i9BthnS5FlMqKtMSHDv4ts81a2jS1VFaDBVhlBeIqJ/kQKjQY95BZde9w==",
+      "path": "automapper/10.1.1",
+      "hashPath": "automapper.10.1.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.1": {
       "type": "package",
@@ -1287,12 +1347,12 @@
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/5.0.1",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.5.0.1.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.5.0": {
+    "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
-      "path": "microsoft.csharp/4.5.0",
-      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/2.0.1": {
       "type": "package",
@@ -1553,6 +1613,20 @@
       "path": "runtime.native.system/4.3.0",
       "hashPath": "runtime.native.system.4.3.0.nupkg.sha512"
     },
+    "SendGrid/9.22.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5vXkfOqPhi6W5/tEmRcTVJakT69SXiCGqVRERYF4ZAtJ4alylzlOqin6w8Xrog0Brf3RL+4BKXI+CwKbFLtteA==",
+      "path": "sendgrid/9.22.0",
+      "hashPath": "sendgrid.9.22.0.nupkg.sha512"
+    },
+    "starkbank-ecdsa/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hP53QPYOOEIR44EK9phz+DYliM6DEieDZxpb8GZzE+++qyrWqUscKcyHCC6L9yu/ehllYtqxtT4qrjWDsuQlUQ==",
+      "path": "starkbank-ecdsa/1.2.0",
+      "hashPath": "starkbank-ecdsa.1.2.0.nupkg.sha512"
+    },
     "StyleCop.Analyzers/1.2.0-beta.312": {
       "type": "package",
       "serviceable": true,
@@ -1777,12 +1851,12 @@
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
     },
-    "System.Reflection.Emit/4.3.0": {
+    "System.Reflection.Emit/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
-      "path": "system.reflection.emit/4.3.0",
-      "hashPath": "system.reflection.emit.4.3.0.nupkg.sha512"
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
       "type": "package",
@@ -2045,6 +2119,21 @@
       "sha512": ""
     },
     "TechZoneBgWebProject.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TechZoneBgWebProject.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TechZoneBgWebProject.Services.Mapping/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TechZoneBgWebProject.Services.Messaging/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

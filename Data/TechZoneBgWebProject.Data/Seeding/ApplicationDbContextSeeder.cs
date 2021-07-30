@@ -27,8 +27,11 @@
                           {
                               new RolesSeeder(),
                               new AdminSeeder(),
+                              new UserSeeder(),
                               new NewsSourceSeeder(),
                               new NewsSeeder(),
+                              new CategoriesSeeder(),
+                              new TagsSeeder(),
                           };
 
             foreach (var seeder in seeders)

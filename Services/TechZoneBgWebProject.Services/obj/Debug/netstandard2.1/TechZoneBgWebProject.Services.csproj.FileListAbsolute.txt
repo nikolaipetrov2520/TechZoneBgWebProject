@@ -16,3 +16,8 @@ C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBg
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.dll
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.csproj.CopyComplete

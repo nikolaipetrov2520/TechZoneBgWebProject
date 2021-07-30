@@ -132,3 +132,9 @@ a.news:hover, a.news:active {
     color:chocolate !important;
     text-decoration: none !important;
 }
+img.zoomimg {
+    transition: transform .4s;
+}
+img.zoomimg:hover, img.zoomimg:active {
+    transform: scale(1.1);
+}

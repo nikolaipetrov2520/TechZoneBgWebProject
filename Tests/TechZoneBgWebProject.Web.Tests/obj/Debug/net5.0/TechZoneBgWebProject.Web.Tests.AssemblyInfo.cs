@@ -13,6 +13,8 @@ using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data", "TechZoneBgWebProject.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=n" +
+    "ull", "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services", "TechZoneBgWebProject.Services.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web", "TechZoneBgWebProject.Web.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, Public" +
     "KeyToken=null", "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web.Infrastructure", "TechZoneBgWebProject.Web.Infrastructure.csproj", "0")]

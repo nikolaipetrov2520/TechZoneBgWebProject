@@ -19,6 +19,9 @@
     using TechZoneBgWebProject.Data.Seeding;
     using TechZoneBgWebProject.Services.Mapping;
     using TechZoneBgWebProject.Services.Messaging;
+    using TechZoneBgWebProject.Services.Posts;
+    using TechZoneBgWebProject.Services.Providers;
+    using TechZoneBgWebProject.Services.Tags;
     using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.ViewModels;
 
@@ -62,7 +65,6 @@
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
-            // Application services
             services.AddTransient<IEmailSender>(
                 serviceProvider => new SendGridEmailSender(this.configuration["SendGrid:ApiKey"]));
         }

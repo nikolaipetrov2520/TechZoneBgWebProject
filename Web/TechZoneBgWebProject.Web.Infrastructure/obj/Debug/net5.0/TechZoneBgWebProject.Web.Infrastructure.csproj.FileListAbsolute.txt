@@ -20,3 +20,9 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZ
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZoneBgWebProject.Data.Common.pdb
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.pdb
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\obj\Debug\net5.0\TechZoneBgWebProject.Web.Infrastructure.csproj.CopyComplete
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZoneBgWebProject.Services.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZoneBgWebProject.Services.Messaging.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZoneBgWebProject.Services.Messaging.pdb
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZoneBgWebProject.Services.pdb
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.Infrastructure\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.pdb
