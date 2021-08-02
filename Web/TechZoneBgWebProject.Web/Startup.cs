@@ -1,7 +1,7 @@
 ﻿namespace TechZoneBgWebProject.Web
 {
     using System.Reflection;
-
+    using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -64,6 +64,19 @@
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
+
+            services.AddTransient<IPostsService, PostsService>();
+            services.AddTransient<ITagsService, TagsService>();
+            services.AddTransient<IDateTimeProvider, DateTimeProvider>();
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new TechZoneBgProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddMvc();
 
             services.AddTransient<IEmailSender>(
                 serviceProvider => new SendGridEmailSender(this.configuration["SendGrid:ApiKey"]));

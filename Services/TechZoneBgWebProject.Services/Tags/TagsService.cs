@@ -12,12 +12,10 @@
     public class TagsService : ITagsService
     {
         private readonly ApplicationDbContext db;
-        private readonly IMapper mapper;
 
-        public TagsService(ApplicationDbContext db, IMapper mapper)
+        public TagsService(ApplicationDbContext db)
         {
             this.db = db;
-            this.mapper = mapper;
         }
 
         public Task<bool> AreExistingAsync(IEnumerable<int> ids)
@@ -40,14 +38,10 @@
             throw new System.NotImplementedException();
         }
 
-        public async Task<IEnumerable<TModel>> GetAllByPostIdAsync<TModel>(int postId)
-            => await this.db.PostsTags
-                .AsNoTracking()
-                .Where(pt => pt.PostId == postId && !pt.Post.IsDeleted)
-                .Select(pt => pt.Tag)
-                .Where(t => !t.IsDeleted)
-                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
-                .ToListAsync();
+        public Task<IEnumerable<TModel>> GetAllByPostIdAsync<TModel>(int postId)
+        {
+            throw new System.NotImplementedException();
+        }
 
         public Task<TModel> GetByIdAsync<TModel>(int id)
         {
