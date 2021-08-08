@@ -21,20 +21,6 @@
             this.mapper = mapper;
         }
 
-        public Task CreateAsync(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EditAsync(int id, string name)
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<IEnumerable<TModel>> GetAllAsync<TModel>(string search = null)
         {
@@ -55,10 +41,12 @@
             return categories;
         }
 
-        public Task<TModel> GetByIdAsync<TModel>(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<TModel> GetByIdAsync<TModel>(int id)
+            => await this.db.Categories
+                .AsNoTracking()
+                .Where(c => c.Id == id && !c.IsDeleted)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync();
 
         public Task<bool> IsExistingAsync(int id)
         {
@@ -66,6 +54,21 @@
         }
 
         public Task<bool> IsExistingAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task EditAsync(int id, string name)
         {
             throw new NotImplementedException();
         }

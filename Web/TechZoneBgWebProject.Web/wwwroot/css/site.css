@@ -77,9 +77,10 @@ a.white-text {
     color: #fff !important;
 }
 
-    a.white-text:hover {
-        color: gray !important;
-    }
+a.white-text:hover {
+    color: #ccc9c9 !important;
+
+}
 
 button.white-text {
     color: #fff !important;
@@ -92,7 +93,6 @@ button.white-text {
 p.d {
     display: inline;
     text-align: right;
-    padding-right: 10px;
 }
 
 a.c {
@@ -189,17 +189,6 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
-}
-
-body {
-    margin: 0;
-    font-family: "Krub", sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #666f74;
-    text-align: left;
-    background-color: #f8f9fb;
 }
 
 [tabindex="-1"]:focus {
@@ -5619,7 +5608,7 @@ select:disabled.simple-control::-ms-expand {
         top: 0;
         width: 12px;
         height: 12px;
-        background: #ffffff;
+        background: rgb(96, 163, 235);
     }
 
     .custom-select-01::after {
@@ -5671,7 +5660,6 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-size: 16px;
-    line-height: 26px;
     -webkit-animation: fade-in 0.3s linear;
     animation: fade-in 0.3s linear;
 }
@@ -7631,7 +7619,8 @@ hr {
 }
 
 .tt-topic-list .tt-item:nth-child(even):not(.tt-itemselect):not(.tt-item-popup) {
-    background-color: #f2f4f6;
+    background-color: #eff7ff;
+    border-radius: 4px;
 }
 
 .tt-topic-list .tt-item:nth-child(odd):not(.tt-itemselect):not(.tt-item-popup) {
@@ -8011,7 +8000,7 @@ hr {
 }
 
 .tt-single-topic-list > .tt-item:not([class^="tt-wrapper-success"]) {
-    background-color: #ffffff;
+    background-color: #eff7ff;
 }
 
 .tt-single-topic-list > .tt-item.tt-wrapper-success {
@@ -9956,7 +9945,7 @@ html.ie.gecko body.modal-open {
     }
 
 .tt-categories-list .tt-item {
-    background-color: #ffffff;
+    background-color: #eff7ff;
     border-radius: 3px;
 }
 

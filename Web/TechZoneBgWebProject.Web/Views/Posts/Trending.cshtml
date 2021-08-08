@@ -17,42 +17,6 @@
                 <div class="tt-col-value">Activity</div>
             </div>
 
-            @if (!this.User.Identity.IsAuthenticated)
-            {
-                <div class="tt-item tt-item-popup" id="not-logged-in-user">
-                    <div class="tt-col-avatar">
-                        <svg class="tt-icon">
-                            <use xlink:href="#icon-ava-f"></use>
-                        </svg>
-                    </div>
-                    <div class="tt-col-message">
-                        Looks like you are new here. Register for free, learn and contribute.
-                    </div>
-                    <div class="tt-col-btn">
-                        <a type="button"
-                           class="btn btn-primary"
-                           asp-area="Identity"
-                           asp-page="/Account/Login">
-                            Log in
-                        </a>
-                        <a type="button"
-                           class="btn btn-secondary"
-                           asp-area="Identity"
-                           asp-page="/Account/Register">
-                            Sign up
-                        </a>
-                        <script type="text/javascript">
-                            var removeHtml = function () { document.getElementById("not-logged-in-user").remove() }
-                        </script>
-                        <button type="button" class="btn-icon" onclick="removeHtml()">
-                            <svg class="tt-icon">
-                                <use xlink:href="#icon-cancel"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            }
-
             @foreach (var post in Model.Posts)
             {
                 var className = "tt-item";
@@ -148,7 +112,7 @@
             {
                 <div class="text-center">
                     <nav>
-                        <ul class="pagination">
+                        <ul class="pagination mb-4">
                             <li>
                                 <a asp-area=""
                                    asp-controller="Posts"
@@ -186,7 +150,7 @@
             {
                 <div class="text-center">
                     <nav>
-                        <ul class="pagination">
+                        <ul class="pagination mb-4">
                             <li>
                                 <a asp-area=""
                                    asp-controller="Posts"

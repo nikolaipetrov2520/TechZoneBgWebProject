@@ -29,8 +29,8 @@
             public const string UserPassword = "user123456";
             public const string UserProfilePicture = "#icon-ava-u";
             public const string UserPhoneNumber = "0888888888";
-            public const string UserFirstName = "Николай";
-            public const string UserLastName = "Петров";
+            public const string UserFirstName = "User";
+            public const string UserLastName = "User";
         }
 
         public class NewsSource
@@ -89,11 +89,17 @@
             public const int ReplyReportDescriptionMinLength = 3;
         }
 
-        public const string DateTimeFormat = "dd/MM/yy HH:mm";
-        public const string DateTimeShortFormat = "dd/MM/yy";
+        public class DateTime
+        {
+            public const string DateTimeFormat = "dd-MM-yy HH:mm";
+            public const string DateTimeShortFormat = "dd/MM/yy";
+        }
 
-        public const string IFrameTag = "iframe";
-        public const string AllowedFileExtensions = "jpg,jpeg,png";
+        public class Sanitizer
+        {
+            public const string IFrameTag = "iframe";
+            public const string AllowedFileExtensions = "jpg,jpeg,png";
+        }
 
         public const string UserUsernameDisplayName = "Display name";
         public const string UserLoginRememberMeDisplayName = "Remember me";

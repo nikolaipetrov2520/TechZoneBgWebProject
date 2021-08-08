@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using TechZoneBgWebProject.Data.Models;
-
-namespace TechZoneBgWebProject.Web.Areas.Identity.Pages.Account
+﻿namespace TechZoneBgWebProject.Web.Areas.Identity.Pages.Account
 {
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+    using Microsoft.Extensions.Logging;
+    using TechZoneBgWebProject.Data.Models;
+
     [AllowAnonymous]
     public class LogoutModel : PageModel
     {
@@ -25,6 +22,7 @@ namespace TechZoneBgWebProject.Web.Areas.Identity.Pages.Account
 
         public void OnGet()
         {
+
         }
 
         public async Task<IActionResult> OnPost(string returnUrl = null)
@@ -33,11 +31,11 @@ namespace TechZoneBgWebProject.Web.Areas.Identity.Pages.Account
             _logger.LogInformation("User logged out.");
             if (returnUrl != null)
             {
-                return LocalRedirect(returnUrl);
+                return this.LocalRedirect(returnUrl);
             }
             else
             {
-                return RedirectToPage();
+                return this.RedirectToPage();
             }
         }
     }

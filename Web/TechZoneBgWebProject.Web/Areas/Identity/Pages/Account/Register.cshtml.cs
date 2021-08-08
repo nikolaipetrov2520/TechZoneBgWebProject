@@ -88,14 +88,16 @@
             if (this.ModelState.IsValid)
             {
 
-                var usernameFirstLetter = char.ToLower(this.Input.Username[0]);
+                var usernameFirstLetter = char.ToLower(this.Input.FirstName[0]);
+                var profilePicture = $"#icon-ava-{usernameFirstLetter}";
 
-                var user = new ApplicationUser 
+                var user = new ApplicationUser
                 {
                     UserName = this.Input.Username,
                     Email = this.Input.Email,
                     FirstName = this.Input.FirstName,
                     LastName = this.Input.LastName,
+                    ProfilePicture = profilePicture,
                     PhoneNumber = this.Input.Username,
                     IsModified = true,
                 };

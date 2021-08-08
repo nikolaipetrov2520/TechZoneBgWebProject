@@ -205,7 +205,7 @@
             foreach (var post in posts)
             {
                 post.Activity = await this.postsService.GetLatestActivityByIdAsync(post.Id);
-                post.Tags = (IEnumerable<PostsTagsViewModel>)await this.tagsService.GetAllByPostIdAsync<PostsTagsDetailsViewModel>(post.Id);
+                post.Tags = await this.tagsService.GetAllByPostIdAsync<PostsTagsViewModel>(post.Id);
             }
 
             var viewModel = new PostsAllViewModel

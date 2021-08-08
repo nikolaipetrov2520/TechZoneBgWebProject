@@ -11,7 +11,7 @@
         public RepliesDeleteViewModel()
         {
             this.sanitizer = new HtmlSanitizer();
-            this.sanitizer.AllowedTags.Add(GlobalConstants.IFrameTag);
+            this.sanitizer.AllowedTags.Add(GlobalConstants.Sanitizer.IFrameTag);
         }
 
         public int Id { get; set; }

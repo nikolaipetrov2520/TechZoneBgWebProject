@@ -57,45 +57,50 @@
 
         @if (Model.Replies.Any())
         {
-<hr />
-                <h6 class="tt-title">Frequent Posters</h6>
-                                <div class="tt-row-icon">
-                                    @{ var replies = this.Model.Replies
-                                                            .OrderByDescending(r => r.CreatedOn)
-                                                            .Select(r => new
-                                                            {
-                                                                AuthorId = r.AuthorId,
-                                                                AuthorProfilePicture = r.AuthorProfilePicture
-                                                            })
-                                                            .Distinct();
+            <hr />
+            <h6 class="tt-title">Frequent Posters</h6>
+            <div class="tt-row-icon">
+                @{
+                    var replies = this.Model.Replies
+                        .OrderByDescending(r => r.CreatedOn)
+                        .Select(r => new
+                        {
+                            AuthorId = r.AuthorId,
+                            AuthorProfilePicture = r.AuthorProfilePicture
+                        })
+                        .Distinct();
 
-                                                        foreach (var reply in replies)
-                                                        {
-                                        <div class="tt-item">
-                                            <a asp-area=""
-                                               asp-controller="Users"
-                                               asp-action="Threads"
-                                               asp-route-id="@reply.AuthorId"
-                                               class="tt-icon-avatar">
-                                                @if (reply.AuthorProfilePicture.StartsWith("#icon-ava"))
-                                                {
-                            <svg>
-                                <use xlink:href="@reply.AuthorProfilePicture"></use>
-                            </svg> }
-                                                else
-                                                {
-                            <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@reply.AuthorProfilePicture"
-                                 alt="avatar"
-                                 class="tt-icon"
-                                 width="40"
-                                 height="40"
-                                 style="border-radius: 50%" />}
-                                            </a>
-                                        </div> } }
-                                </div>
-                                                <hr />
-                                                                <partial name="~/Views/Posts/_DetailsSortPartial.cshtml" model="@Model" />
-         }
+                    foreach (var reply in replies)
+                    {
+                        <div class="tt-item">
+                            <a asp-area="" 
+                               asp-controller="Users" 
+                               asp-action="Threads" 
+                               asp-route-id="@reply.AuthorId" 
+                               class="tt-icon-avatar">
+                                @if (reply.AuthorProfilePicture.StartsWith("#icon-ava"))
+                                {
+                                    <svg>
+                                        <use xlink:href="@reply.AuthorProfilePicture"></use>
+                                    </svg>
+                                }
+                                else
+                                {
+                                    <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@reply.AuthorProfilePicture"
+                                         alt="avatar"
+                                         class="tt-icon"
+                                         width="40"
+                                         height="40"
+                                         style="border-radius: 50%" />
+                                }
+                            </a>
+                        </div>
+                    }
+                }
+            </div>
+            <hr />
+            <partial name="~/Views/Posts/_DetailsSortPartial.cshtml" model="@Model" />
+        }
 
     </div>
 </div>

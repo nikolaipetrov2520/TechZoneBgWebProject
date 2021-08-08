@@ -201,17 +201,47 @@
             return posts;
         }
 
+        public async Task<IEnumerable<TModel>> GetAllByCategoryIdAsync<TModel>(int categoryId, string search = null)
+        {
+            var queryable = this.db.Posts
+               .AsNoTracking()
+               .OrderByDescending(p => p.CreatedOn)
+               .Where(p => p.CategoryId == categoryId && !p.IsDeleted);
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                queryable = queryable.Where(p => p.Title.Contains(search));
+            }
+
+            var posts = await queryable
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
+
+            return posts;
+        }
+
+        public async Task<IEnumerable<TModel>> GetAllByTagIdAsync<TModel>(int tagId, string search = null)
+        {
+            var queryable = this.db.Posts
+               .AsNoTracking()
+               .Where(p => !p.IsDeleted && p.Tags
+                   .Select(t => t.TagId).Contains(tagId));
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                queryable = queryable.Where(p => p.Title.Contains(search));
+            }
+
+            var posts = await queryable
+                .OrderByDescending(p => p.CreatedOn)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
+
+            return posts;
+        }
+
+
         public Task<IEnumerable<TModel>> GetSuggestedAsync<TModel>(int take)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<TModel>> GetAllByTagIdAsync<TModel>(int tagId, string search = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<TModel>> GetAllByCategoryIdAsync<TModel>(int categoryId, string search = null)
         {
             throw new NotImplementedException();
         }
@@ -237,10 +267,10 @@
         private string CalculateLatestActivity(DateTime currentTime, DateTime latestPostTime)
         {
             const decimal totalDays = 365.25m;
-            const char yearsPostfix = 'y';
-            const char daysPostfix = 'd';
-            const char hoursPostfix = 'h';
-            const char minutesPostfix = 'm';
+            const char yearsPostfix = 'г';
+            const char daysPostfix = 'д';
+            const char hoursPostfix = 'ч';
+            const char minutesPostfix = 'м';
 
             var activity = currentTime - latestPostTime;
             var daysFromNow = activity.Days;

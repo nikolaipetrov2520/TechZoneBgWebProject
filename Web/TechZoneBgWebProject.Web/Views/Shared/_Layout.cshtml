@@ -1,4 +1,5 @@
 ﻿@using TechZoneBgWebProject.Common
+@using TechZoneBgWebProject.Web.Infrastructure.Extensions
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,26 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@this.ViewData["Title"] - TechZoneBG</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link href="~/lib/fontawesome/css/all.min.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/selectize/dist/css/selectize.min.css" rel="stylesheet" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-xl navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-xl">
-                <a class="navbar-brand white_text" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/TechZone Logo.png" width="272" height="48"></a>
+                <a class="navbar-brand white_text" asp-area="" asp-controller="Posts" asp-action="Trending"><img src="~/images/TechZone Logo.png" width="272" height="48"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse white_text">
+                <div class="navbar-collapse collapse d-xl-inline-flex flex-md-row-reverse white_text">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link white-text" asp-area="" asp-controller="Home" asp-action="Index" title="Начало"><i class="fas fa-home layout"></i></a>
+                            <a class="nav-link white-text" asp-area="" asp-controller="Posts" asp-action="Trending"><span>Trending</span></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" asp-area="" asp-controller="Posts" asp-action="Following">Following</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" asp-area="" asp-controller="Posts" asp-action="Create">New</a>
+                        </li>
+                        @if (this.User.IsAdministrator())
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link white-text" asp-area="Administration" asp-controller="PostReports" asp-action="All"><span>Reports</span></a>
+                            </li>
+                        }
+
+                        <li class="nav-item">
+                            <a class="nav-link white-text" asp-area="" asp-controller="Tags" asp-action="All">Tags</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text" asp-area="" asp-controller="Categories" asp-action="All">Categories</a>
+                        </li>
+
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">Messages</a>
+                            </li>
+                        }
                     </ul>
+
                 </div>
             </div>
             <div class="social">
@@ -55,6 +85,7 @@
                     </a>
                 </p>
             </div>
+
         </nav>
     </header>
     <div class="container-fluid">
@@ -73,21 +104,43 @@
                 </div>
             </aside>
         </div>
-        
+
     </div>
 
+    <partial name="_SymbolsPartial" />
+
     <footer class="border-top footer white-text">
-        <div class="container">
-           TechZoneBG &copy; 2020 - @DateTime.Now.Year
+        <div class="container" style="color:white">
+            TechZoneBG &copy; 2020 - @DateTime.Now.Year
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/js/bundle.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/lib/signalr/dist/browser/signalr.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/lib/tinymce/tinymce.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/lib/selectize/dist/js/standalone/selectize.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/js/site.min.js" type="text/javascript" asp-append-version="true"></script>
     <script src="https://kit.fontawesome.com/48ab6649dd.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea#customTextArea',
+            height: 300,
+            plugins: [
+                'lists advlist link autolink image media preview hr anchor',
+                'code codesample paste',
+                'table emoticons help'
+            ],
+            toolbar: [
+                'bold italic | emoticons link codesample image media | hr bullist numlist alignleft aligncenter alignright alignjustify |'
+            ],
+            link_default_protocol: "https",
+            menubar: false
+        });
+    </script>
     @await this.RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
