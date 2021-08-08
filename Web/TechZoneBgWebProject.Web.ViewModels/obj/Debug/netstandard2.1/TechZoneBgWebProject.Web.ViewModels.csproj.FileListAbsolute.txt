@@ -30,3 +30,5 @@ C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebPr
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.csproj.CopyComplete
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.dll
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web.ViewModels\obj\Debug\netstandard2.1\TechZoneBgWebProject.Web.ViewModels.pdb
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Common.dll
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web.ViewModels\bin\Debug\netstandard2.1\TechZoneBgWebProject.Common.pdb

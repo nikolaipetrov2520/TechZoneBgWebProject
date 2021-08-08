@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace TechZoneBgWebProject.Common
+﻿namespace TechZoneBgWebProject.Common
 {
+    using System.Collections.Generic;
+
     public static class GlobalConstants
     {
         public const string SystemName = "TechZoneBgWebProject";
@@ -82,6 +82,13 @@ namespace TechZoneBgWebProject.Common
                 };
         }
 
+        public class Replies
+        {
+            public const int ReplyDescriptionMaxLength = 30000;
+            public const int ReplyReportDescriptionMaxLength = 30000;
+            public const int ReplyReportDescriptionMinLength = 3;
+        }
+
         public const string DateTimeFormat = "dd/MM/yy HH:mm";
         public const string DateTimeShortFormat = "dd/MM/yy";
 
@@ -118,10 +125,6 @@ namespace TechZoneBgWebProject.Common
         public const int PostReportDescriptionMaxLength = 30000;
         public const int PostReportDescriptionMinLength = 3;
         public const string PostTypeDisplayName = "Post Type";
-
-        public const int ReplyDescriptionMaxLength = 30000;
-        public const int ReplyReportDescriptionMaxLength = 30000;
-        public const int ReplyReportDescriptionMinLength = 3;
 
         public const int ShortDescriptionAllowedLength = 44;
     }

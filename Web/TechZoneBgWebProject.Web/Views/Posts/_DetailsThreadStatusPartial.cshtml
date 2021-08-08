@@ -1,0 +1,101 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Posts.PostsDetailsViewModel
+
+<div class="tt-item">
+    <div class="tt-info-box">
+        <h6 class="tt-title">Thread Status</h6>
+        <div class="tt-row-icon">
+            <div class="tt-item">
+                <div class="tt-icon-btn tt-position-bottom">
+                    <i class="tt-icon"><svg><use xlink:href="#icon-reply"></use></svg></i>
+                    <span class="tt-text">@Model.RepliesCount</span>
+                </div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-icon-btn tt-position-bottom">
+                    <i class="tt-icon fas fa-eye"></i>
+                    <span class="tt-text">@Model.Views</span>
+                </div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-icon-btn tt-position-bottom">
+                    <i class="tt-icon"><img src="~/images/like.svg" alt="like" /></i>
+                    <span id="post-likes" class="tt-text">@Model.Likes</span>
+                </div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-icon-btn tt-position-bottom">
+                    <i class="tt-icon"><img src="~/images/love.svg" alt="love" /></i>
+                    <span id="post-loves" class="tt-text">@Model.Loves</span>
+                </div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-icon-btn tt-position-bottom">
+                    <i class="tt-icon"><img src="~/images/haha.svg" alt="haha" /></i>
+                    <span id="post-haha" class="tt-text">@Model.HahaCount</span>
+                </div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-icon-btn tt-position-bottom">
+                    <i class="tt-icon"><img src="~/images/wow.svg" alt="wow" /></i>
+                    <span id="post-wow" class="tt-text">@Model.WowCount</span>
+                </div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-icon-btn tt-position-bottom">
+                    <i class="tt-icon"><img src="~/images/sad.svg" alt="sad" /></i>
+                    <span id="post-sad" class="tt-text">@Model.SadCount</span>
+                </div>
+            </div>
+            <div class="tt-item">
+                <div class="tt-icon-btn tt-position-bottom">
+                    <i class="tt-icon"><img src="~/images/angry.svg" alt="angry" /></i>
+                    <span id="post-angry" class="tt-text">@Model.AngryCount</span>
+                </div>
+            </div>
+
+        </div>
+
+        @if (Model.Replies.Any())
+        {
+<hr />
+                <h6 class="tt-title">Frequent Posters</h6>
+                                <div class="tt-row-icon">
+                                    @{ var replies = this.Model.Replies
+                                                            .OrderByDescending(r => r.CreatedOn)
+                                                            .Select(r => new
+                                                            {
+                                                                AuthorId = r.AuthorId,
+                                                                AuthorProfilePicture = r.AuthorProfilePicture
+                                                            })
+                                                            .Distinct();
+
+                                                        foreach (var reply in replies)
+                                                        {
+                                        <div class="tt-item">
+                                            <a asp-area=""
+                                               asp-controller="Users"
+                                               asp-action="Threads"
+                                               asp-route-id="@reply.AuthorId"
+                                               class="tt-icon-avatar">
+                                                @if (reply.AuthorProfilePicture.StartsWith("#icon-ava"))
+                                                {
+                            <svg>
+                                <use xlink:href="@reply.AuthorProfilePicture"></use>
+                            </svg> }
+                                                else
+                                                {
+                            <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@reply.AuthorProfilePicture"
+                                 alt="avatar"
+                                 class="tt-icon"
+                                 width="40"
+                                 height="40"
+                                 style="border-radius: 50%" />}
+                                            </a>
+                                        </div> } }
+                                </div>
+                                                <hr />
+                                                                <partial name="~/Views/Posts/_DetailsSortPartial.cshtml" model="@Model" />
+         }
+
+    </div>
+</div>

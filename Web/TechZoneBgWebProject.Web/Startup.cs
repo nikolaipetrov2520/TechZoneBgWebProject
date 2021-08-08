@@ -1,6 +1,7 @@
 ﻿namespace TechZoneBgWebProject.Web
 {
     using System.Reflection;
+
     using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -17,11 +18,15 @@
     using TechZoneBgWebProject.Data.Models;
     using TechZoneBgWebProject.Data.Repositories;
     using TechZoneBgWebProject.Data.Seeding;
+    using TechZoneBgWebProject.Services.Categories;
     using TechZoneBgWebProject.Services.Mapping;
     using TechZoneBgWebProject.Services.Messaging;
     using TechZoneBgWebProject.Services.Posts;
     using TechZoneBgWebProject.Services.Providers;
+    using TechZoneBgWebProject.Services.Reactions;
+    using TechZoneBgWebProject.Services.Replies;
     using TechZoneBgWebProject.Services.Tags;
+    using TechZoneBgWebProject.Services.Users;
     using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.ViewModels;
 
@@ -66,8 +71,12 @@
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             services.AddTransient<IPostsService, PostsService>();
+            services.AddTransient<IReactionsService, ReactionsService>();
             services.AddTransient<ITagsService, TagsService>();
+            services.AddTransient<ICategoriesService, CategoriesService>();
+            services.AddTransient<IRepliesService, RepliesService>();
             services.AddTransient<IDateTimeProvider, DateTimeProvider>();
+            services.AddTransient<IUsersService, UsersService>();
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TechZoneBgProfile());
@@ -80,6 +89,7 @@
 
             services.AddTransient<IEmailSender>(
                 serviceProvider => new SendGridEmailSender(this.configuration["SendGrid:ApiKey"]));
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -111,17 +121,16 @@
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseStatusCodePagesWithRedirects("/Home/NotFound{0}");
             app.UseEndpoints(
                 endpoints =>
                     {
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                        endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                        endpoints.MapControllerRoute("default", "{controller=Posts}/{action=Trending}/{id?}");
                         endpoints.MapRazorPages();
                     });
         }

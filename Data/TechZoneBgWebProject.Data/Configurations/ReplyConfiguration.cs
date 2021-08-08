@@ -12,7 +12,7 @@
         {
             reply
                 .Property(r => r.Description)
-                .HasMaxLength(GlobalConstants.ReplyDescriptionMaxLength)
+                .HasMaxLength(GlobalConstants.Replies.ReplyDescriptionMaxLength)
                 .IsRequired();
 
             reply

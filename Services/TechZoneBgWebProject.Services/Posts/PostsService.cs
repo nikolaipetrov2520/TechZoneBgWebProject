@@ -12,18 +12,21 @@
     using TechZoneBgWebProject.Data.Models;
     using TechZoneBgWebProject.Data.Models.Enums;
     using TechZoneBgWebProject.Services.Providers;
+    using TechZoneBgWebProject.Services.Users;
 
     public class PostsService : IPostsService
     {
         private readonly ApplicationDbContext db;
         private readonly IDateTimeProvider dateTimeProvider;
         private readonly IMapper mapper;
+        private readonly IUsersService usersService;
 
-        public PostsService(ApplicationDbContext db, IDateTimeProvider dateTimeProvider, IMapper mapper)
+        public PostsService(ApplicationDbContext db, IDateTimeProvider dateTimeProvider, IMapper mapper, IUsersService usersService)
         {
             this.db = db;
             this.dateTimeProvider = dateTimeProvider;
             this.mapper = mapper;
+            this.usersService = usersService;
         }
 
         public async Task<string> GetLatestActivityByIdAsync(int id)
@@ -65,69 +68,103 @@
             return count;
         }
 
-        public Task<int> CreateAsync(string title, PostType type, string description, string authorId, int categoryId, IEnumerable<int> tagIds)
+        public async Task<int> CreateAsync(string title, PostType type, string description, string authorId, int categoryId, IEnumerable<int> tagIds)
         {
-            throw new NotImplementedException();
+            var post = new Post
+            {
+                Title = title,
+                Type = type,
+                Description = description,
+                CreatedOn = this.dateTimeProvider.Now(),
+                AuthorId = authorId,
+                CategoryId = categoryId,
+            };
+
+            await this.db.Posts.AddAsync(post);
+            await this.db.SaveChangesAsync();
+            await this.AddTagsAsync(post.Id, tagIds);
+
+            await this.usersService.AddPointsAsync(authorId);
+
+            return post.Id;
         }
 
-        public Task EditAsync(int id, string title, string description, int categoryId, IEnumerable<int> tagIds)
+        public async Task EditAsync(int id, string title, string description, int categoryId, IEnumerable<int> tagIds)
         {
-            throw new NotImplementedException();
+            var post = await this.GetByIdAsync(id);
+
+            await this.RemoveTagsAsync(id, post);
+
+            post.Title = title;
+            post.Description = description;
+            post.CategoryId = categoryId;
+            post.ModifiedOn = this.dateTimeProvider.Now();
+
+            await this.AddTagsAsync(id, tagIds);
+            await this.db.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var post = await this.GetByIdAsync(id);
+
+            post.IsDeleted = true;
+            post.DeletedOn = this.dateTimeProvider.Now();
+
+            await this.db.SaveChangesAsync();
         }
 
-        public Task ViewAsync(int id)
+        public async Task ViewAsync(int id)
         {
-            throw new NotImplementedException();
+            var post = await this.GetByIdAsync(id);
+
+            post.Views++;
+
+            await this.db.SaveChangesAsync();
         }
 
-        public Task<bool> PinAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<int> GetFollowingCountAsync(string userId)
+         => await this.db.Posts
+                .Where(p => !p.IsDeleted && p.Author.Followers
+                    .Where(f => !f.IsDeleted)
+                    .Select(f => f.FollowerId)
+                    .FirstOrDefault() == userId)
+                .CountAsync();
 
-        public Task<bool> IsExistingAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<string> GetAuthorIdByIdAsync(int id)
+        => await this.db.Posts
+                .Where(p => p.Id == id && !p.IsDeleted)
+                .Select(p => p.AuthorId)
+                .FirstOrDefaultAsync();
 
-        public Task<int> GetFollowingCountAsync(string userId)
+        public async Task<IEnumerable<TModel>> GetAllFollowingByUserIdAsync<TModel>(string userId, string search = null, int skip = 0, int? take = null)
         {
-            throw new NotImplementedException();
-        }
+            var queryable = this.db.Posts
+                .AsNoTracking()
+                .OrderByDescending(p => p.CreatedOn)
+                .ThenByDescending(p => p.Reactions
+                    .Count(r => r.ReactionType != ReactionType.Neutral))
+                .Where(p => p.Author.Followers
+                    .Where(f => !f.IsDeleted && f.FollowerId == userId)
+                    .Select(f => f.FollowerId)
+                    .FirstOrDefault() == userId);
 
-        public Task<string> GetAuthorIdByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                queryable = queryable.Where(p => p.Title.Contains(search));
+            }
 
-        public Task<IEnumerable<TModel>> GetSuggestedAsync<TModel>(int take)
-        {
-            throw new NotImplementedException();
-        }
+            if (take.HasValue)
+            {
+                queryable = queryable.Skip(skip).Take(take.Value);
+            }
 
-        public Task<IEnumerable<TModel>> GetAllByTagIdAsync<TModel>(int tagId, string search = null)
-        {
-            throw new NotImplementedException();
-        }
+            var posts = await queryable
+                .Where(p => !p.IsDeleted)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
 
-        public Task<IEnumerable<TModel>> GetAllByCategoryIdAsync<TModel>(int categoryId, string search = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<TModel>> GetAllByUserIdAsync<TModel>(string userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<TModel>> GetAllFollowingByUserIdAsync<TModel>(string userId, string search = null, int skip = 0, int? take = null)
-        {
-            throw new NotImplementedException();
+            return posts;
         }
 
         public async Task<TModel> GetByIdAsync<TModel>(int id)
@@ -164,6 +201,36 @@
             return posts;
         }
 
+        public Task<IEnumerable<TModel>> GetSuggestedAsync<TModel>(int take)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<TModel>> GetAllByTagIdAsync<TModel>(int tagId, string search = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<TModel>> GetAllByCategoryIdAsync<TModel>(int categoryId, string search = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<TModel>> GetAllByUserIdAsync<TModel>(string userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> PinAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> IsExistingAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         private async Task<Post> GetByIdAsync(int id)
             => await this.db.Posts.FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
 
@@ -198,6 +265,33 @@
             }
 
             return result;
+        }
+
+        private async Task AddTagsAsync(int id, IEnumerable<int> tagIds)
+        {
+            var post = await this.GetByIdAsync(id);
+
+            foreach (var tagId in tagIds)
+            {
+                post.Tags.Add(new PostTag
+                {
+                    PostId = id,
+                    TagId = tagId,
+                });
+            }
+
+            await this.db.SaveChangesAsync();
+        }
+
+        private async Task RemoveTagsAsync(int id, Post post)
+        {
+            var postTags = await this.db.PostsTags.Where(pt => pt.PostId == id).ToListAsync();
+            foreach (var tag in postTags)
+            {
+                post.Tags.Remove(tag);
+            }
+
+            await this.db.SaveChangesAsync();
         }
     }
 }

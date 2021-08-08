@@ -1,0 +1,133 @@
+﻿namespace TechZoneBgWebProject.Services.Replies
+{
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
+    using Microsoft.EntityFrameworkCore;
+    using TechZoneBgWebProject.Data;
+    using TechZoneBgWebProject.Data.Models;
+    using TechZoneBgWebProject.Services.Providers;
+    using TechZoneBgWebProject.Services.Users;
+
+    public class RepliesService : IRepliesService
+    {
+        private readonly ApplicationDbContext db;
+        private readonly IMapper mapper;
+        private readonly IDateTimeProvider dateTimeProvider;
+        private readonly IUsersService usersService;
+
+        public RepliesService(IMapper mapper, ApplicationDbContext db, IDateTimeProvider dateTimeProvider, IUsersService usersService)
+        {
+            this.mapper = mapper;
+            this.db = db;
+            this.dateTimeProvider = dateTimeProvider;
+            this.usersService = usersService;
+        }
+
+        public async Task CreateAsync(string description, int? parentId, int postId, string authorId)
+        {
+            var reply = new Reply
+            {
+                Description = description,
+                ParentId = parentId,
+                PostId = postId,
+                AuthorId = authorId,
+                CreatedOn = this.dateTimeProvider.Now(),
+            };
+
+            await this.db.Replies.AddAsync(reply);
+            await this.db.SaveChangesAsync();
+
+            await this.usersService.AddPointsAsync(authorId);
+        }
+
+        public async Task<IEnumerable<TModel>> GetAllByPostIdAsync<TModel>(int postId, string sort = null)
+        {
+            var queryable = this.db.Replies
+                .AsNoTracking()
+                .Where(r => r.PostId == postId && !r.IsDeleted)
+                .OrderByDescending(r => r.IsBestAnswer);
+
+            queryable = sort switch
+            {
+                "recent" => queryable.ThenByDescending(r => r.CreatedOn),
+                "most reacted" => queryable.ThenByDescending(r => r.Reactions.Count),
+                "longest" => queryable.ThenByDescending(r => r.Description.Length),
+                "shortest" => queryable.ThenBy(r => r.Description.Length),
+                _ => queryable.ThenByDescending(r => r.CreatedOn),
+            };
+
+            var replies = await queryable
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
+
+            return replies;
+        }
+
+        public async Task<string> GetAuthorIdByIdAsync(int id)
+            => await this.db.Replies
+                .Where(r => r.Id == id && !r.IsDeleted)
+                .Select(r => r.AuthorId)
+                .FirstOrDefaultAsync();
+
+        public async Task<TModel> GetByIdAsync<TModel>(int id)
+            => await this.db.Replies
+                .AsNoTracking()
+                .Where(r => r.Id == id && !r.IsDeleted)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync();
+
+        public async Task EditAsync(int id, string description)
+        {
+            var reply = await this.GetByIdAsync(id);
+
+            reply.Description = description;
+            reply.ModifiedOn = this.dateTimeProvider.Now();
+
+            await this.db.SaveChangesAsync();
+        }
+
+
+        public async Task DeleteAsync(int id)
+        {
+            var reply = await this.GetByIdAsync(id);
+
+            reply.IsDeleted = true;
+            reply.DeletedOn = this.dateTimeProvider.Now();
+
+            await this.db.SaveChangesAsync();
+            await this.DeleteNestedAsync(id);
+        }
+
+        public Task MakeBestAnswerAsync(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<IEnumerable<TModel>> GetAllByUserIdAsync<TModel>(string userId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private async Task<Reply> GetByIdAsync(int id)
+            => await this.db.Replies.FirstOrDefaultAsync(r => r.Id == id && !r.IsDeleted);
+
+        private async Task DeleteNestedAsync(int id)
+        {
+            var nestedReply = await this.db.Replies.FirstOrDefaultAsync(r => r.ParentId == id && !r.IsDeleted);
+            if (nestedReply == null)
+            {
+                return;
+            }
+
+            nestedReply.IsDeleted = true;
+            nestedReply.DeletedOn = this.dateTimeProvider.Now();
+
+            await this.db.SaveChangesAsync();
+            await this.DeleteNestedAsync(nestedReply.Id);
+        }
+    }
+}

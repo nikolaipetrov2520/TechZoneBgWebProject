@@ -9,12 +9,37 @@
     ".NETStandard,Version=v2.1/": {
       "TechZoneBgWebProject.Web.ViewModels/1.0.0": {
         "dependencies": {
+          "HtmlSanitizer": "6.0.437",
           "StyleCop.Analyzers": "1.2.0-beta.312",
+          "TechZoneBgWebProject.Common": "1.0.0",
           "TechZoneBgWebProject.Data.Models": "1.0.0",
           "TechZoneBgWebProject.Services.Mapping": "1.0.0"
         },
         "runtime": {
           "TechZoneBgWebProject.Web.ViewModels.dll": {}
+        }
+      },
+      "AngleSharp/0.16.0": {
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AngleSharp.dll": {
+            "assemblyVersion": "0.16.0.0",
+            "fileVersion": "0.16.0.0"
+          }
+        }
+      },
+      "AngleSharp.Css/0.16.0": {
+        "dependencies": {
+          "AngleSharp": "0.16.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AngleSharp.Css.dll": {
+            "assemblyVersion": "0.16.0.0",
+            "fileVersion": "0.16.0.0"
+          }
         }
       },
       "AutoMapper/10.1.1": {
@@ -26,6 +51,18 @@
           "lib/netstandard2.0/AutoMapper.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.1.1.0"
+          }
+        }
+      },
+      "HtmlSanitizer/6.0.437": {
+        "dependencies": {
+          "AngleSharp": "0.16.0",
+          "AngleSharp.Css": "0.16.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/HtmlSanitizer.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.437.0"
           }
         }
       },
@@ -313,6 +350,22 @@
           }
         }
       },
+      "System.Text.Encoding.CodePages/5.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "TechZoneBgWebProject.Common/1.0.0": {
+        "runtime": {
+          "TechZoneBgWebProject.Common.dll": {}
+        }
+      },
       "TechZoneBgWebProject.Data.Common/1.0.0": {
         "dependencies": {
           "System.ComponentModel.Annotations": "5.0.0"
@@ -346,12 +399,33 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AngleSharp/0.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W2Pja32gtmXLqgx4eChVehRGabH84WUNg2HsEDpVFYbq7xqexpML6J1r84Js66PVciYf7EQA0DS1sU79ndsouw==",
+      "path": "anglesharp/0.16.0",
+      "hashPath": "anglesharp.0.16.0.nupkg.sha512"
+    },
+    "AngleSharp.Css/0.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kGsQe3yaTD6jf0zBAlD6kiBX/EIFCapkoNuXef56nKGKmn2y7FSSEQLkYrsJybK590nxTMQm+A9vEKMYd9yPiw==",
+      "path": "anglesharp.css/0.16.0",
+      "hashPath": "anglesharp.css.0.16.0.nupkg.sha512"
+    },
     "AutoMapper/10.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-uMgbqOdu9ZG5cIOty0C85hzzayBH2i9BthnS5FlMqKtMSHDv4ts81a2jS1VFaDBVhlBeIqJ/kQKjQY95BZde9w==",
       "path": "automapper/10.1.1",
       "hashPath": "automapper.10.1.1.nupkg.sha512"
+    },
+    "HtmlSanitizer/6.0.437": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XxJeTUND6WOfcR7fDwdsNCJ6e6dEQdu8bJAMqmpAUGebgIZS8r0EOkb77JBqiB0QmCoeDaHOnBJ+NkChRW4+IQ==",
+      "path": "htmlsanitizer/6.0.437",
+      "hashPath": "htmlsanitizer.6.0.437.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.1": {
       "type": "package",
@@ -555,6 +629,18 @@
       "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
       "path": "system.runtime.compilerservices.unsafe/5.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
+      "path": "system.text.encoding.codepages/5.0.0",
+      "hashPath": "system.text.encoding.codepages.5.0.0.nupkg.sha512"
+    },
+    "TechZoneBgWebProject.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "TechZoneBgWebProject.Data.Common/1.0.0": {
       "type": "project",

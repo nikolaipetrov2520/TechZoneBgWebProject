@@ -1,0 +1,498 @@
+﻿@using TechZoneBgWebProject.Web.Infrastructure.Extensions
+@using TechZoneBgWebProject.Web.ViewModels.Posts
+@model PostsDetailsViewModel
+@{ ViewData["Title"] = Model.Title;
+                async Task GetReplies(int? parentId)
+                {
+                    var replies = this.Model.Replies.Where(r => r.ParentId == parentId);
+                    if (!replies.Any())
+                    {
+                        return;
+                    }
+
+    <div class="topic-inner-list">
+        @foreach (var reply in replies)
+        {
+<div class="topic-inner">
+    <div class="topic-inner-title">
+        <div class="topic-inner-avatar">
+            <i class="tt-icon">
+                @if (reply.AuthorProfilePicture.StartsWith("#icon-ava"))
+                {
+<svg>
+    <use xlink:href="@reply.AuthorProfilePicture"></use>
+</svg> }
+                    else
+                    {
+<img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@reply.AuthorProfilePicture"
+     alt="avatar"
+     class="tt-icon"
+     width="40"
+     height="40"
+     style="border-radius: 50%" />}
+            </i>
+        </div>
+        <div class="topic-inner-title">
+            <a asp-area=""
+               asp-controller="Users"
+               asp-action="Threads"
+               asp-route-id="@reply.AuthorId">
+                @reply.AuthorFirstName
+            </a>
+        </div>
+    </div>
+    <div class="topic-inner-description">
+        @Html.Raw(reply.SanitizedDescription)
+        <div class="tt-item-info info-bottom">
+            <partial name="_DetailsRepliesReactionsPartial" model="reply" />
+            <div class="col-separator"></div>
+
+            @if (reply.AuthorId == this.User.GetId() || this.User.IsAdministrator())
+            {
+<a asp-area=""
+   asp-controller="Replies"
+   asp-action="Edit"
+   asp-route-id="@reply.Id"
+   class="tt-icon-btn"
+   style="color: #666f74">
+    <i class="fas fa-pen"></i>
+</a>
+                        <a asp-area=""
+                           asp-controller="Replies"
+                           asp-action="Delete"
+                           asp-route-id="@reply.Id"
+                           class="tt-icon-btn"
+                           style="color: #666f74">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>}
+
+            <a asp-area=""
+               asp-controller="ReplyReports"
+               asp-action="Create"
+               asp-route-id="@reply.Id"
+               class="tt-icon-btn tt-hover-02 tt-small-indent">
+                <i class="tt-icon"><svg><use xlink:href="#icon-flag"></use></svg></i>
+            </a>
+            <a asp-area=""
+               asp-controller="Replies"
+               asp-action="Details"
+               asp-route-id="@reply.Id"
+               class="tt-icon-btn tt-hover-02 tt-small-indent">
+                <i class="tt-icon"><svg><use xlink:href="#icon-reply"></use></svg></i>
+            </a>
+        </div>
+        @{ await GetReplies(reply.Id); }
+    </div>
+</div>}
+    </div> } }
+
+<br />
+<div class="container">
+    <div class="tt-single-topic-list" style="word-break: break-word;">
+        <div class="tt-item">
+            <div class="tt-single-topic">
+                <div class="tt-item-header">
+                    <div class="tt-item-info info-top">
+                        <div class="tt-avatar-icon">
+                            <i class="tt-icon">
+                                @if (Model.AuthorProfilePicture.StartsWith("#icon-ava"))
+                                {
+                    <svg>
+                        <use xlink:href="@Model.AuthorProfilePicture"></use>
+                    </svg> }
+                                else
+                                {
+                    <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@Model.AuthorProfilePicture"
+                         alt="avatar"
+                         class="tt-icon"
+                         width="40"
+                         height="40"
+                         style="border-radius: 50%" />}
+                            </i>
+                        </div>
+                        <div class="tt-avatar-title">
+                            <a asp-area=""
+                               asp-controller="Users"
+                               asp-action="Threads"
+                               asp-route-id="@Model.AuthorId">
+                                @Model.AuthorFirstName
+                            </a>
+                        </div>
+                        <div class="tt-info-time">
+                            @if (this.User.IsAdministrator())
+                            {
+                <button class="tt-icon-btn"
+                        style="padding: 0; border: none; background: none; outline: none; color: #666f74"
+                        onclick="pinPost(@Model.Id)">
+                    <i class="fas fa-thumbtack"></i>&nbsp;
+                    <span id="isPinned">@(Model.IsPinned ? "Unpin" : "Pin")</span>
+                </button>}
+                            &nbsp;
+                            <i class="tt-icon fas fa-calendar-alt"></i>@Model.CreatedOn
+                        </div>
+                    </div>
+                    <h3 class="tt-item-title">
+                        <a href="#">@Model.Title</a>
+                    </h3>
+                    <div class="tt-item-tag">
+                        <ul class="tt-list-badge">
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Categories"
+                                   asp-action="Details"
+                                   asp-route-id="@Model.Category.Id">
+                                    <span class="tt-color03 tt-badge">@Model.Category.Name</span>
+                                </a>
+                            </li>
+                            @foreach (var tag in Model.Tags)
+                            {
+                <li>
+                    <a asp-area=""
+                       asp-controller="Tags"
+                       asp-action="Details"
+                       asp-route-id="@tag.Id">
+                        <span class="tt-badge">@tag.Name</span>
+                    </a>
+                </li>}
+                        </ul>
+                    </div>
+                </div>
+                <div class="tt-item-description">
+                    <p>@Html.Raw(Model.SanitizedDescription)</p>
+                </div>
+                <div class="tt-item-info info-bottom">
+                    <partial name="_DetailsReactionsPartial" model="Model" />
+
+                    <div class="col-separator"></div>
+
+                    @if (this.Model.AuthorId == this.User.GetId() || this.User.IsAdministrator())
+                    {
+        <a asp-area=""
+           asp-controller="Posts"
+           asp-action="Edit"
+           asp-route-id="@Model.Id"
+           class="tt-icon-btn"
+           style="color: #666f74">
+            <i class="fas fa-pen"></i>
+        </a>
+                        <a asp-area=""
+                           asp-controller="Posts"
+                           asp-action="Delete"
+                           asp-route-id="@Model.Id"
+                           class="tt-icon-btn"
+                           style="color: #666f74">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>}
+
+                    <a asp-area=""
+                       asp-controller="PostReports"
+                       asp-action="Create"
+                       asp-route-id="@Model.Id"
+                       class="tt-icon-btn tt-hover-02 tt-small-indent">
+                        <i class="tt-icon"><svg><use xlink:href="#icon-flag"></use></svg></i>
+                    </a>
+                    <button style="padding: 0; border:none; background:none; outline:none"
+                            class="tt-icon-btn tt-hover-02 tt-small-indent"
+                            onclick="animateButton()">
+                        <i class="tt-icon"><svg><use xlink:href="#icon-reply"></use></svg></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <partial name="_DetailsThreadStatusPartial.cshtml" model="@Model" />
+
+        <form id="reactions-form" method="post"></form>
+
+        @foreach (var reply in Model.Replies.Where(r => r.ParentId == null))
+        {
+            var successWrapper = reply.IsBestAnswer ? " tt-wrapper-success" : string.Empty;
+            var badgeColor = reply.IsBestAnswer ? "tt-color13 " : string.Empty;
+            var badgeText = reply.IsBestAnswer
+                ? @"<i class=""fas fa-medal""></i>&nbsp;best answer"
+                : @"<i class=""fas fa-hand-point-right""></i>&nbsp;best answer";
+
+<div class="tt-item @successWrapper">
+    <div class="tt-single-topic">
+        <div class="tt-item-header pt-noborder">
+            <div class="tt-item-info info-top">
+                <div class="tt-avatar-icon">
+                    <i class="tt-icon">
+                        @if (reply.AuthorProfilePicture.StartsWith("#icon-ava"))
+                        {
+        <svg>
+            <use xlink:href="@reply.AuthorProfilePicture"></use>
+        </svg> }
+                        else
+                        {
+        <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@reply.AuthorProfilePicture"
+             alt="avatar"
+             class="tt-icon"
+             width="40"
+             height="40"
+             style="border-radius: 50%" />}
+                    </i>
+                </div>
+                <div class="tt-avatar-title">
+                    <a asp-area=""
+                       asp-controller="Users"
+                       asp-action="Threads"
+                       asp-route-id="@reply.AuthorId">
+                        @reply.AuthorFirstName
+                    </a>
+                    @if (Model.AuthorId == this.User.GetId() || this.User.IsAdministrator())
+                    {
+    <a asp-area=""
+       asp-controller="Replies"
+       asp-action="BestAnswer"
+       asp-route-id="@reply.Id">
+        <span class="@badgeColor tt-badge">@Html.Raw(badgeText)</span>
+    </a> }
+                    else
+                    {
+    @if (reply.IsBestAnswer)
+    {
+<a href="#">
+    <span class="@badgeColor tt-badge">@Html.Raw(badgeText)</span>
+</a>}}
+                </div>
+                <div class="tt-info-time">
+                    <i class="tt-icon fas fa-calendar-alt"></i>@reply.CreatedOn
+                </div>
+            </div>
+        </div>
+        <div class="tt-item-description">
+            <p>@Html.Raw(reply.SanitizedDescription)</p>
+            @{ await GetReplies(reply.Id); }
+        </div>
+        <div class="tt-item-info info-bottom">
+            <partial name="_DetailsRepliesReactionsPartial" model="reply" />
+            <div class="col-separator"></div>
+
+            @if (reply.AuthorId == this.User.GetId() || this.User.IsAdministrator())
+            {
+<a asp-area=""
+   asp-controller="Replies"
+   asp-action="Edit"
+   asp-route-id="@reply.Id"
+   class="tt-icon-btn"
+   style="color: #666f74">
+    <i class="fas fa-pen"></i>
+</a>
+                    <a asp-area=""
+                       asp-controller="Replies"
+                       asp-action="Delete"
+                       asp-route-id="@reply.Id"
+                       class="tt-icon-btn"
+                       style="color: #666f74">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>}
+
+            <a asp-area=""
+               asp-controller="ReplyReports"
+               asp-action="Create"
+               asp-route-id="@reply.Id"
+               class="tt-icon-btn tt-hover-02 tt-small-indent">
+                <i class="tt-icon"><svg><use xlink:href="#icon-flag"></use></svg></i>
+            </a>
+            <a asp-area=""
+               asp-controller="Replies"
+               asp-action="Details"
+               asp-route-id="@reply.Id"
+               class="tt-icon-btn tt-hover-02 tt-small-indent">
+                <i class="tt-icon"><svg><use xlink:href="#icon-reply"></use></svg></i>
+            </a>
+        </div>
+    </div>
+</div>}
+    </div>
+    @if (Model.Replies.Any())
+    {
+<div class="tt-wrapper-inner">
+    <h4 class="tt-title-separator"><span>You’ve reached the end of replies</span></h4>
+</div> }
+            else
+            {
+<div class="tt-wrapper-inner">
+    <h4 class="tt-title-separator"><span>There are no replies in this post</span></h4>
+</div>}
+    <div id="reply-box">
+        <vc:create-reply post-id="@Model.Id" parent-id="null"></vc:create-reply>
+    </div>
+</div>
+
+@section Scripts {
+    <script>var token = $("#reactions-form input[name=__RequestVerificationToken]").val();
+
+        function animateButton() {
+            $('html, body').animate({
+                scrollTop: $("#reply-box").offset().top
+            }, 1500);
+        }
+
+        function pinPost(id) {
+            $.ajax({
+                type: "POST",
+                url: "/Administration/Posts/Pin/" + id,
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (json) {
+                    if (json === true) {
+                        $('#isPinned').html('Unpin');
+                    } else {
+                        $('#isPinned').html('Pin');
+                    }
+                }
+            });
+        }
+
+        function likeReaction(id, controller, type) {
+            $.ajax({
+                type: "GET",
+                url: "/api/" + controller + "/like/" + id,
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (json) {
+                    if (type === 'post') {
+                        $("#post-likes").html(json.likes);
+                        $("#post-loves").html(json.loves);
+                        $("#post-haha").html(json.hahaCount);
+                        $("#post-wow").html(json.wowCount);
+                        $("#post-sad").html(json.sadCount);
+                        $("#post-angry").html(json.angryCount);
+                    } else {
+                        $("#reply-likes-" + id).html(json.likes);
+                        $("#reply-loves-" + id).html(json.loves);
+                        $("#reply-haha-" + id).html(json.hahaCount);
+                        $("#reply-wow-" + id).html(json.wowCount);
+                        $("#reply-sad-" + id).html(json.sadCount);
+                        $("#reply-angry-" + id).html(json.angryCount);
+                    }
+                }
+            });
+        }
+
+        function loveReaction(id, controller, type) {
+            $.ajax({
+                type: "GET",
+                url: "/api/" + controller + "/love/" + id,
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (json) {
+                    if (type === 'post') {
+                        $("#post-likes").html(json.likes);
+                        $("#post-loves").html(json.loves);
+                        $("#post-haha").html(json.hahaCount);
+                        $("#post-wow").html(json.wowCount);
+                        $("#post-sad").html(json.sadCount);
+                        $("#post-angry").html(json.angryCount);
+                    } else {
+                        $("#reply-likes-" + id).html(json.likes);
+                        $("#reply-loves-" + id).html(json.loves);
+                        $("#reply-haha-" + id).html(json.hahaCount);
+                        $("#reply-wow-" + id).html(json.wowCount);
+                        $("#reply-sad-" + id).html(json.sadCount);
+                        $("#reply-angry-" + id).html(json.angryCount);
+                    }
+                }
+            });
+        }
+
+        function hahaReaction(id, controller, type) {
+            $.ajax({
+                type: "GET",
+                url: "/api/" + controller + "/haha/" + id,
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (json) {
+                    if (type === 'post') {
+                        $("#post-likes").html(json.likes);
+                        $("#post-loves").html(json.loves);
+                        $("#post-haha").html(json.hahaCount);
+                        $("#post-wow").html(json.wowCount);
+                        $("#post-sad").html(json.sadCount);
+                        $("#post-angry").html(json.angryCount);
+                    } else {
+                        $("#reply-likes-" + id).html(json.likes);
+                        $("#reply-loves-" + id).html(json.loves);
+                        $("#reply-haha-" + id).html(json.hahaCount);
+                        $("#reply-wow-" + id).html(json.wowCount);
+                        $("#reply-sad-" + id).html(json.sadCount);
+                        $("#reply-angry-" + id).html(json.angryCount);
+                    }
+                }
+            });
+        }
+
+        function wowReaction(id, controller, type) {
+            $.ajax({
+                type: "GET",
+                url: "/api/" + controller + "/wow/" + id,
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (json) {
+                    if (type === 'post') {
+                        $("#post-likes").html(json.likes);
+                        $("#post-loves").html(json.loves);
+                        $("#post-haha").html(json.hahaCount);
+                        $("#post-wow").html(json.wowCount);
+                        $("#post-sad").html(json.sadCount);
+                        $("#post-angry").html(json.angryCount);
+                    } else {
+                        $("#reply-likes-" + id).html(json.likes);
+                        $("#reply-loves-" + id).html(json.loves);
+                        $("#reply-haha-" + id).html(json.hahaCount);
+                        $("#reply-wow-" + id).html(json.wowCount);
+                        $("#reply-sad-" + id).html(json.sadCount);
+                        $("#reply-angry-" + id).html(json.angryCount);
+                    }
+                }
+            });
+        }
+
+        function sadReaction(id, controller, type) {
+            $.ajax({
+                type: "GET",
+                url: "/api/" + controller + "/sad/" + id,
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (json) {
+                    if (type === 'post') {
+                        $("#post-likes").html(json.likes);
+                        $("#post-loves").html(json.loves);
+                        $("#post-haha").html(json.hahaCount);
+                        $("#post-wow").html(json.wowCount);
+                        $("#post-sad").html(json.sadCount);
+                        $("#post-angry").html(json.angryCount);
+                    } else {
+                        $("#reply-likes-" + id).html(json.likes);
+                        $("#reply-loves-" + id).html(json.loves);
+                        $("#reply-haha-" + id).html(json.hahaCount);
+                        $("#reply-wow-" + id).html(json.wowCount);
+                        $("#reply-sad-" + id).html(json.sadCount);
+                        $("#reply-angry-" + id).html(json.angryCount);
+                    }
+                }
+            });
+        }
+
+        function angryReaction(id, controller, type) {
+            $.ajax({
+                type: "GET",
+                url: "/api/" + controller + "/angry/" + id,
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (json) {
+                    if (type === 'post') {
+                        $("#post-likes").html(json.likes);
+                        $("#post-loves").html(json.loves);
+                        $("#post-haha").html(json.hahaCount);
+                        $("#post-wow").html(json.wowCount);
+                        $("#post-sad").html(json.sadCount);
+                        $("#post-angry").html(json.angryCount);
+                    } else {
+                        $("#reply-likes-" + id).html(json.likes);
+                        $("#reply-loves-" + id).html(json.loves);
+                        $("#reply-haha-" + id).html(json.hahaCount);
+                        $("#reply-wow-" + id).html(json.wowCount);
+                        $("#reply-sad-" + id).html(json.sadCount);
+                        $("#reply-angry-" + id).html(json.angryCount);
+                    }
+                }
+            });
+        }</script>
+    <partial name="_ValidationScriptsPartial" />
+}

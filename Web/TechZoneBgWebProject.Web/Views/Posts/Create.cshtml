@@ -1,0 +1,133 @@
+﻿@using TechZoneBgWebProject.Common
+@using TechZoneBgWebProject.Data.Models.Enums
+@model TechZoneBgWebProject.Web.InputModels.Posts.PostsCreateInputModel
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+<div class="container">
+    <div class="tt-wrapper-inner">
+        <br />
+        <h1 class="tt-title-border">
+            @ViewData["Title"]
+        </h1>
+        <form class="form-default form-create-topic" asp-action="Create">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Title">Post Title</label>
+                <div class="tt-value-wrapper">
+                    <input asp-for="Title"
+                           type="text"
+                           class="form-control"
+                           id="inputTopicTitle"
+                           placeholder="Subject of your post"
+                           onkeyup="changeRemainingLength()" />
+                    <span id="remainingLength" class="tt-value-input">@GlobalConstants.PostTitleMaxLength</span>
+                    <span asp-validation-for="Title"></span>
+                </div>
+                <div class="tt-note">Describe your post well, while keeping the subject as short as possible.</div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostType">Post Type</label>
+                <input id="post-type" value="@PostType.Discussion" asp-for="PostType" type="radio" hidden />
+                <div class="tt-js-active-btn tt-wrapper-btnicon">
+                    <div class="row tt-w410-col-02">
+                        <div class="col-4 col-lg-3 col-xl-2">
+                            <a href="#" class="tt-button-icon" onclick="$('#post-type').val('Discussion');">
+                                <span class="tt-icon">
+                                    <svg>
+                                        <use xlink:href="#icon-discussion"></use>
+                                    </svg>
+                                </span>
+                                <span class="tt-text">@PostType.Discussion</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-lg-3 col-xl-2">
+                            <a href="#" class="tt-button-icon" onclick="$('#post-type').val('Image');">
+                                <span class="tt-icon">
+                                    <svg>
+                                        <use xlink:href="#icon-gallery"></use>
+                                    </svg>
+                                </span>
+                                <span class="tt-text">@PostType.Image</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-lg-3 col-xl-2">
+                            <a href="#" class="tt-button-icon" onclick="$('#post-type').val('Video');">
+                                <span class="tt-icon">
+                                    <svg>
+                                        <use xlink:href="#Video"></use>
+                                    </svg>
+                                </span>
+                                <span class="tt-text">@PostType.Video</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span asp-validation-for="PostType"></span>
+            </div>
+            <div class="pt-editor">
+                <h6 class="pt-title">Post Description</h6>
+                <div class="form-group">
+                    <textarea id="customTextArea" asp-for="Description" placeholder="Lets get started"></textarea>
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="CategoryId">Category</label>
+                            <select asp-for="CategoryId" id="input-category">
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id">@category.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CategoryId"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label asp-for="TagIds">Tags</label>
+                            <select asp-for="TagIds" id="input-tags">
+                                @foreach (var tag in Model.Tags)
+                                {
+                                    <option value="@tag.Id">@tag.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="TagIds"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-auto ml-md-auto">
+                        <button type="submit" class="btn btn-secondary btn-width-lg">Create Post</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function changeRemainingLength() {
+            var value = $('#inputTopicTitle').val();
+            $('#remainingLength').html(@GlobalConstants.PostTitleMaxLength - value.length);
+        }
+        var $select = $('#input-category').selectize({
+            create: false,
+            sortField: 'text',
+            placeholder: 'Please select...'
+        });
+        $select.each(function () {
+            $(this)[0].selectize.clear(true);
+        });
+        $('#input-tags').selectize({
+            plugins: ['remove_button'],
+            delimiter: ',',
+            persist: false,
+            create: false
+        });
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}

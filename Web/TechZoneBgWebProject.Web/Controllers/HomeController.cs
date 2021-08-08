@@ -13,10 +13,7 @@
             return this.View();
         }
 
-        public IActionResult Privacy()
-        {
-            return this.View();
-        }
+        public IActionResult NotFound404() => this.View();
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

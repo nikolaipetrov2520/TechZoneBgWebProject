@@ -537,3 +537,6 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\ref\TechZone
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Web.Tests.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Web.Tests.genruntimeconfig.cache
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\AngleSharp.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\AngleSharp.Css.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\HtmlSanitizer.dll
