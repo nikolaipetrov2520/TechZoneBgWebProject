@@ -8001,6 +8001,7 @@ hr {
 
 .tt-single-topic-list > .tt-item:not([class^="tt-wrapper-success"]) {
     background-color: #eff7ff;
+    border-radius: 6px;
 }
 
 .tt-single-topic-list > .tt-item.tt-wrapper-success {

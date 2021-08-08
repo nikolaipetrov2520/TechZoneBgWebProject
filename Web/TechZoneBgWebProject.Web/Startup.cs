@@ -72,6 +72,7 @@
 
             services.AddTransient<IPostsService, PostsService>();
             services.AddTransient<IReactionsService, ReactionsService>();
+            services.AddTransient<IReplyReactionsService, ReplyReactionsService>();
             services.AddTransient<ITagsService, TagsService>();
             services.AddTransient<ICategoriesService, CategoriesService>();
             services.AddTransient<IRepliesService, RepliesService>();
