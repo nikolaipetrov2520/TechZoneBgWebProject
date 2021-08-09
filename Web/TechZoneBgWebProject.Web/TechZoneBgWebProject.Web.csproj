@@ -36,7 +36,6 @@
     <ProjectReference Include="..\..\TechZoneBgWebProject.Common\TechZoneBgWebProject.Common.csproj" />
     <ProjectReference Include="..\..\Data\TechZoneBgWebProject.Data.Models\TechZoneBgWebProject.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\TechZoneBgWebProject.Data\TechZoneBgWebProject.Data.csproj" />
-    <ProjectReference Include="..\..\Services\TechZoneBgWebProject.Services.Data\TechZoneBgWebProject.Services.Data.csproj" />
     <ProjectReference Include="..\..\Services\TechZoneBgWebProject.Services.Mapping\TechZoneBgWebProject.Services.Mapping.csproj" />
     <ProjectReference Include="..\..\Services\TechZoneBgWebProject.Services.Messaging\TechZoneBgWebProject.Services.Messaging.csproj" />
     <ProjectReference Include="..\..\Services\TechZoneBgWebProject.Services\TechZoneBgWebProject.Services.csproj" />

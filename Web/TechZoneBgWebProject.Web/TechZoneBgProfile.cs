@@ -7,6 +7,7 @@
     using TechZoneBgWebProject.Common;
     using TechZoneBgWebProject.Data.Models;
     using TechZoneBgWebProject.Data.Models.Enums;
+    using TechZoneBgWebProject.Web.InputModels.Categories;
     using TechZoneBgWebProject.Web.InputModels.Posts;
     using TechZoneBgWebProject.Web.InputModels.Replais;
     using TechZoneBgWebProject.Web.ViewModels.Categories;
@@ -50,6 +51,7 @@
                 dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
 
             this.CreateMap<Category, PostsCategoryDetailsViewModel>();
+            this.CreateMap<Category, CategoriesEditInputModel>();
             this.CreateMap<Category, CategoriesInfoViewModel>();
             this.CreateMap<Category, PostsCategoryViewModel>()
                .ForMember(

@@ -12,7 +12,7 @@
         {
             tag
                 .Property(t => t.Name)
-                .HasMaxLength(GlobalConstants.TagNameMaxLength)
+                .HasMaxLength(GlobalConstants.Tag.TagNameMaxLength)
                 .IsRequired();
 
             tag

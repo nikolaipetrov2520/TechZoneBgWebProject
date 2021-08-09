@@ -1880,21 +1880,6 @@
           "bin/placeholder/TechZoneBgWebProject.Services.dll": {}
         }
       },
-      "TechZoneBgWebProject.Services.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "TechZoneBgWebProject.Data.Common": "1.0.0",
-          "TechZoneBgWebProject.Data.Models": "1.0.0",
-          "TechZoneBgWebProject.Services.Mapping": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/TechZoneBgWebProject.Services.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TechZoneBgWebProject.Services.Data.dll": {}
-        }
-      },
       "TechZoneBgWebProject.Services.Mapping/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -6713,11 +6698,6 @@
       "path": "../../Services/TechZoneBgWebProject.Services/TechZoneBgWebProject.Services.csproj",
       "msbuildProject": "../../Services/TechZoneBgWebProject.Services/TechZoneBgWebProject.Services.csproj"
     },
-    "TechZoneBgWebProject.Services.Data/1.0.0": {
-      "type": "project",
-      "path": "../../Services/TechZoneBgWebProject.Services.Data/TechZoneBgWebProject.Services.Data.csproj",
-      "msbuildProject": "../../Services/TechZoneBgWebProject.Services.Data/TechZoneBgWebProject.Services.Data.csproj"
-    },
     "TechZoneBgWebProject.Services.Mapping/1.0.0": {
       "type": "project",
       "path": "../../Services/TechZoneBgWebProject.Services.Mapping/TechZoneBgWebProject.Services.Mapping.csproj",
@@ -6743,7 +6723,6 @@
       "TechZoneBgWebProject.Data.Common >= 1.0.0",
       "TechZoneBgWebProject.Data.Models >= 1.0.0",
       "TechZoneBgWebProject.Services >= 1.0.0",
-      "TechZoneBgWebProject.Services.Data >= 1.0.0",
       "TechZoneBgWebProject.Services.Mapping >= 1.0.0",
       "TechZoneBgWebProject.Services.Messaging >= 1.0.0"
     ]
@@ -6791,9 +6770,6 @@
             },
             "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
               "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj"
-            },
-            "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Data\\TechZoneBgWebProject.Services.Data.csproj": {
-              "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Data\\TechZoneBgWebProject.Services.Data.csproj"
             },
             "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
               "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"

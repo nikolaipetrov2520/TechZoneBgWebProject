@@ -8,14 +8,14 @@
               asp-controller="Replies"
               asp-action="Create"
               method="post">
-            <div asp-validation-summary="All"></div>
+            <div class="text-danger" asp-validation-summary="All"></div>
             <div class="form-group">
                 <input asp-for="ParentId" value="@Model.ParentId" hidden />
                 <input asp-for="PostId" value="@Model.PostId" hidden />
             </div>
             <div class="form-group">
                 <textarea id="customTextArea" asp-for="Description" placeholder="Напишете отговор"></textarea>
-                <span asp-validation-for="Description"></span>
+                <span class="text-danger" asp-validation-for="Description"></span>
             </div>
             <div class="pt-row">
                 <div class="col-auto ml-md-auto mb-5">

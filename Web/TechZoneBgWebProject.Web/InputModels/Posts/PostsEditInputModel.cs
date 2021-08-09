@@ -3,8 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    //using Infrastructure.Attributes;
-
+    using TechZoneBgWebProject.Web.Infrastructure.Attributes;
     using TechZoneBgWebProject.Web.ViewModels.Posts;
 
     using static TechZoneBgWebProject.Common.ErrorMessages;
@@ -24,13 +23,13 @@
         public string Description { get; set; }
 
         [Required]
-        //[EnsureCategoryIdExists(ErrorMessage = CategoryNonExistingIdErrorMessage)]
+        [CategoryIdExists(ErrorMessage = CategoryNonExistingIdErrorMessage)]
         public int CategoryId { get; set; }
 
         public string AuthorId { get; set; }
 
-        //[EnsureTagIdsExists(ErrorMessage = TagNonExistingIdErrorMessage)]
-        [Display(Name = TagsDisplayName)]
+        [TagIdsExists(ErrorMessage = TagNonExistingIdErrorMessage)]
+        [Display(Name = Tag.TagsDisplayName)]
         public IEnumerable<int> TagIds { get; set; }
 
         public IEnumerable<PostsTagsDetailsViewModel> Tags { get; set; }

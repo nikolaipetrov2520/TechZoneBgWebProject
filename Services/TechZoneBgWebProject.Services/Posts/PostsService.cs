@@ -240,6 +240,20 @@
             return posts;
         }
 
+        public async Task<bool> PinAsync(int id)
+        {
+            var post = await this.GetByIdAsync(id);
+
+            post.IsPinned = !post.IsPinned;
+            post.ModifiedOn = this.dateTimeProvider.Now();
+
+            await this.db.SaveChangesAsync();
+
+            return post.IsPinned;
+        }
+
+        public async Task<bool> IsExistingAsync(int id)
+            => await this.db.Posts.AnyAsync(p => p.Id == id && !p.IsDeleted);
 
         public Task<IEnumerable<TModel>> GetSuggestedAsync<TModel>(int take)
         {
@@ -247,16 +261,6 @@
         }
 
         public Task<IEnumerable<TModel>> GetAllByUserIdAsync<TModel>(string userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> PinAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> IsExistingAsync(int id)
         {
             throw new NotImplementedException();
         }

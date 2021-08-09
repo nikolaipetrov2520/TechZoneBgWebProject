@@ -9,16 +9,20 @@
     using AutoMapper.QueryableExtensions;
     using Microsoft.EntityFrameworkCore;
     using TechZoneBgWebProject.Data;
+    using TechZoneBgWebProject.Data.Models;
+    using TechZoneBgWebProject.Services.Providers;
 
     public class CategoriesService : ICategoriesService
     {
         private readonly ApplicationDbContext db;
         private readonly IMapper mapper;
+        private readonly IDateTimeProvider dateTimeProvider;
 
-        public CategoriesService(ApplicationDbContext db, IMapper mapper)
+        public CategoriesService(ApplicationDbContext db, IMapper mapper, IDateTimeProvider dateTimeProvider)
         {
             this.db = db;
             this.mapper = mapper;
+            this.dateTimeProvider = dateTimeProvider;
         }
 
 
@@ -48,29 +52,45 @@
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync();
 
-        public Task<bool> IsExistingAsync(int id)
+        public async Task<bool> IsExistingAsync(int id)
+            => await this.db.Categories.AnyAsync(c => c.Id == id && !c.IsDeleted);
+
+        public async Task<bool> IsExistingAsync(string name)
+            => await this.db.Categories.AnyAsync(c => c.Name == name && !c.IsDeleted);
+
+        public async Task CreateAsync(string name)
         {
-            throw new NotImplementedException();
+            var category = new Category
+            {
+                Name = name,
+                CreatedOn = this.dateTimeProvider.Now(),
+            };
+
+            await this.db.Categories.AddAsync(category);
+            await this.db.SaveChangesAsync();
         }
 
-        public Task<bool> IsExistingAsync(string name)
+        public async Task EditAsync(int id, string name)
         {
-            throw new NotImplementedException();
+            var category = await this.GetByIdAsync(id);
+
+            category.Name = name;
+            category.ModifiedOn = this.dateTimeProvider.Now();
+
+            await this.db.SaveChangesAsync();
         }
 
-        public Task CreateAsync(string name)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var category = await this.GetByIdAsync(id);
+
+            category.IsDeleted = true;
+            category.DeletedOn = this.dateTimeProvider.Now();
+
+            await this.db.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EditAsync(int id, string name)
-        {
-            throw new NotImplementedException();
-        }
+        private async Task<Category> GetByIdAsync(int id)
+            => await this.db.Categories.FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
     }
 }

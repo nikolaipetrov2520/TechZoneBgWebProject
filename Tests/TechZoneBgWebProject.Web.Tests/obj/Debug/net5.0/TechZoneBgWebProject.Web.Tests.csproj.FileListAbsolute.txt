@@ -8,7 +8,6 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\appsettings.
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\appsettings.json
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\bundleconfig.json
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\libman.json
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Web.StaticWebAssets.xml
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Web.exe
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\testhost.exe
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -502,7 +501,6 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWe
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.Common.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.dll
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Messaging.dll
@@ -515,7 +513,6 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWe
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.Common.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.pdb
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Messaging.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Web.Infrastructure.pdb
@@ -540,3 +537,4 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\System.Diagn
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\AngleSharp.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\AngleSharp.Css.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\HtmlSanitizer.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Web.StaticWebAssets.xml

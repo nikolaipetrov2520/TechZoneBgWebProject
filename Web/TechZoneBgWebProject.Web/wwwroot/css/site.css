@@ -103,6 +103,9 @@ a.c {
     transition: transform .2s ease;
 }
 
+a:hover {
+    color: rgba(96, 163, 235, 0.795) !important;
+}
 a.c:hover {
     color: gray !important;
 }
@@ -159,7 +162,7 @@ ul.pagination {
         }
 
             ul.pagination li a.active {
-                background-color: #2e3192;
+                background-color: #bfbfbf;
                 color: white;
                 border-radius: 5px;
             }
@@ -5573,7 +5576,7 @@ select:disabled.simple-control::-ms-expand {
         line-height: 22px;
         font-size: 16px;
         padding: 8px 22px 5px 10px;
-        color: #182730;
+        color: white;
         cursor: pointer;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -5816,7 +5819,7 @@ hr {
         }
 
     .btn.btn-secondary {
-        background-color: #2172cd;
+        background-color: #0bab4f;
         color: #ffffff;
     }
 
@@ -7614,8 +7617,9 @@ hr {
 }
 
 .tt-topic-list .tt-item.tt-itemselect {
-    background-color: #f9efe3;
-    border-bottom: 1px solid #e2e7ea;
+    background-color: #e3f9e7;
+    border-radius: 4px;
+    margin-bottom: 3px;
 }
 
 .tt-topic-list .tt-item:nth-child(even):not(.tt-itemselect):not(.tt-item-popup) {
@@ -8153,7 +8157,11 @@ hr {
 
         .tt-single-topic .tt-item-description .topic-inner {
             background-color: #f7f8fa;
-            border-left: 2px solid #2172cd;
+            border-left: 1px solid #21cd43;
+            border-top: 1px solid #21cd43;
+            border-radius: 4px;
+            border-right: 1px solid #d0eff1;
+            border-bottom: 1px solid #d0eff1;
             padding: 30px 43px 22px 28px;
         }
 
@@ -8461,7 +8469,7 @@ hr {
     }
 
     .tt-badge.tt-color01 {
-        background-color: #2e3192;
+        background-color: #eaa125;
     }
 
     .tt-badge.tt-color02 {

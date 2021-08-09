@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\TechZoneBgWebProject.Data\TechZoneBgWebProject.Data.csproj" />
-    <ProjectReference Include="..\..\Services\TechZoneBgWebProject.Services.Data\TechZoneBgWebProject.Services.Data.csproj" />
   </ItemGroup>
 
 </Project>

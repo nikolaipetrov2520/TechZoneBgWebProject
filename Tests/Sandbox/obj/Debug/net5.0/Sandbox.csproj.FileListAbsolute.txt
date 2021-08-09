@@ -51,7 +51,6 @@ D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Common.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Data.Common.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Data.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.dll
-D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Services.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Services.Messaging.dll
@@ -59,7 +58,6 @@ D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Common.pdb
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Data.Common.pdb
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.pdb
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Data.pdb
-D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.pdb
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.pdb
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Services.Messaging.pdb
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Services.pdb

@@ -8,16 +8,20 @@
     using AutoMapper.QueryableExtensions;
     using Microsoft.EntityFrameworkCore;
     using TechZoneBgWebProject.Data;
+    using TechZoneBgWebProject.Data.Models;
+    using TechZoneBgWebProject.Services.Providers;
 
     public class TagsService : ITagsService
     {
         private readonly ApplicationDbContext db;
         private readonly IMapper mapper;
+        private readonly IDateTimeProvider dateTimeProvider;
 
-        public TagsService(ApplicationDbContext db, IMapper mapper)
+        public TagsService(ApplicationDbContext db, IMapper mapper, IDateTimeProvider dateTimeProvider)
         {
             this.db = db;
             this.mapper = mapper;
+            this.dateTimeProvider = dateTimeProvider;
         }
 
         public async Task<IEnumerable<TModel>> GetAllAsync<TModel>(string search = null, int skip = 0, int? take = null)
@@ -77,29 +81,46 @@
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync();
 
-        public Task<bool> IsExistingAsync(int id)
+        public async Task<bool> AreExistingAsync(IEnumerable<int> ids)
         {
-            throw new System.NotImplementedException();
+            foreach (var id in ids)
+            {
+                var isExisting = await this.db.Tags.AnyAsync(t => t.Id == id && !t.IsDeleted);
+                if (!isExisting)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        public Task<bool> IsExistingAsync(string name)
+        public async Task<bool> IsExistingAsync(int id)
+            => await this.db.Tags.AnyAsync(t => t.Id == id && !t.IsDeleted);
+
+        public async Task<bool> IsExistingAsync(string name)
+            => await this.db.Tags.AnyAsync(t => t.Name == name && !t.IsDeleted);
+
+        public async Task CreateAsync(string name)
         {
-            throw new System.NotImplementedException();
+            var tag = new Tag
+            {
+                Name = name,
+                CreatedOn = this.dateTimeProvider.Now(),
+            };
+
+            await this.db.Tags.AddAsync(tag);
+            await this.db.SaveChangesAsync();
         }
 
-        public Task<bool> AreExistingAsync(IEnumerable<int> ids)
+        public async Task DeleteAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
+            var tag = await this.db.Tags.FirstOrDefaultAsync(t => t.Id == id && !t.IsDeleted);
 
-        public Task CreateAsync(string name)
-        {
-            throw new System.NotImplementedException();
-        }
+            tag.IsDeleted = true;
+            tag.DeletedOn = this.dateTimeProvider.Now();
 
-        public Task DeleteAsync(int id)
-        {
-            throw new System.NotImplementedException();
+            await this.db.SaveChangesAsync();
         }
     }
 }

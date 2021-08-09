@@ -11,7 +11,6 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\Te
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\ref\TechZoneBgWebProject.Services.Data.Tests.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.pdb
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\AutoMapper.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\Castle.Core.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -153,14 +152,10 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\Te
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.Common.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.dll
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.dll
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.pdb
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Common.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.Common.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.pdb
-D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.csprojAssemblyReference.cache
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.GeneratedMSBuildEditorConfig.editorconfig
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.AssemblyInfoInputs.cache

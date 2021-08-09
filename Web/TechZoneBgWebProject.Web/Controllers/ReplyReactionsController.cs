@@ -24,38 +24,10 @@
                 replyId,
                 this.User.GetId());
 
-        [Route("love/{replyId}")]
-        public async Task<ActionResult<ReactionsCountServiceModel>> Love(int replyId)
+        [Route("dislike/{replyId}")]
+        public async Task<ActionResult<ReactionsCountServiceModel>> Dislike(int replyId)
             => await this.replyReactionsService.ReactAsync(
-                ReactionType.Love,
-                replyId,
-                this.User.GetId());
-
-        [Route("haha/{replyId}")]
-        public async Task<ActionResult<ReactionsCountServiceModel>> Haha(int replyId)
-            => await this.replyReactionsService.ReactAsync(
-                ReactionType.Haha,
-                replyId,
-                this.User.GetId());
-
-        [Route("wow/{replyId}")]
-        public async Task<ActionResult<ReactionsCountServiceModel>> Wow(int replyId)
-            => await this.replyReactionsService.ReactAsync(
-                ReactionType.Wow,
-                replyId,
-                this.User.GetId());
-
-        [Route("sad/{replyId}")]
-        public async Task<ActionResult<ReactionsCountServiceModel>> Sad(int replyId)
-            => await this.replyReactionsService.ReactAsync(
-                ReactionType.Sad,
-                replyId,
-                this.User.GetId());
-
-        [Route("angry/{replyId}")]
-        public async Task<ActionResult<ReactionsCountServiceModel>> Angry(int replyId)
-            => await this.replyReactionsService.ReactAsync(
-                ReactionType.Angry,
+                ReactionType.Dislike,
                 replyId,
                 this.User.GetId());
     }

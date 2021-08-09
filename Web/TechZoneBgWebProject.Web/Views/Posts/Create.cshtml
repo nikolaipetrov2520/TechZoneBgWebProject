@@ -12,7 +12,7 @@
             @ViewData["Title"]
         </h1>
         <form class="form-default form-create-topic" asp-action="Create">
-            <div asp-validation-summary="All"></div>
+            <div class="text-danger" asp-validation-summary="All"></div>
             <div class="form-group">
                 <label asp-for="Title">Post Title</label>
                 <div class="tt-value-wrapper">
@@ -23,7 +23,7 @@
                            placeholder="Subject of your post"
                            onkeyup="changeRemainingLength()" />
                     <span id="remainingLength" class="tt-value-input">@GlobalConstants.PostTitleMaxLength</span>
-                    <span asp-validation-for="Title"></span>
+                    <span class="text-danger" asp-validation-for="Title"></span>
                 </div>
                 <div class="tt-note">Describe your post well, while keeping the subject as short as possible.</div>
             </div>
@@ -64,13 +64,13 @@
                         </div>
                     </div>
                 </div>
-                <span asp-validation-for="PostType"></span>
+                <span class="text-danger" asp-validation-for="PostType"></span>
             </div>
             <div class="pt-editor">
                 <h6 class="pt-title">Post Description</h6>
                 <div class="form-group">
                     <textarea id="customTextArea" asp-for="Description" placeholder="Lets get started"></textarea>
-                    <span asp-validation-for="Description"></span>
+                    <span class="text-danger" asp-validation-for="Description"></span>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -82,7 +82,7 @@
                                     <option value="@category.Id">@category.Name</option>
                                 }
                             </select>
-                            <span asp-validation-for="CategoryId"></span>
+                            <span class="text-danger" asp-validation-for="CategoryId"></span>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -94,12 +94,12 @@
                                     <option value="@tag.Id">@tag.Name</option>
                                 }
                             </select>
-                            <span asp-validation-for="TagIds"></span>
+                            <span class="text-danger" asp-validation-for="TagIds"></span>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-auto ml-md-auto">
+                    <div class="col-auto mb-5 ml-md-auto">
                         <button type="submit" class="btn btn-secondary btn-width-lg">Create Post</button>
                     </div>
                 </div>

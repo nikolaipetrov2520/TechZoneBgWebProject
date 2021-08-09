@@ -267,45 +267,46 @@
                         </div>
                         <div class="tt-item-description">
                             <p>@Html.Raw(reply.SanitizedDescription)</p>
-                            @{ await GetReplies(reply.Id); }
-                        </div>
-                        <div class="tt-item-info info-bottom">
-                            <partial name="_DetailsRepliesReactionsPartial" model="reply" />
-                            <div class="col-separator"></div>
 
-                            @if (reply.AuthorId == this.User.GetId() || this.User.IsAdministrator())
-                             {
+                            <div class="tt-item-info info-bottom">
+                                <partial name="_DetailsRepliesReactionsPartial" model="reply" />
+                                <div class="col-separator"></div>
+
+                                @if (reply.AuthorId == this.User.GetId() || this.User.IsAdministrator())
+                                {
+                                       <a asp-area=""
+                                          asp-controller="Replies"
+                                          asp-action="Edit"
+                                          asp-route-id="@reply.Id"
+                                          class="tt-icon-btn"
+                                          style="color: #666f74">
+                                           <i class="fas fa-pen"></i>
+                                       </a>
+                                      <a asp-area=""
+                                         asp-controller="Replies"
+                                         asp-action="Delete"
+                                         asp-route-id="@reply.Id"
+                                         class="tt-icon-btn"
+                                         style="color: #666f74">
+                                          <i class="fas fa-trash-alt"></i>
+                                      </a>
+                                 }
                                 <a asp-area=""
-                                   asp-controller="Replies"
-                                   asp-action="Edit"
+                                   asp-controller="ReplyReports"
+                                   asp-action="Create"
                                    asp-route-id="@reply.Id"
-                                   class="tt-icon-btn"
-                                   style="color: #666f74">
-                                    <i class="fas fa-pen"></i>
+                                   class="tt-icon-btn tt-hover-02 tt-small-indent">
+                                    <i class="tt-icon"><svg><use xlink:href="#icon-flag"></use></svg></i>
                                 </a>
                                 <a asp-area=""
                                    asp-controller="Replies"
-                                   asp-action="Delete"
+                                   asp-action="Details"
                                    asp-route-id="@reply.Id"
-                                   class="tt-icon-btn"
-                                   style="color: #666f74">
-                                    <i class="fas fa-trash-alt"></i>
+                                   class="tt-icon-btn tt-hover-02 tt-small-indent">
+                                    <i class="tt-icon"><svg><use xlink:href="#icon-reply"></use></svg></i>
                                 </a>
-                             }
-                             <a asp-area=""
-                                asp-controller="ReplyReports"
-                                asp-action="Create"
-                                asp-route-id="@reply.Id"
-                                class="tt-icon-btn tt-hover-02 tt-small-indent">
-                                 <i class="tt-icon"><svg><use xlink:href="#icon-flag"></use></svg></i>
-                             </a>
-                             <a asp-area=""
-                                asp-controller="Replies"
-                                asp-action="Details"
-                                asp-route-id="@reply.Id"
-                                class="tt-icon-btn tt-hover-02 tt-small-indent">
-                                 <i class="tt-icon"><svg><use xlink:href="#icon-reply"></use></svg></i>
-                             </a>
+                            </div>
+                            @{ await GetReplies(reply.Id); }
                         </div>
                     </div>
             </div>
@@ -339,7 +340,7 @@
 
         function pinPost(id) {
             $.ajax({
-                type: "POST",
+                type: "GET",
                 url: "/Administration/Posts/Pin/" + id,
                 headers: { 'X-CSRF-TOKEN': token },
                 success: function (json) {
@@ -360,146 +361,33 @@
                 success: function (json) {
                     if (type === 'post') {
                         $("#post-likes").html(json.likes);
-                        $("#post-loves").html(json.loves);
-                        $("#post-haha").html(json.hahaCount);
-                        $("#post-wow").html(json.wowCount);
-                        $("#post-sad").html(json.sadCount);
-                        $("#post-angry").html(json.angryCount);
+                        $("#post-dislike").html(json.dislike);
+                      
                     } else {
                         $("#reply-likes-" + id).html(json.likes);
-                        $("#reply-loves-" + id).html(json.loves);
-                        $("#reply-haha-" + id).html(json.hahaCount);
-                        $("#reply-wow-" + id).html(json.wowCount);
-                        $("#reply-sad-" + id).html(json.sadCount);
-                        $("#reply-angry-" + id).html(json.angryCount);
+                        $("#reply-dislike-" + id).html(json.dislike);
+                     ;
                     }
                 }
             });
         }
 
-        function loveReaction(id, controller, type) {
+        function dislikeReaction(id, controller, type) {
             $.ajax({
                 type: "GET",
-                url: "/api/" + controller + "/love/" + id,
+                url: "/api/" + controller + "/dislike/" + id,
                 headers: { 'X-CSRF-TOKEN': token },
                 success: function (json) {
                     if (type === 'post') {
                         $("#post-likes").html(json.likes);
-                        $("#post-loves").html(json.loves);
-                        $("#post-haha").html(json.hahaCount);
-                        $("#post-wow").html(json.wowCount);
-                        $("#post-sad").html(json.sadCount);
-                        $("#post-angry").html(json.angryCount);
+                        $("#post-dislike").html(json.dislike);
                     } else {
                         $("#reply-likes-" + id).html(json.likes);
-                        $("#reply-loves-" + id).html(json.loves);
-                        $("#reply-haha-" + id).html(json.hahaCount);
-                        $("#reply-wow-" + id).html(json.wowCount);
-                        $("#reply-sad-" + id).html(json.sadCount);
-                        $("#reply-angry-" + id).html(json.angryCount);
+                        $("#reply-dislike-" + id).html(json.dislike);
                     }
                 }
             });
         }
-
-        function hahaReaction(id, controller, type) {
-            $.ajax({
-                type: "GET",
-                url: "/api/" + controller + "/haha/" + id,
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (json) {
-                    if (type === 'post') {
-                        $("#post-likes").html(json.likes);
-                        $("#post-loves").html(json.loves);
-                        $("#post-haha").html(json.hahaCount);
-                        $("#post-wow").html(json.wowCount);
-                        $("#post-sad").html(json.sadCount);
-                        $("#post-angry").html(json.angryCount);
-                    } else {
-                        $("#reply-likes-" + id).html(json.likes);
-                        $("#reply-loves-" + id).html(json.loves);
-                        $("#reply-haha-" + id).html(json.hahaCount);
-                        $("#reply-wow-" + id).html(json.wowCount);
-                        $("#reply-sad-" + id).html(json.sadCount);
-                        $("#reply-angry-" + id).html(json.angryCount);
-                    }
-                }
-            });
-        }
-
-        function wowReaction(id, controller, type) {
-            $.ajax({
-                type: "GET",
-                url: "/api/" + controller + "/wow/" + id,
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (json) {
-                    if (type === 'post') {
-                        $("#post-likes").html(json.likes);
-                        $("#post-loves").html(json.loves);
-                        $("#post-haha").html(json.hahaCount);
-                        $("#post-wow").html(json.wowCount);
-                        $("#post-sad").html(json.sadCount);
-                        $("#post-angry").html(json.angryCount);
-                    } else {
-                        $("#reply-likes-" + id).html(json.likes);
-                        $("#reply-loves-" + id).html(json.loves);
-                        $("#reply-haha-" + id).html(json.hahaCount);
-                        $("#reply-wow-" + id).html(json.wowCount);
-                        $("#reply-sad-" + id).html(json.sadCount);
-                        $("#reply-angry-" + id).html(json.angryCount);
-                    }
-                }
-            });
-        }
-
-        function sadReaction(id, controller, type) {
-            $.ajax({
-                type: "GET",
-                url: "/api/" + controller + "/sad/" + id,
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (json) {
-                    if (type === 'post') {
-                        $("#post-likes").html(json.likes);
-                        $("#post-loves").html(json.loves);
-                        $("#post-haha").html(json.hahaCount);
-                        $("#post-wow").html(json.wowCount);
-                        $("#post-sad").html(json.sadCount);
-                        $("#post-angry").html(json.angryCount);
-                    } else {
-                        $("#reply-likes-" + id).html(json.likes);
-                        $("#reply-loves-" + id).html(json.loves);
-                        $("#reply-haha-" + id).html(json.hahaCount);
-                        $("#reply-wow-" + id).html(json.wowCount);
-                        $("#reply-sad-" + id).html(json.sadCount);
-                        $("#reply-angry-" + id).html(json.angryCount);
-                    }
-                }
-            });
-        }
-
-        function angryReaction(id, controller, type) {
-            $.ajax({
-                type: "GET",
-                url: "/api/" + controller + "/angry/" + id,
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (json) {
-                    if (type === 'post') {
-                        $("#post-likes").html(json.likes);
-                        $("#post-loves").html(json.loves);
-                        $("#post-haha").html(json.hahaCount);
-                        $("#post-wow").html(json.wowCount);
-                        $("#post-sad").html(json.sadCount);
-                        $("#post-angry").html(json.angryCount);
-                    } else {
-                        $("#reply-likes-" + id).html(json.likes);
-                        $("#reply-loves-" + id).html(json.loves);
-                        $("#reply-haha-" + id).html(json.hahaCount);
-                        $("#reply-wow-" + id).html(json.wowCount);
-                        $("#reply-sad-" + id).html(json.sadCount);
-                        $("#reply-angry-" + id).html(json.angryCount);
-                    }
-                }
-            });
-        }</script>
+    </script>
     <partial name="_ValidationScriptsPartial" />
 }

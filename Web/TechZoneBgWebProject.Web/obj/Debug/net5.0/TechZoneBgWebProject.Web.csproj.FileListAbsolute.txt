@@ -411,7 +411,6 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Data.Common.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Data.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.dll
-D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Services.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.dll
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Services.Messaging.dll
@@ -420,7 +419,6 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Common.pdb
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Data.Models.pdb
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Data.pdb
-D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Services.Data.pdb
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.pdb
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Services.Messaging.pdb
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\TechZoneBgWebProject.Services.pdb
@@ -442,7 +440,6 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\scopedcss\bundle\Tec
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\TechZoneBgWebProject.Web.TagHelpers.input.cache
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\TechZoneBgWebProject.Web.TagHelpers.output.cache
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\TechZoneBgWebProject.Web.RazorCoreGenerate.cache
-D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Dashboard\Index.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewStart.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
@@ -998,3 +995,8 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Categori
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Categories\Details.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Tags\All.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Tags\Details.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Categories\All.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Categories\Create.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Categories\Edit.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Tags\All.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Tags\Create.cshtml.g.cs

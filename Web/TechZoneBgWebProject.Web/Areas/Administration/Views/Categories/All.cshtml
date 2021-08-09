@@ -1,0 +1,99 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Categories.CategoriesAllViewModel
+@{ ViewData["Title"] = "Categories"; }
+
+<br />
+<div class="tt-custom-mobile-indent container">
+    <div class="tt-categories-title">
+        <div class="tt-title">@ViewData["Title"]</div>
+        <a asp-area="Administration"
+           asp-controller="Categories"
+           asp-action="Create"
+           class="btn btn-secondary ml-auto">
+            <i class="fas fa-plus"></i>
+        </a>
+        &nbsp;
+        <div class="tt-search">
+            <form class="search-wrapper"
+                  asp-area="Administration"
+                  asp-controller="Categories"
+                  asp-action="All"
+                  method="get">
+                <div class="search-form">
+                    <input type="text"
+                           asp-for="Search"
+                           class="tt-search__input"
+                           placeholder="Search Categories" />
+                    <button class="tt-search__btn" type="submit">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-search"></use>
+                        </svg>
+                    </button>
+                    <button class="tt-search__close">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-cancel"></use>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="tt-categories-list">
+        <div class="row">
+
+            @foreach (var category in Model.Categories)
+            {
+<div class="col-md-6 col-lg-4">
+    <div class="tt-item">
+        <div class="tt-item-header">
+            <ul class="tt-list-badge">
+                <li>
+                    <a asp-area=""
+                       asp-controller="Categories"
+                       asp-action="Details"
+                       asp-route-id="@category.Id">
+                        <span class="tt-color01 tt-badge">@category.Name</span>
+                    </a>
+                </li>
+            </ul>
+            <h6 class="tt-title">
+                <a asp-area=""
+                   asp-controller="Categories"
+                   asp-action="Details"
+                   asp-route-id="@category.Id">
+                    Threads - @category.PostsCount
+                </a>
+            </h6>
+        </div>
+        <div class="tt-item-layout">
+            <div class="innerwrapper">
+                Lets discuss about @category.Name.
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-auto">
+                    <a asp-area="Administration"
+                       asp-controller="Categories"
+                       asp-action="Edit"
+                       asp-route-id="@category.Id"
+                       class="btn btn-secondary">
+                        Edit
+                    </a>
+                    <form asp-area="Administration"
+                          asp-controller="Categories"
+                          asp-action="Delete"
+                          asp-route-id="@category.Id"
+                          method="post"
+                          class="btn">
+                        <button type="submit" class="btn btn-secondary">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            }
+
+        </div>
+    </div>
+</div>

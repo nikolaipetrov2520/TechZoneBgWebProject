@@ -12,7 +12,7 @@
         {
             category
                 .Property(c => c.Name)
-                .HasMaxLength(GlobalConstants.CategoryNameMaxLength)
+                .HasMaxLength(GlobalConstants.Category.CategoryNameMaxLength)
                 .IsRequired();
 
             category

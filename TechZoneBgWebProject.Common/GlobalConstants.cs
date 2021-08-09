@@ -101,6 +101,19 @@
             public const string AllowedFileExtensions = "jpg,jpeg,png";
         }
 
+        public class Category
+        {
+            public const int CategoryNameMaxLength = 50;
+            public const int CategoryNameMinLength = 3;
+        }
+
+        public class Tag
+        {
+            public const int TagNameMaxLength = 20;
+            public const int TagNameMinLength = 3;
+            public const string TagsDisplayName = "Tags";
+        }
+
         public const string UserUsernameDisplayName = "Display name";
         public const string UserLoginRememberMeDisplayName = "Remember me";
         public const string UserCurrentPasswordDisplayName = "Current password";
@@ -115,13 +128,6 @@
         public const int UserPasswordMinLength = 6;
         public const int UserBiographyMaxLength = 250;
         public const int UserMinAge = 18;
-
-        public const int TagNameMaxLength = 20;
-        public const int TagNameMinLength = 3;
-        public const string TagsDisplayName = "Tags";
-
-        public const int CategoryNameMaxLength = 50;
-        public const int CategoryNameMinLength = 3;
 
         public const int MessageContentMaxLength = 300;
 

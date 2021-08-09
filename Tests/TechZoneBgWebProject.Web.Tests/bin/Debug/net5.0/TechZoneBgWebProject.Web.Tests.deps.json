@@ -3018,19 +3018,6 @@
           "TechZoneBgWebProject.Services.dll": {}
         }
       },
-      "TechZoneBgWebProject.Services.Data/1.0.0": {
-        "dependencies": {
-          "TechZoneBgWebProject.Data.Common": "1.0.0",
-          "TechZoneBgWebProject.Data.Models": "1.0.0",
-          "TechZoneBgWebProject.Services.Mapping": "1.0.0"
-        },
-        "runtime": {
-          "TechZoneBgWebProject.Services.Data.dll": {}
-        },
-        "compile": {
-          "TechZoneBgWebProject.Services.Data.dll": {}
-        }
-      },
       "TechZoneBgWebProject.Services.Mapping/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1"
@@ -3068,7 +3055,6 @@
           "TechZoneBgWebProject.Data": "1.0.0",
           "TechZoneBgWebProject.Data.Models": "1.0.0",
           "TechZoneBgWebProject.Services": "1.0.0",
-          "TechZoneBgWebProject.Services.Data": "1.0.0",
           "TechZoneBgWebProject.Services.Mapping": "1.0.0",
           "TechZoneBgWebProject.Services.Messaging": "1.0.0",
           "TechZoneBgWebProject.Web.Infrastructure": "1.0.0",
@@ -6301,11 +6287,6 @@
       "sha512": ""
     },
     "TechZoneBgWebProject.Services/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TechZoneBgWebProject.Services.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

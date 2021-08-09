@@ -1,14 +1,8 @@
 ﻿@model TechZoneBgWebProject.Web.ViewModels.Users.UsersLoginStatusViewModel
-
+@using TechZoneBgWebProject.Web.Infrastructure.Extensions
 <div class="col-auto ml-auto">
     <div class="tt-user-info d-flex justify-content-center">
-        <a class="tt-btn-icon"
-           style="color: #666f74"
-           asp-area=""
-           asp-controller="Chat"
-           asp-action="All">
-            <i class="tt-icon fas fa-comment"></i>
-        </a>
+        
         <a asp-area=""
            asp-controller="Users"
            asp-action="Threads"
@@ -16,23 +10,31 @@
             <div class="tt-avatar-icon tt-size-md">
                 <i class="tt-icon">
                     @if (Model.ProfilePicture.StartsWith("#icon-ava"))
-                    {
-        <svg>
-            <use xlink:href="@Model.ProfilePicture"></use>
-        </svg> }
-                    else
-                    {
-        <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@Model.ProfilePicture"
-             alt="avatar"
-             width="40"
-             height="40"
-             style="border-radius: 50%" />}
+                     {
+                        <svg>
+                            <use xlink:href="@Model.ProfilePicture"></use>
+                        </svg>
+                     }
+                     else
+                     {
+                        <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@Model.ProfilePicture"
+                            alt="avatar"
+                            width="40"
+                            height="40"
+                            style="border-radius: 50%" />
+                     }
                 </i>
             </div>
         </a>
         <div class="custom-select-01">
             <select onchange="location = this.value;">
                 <option disabled selected hidden>@Model.FirstName</option>
+                @if (this.User.IsAdministrator())
+                 {
+                    <option value="/Administration/PostReports/All">Reports</option>
+                    <option value="/Administration/Tags/All">Tags</option>
+                    <option value="/Administration/Categories/All">Categories</option>
+                 }
                 <option value="/Users/Threads/@Model.Id">View Account</option>
                 <option value="/Identity/Account/Manage">Manage Account</option>
                 <option value="/Identity/Account/Logout">Logout</option>

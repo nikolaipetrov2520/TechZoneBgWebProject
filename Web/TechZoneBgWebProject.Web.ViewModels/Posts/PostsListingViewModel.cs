@@ -10,6 +10,8 @@
 
         public int Likes { get; set; }
 
+        public int Dislike { get; set; }
+
         public int RepliesCount { get; set; }
 
         public int Views { get; set; }

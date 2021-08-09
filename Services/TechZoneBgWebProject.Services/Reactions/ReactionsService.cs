@@ -61,11 +61,7 @@
             => new ReactionsCountServiceModel
             {
                 Likes = await this.GetCountByTypeAndPostIdAsync(ReactionType.Like, postId),
-                Loves = await this.GetCountByTypeAndPostIdAsync(ReactionType.Love, postId),
-                HahaCount = await this.GetCountByTypeAndPostIdAsync(ReactionType.Haha, postId),
-                WowCount = await this.GetCountByTypeAndPostIdAsync(ReactionType.Wow, postId),
-                SadCount = await this.GetCountByTypeAndPostIdAsync(ReactionType.Sad, postId),
-                AngryCount = await this.GetCountByTypeAndPostIdAsync(ReactionType.Angry, postId),
+                Dislike = await this.GetCountByTypeAndPostIdAsync(ReactionType.Dislike, postId),
             };
 
         private async Task<int> GetCountByTypeAndPostIdAsync(ReactionType reactionType, int postId)
