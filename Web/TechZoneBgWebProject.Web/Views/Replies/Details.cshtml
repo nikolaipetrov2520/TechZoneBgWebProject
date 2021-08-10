@@ -212,11 +212,7 @@
                 headers: { 'X-CSRF-TOKEN': token },
                 success: function (json) {
                     $("#reply-likes-" + id).html(json.likes);
-                    $("#reply-loves-" + id).html(json.loves);
-                    $("#reply-haha-" + id).html(json.hahaCount);
-                    $("#reply-wow-" + id).html(json.wowCount);
-                    $("#reply-sad-" + id).html(json.sadCount);
-                    $("#reply-angry-" + id).html(json.angryCount);
+                    $("#reply-dislike-" + id).html(json.dislike);
                 }
             });
         }
@@ -224,79 +220,11 @@
         function loveReaction(id) {
             $.ajax({
                 type: "GET",
-                url: "/api/reply-reactions/love/" + id,
+                url: "/api/reply-reactions/dislike/" + id,
                 headers: { 'X-CSRF-TOKEN': token },
                 success: function (json) {
                     $("#reply-likes-" + id).html(json.likes);
-                    $("#reply-loves-" + id).html(json.loves);
-                    $("#reply-haha-" + id).html(json.hahaCount);
-                    $("#reply-wow-" + id).html(json.wowCount);
-                    $("#reply-sad-" + id).html(json.sadCount);
-                    $("#reply-angry-" + id).html(json.angryCount);
-                }
-            });
-        }
-
-        function hahaReaction(id) {
-            $.ajax({
-                type: "GET",
-                url: "/api/reply-reactions/haha/" + id,
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (json) {
-                    $("#reply-likes-" + id).html(json.likes);
-                    $("#reply-loves-" + id).html(json.loves);
-                    $("#reply-haha-" + id).html(json.hahaCount);
-                    $("#reply-wow-" + id).html(json.wowCount);
-                    $("#reply-sad-" + id).html(json.sadCount);
-                    $("#reply-angry-" + id).html(json.angryCount);
-                }
-            });
-        }
-
-        function wowReaction(id) {
-            $.ajax({
-                type: "GET",
-                url: "/api/reply-reactions/wow/" + id,
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (json) {
-                    $("#reply-likes-" + id).html(json.likes);
-                    $("#reply-loves-" + id).html(json.loves);
-                    $("#reply-haha-" + id).html(json.hahaCount);
-                    $("#reply-wow-" + id).html(json.wowCount);
-                    $("#reply-sad-" + id).html(json.sadCount);
-                    $("#reply-angry-" + id).html(json.angryCount);
-                }
-            });
-        }
-
-        function sadReaction(id) {
-            $.ajax({
-                type: "GET",
-                url: "/api/reply-reactions/sad/" + id,
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (json) {
-                    $("#reply-likes-" + id).html(json.likes);
-                    $("#reply-loves-" + id).html(json.loves);
-                    $("#reply-haha-" + id).html(json.hahaCount);
-                    $("#reply-wow-" + id).html(json.wowCount);
-                    $("#reply-sad-" + id).html(json.sadCount);
-                    $("#reply-angry-" + id).html(json.angryCount);
-                }
-            });
-        }
-
-        function angryReaction(id) {
-            $.ajax({
-                type: "GET",
-                url: "/api/reply-reactions/angry/" + id,
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (json) {
-                    $("#reply-likes-" + id).html(json.likes);
-                    $("#reply-loves-" + id).html(json.loves);
-                    $("#reply-haha-" + id).html(json.hahaCount);
-                    $("#reply-wow-" + id).html(json.wowCount);
-                    $("#reply-sad-" + id).html(json.sadCount);
-                    $("#reply-angry-" + id).html(json.angryCount);
+                    $("#reply-dislike-" + id).html(json.dislike);
                 }
             });
         }</script>
