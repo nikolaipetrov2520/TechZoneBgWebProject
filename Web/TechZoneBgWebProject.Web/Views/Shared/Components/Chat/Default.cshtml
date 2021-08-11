@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TechZoneBgWebProject.Web.ViewModels.Messages.ChatViewModel>
+
+<div class="tt-all-avatar">
+    <div class="tt-list-avatar" style="overflow-y: auto; height:400px; display:block; word-break: break-word;">
+        @if (this.Model.Any())
+        {
+            foreach (var chat in this.Model)
+            {
+<a onclick="location.href = '/Chat/WithUser/@chat.Id';" href="#" class="tt-item">
+    <div class="tt-col-avatar">
+        @if (chat.ProfilePicture.StartsWith("#icon-ava"))
+        {
+<svg class="tt-icon">
+    <use xlink:href="@chat.ProfilePicture"></use>
+</svg> }
+else
+{
+<img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@chat.ProfilePicture"
+     alt="avatar"
+     class="tt-icon"
+     width="40"
+     height="40"
+     style="border-radius: 50%" />}
+    </div>
+    <div class="tt-col-description">
+        <h4 class="tt-title"><span>@(chat.FirstName + " " + chat.LastName)</span>  <span class="time">@chat.LastMessageActivity</span></h4>
+        <div class="tt-message">@chat.LastMessage</div>
+    </div>
+</a> }
+}
+else
+{
+<div class="tt-layout-404">
+    <p>
+        You don't have any messages<br />
+        But you can <a asp-area="" asp-controller="Chat" asp-action="SendMessage" class="tt-color-dark tt-underline-02">send</a> one now.
+    </p>
+</div>}
+    </div>
+</div>

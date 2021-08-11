@@ -20,7 +20,7 @@
             var isExisting = await userManager.Users.AnyAsync(u => u.UserName == GlobalConstants.User.UserUserName);
             if (!isExisting)
             {
-                var testUser = new ApplicationUser
+                var user = new ApplicationUser
                 {
                     UserName = GlobalConstants.User.UserUserName,
                     Email = GlobalConstants.User.UserEmail,
@@ -32,7 +32,7 @@
                     LastName = GlobalConstants.User.UserLastName,
                 };
 
-                var result = await userManager.CreateAsync(testUser, GlobalConstants.User.UserPassword);
+                var result = await userManager.CreateAsync(user, GlobalConstants.User.UserPassword);
                 if (!result.Succeeded)
                 {
                     throw new Exception(string.Join(Environment.NewLine, result.Errors.Select(e => e.Description)));

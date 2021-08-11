@@ -36,7 +36,6 @@
 
         public int Dislike { get; set; }
 
-
         public string AuthorId { get; set; }
 
         public string AuthorFirstName { get; set; }

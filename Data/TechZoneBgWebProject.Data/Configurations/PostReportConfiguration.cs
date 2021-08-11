@@ -12,7 +12,7 @@
         {
             postReport
                 .Property(r => r.Description)
-                .HasMaxLength(GlobalConstants.PostReportDescriptionMaxLength)
+                .HasMaxLength(GlobalConstants.Post.PostReportDescriptionMaxLength)
                 .IsRequired();
 
             postReport

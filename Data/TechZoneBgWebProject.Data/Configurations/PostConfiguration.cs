@@ -12,12 +12,12 @@
         {
             post
                 .Property(p => p.Title)
-                .HasMaxLength(GlobalConstants.PostTitleMaxLength)
+                .HasMaxLength(GlobalConstants.Post.PostTitleMaxLength)
                 .IsRequired();
 
             post
                 .Property(p => p.Description)
-                .HasMaxLength(GlobalConstants.PostDescriptionMaxLength)
+                .HasMaxLength(GlobalConstants.Post.PostDescriptionMaxLength)
                 .IsRequired();
 
             post

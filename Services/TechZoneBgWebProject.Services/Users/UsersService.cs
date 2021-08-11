@@ -1,6 +1,5 @@
 ﻿namespace TechZoneBgWebProject.Services.Users
 {
-
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -107,10 +106,12 @@
             throw new System.NotImplementedException();
         }
 
-        public Task<IEnumerable<TModel>> GetAllAsync<TModel>()
-        {
-            throw new System.NotImplementedException();
-        }
+        public async Task<IEnumerable<TModel>> GetAllAsync<TModel>()
+             => await this.db.Users
+                .AsNoTracking()
+                .Where(u => !u.IsDeleted)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
 
         private async Task<ApplicationUser> GetByIdAsync(string id)
             => await this.db.Users.FirstOrDefaultAsync(u => u.Id == id && !u.IsDeleted);

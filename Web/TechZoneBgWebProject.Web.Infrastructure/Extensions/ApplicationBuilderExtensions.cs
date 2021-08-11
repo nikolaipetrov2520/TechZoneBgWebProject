@@ -1,8 +1,8 @@
-﻿
-namespace TechZoneBgWebProject.Web.Infrastructure.Extensions
+﻿namespace TechZoneBgWebProject.Web.Infrastructure.Extensions
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.DependencyInjection;
+
     using TechZoneBgWebProject.Data;
     using TechZoneBgWebProject.Data.Seeding;
 

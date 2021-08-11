@@ -13,16 +13,16 @@
     public class PostsCreateInputModel
     {
         [Required]
-        [StringLength(PostTitleMaxLength, ErrorMessage = PostTitleLengthErrorMessage, MinimumLength = PostTitleMinLength)]
+        [StringLength(Post.PostTitleMaxLength, ErrorMessage = PostTitleLengthErrorMessage, MinimumLength = Post.PostTitleMinLength)]
         public string Title { get; set; }
 
         [Required]
         [EnumDataType(typeof(PostType))]
-        [Display(Name = PostTypeDisplayName)]
+        [Display(Name = Post.PostTypeDisplayName)]
         public PostType PostType { get; set; }
 
         [Required]
-        [MaxLength(PostDescriptionMaxLength)]
+        [MaxLength(Post.PostDescriptionMaxLength)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 

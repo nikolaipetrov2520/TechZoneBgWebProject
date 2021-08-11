@@ -11,6 +11,7 @@
     using TechZoneBgWebProject.Web.InputModels.Posts;
     using TechZoneBgWebProject.Web.InputModels.Replais;
     using TechZoneBgWebProject.Web.ViewModels.Categories;
+    using TechZoneBgWebProject.Web.ViewModels.Messages;
     using TechZoneBgWebProject.Web.ViewModels.Posts;
     using TechZoneBgWebProject.Web.ViewModels.Replies;
     using TechZoneBgWebProject.Web.ViewModels.Tags;
@@ -75,8 +76,14 @@
             this.CreateMap<Tag, PostsTagsViewModel>();
 
             this.CreateMap<Reply, RepliesEditInputModel>();
-            this.CreateMap<Reply, RepliesDetailsViewModel>();
-            this.CreateMap<Reply, RepliesDeleteViewModel>();
+            this.CreateMap<Reply, RepliesDetailsViewModel>()
+                .ForMember(
+                dest => dest.CreatedOn,
+                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
+            this.CreateMap<Reply, RepliesDeleteViewModel>()
+                .ForMember(
+                dest => dest.CreatedOn,
+                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
             this.CreateMap<Reply, RepliesDeleteConfirmedViewModel>();
             this.CreateMap<Reply, PostsRepliesDetailsViewModel>()
                 .ForMember(
@@ -94,6 +101,13 @@
                 .ForMember(
                 dest => dest.CreatedOn,
                 dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
+
+            this.CreateMap<Message, ChatMessagesWithUserViewModel>()
+            .ForMember(
+                dest => dest.CreatedOn,
+                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
+            this.CreateMap<ApplicationUser, ChatUserViewModel>();
+            this.CreateMap<ApplicationUser, ChatViewModel>();
         }
     }
 }

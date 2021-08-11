@@ -20,6 +20,7 @@
     using TechZoneBgWebProject.Data.Seeding;
     using TechZoneBgWebProject.Services.Categories;
     using TechZoneBgWebProject.Services.Mapping;
+    using TechZoneBgWebProject.Services.Messages;
     using TechZoneBgWebProject.Services.Messaging;
     using TechZoneBgWebProject.Services.Posts;
     using TechZoneBgWebProject.Services.Providers;
@@ -27,6 +28,7 @@
     using TechZoneBgWebProject.Services.Replies;
     using TechZoneBgWebProject.Services.Tags;
     using TechZoneBgWebProject.Services.Users;
+    using TechZoneBgWebProject.Web.Hubs;
     using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.ViewModels;
 
@@ -76,6 +78,7 @@
             services.AddTransient<ITagsService, TagsService>();
             services.AddTransient<ICategoriesService, CategoriesService>();
             services.AddTransient<IRepliesService, RepliesService>();
+            services.AddTransient<IMessagesService, MessagesService>();
             services.AddTransient<IDateTimeProvider, DateTimeProvider>();
             services.AddTransient<IUsersService, UsersService>();
             var mapperConfig = new MapperConfiguration(mc =>
@@ -132,6 +135,7 @@
                     {
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapControllerRoute("default", "{controller=Posts}/{action=Trending}/{id?}");
+                        endpoints.MapHub<ChatHub>("/chat");
                         endpoints.MapRazorPages();
                     });
         }

@@ -14,11 +14,11 @@
         public int Id { get; set; }
 
         [Required]
-        [StringLength(PostTitleMaxLength, ErrorMessage = PostTitleLengthErrorMessage, MinimumLength = PostTitleMinLength)]
+        [StringLength(Post.PostTitleMaxLength, ErrorMessage = PostTitleLengthErrorMessage, MinimumLength = Post.PostTitleMinLength)]
         public string Title { get; set; }
 
         [Required]
-        [MaxLength(PostDescriptionMaxLength)]
+        [MaxLength(Post.PostDescriptionMaxLength)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 

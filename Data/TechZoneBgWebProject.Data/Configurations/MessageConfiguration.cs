@@ -12,7 +12,7 @@
         {
             message
                 .Property(m => m.Content)
-                .HasMaxLength(GlobalConstants.MessageContentMaxLength)
+                .HasMaxLength(GlobalConstants.Messages.MessageContentMaxLength)
                 .IsRequired();
 
             message

@@ -1000,3 +1000,7 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administ
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Categories\Edit.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Tags\All.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Tags\Create.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Chat\All.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Chat\SendMessage.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Chat\WithUser.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\Chat\Default.cshtml.g.cs

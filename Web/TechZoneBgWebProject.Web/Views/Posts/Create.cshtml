@@ -22,7 +22,7 @@
                            id="inputTopicTitle"
                            placeholder="Subject of your post"
                            onkeyup="changeRemainingLength()" />
-                    <span id="remainingLength" class="tt-value-input">@GlobalConstants.PostTitleMaxLength</span>
+                    <span id="remainingLength" class="tt-value-input">@GlobalConstants.Post.PostTitleMaxLength</span>
                     <span class="text-danger" asp-validation-for="Title"></span>
                 </div>
                 <div class="tt-note">Describe your post well, while keeping the subject as short as possible.</div>
@@ -112,7 +112,7 @@
     <script>
         function changeRemainingLength() {
             var value = $('#inputTopicTitle').val();
-            $('#remainingLength').html(@GlobalConstants.PostTitleMaxLength - value.length);
+            $('#remainingLength').html(@GlobalConstants.Post.PostTitleMaxLength - value.length);
         }
         var $select = $('#input-category').selectize({
             create: false,

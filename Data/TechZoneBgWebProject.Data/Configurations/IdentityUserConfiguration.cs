@@ -12,7 +12,7 @@
         {
             user
                 .Property(u => u.Biography)
-                .HasMaxLength(GlobalConstants.UserBiographyMaxLength);
+                .HasMaxLength(GlobalConstants.Register.UserBiographyMaxLength);
 
             user
                 .HasMany(e => e.Claims)

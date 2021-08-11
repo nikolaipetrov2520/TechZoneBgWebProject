@@ -3,9 +3,8 @@
     using System;
     using System.Threading.Tasks;
 
-    using TechZoneBgWebProject.Data.Common;
-
     using Microsoft.EntityFrameworkCore;
+    using TechZoneBgWebProject.Data.Common;
 
     public class DbQueryRunner : IDbQueryRunner
     {

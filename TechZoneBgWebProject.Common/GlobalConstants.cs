@@ -23,7 +23,6 @@
 
         public class User
         {
-
             public const string UserUserName = "0888888888";
             public const string UserEmail = "testuser@techzone-bg.com";
             public const string UserPassword = "user123456";
@@ -114,30 +113,24 @@
             public const string TagsDisplayName = "Tags";
         }
 
-        public const string UserUsernameDisplayName = "Display name";
-        public const string UserLoginRememberMeDisplayName = "Remember me";
-        public const string UserCurrentPasswordDisplayName = "Current password";
-        public const string UserNewPasswordDisplayName = "New password";
-        public const string UserConfirmPasswordDisplayName = "Confirm password";
-        public const string UserConfirmNewPasswordDisplayName = "Confirm new password";
-        public const string UserNewEmailDisplayName = "New email";
-        public const string UserBirthDateDisplayName = "Birthday";
-        public const int UserUsernameMaxLength = 25;
-        public const int UserUsernameMinLength = 4;
-        public const int UserPasswordMaxLength = 100;
-        public const int UserPasswordMinLength = 6;
-        public const int UserBiographyMaxLength = 250;
-        public const int UserMinAge = 18;
+        public class Register
+        {
+            public const int UserBiographyMaxLength = 250;
+        }
 
-        public const int MessageContentMaxLength = 300;
+        public class Post
+        {
+            public const int PostTitleMaxLength = 100;
+            public const int PostTitleMinLength = 3;
+            public const int PostDescriptionMaxLength = 30000;
+            public const int PostReportDescriptionMaxLength = 30000;
+            public const int PostReportDescriptionMinLength = 3;
+            public const string PostTypeDisplayName = "Post Type";
+        }
 
-        public const int PostTitleMaxLength = 100;
-        public const int PostTitleMinLength = 3;
-        public const int PostDescriptionMaxLength = 30000;
-        public const int PostReportDescriptionMaxLength = 30000;
-        public const int PostReportDescriptionMinLength = 3;
-        public const string PostTypeDisplayName = "Post Type";
-
-        public const int ShortDescriptionAllowedLength = 44;
+        public class Messages
+        {
+            public const int MessageContentMaxLength = 300;
+        }
     }
 }

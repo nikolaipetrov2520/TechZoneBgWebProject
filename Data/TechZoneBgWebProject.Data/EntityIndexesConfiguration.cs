@@ -2,9 +2,8 @@
 {
     using System.Linq;
 
-    using TechZoneBgWebProject.Data.Common.Models;
-
     using Microsoft.EntityFrameworkCore;
+    using TechZoneBgWebProject.Data.Common.Models;
 
     internal static class EntityIndexesConfiguration
     {
