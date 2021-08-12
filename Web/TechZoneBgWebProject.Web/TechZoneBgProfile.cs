@@ -22,9 +22,23 @@
         public TechZoneBgProfile()
         {
             this.CreateMap<ApplicationUser, UsersLoginStatusViewModel>();
+            this.CreateMap<ApplicationUser, UsersViewModel>()
+                .ForMember(
+                    dest => dest.ThreadsCount,
+                    dest => dest.MapFrom(src => src.Posts.Count(p => !p.IsDeleted)));
+            this.CreateMap<ApplicationUser, ChatUserViewModel>();
+            this.CreateMap<ApplicationUser, ChatViewModel>();
+            this.CreateMap<ApplicationUser, UsersDetailsViewModel>();
 
             this.CreateMap<Post, PostsDeleteViewModel>();
             this.CreateMap<Post, PostsDeleteConfirmedViewModel>();
+            this.CreateMap<Post, UsersThreadsViewModel>()
+                .ForMember(
+                dest => dest.CategoryId,
+                dest => dest.MapFrom(src => src.Category.Id))
+                .ForMember(
+                dest => dest.CategoryName,
+                dest => dest.MapFrom(src => src.Category.Name));
             this.CreateMap<Post, PostsEditInputModel>();
             this.CreateMap<Post, PostsListingViewModel>()
                 .ForMember(
@@ -63,6 +77,7 @@
                    dest => dest.MapFrom(src => src.Name));
 
             this.CreateMap<PostTag, PostsTagsDetailsViewModel>();
+            this.CreateMap<PostTag, UsersThreadsTagsViewModel>();
             this.CreateMap<PostTag, PostsTagsViewModel>()
                .ForMember(
                    dest => dest.Id,
@@ -72,10 +87,12 @@
                    dest => dest.MapFrom(src => src.Post.Title));
 
             this.CreateMap<Tag, PostsTagsDetailsViewModel>();
+            this.CreateMap<Tag, UsersThreadsTagsViewModel>();
             this.CreateMap<Tag, TagsInfoViewModel>();
             this.CreateMap<Tag, PostsTagsViewModel>();
 
             this.CreateMap<Reply, RepliesEditInputModel>();
+            this.CreateMap<Reply, UsersRepliesViewModel>();
             this.CreateMap<Reply, RepliesDetailsViewModel>()
                 .ForMember(
                 dest => dest.CreatedOn,
@@ -106,8 +123,8 @@
             .ForMember(
                 dest => dest.CreatedOn,
                 dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
-            this.CreateMap<ApplicationUser, ChatUserViewModel>();
-            this.CreateMap<ApplicationUser, ChatViewModel>();
+
+            this.CreateMap<UserFollower, UsersViewModel>();
         }
     }
 }

@@ -9406,7 +9406,7 @@ html.ie.gecko body.modal-open {
     }
 }
 
-.tt-tab-wrapper .nav-tabs {
+.tt-tab-wrapper .nav-tab {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9430,7 +9430,7 @@ html.ie.gecko body.modal-open {
     border-bottom: 1px solid #e2e7ea;
 }
 
-    .tt-tab-wrapper .nav-tabs .nav-item a {
+    .tt-tab-wrapper .nav-tab .nav-item a {
         color: #182730;
         display: inline-block;
         -webkit-transition: color 0.2s linear;
@@ -9438,7 +9438,7 @@ html.ie.gecko body.modal-open {
         font-weight: 500;
     }
 
-        .tt-tab-wrapper .nav-tabs .nav-item a span {
+        .tt-tab-wrapper .nav-tab .nav-item a span {
             padding-top: 22px;
             padding-bottom: 23px;
             display: inline-block;
@@ -9446,7 +9446,7 @@ html.ie.gecko body.modal-open {
             letter-spacing: 0.01em;
         }
 
-            .tt-tab-wrapper .nav-tabs .nav-item a span:after {
+            .tt-tab-wrapper .nav-tab .nav-item a span:after {
                 content: '';
                 display: block;
                 position: absolute;
@@ -9459,56 +9459,56 @@ html.ie.gecko body.modal-open {
                 transition: background-color 0.2s linear;
             }
 
-        .tt-tab-wrapper .nav-tabs .nav-item a:hover {
+        .tt-tab-wrapper .nav-tab .nav-item a:hover {
             color: #2172cd;
         }
 
-        .tt-tab-wrapper .nav-tabs .nav-item a.active {
+        .tt-tab-wrapper .nav-tab .nav-item a.active {
             color: #2172cd;
         }
 
-            .tt-tab-wrapper .nav-tabs .nav-item a.active span:after {
+            .tt-tab-wrapper .nav-tab .nav-item a.active span:after {
                 background-color: #2172cd;
             }
 
-    .tt-tab-wrapper .nav-tabs .nav-item:first-child a {
+    .tt-tab-wrapper .nav-tab .nav-item:first-child a {
         padding-left: 0;
     }
 
-    .tt-tab-wrapper .nav-tabs .nav-item:last-child a {
+    .tt-tab-wrapper .nav-tab .nav-item:last-child a {
         padding-right: 0;
     }
 
 @media (min-width: 992px) {
-    .tt-tab-wrapper .nav-tabs .nav-item {
+    .tt-tab-wrapper .nav-tab .nav-item {
         padding-left: 14px;
         padding-right: 14px;
     }
 
-        .tt-tab-wrapper .nav-tabs .nav-item:first-child {
+        .tt-tab-wrapper .nav-tab .nav-item:first-child {
             padding-left: 0;
         }
 }
 
 @media (max-width: 991px) {
-    .tt-tab-wrapper .nav-tabs .nav-item {
+    .tt-tab-wrapper .nav-tab .nav-item {
         padding-left: 12px;
         padding-right: 12px;
     }
 
-        .tt-tab-wrapper .nav-tabs .nav-item:first-child {
+        .tt-tab-wrapper .nav-tab .nav-item:first-child {
             padding-left: 0;
         }
 }
 
 @media (max-width: 767px) {
-    .tt-tab-wrapper .nav-tabs .nav-item.tt-hide-md {
+    .tt-tab-wrapper .nav-tab .nav-item.tt-hide-md {
         display: none;
     }
 }
 
 @media (max-width: 575px) {
-    .tt-tab-wrapper .nav-tabs .nav-item.tt-hide-xs {
+    .tt-tab-wrapper .nav-tab .nav-item.tt-hide-xs {
         display: none;
     }
 }

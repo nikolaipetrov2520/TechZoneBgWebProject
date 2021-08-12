@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
     <link href="~/lib/fontawesome/css/all.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/lib/selectize/dist/css/selectize.min.css" rel="stylesheet" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 
 </head>
 <body>
@@ -86,7 +86,7 @@
                     @this.RenderBody()
                 </main>
             </div>
-            <aside class="col-xl-3">
+            <aside class="col-xl-3 mb-5">
                 <div class="g-mb-20">
                     <cache expires-after="@TimeSpan.FromSeconds(10)">
                         <vc:main-news></vc:main-news>

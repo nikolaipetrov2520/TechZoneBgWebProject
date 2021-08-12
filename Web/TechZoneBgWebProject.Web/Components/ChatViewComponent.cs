@@ -1,5 +1,6 @@
 ﻿namespace TechZoneBgWebProject.Web.Components
 {
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,8 @@
                 user.LastMessage = await this.messagesService.GetLastMessageAsync(currentUserId, user.Id);
                 user.LastMessageActivity = await this.messagesService.GetLastActivityAsync(currentUserId, user.Id);
             }
+
+            conversations = conversations.OrderByDescending(x => x.LastMessageActivity);
 
             return this.View(conversations);
         }

@@ -40,7 +40,7 @@
                             <select asp-for="ReceiverId" id="input-user">
                                 @foreach (var user in Model.Users.Where(u => u.Id != this.User.GetId()))
                                 {
-                    <option value="@user.Id">@(user.FirstName + "" + user.LastName)</option>}
+                    <option value="@user.Id">@(user.FirstName + " " + user.LastName)</option>}
                             </select>
                             <span asp-validation-for="ReceiverId"></span>
                         </div>

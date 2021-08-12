@@ -1,0 +1,92 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Users.UsersDetailsViewModel
+@{ ViewData["Title"] = Model.FirstName; }
+
+<partial name="_DetailsPartial" model="Model" />
+
+<div class="container">
+    <div class="tt-tab-wrapper">
+
+        <vc:users-details user-id="@Model.Id"></vc:users-details>
+
+        <div class="tab-pane tt-indent-none show active" id="tt-tab-04" role="tabpanel">
+            @if (Model.Followers.Any())
+            {
+<div class="tt-followers-list" style="word-break: break-word;">
+    <div class="tt-list-header">
+        <div class="tt-col-name">User</div>
+        <div class="tt-col-value-large hide-mobile">Threads</div>
+        <div class="tt-col-value-large hide-mobile">Replies</div>
+        <div class="tt-col-value">Points</div>
+    </div>
+    @foreach (var follower in Model.Followers)
+    {
+<div class="tt-item">
+    <div class="tt-col-merged">
+        <div class="tt-col-avatar">
+            <a asp-area=""
+               asp-controller="Users"
+               asp-action="Threads"
+               asp-route-id="@follower.Id">
+                @if (follower.ProfilePicture.StartsWith("#icon-ava"))
+                {
+<svg class="tt-icon">
+    <use xlink:href="@follower.ProfilePicture"></use>
+</svg> }
+                    else
+                    {
+<img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@follower.ProfilePicture"
+     alt="avatar"
+     class="tt-icon"
+     width="40"
+     height="40"
+     style="border-radius: 50%" />}
+            </a>
+        </div>
+        <div class="tt-col-description">
+            <h6 class="tt-title">
+                <a asp-area=""
+                   asp-controller="Users"
+                   asp-action="Threads"
+                   asp-route-id="@follower.Id">
+                    @(follower.FirstName + " " + follower.LastName)
+                </a>
+            </h6>
+        </div>
+    </div>
+    <div class="tt-col-value-large hide-mobile">@follower.ThreadsCount</div>
+    <div class="tt-col-value-large hide-mobile">@follower.RepliesCount</div>
+    <div class="tt-col-value"><span class="tt-color16 tt-badge">Points: @follower.Points</span></div>
+</div>}
+</div> }
+            else
+            {
+<div class="tt-layout-404">
+    <h6 class="tt-title">@(Model.FirstName + " " + Model.LastName) has no followers.</h6>
+</div>            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var token = $("#follow-form input[name=__RequestVerificationToken]").val();
+
+        function follow(id) {
+            $.ajax({
+                type: "GET",
+                url: "/Users/Follow/" + id,
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (json) {
+                    if (json === true) {
+                        $('#follow-button').html('Following');
+                        $('#followersCount').html(@Model.FollowersCount + ' Followers');
+                    } else {
+                        $('#follow-button').html('Follow');
+                        $('#followersCount').html(@(Model.FollowersCount - 1) + ' Followers');
+                    }
+                }
+            });
+        }
+    </script>
+}
+

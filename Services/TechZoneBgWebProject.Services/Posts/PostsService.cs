@@ -260,10 +260,13 @@
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<TModel>> GetAllByUserIdAsync<TModel>(string userId)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<TModel>> GetAllByUserIdAsync<TModel>(string userId)
+            => await this.db.Posts
+                .AsNoTracking()
+                .OrderByDescending(p => p.CreatedOn)
+                .Where(p => p.AuthorId == userId && !p.IsDeleted)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
 
         private async Task<Post> GetByIdAsync(int id)
             => await this.db.Posts.FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
