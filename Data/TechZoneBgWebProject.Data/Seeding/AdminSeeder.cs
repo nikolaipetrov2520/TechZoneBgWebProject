@@ -30,7 +30,6 @@
                     PhoneNumber = GlobalConstants.Admin.AdministratorPhoneNumber,
                     IsModified = true,
                     FirstName = GlobalConstants.Admin.AdministratorFirstName,
-                    LastName = GlobalConstants.Admin.AdministratorLastName,
                 };
 
                 var result = await userManager.CreateAsync(admin, GlobalConstants.Admin.AdministratorPassword);

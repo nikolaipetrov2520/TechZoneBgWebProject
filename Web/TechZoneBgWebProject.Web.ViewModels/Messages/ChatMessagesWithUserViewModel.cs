@@ -18,8 +18,6 @@
 
         public string AuthorId { get; set; }
 
-        public string RecieverId { get; set; }
-
         public string AuthorFirstName { get; set; }
 
         public string AuthorProfilePicture { get; set; }

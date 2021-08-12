@@ -29,7 +29,6 @@
                     PhoneNumber = GlobalConstants.User.UserPhoneNumber,
                     IsModified = true,
                     FirstName = GlobalConstants.User.UserFirstName,
-                    LastName = GlobalConstants.User.UserLastName,
                 };
 
                 var result = await userManager.CreateAsync(user, GlobalConstants.User.UserPassword);

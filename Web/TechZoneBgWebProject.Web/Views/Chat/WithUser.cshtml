@@ -1,9 +1,5 @@
 ﻿@model TechZoneBgWebProject.Web.ViewModels.Messages.ChatWithUserViewModel
 @{ ViewData["Title"] = "Messages"; }
-@using TechZoneBgWebProject.Data.Models
-@using Microsoft.AspNetCore.Identity
-@inject SignInManager<ApplicationUser> SignInManager
-@inject UserManager<ApplicationUser> UserManager
 
 <div class="container">
     <div class="tt-messages-layout">
@@ -48,41 +44,41 @@
                 </div>
                 <div id="messagesList"
                      class="tt-list-time-topic"
-                     style="overflow-y: auto; overflow-x: hidden; height:300px; display:block; word-break: break-word;">
+                     style="overflow-y: auto; overflow-x: hidden; height:400px; display:block; word-break: break-word;">
 
-                    @if (@Model.Messages.Any(x => x.AuthorId == @UserManager.GetUserAsync(this.User).Result.Id) || @Model.Messages.Any(x => x.RecieverId == @UserManager.GetUserAsync(this.User).Result.Id))
-                    {
-        @foreach (var message in Model.Messages)
-        {
-<div class="tt-item">
-    <div class="tt-col-avatar">
-        @if (message.AuthorProfilePicture.StartsWith("#icon-ava"))
-        {
-<svg class="tt-icon">
-    <use xlink:href="@message.AuthorProfilePicture"></use>
-</svg> }
-else
-{
-<img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@message.AuthorProfilePicture"
-     alt="avatar"
-     class="tt-icon"
-     width="40"
-     height="40"
-     style="border-radius: 50%" />}
-    </div>
-    <div class="tt-col-description">
-        <h4 class="tt-title">
-            <a asp-area=""
-               asp-controller="Users"
-               asp-action="Threads"
-               asp-route-id="@message.AuthorId">
-                @message.AuthorFirstName
-            </a>
-            <span class="time">@message.CreatedOn</span>
-        </h4>
-        @Html.Raw(message.SanitizedContent)
-    </div>
-</div>}}
+                    @foreach (var message in Model.Messages)
+                     {
+                        <div class="tt-item">
+                            <div class="tt-col-avatar">
+                                 @if (message.AuthorProfilePicture.StartsWith("#icon-ava"))
+                                  {
+                                    <svg class="tt-icon">
+                                        <use xlink:href="@message.AuthorProfilePicture"></use>
+                                    </svg> }
+                                  else
+                                  {
+                                    <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@message.AuthorProfilePicture"
+                                         alt="avatar"
+                                         class="tt-icon"
+                                         width="40"
+                                         height="40"
+                                         style="border-radius: 50%" />
+                                  }
+                            </div>
+                            <div class="tt-col-description">
+                                <h4 class="tt-title">
+                                    <a asp-area=""
+                                       asp-controller="Users"
+                                       asp-action="Threads"
+                                       asp-route-id="@message.AuthorId">
+                                        @message.AuthorFirstName
+                                    </a>
+                                    <span class="time">@message.CreatedOn</span>
+                                </h4>
+                                @Html.Raw(message.SanitizedContent)
+                            </div>
+                        </div>
+                     }
 
                 </div>
                 <div id="whoIsTyping"></div>
