@@ -9,6 +9,7 @@
     using TechZoneBgWebProject.Services.Tags;
     using TechZoneBgWebProject.Services.Users;
     using TechZoneBgWebProject.Web.Infrastructure.Extensions;
+    using TechZoneBgWebProject.Web.ViewModels.Messages;
     using TechZoneBgWebProject.Web.ViewModels.Users;
 
     public class UsersController : Controller

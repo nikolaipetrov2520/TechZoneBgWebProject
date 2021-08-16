@@ -26,6 +26,7 @@
     using TechZoneBgWebProject.Services.Providers;
     using TechZoneBgWebProject.Services.Reactions;
     using TechZoneBgWebProject.Services.Replies;
+    using TechZoneBgWebProject.Services.Reports;
     using TechZoneBgWebProject.Services.Tags;
     using TechZoneBgWebProject.Services.Users;
     using TechZoneBgWebProject.Web.Hubs;
@@ -76,6 +77,8 @@
             services.AddTransient<ITagsService, TagsService>();
             services.AddTransient<ICategoriesService, CategoriesService>();
             services.AddTransient<IRepliesService, RepliesService>();
+            services.AddTransient<IReportsService, ReportsService>();
+            services.AddTransient<IReplyReportsService, ReplyReportsService>();
             services.AddTransient<IMessagesService, MessagesService>();
             services.AddTransient<IDateTimeProvider, DateTimeProvider>();
             services.AddTransient<IUsersService, UsersService>();

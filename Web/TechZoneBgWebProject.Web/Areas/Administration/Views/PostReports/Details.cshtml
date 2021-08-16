@@ -1,0 +1,75 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Reports.PostReportsDetailsViewModel
+@{ ViewData["Title"] = "Post Report Details"; }
+
+<br />
+<div class="container">
+    <div class="tt-single-topic-list" style="word-break: break-word;">
+        <div class="tt-item">
+            <div class="tt-info-box">
+                <h6 class="tt-title">
+                    Report for <a asp-area="" asp-controller="Posts" asp-action="Details" asp-route-id="@Model.PostId">@Model.PostTitle</a>
+                </h6>
+            </div>
+        </div>
+        <div class="tt-item">
+            <div class="tt-single-topic">
+                <div class="tt-item-header pt-noborder">
+                    <div class="tt-item-info info-top">
+                        <div class="tt-avatar-icon">
+                            <i class="tt-icon">
+                                @if (Model.AuthorProfilePicture.StartsWith("#icon-ava"))
+                                {
+                    <svg>
+                        <use xlink:href="@Model.AuthorProfilePicture"></use>
+                    </svg> }
+                                else
+                                {
+                    <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@Model.AuthorProfilePicture"
+                         alt="avatar"
+                         class="tt-icon"
+                         width="40"
+                         height="40"
+                         style="border-radius: 50%" />}
+                            </i>
+                        </div>
+                        <div class="tt-avatar-title">
+                            <a asp-area=""
+                               asp-controller="Users"
+                               asp-action="Threads"
+                               asp-route-id="@Model.AuthorId">
+                                @(Model.AuthorFirstName + " " + Model.AuthorLastName)
+                            </a>
+                        </div>
+                        <a href="#" class="tt-info-time">
+                            <i class="tt-icon fas fa-calendar-alt"></i>@Model.CreatedOn
+                        </a>
+                    </div>
+                </div>
+                <div class="tt-item-description">
+                    <p>@Html.Raw(Model.SanitizedDescription)</p>
+                </div>
+                <div class="tt-item-info info-bottom">
+                    <form asp-area="Administration"
+                          asp-controller="PostReports"
+                          asp-action="Delete"
+                          asp-route-id="@Model.Id"
+                          method="post">
+                        <button type="submit" class="btn btn-primary">Disapprove</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-auto ml-md-auto">
+                <a asp-area="Administration"
+                   asp-controller="PostReports"
+                   asp-action="All"
+                   class="btn btn-primary">
+                    Back to all
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

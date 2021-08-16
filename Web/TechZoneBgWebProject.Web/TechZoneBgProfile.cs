@@ -10,10 +10,13 @@
     using TechZoneBgWebProject.Web.InputModels.Categories;
     using TechZoneBgWebProject.Web.InputModels.Posts;
     using TechZoneBgWebProject.Web.InputModels.Replais;
+    using TechZoneBgWebProject.Web.InputModels.ReplyReports;
+    using TechZoneBgWebProject.Web.InputModels.Reports;
     using TechZoneBgWebProject.Web.ViewModels.Categories;
     using TechZoneBgWebProject.Web.ViewModels.Messages;
     using TechZoneBgWebProject.Web.ViewModels.Posts;
     using TechZoneBgWebProject.Web.ViewModels.Replies;
+    using TechZoneBgWebProject.Web.ViewModels.Reports;
     using TechZoneBgWebProject.Web.ViewModels.Tags;
     using TechZoneBgWebProject.Web.ViewModels.Users;
 
@@ -120,11 +123,21 @@
                 dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
 
             this.CreateMap<Message, ChatMessagesWithUserViewModel>()
-            .ForMember(
+                .ForMember(
                 dest => dest.CreatedOn,
                 dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
 
             this.CreateMap<UserFollower, UsersViewModel>();
+            this.CreateMap<Post, ReportsInputModel>();
+            this.CreateMap<PostReport, PostReportsListingViewModel>()
+                .ForMember(
+                dest => dest.CreatedOn,
+                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
+            this.CreateMap<PostReport, PostReportsDetailsViewModel>()
+                .ForMember(
+                dest => dest.CreatedOn,
+                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
+            this.CreateMap<Reply, ReplyReportsInputModel>();
         }
     }
 }

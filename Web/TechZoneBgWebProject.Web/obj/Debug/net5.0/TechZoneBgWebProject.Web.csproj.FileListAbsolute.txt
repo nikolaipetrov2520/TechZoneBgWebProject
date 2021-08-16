@@ -1011,3 +1011,7 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Shared\C
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Users\Replies.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Users\Followers.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Users\Following.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Reports\Create.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\ReplyReports\Create.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\PostReports\All.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\PostReports\Details.cshtml.g.cs

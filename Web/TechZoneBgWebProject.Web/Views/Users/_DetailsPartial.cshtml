@@ -11,8 +11,8 @@
         <svg class="tt-icon">
             <use xlink:href="@Model.ProfilePicture"></use>
         </svg> }
-                    else
-                    {
+    else
+    {
         <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@Model.ProfilePicture"
              alt="avatar"
              class="tt-icon"
@@ -41,13 +41,13 @@
 
             @if (Model.Id == this.User.GetId())
             {
-<a href="/Identity/Account/Manage" class="tt-icon-btn" style="color: #666f74">
-    <i class="fas fa-cog"></i>
-</a> }
+            <a href="/Identity/Account/Manage" class="tt-icon-btn" style="color: #666f74">
+                <i class="fas fa-cog"></i>
+            </a> }
             else
             {
-<vc:users-follow-button user-id="@Model.Id"></vc:users-follow-button>            }
+            <vc:users-follow-button user-id="@Model.Id"></vc:users-follow-button>}
 
         </div>
-    </div>
+                    </div>
 </div>

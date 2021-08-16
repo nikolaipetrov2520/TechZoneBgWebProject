@@ -132,5 +132,10 @@
         {
             public const int MessageContentMaxLength = 300;
         }
+
+        public class Reports
+        {
+            public const int ShortDescriptionAllowedLength = 44;
+        }
     }
 }

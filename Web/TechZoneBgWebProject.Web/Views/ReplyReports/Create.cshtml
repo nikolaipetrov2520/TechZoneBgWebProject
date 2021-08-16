@@ -1,0 +1,43 @@
+﻿@model TechZoneBgWebProject.Web.InputModels.ReplyReports.ReplyReportsInputModel
+@{ ViewData["Title"] = "Report"; }
+
+<div class="container">
+    <div class="tt-wrapper-inner">
+        <br />
+        <h1 class="tt-title-border">
+            Describe your report
+        </h1>
+        <form class="form-default form-create-topic"
+              asp-area=""
+              asp-controller="ReplyReports"
+              asp-action="Create"
+              asp-route-id="@Model.Id">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="pt-editor">
+                <h6 class="pt-title">Report Description</h6>
+                <div class="form-group">
+                    <textarea id="customTextArea" asp-for="Description" placeholder="Lets get started"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-auto ml-md-auto">
+                        <a asp-area=""
+                           asp-controller="Replies"
+                           asp-action="Details"
+                           asp-route-id="@Model.Id"
+                           class="btn btn-primary btn-width-lg">
+                            Back
+                        </a>
+                        <button type="submit" class="btn btn-secondary btn-width-lg">
+                            Create Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

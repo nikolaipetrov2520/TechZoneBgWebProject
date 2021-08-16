@@ -2,6 +2,8 @@
 {
     using System.Collections.Generic;
 
+    using TechZoneBgWebProject.Web.ViewModels.Messages;
+
     public class UsersDetailsViewModel
     {
         public string Id { get; set; }
