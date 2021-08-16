@@ -16,6 +16,7 @@
     using TechZoneBgWebProject.Web.ViewModels.Messages;
     using TechZoneBgWebProject.Web.ViewModels.Posts;
     using TechZoneBgWebProject.Web.ViewModels.Replies;
+    using TechZoneBgWebProject.Web.ViewModels.ReplyReports;
     using TechZoneBgWebProject.Web.ViewModels.Reports;
     using TechZoneBgWebProject.Web.ViewModels.Tags;
     using TechZoneBgWebProject.Web.ViewModels.Users;
@@ -138,6 +139,14 @@
                 dest => dest.CreatedOn,
                 dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
             this.CreateMap<Reply, ReplyReportsInputModel>();
+            this.CreateMap<ReplyReport, ReplyReportsListingViewModel>()
+                .ForMember(
+                dest => dest.CreatedOn,
+                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
+            this.CreateMap<ReplyReport, ReplyReportsDetailsViewModel>()
+                .ForMember(
+                dest => dest.CreatedOn,
+                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
         }
     }
 }

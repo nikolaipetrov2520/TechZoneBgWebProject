@@ -132,36 +132,6 @@
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
 
-        public Task<bool> IsDeletedAsync(string username)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> IsUsernameUsedAsync(string username)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task ModifyAsync(string id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteAsync(string id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<IEnumerable<TModel>> GetAdminsAsync<TModel>()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<int> GetTotalCountAsync()
-        {
-            throw new System.NotImplementedException();
-        }
-
         private async Task<ApplicationUser> GetByIdAsync(string id)
             => await this.db.Users.FirstOrDefaultAsync(u => u.Id == id && !u.IsDeleted);
     }

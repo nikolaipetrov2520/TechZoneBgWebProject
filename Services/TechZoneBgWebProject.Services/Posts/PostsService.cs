@@ -255,11 +255,6 @@
         public async Task<bool> IsExistingAsync(int id)
             => await this.db.Posts.AnyAsync(p => p.Id == id && !p.IsDeleted);
 
-        public Task<IEnumerable<TModel>> GetSuggestedAsync<TModel>(int take)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<IEnumerable<TModel>> GetAllByUserIdAsync<TModel>(string userId)
             => await this.db.Posts
                 .AsNoTracking()

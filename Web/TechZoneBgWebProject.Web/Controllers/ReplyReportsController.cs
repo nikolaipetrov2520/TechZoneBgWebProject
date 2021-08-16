@@ -32,6 +32,7 @@
                 return this.NotFound();
             }
 
+            reply.Description = string.Empty;
             return this.View(reply);
         }
 

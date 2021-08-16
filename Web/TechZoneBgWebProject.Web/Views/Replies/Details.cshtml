@@ -16,19 +16,9 @@
             <div class="topic-inner-title">
                 <div class="topic-inner-avatar">
                     <i class="tt-icon">
-                        @if (reply.AuthorProfilePicture.StartsWith("#icon-ava"))
-                        {
-    <svg>
-        <use xlink:href="@reply.AuthorProfilePicture"></use>
-    </svg> }
-                        else
-                        {
-    <img src="https://res.cloudinary.com/forumnet/image/upload/t_profile-picture/@reply.AuthorProfilePicture"
-         alt="avatar"
-         class="tt-icon"
-         width="40"
-         height="40"
-         style="border-radius: 50%" />}
+                        <svg>
+                            <use xlink:href="@reply.AuthorProfilePicture"></use>
+                        </svg>
                     </i>
                 </div>
                 <div class="topic-inner-title">

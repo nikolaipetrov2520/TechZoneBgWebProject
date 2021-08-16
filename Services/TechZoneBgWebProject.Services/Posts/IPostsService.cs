@@ -29,8 +29,6 @@
 
         Task<TModel> GetByIdAsync<TModel>(int id);
 
-        Task<IEnumerable<TModel>> GetSuggestedAsync<TModel>(int take);
-
         Task<List<TModel>> GetAllAsync<TModel>(string search = null, int skip = 0, int? take = null);
 
         Task<IEnumerable<TModel>> GetAllByTagIdAsync<TModel>(int tagId, string search = null);

@@ -537,3 +537,4 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\System.Diagn
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\AngleSharp.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\AngleSharp.Css.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\HtmlSanitizer.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Web.StaticWebAssets.xml

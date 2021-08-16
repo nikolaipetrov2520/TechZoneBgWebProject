@@ -102,9 +102,23 @@
             await this.DeleteNestedAsync(id);
         }
 
-        public Task MakeBestAnswerAsync(int id)
+        public async Task MakeBestAnswerAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var reply = await this.GetByIdAsync(id);
+
+            reply.IsBestAnswer = true;
+
+            var bestAnswerReply = await this.db.Replies.FirstOrDefaultAsync(r => r.IsBestAnswer && !r.IsDeleted);
+            if (bestAnswerReply == null)
+            {
+                await this.usersService.AddPointsAsync(reply.AuthorId, 5);
+            }
+            else
+            {
+                bestAnswerReply.IsBestAnswer = false;
+            }
+
+            await this.db.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<TModel>> GetAllByUserIdAsync<TModel>(string userId)

@@ -40,15 +40,28 @@
             await this.db.SaveChangesAsync();
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var replyReport = await this.db.ReplyReports.FirstOrDefaultAsync(r => r.Id == id && !r.IsDeleted);
+            if (replyReport == null)
+            {
+                return false;
+            }
+
+            replyReport.IsDeleted = true;
+            replyReport.DeletedOn = this.dateTimeProvider.Now();
+
+            await this.db.SaveChangesAsync();
+
+            return true;
         }
 
-        public Task<IEnumerable<TModel>> GetAllAsync<TModel>()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<TModel>> GetAllAsync<TModel>()
+            => await this.db.ReplyReports
+                .AsNoTracking()
+                .Where(r => !r.IsDeleted && !r.Reply.IsDeleted)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
 
         public async Task<TModel> GetByIdAsync<TModel>(int id)
             => await this.db.ReplyReports
