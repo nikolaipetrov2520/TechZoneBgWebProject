@@ -8,10 +8,7 @@
 
     public class HomeController : BaseController
     {
-        public IActionResult Index()
-        {
-            return this.View();
-        }
+        public IActionResult Index() => this.RedirectToAction("Trending", "Posts");
 
         public IActionResult NotFound404() => this.View();
 

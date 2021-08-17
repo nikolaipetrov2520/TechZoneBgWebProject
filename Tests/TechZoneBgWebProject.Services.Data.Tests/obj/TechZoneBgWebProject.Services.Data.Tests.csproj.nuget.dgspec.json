@@ -254,6 +254,160 @@
         }
       }
     },
+    "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj",
+        "projectName": "TechZoneBgWebProject.Services.Mapping",
+        "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj",
+        "projectName": "TechZoneBgWebProject.Services",
+        "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
+              },
+              "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj"
+              },
+              "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -354,6 +508,9 @@
             "projectReferences": {
               "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
                 "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj"
+              },
+              "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj"
               }
             }
           }
@@ -368,6 +525,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[5.0.1, )"

@@ -54,6 +54,12 @@
 
             this.CreateMap<Post, PostsDetailsViewModel>()
                 .ForMember(
+                    dest => dest.Likes,
+                    dest => dest.MapFrom(src => src.Reactions.Count(r => r.ReactionType == ReactionType.Like)))
+                .ForMember(
+                    dest => dest.Dislike,
+                    dest => dest.MapFrom(src => src.Reactions.Count(r => r.ReactionType == ReactionType.Dislike)))
+                .ForMember(
                 dest => dest.AuthorId,
                 dest => dest.MapFrom(src => src.Author.Id))
                 .ForMember(
@@ -121,7 +127,13 @@
                 dest => dest.MapFrom(src => src.Author.ProfilePicture))
                 .ForMember(
                 dest => dest.CreatedOn,
-                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
+                dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)))
+                .ForMember(
+                    dest => dest.Likes,
+                    dest => dest.MapFrom(src => src.Reactions.Count(r => r.ReactionType == ReactionType.Like)))
+                .ForMember(
+                    dest => dest.Dislike,
+                    dest => dest.MapFrom(src => src.Reactions.Count(r => r.ReactionType == ReactionType.Dislike)));
 
             this.CreateMap<Message, ChatMessagesWithUserViewModel>()
                 .ForMember(

@@ -4,7 +4,6 @@
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-
     using TechZoneBgWebProject.Services.Replies;
     using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.InputModels.Replais;
@@ -44,7 +43,6 @@
             }
 
             reply.Replies = await this.repliesService.GetAllByPostIdAsync<RepliesDetailsViewModel>(reply.PostId);
-
             return this.View(reply);
         }
 

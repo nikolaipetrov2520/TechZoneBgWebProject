@@ -166,3 +166,9 @@ D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\Te
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\ref\TechZoneBgWebProject.Services.Data.Tests.dll
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.pdb
 D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.genruntimeconfig.cache
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\AutoMapper.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\FluentAssertions.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.pdb
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Services.Mapping.pdb

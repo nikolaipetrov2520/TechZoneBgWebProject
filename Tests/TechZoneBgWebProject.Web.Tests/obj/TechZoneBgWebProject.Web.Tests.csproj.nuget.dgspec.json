@@ -602,6 +602,10 @@
               "target": "Package",
               "version": "[16.8.3, )"
             },
+            "MyTested.AspNetCore.Mvc.Universe": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.0.0-alpha07, )"

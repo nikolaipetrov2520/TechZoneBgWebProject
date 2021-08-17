@@ -6,9 +6,10 @@
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-
+    using TechZoneBgWebProject.Data.Models.Enums;
     using TechZoneBgWebProject.Services.Categories;
     using TechZoneBgWebProject.Services.Posts;
+    using TechZoneBgWebProject.Services.Reactions;
     using TechZoneBgWebProject.Services.Replies;
     using TechZoneBgWebProject.Services.Tags;
     using TechZoneBgWebProject.Services.Users;
@@ -103,7 +104,6 @@
 
             post.Tags = await this.tagsService.GetAllByPostIdAsync<PostsTagsDetailsViewModel>(id);
             post.Replies = await this.repliesService.GetAllByPostIdAsync<PostsRepliesDetailsViewModel>(id, sort);
-
             return this.View(post);
         }
 
