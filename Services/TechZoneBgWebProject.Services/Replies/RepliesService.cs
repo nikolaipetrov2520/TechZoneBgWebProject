@@ -90,7 +90,6 @@
             await this.db.SaveChangesAsync();
         }
 
-
         public async Task DeleteAsync(int id)
         {
             var reply = await this.GetByIdAsync(id);
@@ -128,7 +127,6 @@
                 .OrderByDescending(p => p.CreatedOn)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
-
 
         private async Task<Reply> GetByIdAsync(int id)
             => await this.db.Replies.FirstOrDefaultAsync(r => r.Id == id && !r.IsDeleted);

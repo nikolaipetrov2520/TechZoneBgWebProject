@@ -58,7 +58,6 @@
                 CreatedOn = dateTimeProvider.Object.Now(),
             };
 
-
             actual.Should().BeEquivalentTo(expected);
         }
     }

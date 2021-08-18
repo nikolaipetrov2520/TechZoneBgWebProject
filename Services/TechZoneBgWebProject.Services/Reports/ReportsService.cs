@@ -68,6 +68,5 @@
                 .Where(pr => pr.Id == id && !pr.IsDeleted)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync();
-
     }
 }

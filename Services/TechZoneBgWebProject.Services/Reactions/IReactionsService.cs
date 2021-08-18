@@ -10,6 +10,5 @@
         Task<ReactionsCountServiceModel> ReactAsync(ReactionType reactionType, int postId, string authorId);
 
         Task<int> GetTotalCountAsync();
-
     }
 }

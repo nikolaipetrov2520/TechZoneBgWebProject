@@ -102,7 +102,9 @@
             this.CreateMap<Tag, PostsTagsViewModel>();
 
             this.CreateMap<Reply, RepliesEditInputModel>();
-            this.CreateMap<Reply, UsersRepliesViewModel>();
+            this.CreateMap<Reply, UsersRepliesViewModel>().ForMember(
+                    dest => dest.Activity,
+                    dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeShortFormat, CultureInfo.InvariantCulture)));
             this.CreateMap<Reply, RepliesDetailsViewModel>()
                 .ForMember(
                 dest => dest.CreatedOn,
