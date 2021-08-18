@@ -12,7 +12,7 @@
 * [Bootstrap](https://github.com/twbs/bootstrap)
 * [jQuery](https://github.com/jquery/jquery)
 * [Selectize.js](https://github.com/selectize/selectize.js)
-* * [SignalR](https://github.com/SignalR/SignalR)
+* [SignalR](https://github.com/SignalR/SignalR)
 * [TinyMCE](https://github.com/tinymce/)
 * [xUnit](https://github.com/xunit/xunit)
 * [Moq](https://github.com/moq/moq)
