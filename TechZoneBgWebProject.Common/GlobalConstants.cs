@@ -21,6 +21,22 @@
             public const string AdministratorLastName = "Petrov";
         }
 
+        public class TechzoneBgEmployee
+        {
+            public const string EmployeeAreaName = "TechzoneBgEmployee";
+            public const string EmployeeRoleName = "TechzoneBgEmployee";
+        }
+        public class SwypeEmployee
+        {
+            public const string EmployeeAreaName = "SwypeEmployee";
+            public const string EmployeeRoleName = "SwypeEmployee";
+        }
+        public class Moderator
+        {
+            public const string ModeratorAreaName = "Moderator";
+            public const string ModeratorRoleName = "Moderator";
+        }
+
         public class User
         {
             public const string UserUserName = "0888888888";

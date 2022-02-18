@@ -16,3 +16,12 @@ C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBg
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.deps.json
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\bin\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.csprojAssemblyReference.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.AssemblyInfo.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services.Mapping\obj\Debug\netstandard2.1\TechZoneBgWebProject.Services.Mapping.pdb

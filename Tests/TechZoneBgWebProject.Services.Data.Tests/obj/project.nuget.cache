@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tsfcn/suk+XyabM9YCrNETTkLI7W6fbcy/A5yUBtXqcnQZfhvH+DNsQvbAQdIUQhKm8GASKYQjDD3zb+Xf4VRw==",
+  "dgSpecHash": "hOi6MGByL54nv1hCuKjxKPHd1ZOy5afMRuujHrgrWHBPN7gaGtp463muMq3lCN5M0BtnfX1QGZwtR4IbuFu6pg==",
   "success": true,
-  "projectFilePath": "D:\\TechZoneBG\\Tests\\TechZoneBgWebProject.Services.Data.Tests\\TechZoneBgWebProject.Services.Data.Tests.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Tests\\TechZoneBgWebProject.Services.Data.Tests\\TechZoneBgWebProject.Services.Data.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",

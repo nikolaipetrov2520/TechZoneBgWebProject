@@ -20,6 +20,8 @@
     using TechZoneBgWebProject.Web.ViewModels.Reports;
     using TechZoneBgWebProject.Web.ViewModels.Tags;
     using TechZoneBgWebProject.Web.ViewModels.Users;
+    using TechZoneBgWebProject.Web.ViewModels.Roles;
+    using Microsoft.AspNetCore.Identity;
 
     public class TechZoneBgProfile : Profile
     {
@@ -161,6 +163,17 @@
                 .ForMember(
                 dest => dest.CreatedOn,
                 dest => dest.MapFrom(src => src.CreatedOn.ToString(GlobalConstants.DateTime.DateTimeFormat, CultureInfo.InvariantCulture)));
+            this.CreateMap<ApplicationUser, RolesInfoViewMolel>()
+                .ForMember(
+                dest => dest.Username,
+                dest => dest.MapFrom(src => src.FirstName + " " + src.LastName))
+                .ForMember(
+                dest => dest.Roles,
+                dest => dest.MapFrom(src => src.Roles));
+            this.CreateMap<ApplicationRole, RolesViewModel>()
+                .ForMember(
+                dest => dest.Role,
+                dest => dest.MapFrom(src => src.Name.ToString()));
         }
     }
 }

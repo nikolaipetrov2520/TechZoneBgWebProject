@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oQi9UP19Db86asS1WnllK7kdX1ASCtUXOvDwCH2YvG76ZHxKemIOX5chP0Wr1r2+h3cEVADwhzJdXfdvC2VCWQ==",
+  "dgSpecHash": "ZLMPYFlCvfWk70Ar+Pw4wvQzATVEiLebbt1tIapbxwyTPPx8Y/aF4XKPyTN/rRbXJgeomV9GOWEQOgPExE9ukw==",
   "success": true,
-  "projectFilePath": "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web.Infrastructure\\TechZoneBgWebProject.Web.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.Infrastructure\\TechZoneBgWebProject.Web.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.1\\microsoft.aspnetcore.cryptography.internal.5.0.1.nupkg.sha512",

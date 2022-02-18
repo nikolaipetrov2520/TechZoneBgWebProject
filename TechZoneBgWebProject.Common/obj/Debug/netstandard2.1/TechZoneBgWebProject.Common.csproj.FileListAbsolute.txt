@@ -16,3 +16,12 @@ C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\TechZoneBgWebProjec
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.dll
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.pdb
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\bin\Debug\netstandard2.1\TechZoneBgWebProject.Common.deps.json
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\bin\Debug\netstandard2.1\TechZoneBgWebProject.Common.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\bin\Debug\netstandard2.1\TechZoneBgWebProject.Common.pdb
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.csprojAssemblyReference.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.AssemblyInfo.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\TechZoneBgWebProject.Common\obj\Debug\netstandard2.1\TechZoneBgWebProject.Common.pdb

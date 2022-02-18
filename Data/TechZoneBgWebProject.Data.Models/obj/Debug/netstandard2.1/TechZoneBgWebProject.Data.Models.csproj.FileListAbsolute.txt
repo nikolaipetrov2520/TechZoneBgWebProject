@@ -22,3 +22,15 @@ C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Data\TechZoneBgWebP
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.csproj.CopyComplete
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
 C:\Users\Administrator\Documents\GitHub\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.deps.json
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\bin\Debug\netstandard2.1\TechZoneBgWebProject.Data.Common.pdb
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.csprojAssemblyReference.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.AssemblyInfo.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.csproj.CopyComplete
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Data\TechZoneBgWebProject.Data.Models\obj\Debug\netstandard2.1\TechZoneBgWebProject.Data.Models.pdb

@@ -11,5 +11,14 @@
 
         public static bool IsAdministrator(this ClaimsPrincipal claimsPrincipal)
             => claimsPrincipal.IsInRole(GlobalConstants.Admin.AdministratorRoleName);
+
+        public static bool IsModerator(this ClaimsPrincipal claimsPrincipal)
+            => claimsPrincipal.IsInRole(GlobalConstants.Moderator.ModeratorRoleName);
+
+        public static bool IsTechzoneBgEmployee(this ClaimsPrincipal claimsPrincipal)
+            => claimsPrincipal.IsInRole(GlobalConstants.TechzoneBgEmployee.EmployeeRoleName);
+
+        public static bool IsSwipegEmployee(this ClaimsPrincipal claimsPrincipal)
+            => claimsPrincipal.IsInRole(GlobalConstants.SwypeEmployee.EmployeeRoleName);
     }
 }

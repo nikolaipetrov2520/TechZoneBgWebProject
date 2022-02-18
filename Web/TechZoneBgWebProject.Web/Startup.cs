@@ -27,6 +27,7 @@
     using TechZoneBgWebProject.Services.Reactions;
     using TechZoneBgWebProject.Services.Replies;
     using TechZoneBgWebProject.Services.Reports;
+    using TechZoneBgWebProject.Services.Roles;
     using TechZoneBgWebProject.Services.Tags;
     using TechZoneBgWebProject.Services.Users;
     using TechZoneBgWebProject.Web.Hubs;
@@ -82,6 +83,7 @@
             services.AddTransient<IMessagesService, MessagesService>();
             services.AddTransient<IDateTimeProvider, DateTimeProvider>();
             services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IRolesService, RolesService>();
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TechZoneBgProfile());

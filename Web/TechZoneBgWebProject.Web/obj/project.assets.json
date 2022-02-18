@@ -8495,27 +8495,24 @@
   },
   "packageFolders": {
     "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web\\TechZoneBgWebProject.Web.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web\\TechZoneBgWebProject.Web.csproj",
       "projectName": "TechZoneBgWebProject.Web",
-      "projectPath": "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web\\TechZoneBgWebProject.Web.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web\\TechZoneBgWebProject.Web.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -8528,29 +8525,29 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
-              "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
+            "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
             },
-            "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
-              "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj"
+            "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj"
             },
-            "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
-              "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"
+            "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"
             },
-            "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj": {
-              "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj"
+            "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj"
             },
-            "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj": {
-              "projectPath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj"
+            "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services\\TechZoneBgWebProject.Services.csproj"
             },
-            "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj": {
-              "projectPath": "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj"
+            "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj"
             },
-            "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web.Infrastructure\\TechZoneBgWebProject.Web.Infrastructure.csproj": {
-              "projectPath": "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web.Infrastructure\\TechZoneBgWebProject.Web.Infrastructure.csproj"
+            "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.Infrastructure\\TechZoneBgWebProject.Web.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.Infrastructure\\TechZoneBgWebProject.Web.Infrastructure.csproj"
             },
-            "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj": {
-              "projectPath": "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj"
+            "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj"
             }
           }
         }
@@ -8632,7 +8629,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
