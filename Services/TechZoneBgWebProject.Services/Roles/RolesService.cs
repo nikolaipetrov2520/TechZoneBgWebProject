@@ -1,5 +1,6 @@
 ﻿namespace TechZoneBgWebProject.Services.Roles
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -10,6 +11,7 @@
     using Microsoft.EntityFrameworkCore;
     using TechZoneBgWebProject.Data;
     using TechZoneBgWebProject.Data.Models;
+    using TechZoneBgWebProject.Web.ViewModels.Roles;
 
     public class RolesService : IRolesService
     {
@@ -24,27 +26,33 @@
             this._userManager = _userManager;
         }
 
-        public async Task<IEnumerable<TModel>> GetAllAsync<TModel>(string search = null, int skip = 0, int? take = null)
+        public async Task<List<RolesAllViewModel>> GetAllAsync<TModel>(int count, string search = null, int skip = 0, int? take = null, int page = 1)
         {
-            var queryable = this._userManager.Users
-               .AsNoTracking()
-               .Where(t => !t.IsDeleted);
-
-            if (!string.IsNullOrWhiteSpace(search))
+            var users = this.db.Users.AsNoTracking().Where(t => !t.IsDeleted).Select(x => new RolesAllViewModel
             {
-                queryable = queryable.Where(t => t.UserName.Contains(search));
-            }
+              Id = x.Id,
+              Username = x.FirstName + " " + x.LastName,
+              Role = x.Roles.ToString(),
+              Roles = db.Roles .Select(r => new RolesViewModel
+              {
+                  Id = r.Id,
+                  Role = r.Name,
+              }),
+              Search = search,
+              PageIndex = page,
+              TotalPages = (int)Math.Ceiling(count / (decimal)take),
+            });
+            //if (!string.IsNullOrWhiteSpace(search))
+            //{
+            //    users = users.Where(t => t.UserName.Contains(search));
+            //}
 
             if (take.HasValue)
             {
-                queryable = queryable.Skip(skip).Take(take.Value);
+                users = users.Skip(skip).Take(take.Value);
             }
 
-            var users = await queryable
-                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
-                 .ToListAsync();
-
-            return users;
+            return users.ToList();
         }
 
         public async Task<int> GetCountAsync(string searchFilter = null)

@@ -4087,7 +4087,8 @@
           "Microsoft.EntityFrameworkCore": "5.0.1",
           "TechZoneBgWebProject.Data": "1.0.0",
           "TechZoneBgWebProject.Data.Models": "1.0.0",
-          "TechZoneBgWebProject.Services.Mapping": "1.0.0"
+          "TechZoneBgWebProject.Services.Mapping": "1.0.0",
+          "TechZoneBgWebProject.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TechZoneBgWebProject.Services.dll": {}

@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\TechZoneBgWebProject.Data.Models\TechZoneBgWebProject.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\TechZoneBgWebProject.Data\TechZoneBgWebProject.Data.csproj" />
+    <ProjectReference Include="..\..\Web\TechZoneBgWebProject.Web.ViewModels\TechZoneBgWebProject.Web.ViewModels.csproj" />
     <ProjectReference Include="..\TechZoneBgWebProject.Services.Mapping\TechZoneBgWebProject.Services.Mapping.csproj" />
   </ItemGroup>
 

@@ -9,29 +9,21 @@
 
     public class HomeController : BaseController
     {
-        private readonly ApplicationDbContext db;
-        private readonly UserManager<ApplicationUser> _userManager;
-
-        public HomeController(ApplicationDbContext db, UserManager<ApplicationUser> _userManager)
-        {
-            this.db = db;
-            this._userManager = _userManager;
-        }
         public IActionResult Index()
         {
-            if (true)
+            if (this.User.IsInRole("TechzoneBgEmployee"))
+            {
+                return this.RedirectToAction("Create", "Posts");
+            }
+            else if (this.User.IsInRole("SwypeEmployee"))
             {
 
             }
-            else if (true)
+            else if (this.User.IsInRole("Moderator"))
             {
 
             }
-            else if (true)
-            {
-
-            }
-            else if (true)
+            else if (this.User.IsInRole("Administrator"))
             {
 
             }

@@ -1,5 +1,5 @@
-﻿@model TechZoneBgWebProject.Web.ViewModels.Roles.RolesAllViewModel
-@{ ViewData["Title"] = "Tags"; }
+﻿@model IEnumerable<TechZoneBgWebProject.Web.ViewModels.Roles.RolesAllViewModel>
+@{ ViewData["Title"] = "Roles"; }
 
 <br />
 <div class="tt-custom-mobile-indent container">
@@ -20,7 +20,7 @@
                   method="get">
                 <div class="search-form">
                     <input type="text"
-                           asp-for="Search"
+                           @*asp-for="Search"*@
                            class="tt-search__input"
                            placeholder="Search Tags" />
                     <button class="tt-search__btn" type="submit">
@@ -40,7 +40,7 @@
     <div class="tt-categories-list">
         <div class="row">
 
-            @foreach (var user in Model.Users)
+            @foreach (var user in Model)
             {
                 <div class="col-md-6 col-lg-4">
                     <div class="tt-item">
@@ -60,7 +60,7 @@
                                    asp-controller="Tags"
                                    asp-action="Details"
                                    asp-route-id="@user.Id">
-                                    Role - @user.Roles
+                                    Role - @user.Role
                                 </a>
                             </h6>
                         </div>
@@ -78,12 +78,13 @@
                             </form>
                         </div>
                     </div>
-                </div>      }
+                </div>     
+                }
 
         </div>
     </div>
 
-    @if (Model.TotalPages > 0 && Model.Search == null)
+    @*@if (Model.TotalPages > 0 && Model.Search == null)
     {
         <div class="text-center">
             <nav>
@@ -160,5 +161,5 @@
                 </ul>
             </nav>
         </div>}
-</div>
+</div>*@
 

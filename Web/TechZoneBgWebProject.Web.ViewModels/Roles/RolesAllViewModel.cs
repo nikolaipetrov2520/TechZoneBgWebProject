@@ -6,7 +6,13 @@
     {
         public string Search { get; set; }
 
-        public IEnumerable<RolesInfoViewMolel> Users { get; set; }
+        public string Id { get; set; }
+
+        public string Username { get; set; }
+
+        public string Role { get; set; }
+
+        public IEnumerable<RolesViewModel> Roles { get; set; }
 
         public int PageIndex { get; set; }
 

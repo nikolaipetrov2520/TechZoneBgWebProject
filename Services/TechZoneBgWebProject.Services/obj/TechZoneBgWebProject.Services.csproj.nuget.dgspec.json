@@ -354,6 +354,9 @@
               },
               "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"
+              },
+              "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj"
               }
             }
           }
@@ -438,6 +441,86 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj",
+        "projectName": "TechZoneBgWebProject.Web.ViewModels",
+        "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.ViewModels\\TechZoneBgWebProject.Web.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
+              },
+              "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj"
+              },
+              "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[6.0.437, )"
+            },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",

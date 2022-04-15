@@ -22,17 +22,9 @@
         {
             var skip = (page - 1) * UserPerPage;
             var count = await this.rolesService.GetCountAsync(search);
-            var users = await this.rolesService.GetAllAsync<RolesInfoViewMolel>(search, skip, UserPerPage);
-            var viewModel = new RolesAllViewModel
-            {
-                Users = users,
-                Search = search,
-                PageIndex = page,
-                TotalPages = (int)Math.Ceiling(count / (decimal)UserPerPage),
-            };
+            var users = await this.rolesService.GetAllAsync<RolesAllViewModel>(count, search, skip, UserPerPage, page);
 
-
-            return this.View(viewModel);
+            return this.View(users);
         }
 
     }
