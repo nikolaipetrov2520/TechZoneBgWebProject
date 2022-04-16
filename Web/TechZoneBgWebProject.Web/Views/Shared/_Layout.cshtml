@@ -27,32 +27,32 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (this.User.IsTechzoneBgEmployee())
                         {
-                            <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">TechZoneBg</a>
-                            </li>
+                            @*<li class="nav-item">
+                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">TechZoneBg</a>
+                            </li>*@
                         }
                         else if (this.User.IsSwipegEmployee())
                         {
-                            <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">Swipe</a>
-                            </li>
+                            @*<li class="nav-item">
+                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">Swipe</a>
+                            </li>*@
                         }
                         else if (this.User.IsModerator())
                         {
-                            <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">Moderator</a>
-                            </li>
+                            @*<li class="nav-item">
+                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">Moderator</a>
+                            </li>*@
                         }
                         else if (this.User.IsAdministrator())
                         {
-                            <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">TechZoneBg</a>
+                            @*<li class="nav-item">
+                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">TechZoneBg</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">Swipe</a>
+                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">Swipe</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">Moderator</a>
+                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">Moderator</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link white-text" asp-area="" asp-controller="Posts" asp-action="Create">New Post</a>
@@ -68,12 +68,12 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">Messages</a>
-                            </li>
+                            </li>*@
 
                         }
                         else
                         {
-                            <li class="nav-item">
+                            @*<li class="nav-item">
                                 <a class="nav-link white-text" asp-area="" asp-controller="Posts" asp-action="Create">New Post</a>
                             </li>
                             <li class="nav-item">
@@ -84,13 +84,13 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link white-text" asp-area="" asp-controller="Categories" asp-action="All">Categories</a>
-                            </li>
+                            </li>*@
 
                             @if (this.User.Identity.IsAuthenticated)
                             {
-                                <li class="nav-item">
+                                @*<li class="nav-item">
                                     <a class="nav-link white-text" asp-area="" asp-controller="Chat" asp-action="All" asp-route-id="@this.User.GetId()">Messages</a>
-                                </li>
+                                </li>*@
                             }
                         }
 
