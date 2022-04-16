@@ -25,18 +25,37 @@
                                     &laquo;
                                 </a>
                             </li>
-                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            @if (Model.TotalPages < 15)
                             {
-                                var active = i == Model.PageIndex ? "active" : string.Empty;
-                                <li>
-                                    <a class="@active"
-                                       asp-area=""
-                                       asp-controller="Products"
-                                       asp-action="All"
-                                       asp-route-page="@i">
-                                        @i
-                                    </a>
-                                </li>
+                                @for (int i = 1; i <= Model.TotalPages; i++)
+                                {
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
+                                    <li>
+                                        <a class="@active"
+                                           asp-area=""
+                                           asp-controller="Products"
+                                           asp-action="All"
+                                           asp-route-page="@i">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                            }
+                            else
+                            {
+                                @for (int i = 1; i <= 15; i++)
+                                {
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
+                                    <li>
+                                        <a class="@active"
+                                           asp-area=""
+                                           asp-controller="Products"
+                                           asp-action="All"
+                                           asp-route-page="@i">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
                             }
                             <li>
                                 <a asp-area=""
@@ -145,18 +164,37 @@
                                     &laquo;
                                 </a>
                             </li>
-                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            @if (Model.TotalPages < 15)
                             {
-                                var active = i == Model.PageIndex ? "active" : string.Empty;
-                                <li>
-                                    <a class="@active"
-                                       asp-area=""
-                                       asp-controller="Products"
-                                       asp-action="All"
-                                       asp-route-page="@i">
-                                        @i
-                                    </a>
-                                </li>
+                                @for (int i = 1; i <= Model.TotalPages; i++)
+                                {
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
+                                    <li>
+                                        <a class="@active"
+                                           asp-area=""
+                                           asp-controller="Products"
+                                           asp-action="All"
+                                           asp-route-page="@i">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                            }
+                            else
+                            {
+                                @for (int i = 1; i <= 15; i++)
+                                {
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
+                                    <li>
+                                        <a class="@active"
+                                           asp-area=""
+                                           asp-controller="Products"
+                                           asp-action="All"
+                                           asp-route-page="@i">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
                             }
                             <li>
                                 <a asp-area=""
