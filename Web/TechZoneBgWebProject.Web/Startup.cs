@@ -23,6 +23,7 @@
     using TechZoneBgWebProject.Services.Messages;
     using TechZoneBgWebProject.Services.Messaging;
     using TechZoneBgWebProject.Services.Posts;
+    using TechZoneBgWebProject.Services.Products;
     using TechZoneBgWebProject.Services.Providers;
     using TechZoneBgWebProject.Services.Reactions;
     using TechZoneBgWebProject.Services.Replies;
@@ -84,6 +85,7 @@
             services.AddTransient<IDateTimeProvider, DateTimeProvider>();
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IRolesService, RolesService>();
+            services.AddTransient<IProductsService, ProductsService>();
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TechZoneBgProfile());
@@ -135,7 +137,7 @@
                 endpoints =>
                     {
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                        endpoints.MapControllerRoute("default", "{controller=Posts}/{action=Trending}/{id?}");
+                        endpoints.MapControllerRoute("default", "{controller=Products}/{action=All}/{id?}");
                         endpoints.MapHub<ChatHub>("/chat");
                         endpoints.MapRazorPages();
                     });

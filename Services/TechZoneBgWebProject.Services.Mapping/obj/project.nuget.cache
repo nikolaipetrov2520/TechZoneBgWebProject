@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XSddwjfRVkmk3LyQF25YSUUlR5dYnm7PiPN4RyzCRyZvvDTawORaMfVQr9etaZ1Qva7PZ+zSwxqzJA241OZUXA==",
+  "dgSpecHash": "PjPK0uFMkfvcTHrtMl72HVmmj40kU8AXXNdvsXEW9DCmTF+ANq4jfqlL2fCFY1CbLRPZxxEftmJTqYs7XOTjIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj",
+  "projectFilePath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Mapping\\TechZoneBgWebProject.Services.Mapping.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

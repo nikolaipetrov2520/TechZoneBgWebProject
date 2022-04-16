@@ -346,3 +346,8 @@ C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProj
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\ref\TechZoneBgWebProject.Services.Data.Tests.dll
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.pdb
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProject.Services.Data.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Services.Data.Tests.genruntimeconfig.cache
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\AngleSharp.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\AngleSharp.Css.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\HtmlSanitizer.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.dll
+D:\TechZoneBG\Tests\TechZoneBgWebProject.Services.Data.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.pdb

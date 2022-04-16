@@ -48,3 +48,5 @@ C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebP
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\obj\Debug\net5.0\TechZoneBgWebProject.Services.pdb
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.dll
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Services\TechZoneBgWebProject.Services\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.pdb
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.dll
+D:\TechZoneBG\Services\TechZoneBgWebProject.Services\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.pdb

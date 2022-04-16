@@ -7587,9 +7587,9 @@ hr {
 }
 
 .tt-topic-list .tt-item {
-    display: -webkit-box;
+ 
     display: -ms-flexbox;
-    display: flex;
+    
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -7623,29 +7623,46 @@ hr {
 }
 
 .tt-topic-list .tt-item:nth-child(even):not(.tt-itemselect):not(.tt-item-popup) {
-    background-color: #eff7ff;
+    background-color: #fff;
     border-radius: 4px;
+    border: solid 1px #cbcbcb;
+    margin: 20px;
+    display: inline-block;
+    width: 29%;
+    text-align: center;
+    height: 385px;
+    box-shadow: 0px 9px 13px -4px;
 }
 
 .tt-topic-list .tt-item:nth-child(odd):not(.tt-itemselect):not(.tt-item-popup) {
     background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #cbcbcb;
+    margin: 20px;
+    display: inline-block;
+    width: 29%;
+    text-align: center;
+    height: 385px;
+    box-shadow: 0px 9px 13px -4px;
 }
 
 .tt-topic-list .tt-item .tt-col-avatar .tt-icon {
-    width: 40px;
-    height: 40px;
+    width: 200px;
+    height: 200px;
 }
 
 @media (min-width: 992px) {
     .tt-topic-list .tt-item .tt-col-avatar {
-        width: 8.33333%;
+        width: 100%;
     }
 }
 
 @media (max-width: 991px) {
-    .tt-topic-list .tt-item .tt-col-avatar {
-        width: 10.33333%;
+    .tt-topic-list .tt-item .tt-col-avatar .tt-icon {
+        width: 100px;
+        height: 100px;
     }
+    
 }
 
 @media (max-width: 767px) {
@@ -7671,7 +7688,7 @@ hr {
 
 @media (min-width: 992px) {
     .tt-topic-list .tt-item .tt-col-description {
-        width: 41.66667%;
+        width: 100%;
     }
 }
 
@@ -7773,7 +7790,7 @@ hr {
 
 @media (min-width: 992px) {
     .tt-topic-list .tt-item .tt-col-category:not(.tt-col-value-large) {
-        width: 16.66667%;
+        width: 100%;
     }
 }
 
@@ -7795,7 +7812,7 @@ hr {
 }
 
 .tt-topic-list .tt-item .tt-col-value {
-    width: 8.33333%;
+    width: 100%;
 }
 
 .tt-topic-list .tt-item .tt-col-value-large {
@@ -8004,8 +8021,9 @@ hr {
 }
 
 .tt-single-topic-list > .tt-item:not([class^="tt-wrapper-success"]) {
-    background-color: #eff7ff;
+    background-color: #fff;
     border-radius: 6px;
+    border: solid 1px grey;
 }
 
 .tt-single-topic-list > .tt-item.tt-wrapper-success {
@@ -11130,6 +11148,7 @@ html.ie.gecko body.modal-open {
 
     .tt-all-avatar .tt-list-avatar .tt-item:nth-child(even) {
         background-color: #ffffff;
+        border: solid 1px grey;
     }
 
     .tt-all-avatar .tt-list-avatar .tt-item:before {
@@ -11326,10 +11345,11 @@ html.ie.gecko body.modal-open {
     fill: #ffffff;
 }
 
-    .tt-btn-create-topic .tt-icon svg {
-        width: 40px;
-        height: 40px;
-    }
+.tt-btn-create-topic .tt-icon svg {
+        width: 200px;
+        height: 200px;
+}
+
 
     .tt-btn-create-topic .tt-icon:hover {
         fill: #182730;

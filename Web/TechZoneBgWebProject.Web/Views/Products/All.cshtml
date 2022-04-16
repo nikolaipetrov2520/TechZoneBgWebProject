@@ -1,0 +1,223 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Products.ProductAllViewModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="container">
+    <nav class="tt-topic-list" style="word-break: break-word;">
+
+        @if (Model.Products.Any())
+        {
+            <div class="tt-list-header">
+                @*Search*@
+            </div>
+
+            @if (Model.TotalPages > 0 && Model.Search == null)
+            {
+                <div class="text-center">
+                    <nav>
+                        <ul class="pagination mb-4">
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="All"
+                                   asp-route-page="@Model.PreviousPage">
+                                    &laquo;
+                                </a>
+                            </li>
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                var active = i == Model.PageIndex ? "active" : string.Empty;
+                                <li>
+                                    <a class="@active"
+                                       asp-area=""
+                                       asp-controller="Products"
+                                       asp-action="All"
+                                       asp-route-page="@i">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="All"
+                                   asp-route-page="@Model.NextPage">
+                                    &raquo;
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            }
+            else if (Model.TotalPages > 0 && Model.Search != null)
+            {
+                <div class="text-center">
+                    <nav>
+                        <ul class="pagination mb-4">
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="All"
+                                   asp-route-search="@Model.Search"
+                                   asp-route-page="@Model.PreviousPage">
+                                    &laquo;
+                                </a>
+                            </li>
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                var active = i == Model.PageIndex ? "active" : string.Empty;
+                                <li>
+                                    <a class="@active"
+                                       asp-area=""
+                                       asp-controller="Products"
+                                       asp-action="All"
+                                       asp-route-search="@Model.Search"
+                                       asp-route-page="@i">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="All"
+                                   asp-route-search="@Model.Search"
+                                   asp-route-page="@Model.NextPage">
+                                    &raquo;
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            }
+
+            @foreach (var product in Model.Products)
+            {
+                var className = "tt-item";
+
+
+                <div class="@className">
+                    <div class="tt-col-avatar">
+                        <img class="tt-icon" src="@product.Pic">
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title">
+                            <a asp-area=""
+                               asp-controller="Products"
+                               asp-action="Details"
+                               asp-route-id="@product.Id">
+                                @product.Name
+                            </a>
+                        </h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile">
+                                        <span class="tt-color01 tt-badge">Налично</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category">
+                        <span class="tt-color01 tt-badge">Налично</span>
+
+                    </div>
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        <div class="tt-col-value hide-mobile">@product.Price</div>
+                    }
+
+                </div>
+            }
+
+            @if (Model.TotalPages > 0 && Model.Search == null)
+            {
+                <div class="text-center">
+                    <nav>
+                        <ul class="pagination mb-4">
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="All"
+                                   asp-route-page="@Model.PreviousPage">
+                                    &laquo;
+                                </a>
+                            </li>
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                var active = i == Model.PageIndex ? "active" : string.Empty;
+                                <li>
+                                    <a class="@active"
+                                       asp-area=""
+                                       asp-controller="Products"
+                                       asp-action="All"
+                                       asp-route-page="@i">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="All"
+                                   asp-route-page="@Model.NextPage">
+                                    &raquo;
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            }
+            else if (Model.TotalPages > 0 && Model.Search != null)
+            {
+                <div class="text-center">
+                    <nav>
+                        <ul class="pagination mb-4">
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="All"
+                                   asp-route-search="@Model.Search"
+                                   asp-route-page="@Model.PreviousPage">
+                                    &laquo;
+                                </a>
+                            </li>
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                var active = i == Model.PageIndex ? "active" : string.Empty;
+                                <li>
+                                    <a class="@active"
+                                       asp-area=""
+                                       asp-controller="Products"
+                                       asp-action="All"
+                                       asp-route-search="@Model.Search"
+                                       asp-route-page="@i">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="All"
+                                   asp-route-search="@Model.Search"
+                                   asp-route-page="@Model.NextPage">
+                                    &raquo;
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="tt-layout-404">
+                <h6 class="tt-title">No posts found</h6>
+            </div>
+        }
+
+    </nav>
+</div>

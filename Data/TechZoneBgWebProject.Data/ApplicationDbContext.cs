@@ -30,6 +30,8 @@
 
         public DbSet<Post> Posts { get; set; }
 
+        public DbSet<Product> Products { get; set; }
+
         public DbSet<PostReaction> PostReactions { get; set; }
 
         public DbSet<PostReport> PostReports { get; set; }

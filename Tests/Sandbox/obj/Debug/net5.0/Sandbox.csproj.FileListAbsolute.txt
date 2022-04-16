@@ -144,3 +144,8 @@ C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\obj\Debug
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\obj\Debug\net5.0\ref\Sandbox.dll
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\obj\Debug\net5.0\Sandbox.pdb
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\obj\Debug\net5.0\Sandbox.genruntimeconfig.cache
+D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\AngleSharp.dll
+D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\AngleSharp.Css.dll
+D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\HtmlSanitizer.dll
+D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.dll
+D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.pdb

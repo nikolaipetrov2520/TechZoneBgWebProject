@@ -22,6 +22,7 @@
     using TechZoneBgWebProject.Web.ViewModels.Users;
     using TechZoneBgWebProject.Web.ViewModels.Roles;
     using Microsoft.AspNetCore.Identity;
+    using TechZoneBgWebProject.Web.ViewModels.Products;
 
     public class TechZoneBgProfile : Profile
     {
@@ -174,6 +175,7 @@
                 .ForMember(
                 dest => dest.Role,
                 dest => dest.MapFrom(src => src.Name.ToString()));
+            this.CreateMap<Product, ProductsListingViewModel>();
         }
     }
 }
