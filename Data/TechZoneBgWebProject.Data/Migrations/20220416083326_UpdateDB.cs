@@ -15,9 +15,9 @@ namespace TechZoneBgWebProject.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Barcode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Pic = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Pic = table.Column<string>(type: "decimal(18, 2)", nullable: true),
                     ProductId = table.Column<int>(type: "int", nullable: false),
-                    InStock = table.Column<bool>(type: "bit", nullable: false)
+                    InStock = table.Column<bool>(type: "bit", nullable: false),
                 },
                 constraints: table =>
                 {

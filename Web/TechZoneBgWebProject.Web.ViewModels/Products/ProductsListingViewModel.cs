@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TechZoneBgWebProject.Web.ViewModels.Products
+﻿namespace TechZoneBgWebProject.Web.ViewModels.Products
 {
     public class ProductsListingViewModel
     {
@@ -10,7 +6,7 @@ namespace TechZoneBgWebProject.Web.ViewModels.Products
 
         public string Name { get; set; }
 
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         public string Barcode { get; set; }
 

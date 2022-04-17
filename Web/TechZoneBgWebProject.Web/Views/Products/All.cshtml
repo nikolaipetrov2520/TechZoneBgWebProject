@@ -116,38 +116,39 @@
                 var className = "tt-item";
 
 
-                <div class="@className">
-                    <div class="tt-col-avatar">
-                        <img class="tt-icon" src="@product.Pic">
-                    </div>
-                    <div class="tt-col-description">
-                        <h6 class="tt-title">
-                            <a asp-area=""
-                               asp-controller="Products"
-                               asp-action="Details"
-                               asp-route-id="@product.Id">
-                                @product.Name
-                            </a>
-                        </h6>
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-11">
-                                <ul class="tt-list-badge">
-                                    <li class="show-mobile">
-                                        <span class="tt-color01 tt-badge">Налично</span>
-                                    </li>
-                                </ul>
+                <div class="@className product">
+                    <a>
+                        <div class="tt-col-avatar">
+                            <img class="tt-icon" src="@product.Pic">
+                        </div>
+                        <div class="tt-col-description">
+                            <h6 class="tt-title">
+                                <a asp-area=""
+                                   asp-controller="Products"
+                                   asp-action="Details"
+                                   asp-route-id="@product.Id">
+                                    @product.Name
+                                </a>
+                            </h6>
+                            <div class="row align-items-center no-gutters">
+                                <div class="col-11">
+                                    <ul class="tt-list-badge">
+                                        <li class="show-mobile">
+                                            <span class="tt-color01 tt-badge">Налично</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tt-col-category">
-                        <span class="tt-color01 tt-badge">Налично</span>
+                        <div class="tt-col-category">
+                            <span class="tt-color01 tt-badge">Налично</span>
 
-                    </div>
-                    @if (this.User.Identity.IsAuthenticated)
-                    {
-                        <div class="tt-col-value hide-mobile">@product.Price</div>
-                    }
-
+                        </div>
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            <div class="tt-col-value hide-mobile">@product.Price лв.</div>
+                        }
+                    </a>
                 </div>
             }
 

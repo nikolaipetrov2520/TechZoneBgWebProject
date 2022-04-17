@@ -7646,6 +7646,14 @@ hr {
     box-shadow: 0px 9px 13px -4px;
 }
 
+.product {
+    transition: transform .2s;
+}
+
+.product:hover {
+    zoom: 1.1;
+}
+
 .tt-topic-list .tt-item .tt-col-avatar .tt-icon {
     width: 200px;
     height: 200px;
