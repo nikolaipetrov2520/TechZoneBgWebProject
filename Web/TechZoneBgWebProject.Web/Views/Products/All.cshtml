@@ -204,20 +204,20 @@
                 var className = "tt-item";
 
 
-                <div class="@className product">
-                    <a>
+                <div class="@className">
+                    <a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
                         <div class="tt-col-avatar">
                             <img class="tt-icon" src="@product.Pic">
                         </div>
-                        <div class="tt-col-description">
-                            <h6 class="tt-title">
-                                <a asp-area=""
+                        <div class="tt-col-description" style="height: 85px;">
+                            <div class="tt-title">
+                                <div style="font-size: 14px" asp-area=""
                                    asp-controller="Products"
                                    asp-action="Details"
                                    asp-route-id="@product.Id">
                                     @product.Name
-                                </a>
-                            </h6>
+                                </div>
+                            </div>
                             <div class="row align-items-center no-gutters">
                                 <div class="col-11">
                                     <ul class="tt-list-badge">
@@ -229,12 +229,12 @@
                             </div>
                         </div>
                         <div class="tt-col-category">
-                            <span class="tt-color01 tt-badge">Налично</span>
-
+                            <span class="tt-color13 tt-badge">Налично</span>
+                            <div class="tt-color01 tt-badge">Поръчай</div>
                         </div>
                         @if (this.User.Identity.IsAuthenticated)
                         {
-                            <div class="tt-col-value hide-mobile">@product.Price лв.</div>
+                            <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@product.Price лв.</div>
                         }
                     </a>
                 </div>

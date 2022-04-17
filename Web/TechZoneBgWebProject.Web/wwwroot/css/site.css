@@ -7624,35 +7624,47 @@ hr {
 
 .tt-topic-list .tt-item:nth-child(even):not(.tt-itemselect):not(.tt-item-popup) {
     background-color: #fff;
+    display: inline-block;
+    width: 29%;
+    height: 385px;
     border-radius: 4px;
     border: solid 1px #cbcbcb;
     margin: 20px;
-    display: inline-block;
-    width: 29%;
     text-align: center;
-    height: 385px;
     box-shadow: 0px 9px 13px -4px;
+    transition: transform .4s;
 }
 
 .tt-topic-list .tt-item:nth-child(odd):not(.tt-itemselect):not(.tt-item-popup) {
     background-color: #ffffff;
+    display: inline-block;
+    width: 29%;
+    height: 385px;
     border-radius: 4px;
     border: solid 1px #cbcbcb;
     margin: 20px;
-    display: inline-block;
-    width: 29%;
     text-align: center;
-    height: 385px;
     box-shadow: 0px 9px 13px -4px;
+    transition: transform .4s;
+}
+@media (max-width: 767px) {
+    .tt-topic-list .tt-item:nth-child(even):not(.tt-itemselect):not(.tt-item-popup) {
+        width: 80%;
+    }
+
+    .tt-topic-list .tt-item:nth-child(odd):not(.tt-itemselect):not(.tt-item-popup) {
+        width: 80%;
+    }
 }
 
-.product {
-    transition: transform .2s;
+.tt-topic-list .tt-item:nth-child(even):hover {
+    transform: scale(1.1);
 }
 
-.product:hover {
-    zoom: 1.1;
+.tt-topic-list .tt-item:nth-child(odd):hover {
+    transform: scale(1.1);
 }
+
 
 .tt-topic-list .tt-item .tt-col-avatar .tt-icon {
     width: 200px;
@@ -7682,8 +7694,8 @@ hr {
 
 @media (max-width: 575px) {
     .tt-topic-list .tt-item .tt-col-avatar .tt-icon {
-        width: 30px;
-        height: 30px;
+        width: 100px;
+        height: 100px;
     }
 }
 

@@ -54,7 +54,7 @@
             public const string Itninews = "itninews.com";
             public const string Kaldata = "kaldata.com";
             public const string HiCommUrl = "https://hicomm.bg";
-            public const string ItninewsUrl = "https://wwwitninews.com";
+            public const string ItninewsUrl = "https://www.itninews.com";
             public const string KaldataUrl = "https://www.kaldata.com";
         }
 
