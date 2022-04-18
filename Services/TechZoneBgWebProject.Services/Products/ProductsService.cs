@@ -31,7 +31,12 @@
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                queryable = queryable.Where(p => p.Name.Contains(search));
+                var filters = search.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                foreach (var filter in filters)
+                {
+                    queryable = queryable
+                    .Where(t => t.Name.Contains(filter));
+                }
             }
 
             if (take.HasValue)
@@ -53,8 +58,12 @@
 
             if (!string.IsNullOrWhiteSpace(searchFilter))
             {
-                queryable = queryable
-                    .Where(t => t.Name.Contains(searchFilter));
+                var filters = searchFilter.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                foreach (var filter in filters)
+                {
+                    queryable = queryable
+                    .Where(t => t.Name.Contains(filter));
+                }
             }
 
             var count = await queryable.CountAsync();
