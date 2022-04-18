@@ -27,7 +27,7 @@
                 return this.View(new MainNewsComponentViewModel { MainNews = new List<MainNewsViewModel>() });
             }
 
-            var news = this.mainNewsRepository.All().OrderByDescending(x => x.Id).To<MainNewsViewModel>().ToList();
+            var news = this.mainNewsRepository.All().OrderByDescending(x => x.Id).To<MainNewsViewModel>().ToList().Take(8);
 
             var viewModel = new MainNewsComponentViewModel { MainNews = news };
 
