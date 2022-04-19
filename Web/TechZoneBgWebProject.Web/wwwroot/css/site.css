@@ -11392,3 +11392,11 @@ html.ie.gecko body.modal-open {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+.details {
+    border-top: solid 1px #d7d7d7;
+    padding-top: 10px;
+}
+.tt-details {
+    box-shadow: 0px 9px 20px 2px;
+    margin-top: 35px;
+}
