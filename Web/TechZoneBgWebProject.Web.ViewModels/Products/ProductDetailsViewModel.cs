@@ -1,6 +1,6 @@
 ﻿namespace TechZoneBgWebProject.Web.ViewModels.Products
 {
-    public class ProductsListingViewModel
+    public class ProductDetailsViewModel
     {
         public int Id { get; set; }
 
@@ -11,10 +11,5 @@
         public string Barcode { get; set; }
 
         public string Pic { get; set; }
-
-        public int ProductId { get; set; }
-
-        public bool InStock { get; set; }
-
     }
 }

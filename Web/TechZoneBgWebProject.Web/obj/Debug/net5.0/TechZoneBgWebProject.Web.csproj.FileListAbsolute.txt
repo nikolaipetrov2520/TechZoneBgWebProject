@@ -1573,3 +1573,6 @@ C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProjec
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Areas\Administration\Views\Role\All.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Products\All.cshtml.g.cs
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Shared\_LayoutSearchPartial.cshtml.g.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Products\All.cshtml.g.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Shared\_LayoutSearchPartial.cshtml.g.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Products\Details.cshtml.g.cs

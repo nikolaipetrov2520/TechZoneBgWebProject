@@ -23,7 +23,7 @@
                                     &laquo;
                                 </a>
                             </li>
-                            @if (Model.TotalPages < 3)
+                            @if (Model.TotalPages <= 3)
                             {
                                 @for (int i = 1; i <= Model.TotalPages; i++)
                                 {
@@ -169,7 +169,7 @@
                                     &laquo;
                                 </a>
                             </li>
-                            @if (Model.TotalPages < 3)
+                            @if (Model.TotalPages <= 3)
                             {
                                 @for (int i = 1; i <= Model.TotalPages; i++)
                                 {
@@ -373,7 +373,7 @@
                                     &laquo;
                                 </a>
                             </li>
-                            @if (Model.TotalPages < 3)
+                            @if (Model.TotalPages <= 3)
                             {
                                 @for (int i = 1; i <= Model.TotalPages; i++)
                                 {
@@ -519,7 +519,7 @@
                                     &laquo;
                                 </a>
                             </li>
-                            @if (Model.TotalPages < 3)
+                            @if (Model.TotalPages <= 3)
                             {
                                 @for (int i = 1; i <= Model.TotalPages; i++)
                                 {

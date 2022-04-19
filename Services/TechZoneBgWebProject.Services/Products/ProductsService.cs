@@ -51,6 +51,13 @@
             return products;
         }
 
+        public async Task<TModel> GetByIdAsync<TModel>(int id)
+            => await this.db.Products
+                .AsNoTracking()
+                .Where(p => p.Id == id && p.InStock)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync();
+
         public async Task<int> GetCountAsync(string searchFilter = null)
         {
             var queryable = this.db.Products
@@ -70,5 +77,6 @@
 
             return count;
         }
+
     }
 }

@@ -1,0 +1,27 @@
+﻿@using TechZoneBgWebProject.Web.Infrastructure.Extensions
+@model TechZoneBgWebProject.Web.ViewModels.Products.ProductDetailsViewModel
+@{ ViewData["Title"] = Model.Name;
+}
+<br />
+<div class="container">
+    <div class="tt-single-topic-list" style="word-break: break-word;">
+        <div class="tt-item">
+            <div class="tt-single-topic">
+                <div class="tt-item-header">
+                    <div class="tt-item-info info-top">
+                    </div>
+                    <h3 class="tt-item-title">
+                        <a href="#">@Model.Name</a>
+                    </h3>
+                </div>
+                <div class="tt-item-description">
+                    <img src="@Model.Pic">
+                    <p>@Model.Barcode</p>
+                    <p>Налично</p>
+                    <p>@Model.Price</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

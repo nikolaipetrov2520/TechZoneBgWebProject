@@ -176,6 +176,7 @@
                 dest => dest.Role,
                 dest => dest.MapFrom(src => src.Name.ToString()));
             this.CreateMap<Product, ProductsListingViewModel>();
+            this.CreateMap<Product, ProductDetailsViewModel>();
         }
     }
 }
