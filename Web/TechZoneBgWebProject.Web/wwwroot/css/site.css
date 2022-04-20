@@ -160,6 +160,11 @@ ul.pagination {
             border: 1px solid #ddd;
             margin: 0 4px;
         }
+@media (max-width: 768px) {
+    ul.pagination li a {
+        padding: 8px 10px;
+    }
+}
 
             ul.pagination li a.active {
                 background-color: #bfbfbf;
