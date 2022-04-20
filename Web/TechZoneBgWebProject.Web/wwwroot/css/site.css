@@ -162,7 +162,7 @@ ul.pagination {
         }
 @media (max-width: 768px) {
     ul.pagination li a {
-        padding: 8px 10px;
+        padding: 8px 5px;
     }
 }
 
