@@ -12,7 +12,7 @@
 
     public class ProductsController : BaseController
     {
-        private const int PostsPerPage = 18;
+        private const int PostsPerPage = 36;
 
         private readonly IProductsService productsService;
 
