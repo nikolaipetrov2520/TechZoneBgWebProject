@@ -21,7 +21,7 @@
                     </h3>
                     <div class="details">
                         <span class="tt-color13 tt-badge">Налично</span>
-                        <div class="tt-color01 tt-badge">Поръчай</div>
+                        <div class="tt-color01 tt-badge" onclick="order(@Model.Id)">Поръчай</div>
                         <p>@Model.Barcode</p>
                     </div>
                 </div>
@@ -29,3 +29,19 @@
         </div>
     </div>
 </div>
+@section Scripts {
+    <script>
+        function order(id) {
+            $.ajax({
+                type: "GET",
+                url: "/Order/" + id,
+                success: function (json) {
+                    if (json === true) {
+                        $('#cartSum').html('Unpin');
+                    } else {
+                        $('#cartSum').html('поръчка');
+                    }
+                }
+            });
+        }
+    </script>}

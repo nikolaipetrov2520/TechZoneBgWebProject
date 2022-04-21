@@ -338,11 +338,11 @@
                                     @product.Name
                                 </div>
                             </div>
-                          
+
                         </div>
                         <div class="tt-col-category">
                             <span class="tt-color13 tt-badge">Налично</span>
-                            <div class="tt-color01 tt-badge">Поръчай</div>
+                            <div class="tt-color01 tt-badge" id="order">Поръчай</div>
                         </div>
                         @if (this.User.Identity.IsAuthenticated)
                         {
@@ -668,3 +668,22 @@
 
     </nav>
 </div>
+@*@section Scripts {
+    <script>
+        function order(id) {
+            document.getElementById('order');
+
+            $.ajax({
+                type: "GET",
+                url: "/Order/" + id,
+                success: function (json) {
+                    if (json === true) {
+                        $('#cartSum').html('Unpin');
+                    } else {
+                        $('#cartSum').html('поръчка');
+                    }
+                }
+            });
+        }
+    </script>
+}*@
