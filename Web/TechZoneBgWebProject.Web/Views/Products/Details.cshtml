@@ -20,9 +20,17 @@
                         @Model.Price лв.
                     </h3>
                     <div class="details">
-                        <span class="tt-color13 tt-badge">Налично</span>
-                        <div class="tt-color01 tt-badge" onclick="order(@Model.Id)">Поръчай</div>
-                        <p>@Model.Barcode</p>
+                        <a id="@Model.Id">
+                            <span class="tt-color13 tt-badge">Налично</span>
+                            <div class="tt-color01 tt-badge" id="btn">
+                                <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px;" class="add-to-cart-span">Добави в количка</span>
+                                <a class="add-to-cart-left">-</a>
+                                <input class="add-to-cart-quantity" type="text" name="quantity" value="1">
+                                <a class="add-to-cart-right">+</a>
+                            </div>
+                            <p>@Model.Barcode</p>
+                        </a>
+                       
                     </div>
                 </div>
             </div>
@@ -31,17 +39,37 @@
 </div>
 @section Scripts {
     <script>
-        function order(id) {
-            $.ajax({
-                type: "GET",
-                url: "/Order/" + id,
-                success: function (json) {
-                    if (json === true) {
-                        $('#cartSum').html('Unpin');
-                    } else {
-                        $('#cartSum').html('поръчка');
-                    }
+        $("a").click(function (e) {
+            if (e.target.className == "add-to-cart-quantity" || e.target.className == "add-to-cart-left" || e.target.className == "add-to-cart-span" || e.target.className == "add-to-cart-right") {
+                e.preventDefault();
+                if (e.target.className == "add-to-cart-left") {
+                    let quantity = e.target.offsetParent.childNodes[3];
+                    quantity.value = (Number(quantity.value) - 1).toString();
                 }
-            });
-        }
-    </script>}
+                if (e.target.className == "add-to-cart-right") {
+                    let quantity = e.target.offsetParent.childNodes[3];
+                    quantity.value = (Number(quantity.value) + 1).toString();
+                }
+                if (e.target.className == "add-to-cart-span") {
+                    let quantity = e.target.offsetParent.childNodes[3].value;
+                    alert(`поръчахте ${quantity} броя от продукт с Id ${e.currentTarget.id}`);
+
+                }
+
+            }
+
+            //$.ajax({
+            //    type: "GET",
+            //    url: "/",
+            //    success: function (json) {
+            //        if (json === true) {
+            //            $('#cartSum').html('Unpin');
+            //        } else {
+            //            $('#cartSum').html('поръчка');
+            //        }
+            //    }
+            //});
+        })
+
+    </script>
+}
