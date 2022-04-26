@@ -1,5 +1,7 @@
 ﻿namespace TechZoneBgWebProject.Data.Models
 {
+    using System.Collections.Generic;
+
     public class Product
     {
         public int Id { get; set; }
@@ -16,5 +18,6 @@
 
         public bool InStock { get; set; }
 
+        public ICollection<Cart> Carts { get; set; } = new HashSet<Cart>();
     }
 }
