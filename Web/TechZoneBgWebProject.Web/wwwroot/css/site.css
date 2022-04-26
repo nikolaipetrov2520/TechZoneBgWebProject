@@ -7831,7 +7831,7 @@ hr {
 
 @media (max-width: 991px) {
     .tt-topic-list .tt-item .tt-col-category:not(.tt-col-value-large) {
-        width: 23%;
+        width: 70%;
     }
 }
 
@@ -8491,7 +8491,7 @@ hr {
 
 .tt-badge {
     font-size: 14px;
-    padding: 1px 7px 2px;
+    padding: 2px 7px 2px;
     color: #ffffff;
     line-height: 1;
     font-weight: 500;

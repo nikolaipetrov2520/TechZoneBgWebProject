@@ -342,12 +342,21 @@
                         </div>
                         <div class="tt-col-category">
                             <span class="tt-color13 tt-badge">Налично</span>
-                            <div class="tt-color01 tt-badge" id="btn">
-                                <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px;" class="add-to-cart-span">Добави в количка</span>
-                                <a class="add-to-cart-left">-</a>
-                                <input class="add-to-cart-quantity" type="text" name="quantity" value="1">
-                                <a class="add-to-cart-right">+</a>
-                            </div>
+                            @if (this.User.Identity.IsAuthenticated)
+                            {
+                                <div class="tt-color01 tt-badge">
+                                    <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px;" class="add-to-cart-span">Добави в количка</span>
+                                    <a class="add-to-cart-left">-</a>
+                                    <input class="add-to-cart-quantity" type="text" name="quantity" value="1">
+                                    <a class="add-to-cart-right">+</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div style=" background-color: grey;color: black" class="tt-color01 tt-badge">
+                                    <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px;" class="add-to-cart-span">Регистрирайте се, за да поръчате</span>
+                                </div>
+                            }
                         </div>
                         @if (this.User.Identity.IsAuthenticated)
                         {
