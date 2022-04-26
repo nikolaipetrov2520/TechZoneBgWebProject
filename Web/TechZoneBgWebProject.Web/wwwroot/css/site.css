@@ -7831,7 +7831,7 @@ hr {
 
 @media (max-width: 991px) {
     .tt-topic-list .tt-item .tt-col-category:not(.tt-col-value-large) {
-        width: 70%;
+        width: 100%;
     }
 }
 
