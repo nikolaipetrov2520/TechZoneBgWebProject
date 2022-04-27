@@ -27,7 +27,7 @@
 
         public int Points { get; set; }
 
-        public string Biography { get; set; }
+        public string Address { get; set; }
 
         public string ProfilePicture { get; set; }
 

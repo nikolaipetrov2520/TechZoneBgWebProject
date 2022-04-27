@@ -149,3 +149,8 @@ D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\AngleSharp.Css.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\HtmlSanitizer.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.dll
 D:\TechZoneBG\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.pdb
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\bin\Debug\net5.0\AngleSharp.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\bin\Debug\net5.0\AngleSharp.Css.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\bin\Debug\net5.0\HtmlSanitizer.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\Sandbox\bin\Debug\net5.0\TechZoneBgWebProject.Web.ViewModels.pdb

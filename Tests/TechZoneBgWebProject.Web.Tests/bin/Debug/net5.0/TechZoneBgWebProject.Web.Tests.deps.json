@@ -3502,7 +3502,8 @@
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "TechZoneBgWebProject.Data": "1.0.0",
           "TechZoneBgWebProject.Data.Models": "1.0.0",
-          "TechZoneBgWebProject.Services.Mapping": "1.0.0"
+          "TechZoneBgWebProject.Services.Mapping": "1.0.0",
+          "TechZoneBgWebProject.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "TechZoneBgWebProject.Services.dll": {}

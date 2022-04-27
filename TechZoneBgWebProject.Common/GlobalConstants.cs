@@ -131,7 +131,7 @@
 
         public class Register
         {
-            public const int UserBiographyMaxLength = 250;
+            public const int UserAddressMaxLength = 250;
         }
 
         public class Post

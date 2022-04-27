@@ -11,8 +11,8 @@
         public void Configure(EntityTypeBuilder<ApplicationUser> user)
         {
             user
-                .Property(u => u.Biography)
-                .HasMaxLength(GlobalConstants.Register.UserBiographyMaxLength);
+                .Property(u => u.Address)
+                .HasMaxLength(GlobalConstants.Register.UserAddressMaxLength);
 
             user
                 .HasMany(e => e.Claims)
