@@ -19,21 +19,6 @@ namespace TechZoneBgWebProject.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("CartProduct", b =>
-                {
-                    b.Property<int>("CartsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CartsId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CartProduct");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -313,6 +298,24 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.HasIndex("AuthorId");
 
                     b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.CartProduct", b =>
+                {
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("CartId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartProduct");
                 });
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Category", b =>
@@ -823,21 +826,6 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.ToTable("UsersFollowers");
                 });
 
-            modelBuilder.Entity("CartProduct", b =>
-                {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.Cart", null)
-                        .WithMany()
-                        .HasForeignKey("CartsId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("TechZoneBgWebProject.Data.Models.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationRole", null)
@@ -896,6 +884,25 @@ namespace TechZoneBgWebProject.Data.Migrations
                         .HasForeignKey("AuthorId");
 
                     b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.CartProduct", b =>
+                {
+                    b.HasOne("TechZoneBgWebProject.Data.Models.Cart", "Cart")
+                        .WithMany("Products")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TechZoneBgWebProject.Data.Models.Product", "Product")
+                        .WithMany("Carts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.MainNews", b =>
@@ -1114,6 +1121,11 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Navigation("SentMessages");
                 });
 
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Cart", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Category", b =>
                 {
                     b.Navigation("Posts");
@@ -1133,6 +1145,11 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Navigation("Reports");
 
                     b.Navigation("Tags");
+                });
+
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Product", b =>
+                {
+                    b.Navigation("Carts");
                 });
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Reply", b =>

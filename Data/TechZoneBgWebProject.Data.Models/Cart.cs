@@ -15,7 +15,7 @@
 
         public DateTime? DeletedOn { get; set; }
 
-        public ICollection<Product> Products { get; set; } = new HashSet<Product>();
+        public ICollection<CartProduct> Products { get; set; } = new HashSet<CartProduct>();
 
         public string AuthorId { get; set; }
 

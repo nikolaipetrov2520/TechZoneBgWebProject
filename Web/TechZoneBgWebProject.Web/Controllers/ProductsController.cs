@@ -12,7 +12,7 @@
 
     public class ProductsController : BaseController
     {
-        private const int PostsPerPage = 36;
+        private const int ProductsPerPage = 36;
 
         private readonly IProductsService productsService;
 
@@ -24,16 +24,16 @@
         [AllowAnonymous]
         public async Task<IActionResult> All(int page = 1, string search = null)
         {
-            var skip = (page - 1) * PostsPerPage;
+            var skip = (page - 1) * ProductsPerPage;
             var count = await this.productsService.GetCountAsync(search);
-            var products = await this.productsService.GetAllAsync<ProductsListingViewModel>(search, skip, PostsPerPage);
+            var products = await this.productsService.GetAllAsync<ProductsListingViewModel>(search, skip, ProductsPerPage);
 
             var viewModel = new ProductAllViewModel
             {
                 Products = products,
                 Search = search,
                 PageIndex = page,
-                TotalPages = (int)Math.Ceiling(count / (decimal)PostsPerPage),
+                TotalPages = (int)Math.Ceiling(count / (decimal)ProductsPerPage),
             };
 
             return this.View(viewModel);

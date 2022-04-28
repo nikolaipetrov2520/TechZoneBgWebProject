@@ -18,6 +18,7 @@
     using TechZoneBgWebProject.Data.Models;
     using TechZoneBgWebProject.Data.Repositories;
     using TechZoneBgWebProject.Data.Seeding;
+    using TechZoneBgWebProject.Services.Carts;
     using TechZoneBgWebProject.Services.Categories;
     using TechZoneBgWebProject.Services.Mapping;
     using TechZoneBgWebProject.Services.Messages;
@@ -86,6 +87,7 @@
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IRolesService, RolesService>();
             services.AddTransient<IProductsService, ProductsService>();
+            services.AddTransient<ICartsService, CartsService>();
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TechZoneBgProfile());

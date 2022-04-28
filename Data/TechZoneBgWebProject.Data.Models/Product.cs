@@ -18,6 +18,6 @@
 
         public bool InStock { get; set; }
 
-        public ICollection<Cart> Carts { get; set; } = new HashSet<Cart>();
+        public ICollection<CartProduct> Carts { get; set; } = new HashSet<CartProduct>();
     }
 }

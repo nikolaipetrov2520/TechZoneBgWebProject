@@ -34,6 +34,8 @@
 
         public DbSet<Cart> Carts { get; set; }
 
+        public DbSet<CartProduct> CartProduct { get; set; }
+
         public DbSet<PostReaction> PostReactions { get; set; }
 
         public DbSet<PostReport> PostReports { get; set; }
