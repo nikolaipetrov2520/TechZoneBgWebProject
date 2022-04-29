@@ -18,7 +18,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     AuthorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsFinished = table.Column<bool>(type: "bit", nullable: false),
                     IsSend = table.Column<bool>(type: "bit", nullable: false),
                 },

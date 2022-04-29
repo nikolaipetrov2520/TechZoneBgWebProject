@@ -308,6 +308,9 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 

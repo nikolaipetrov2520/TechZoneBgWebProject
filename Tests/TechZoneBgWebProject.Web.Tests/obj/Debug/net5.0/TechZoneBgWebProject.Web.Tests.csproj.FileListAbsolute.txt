@@ -1143,4 +1143,3 @@ C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProj
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\ref\TechZoneBgWebProject.Web.Tests.dll
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Web.Tests.pdb
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProject.Web.Tests\obj\Debug\net5.0\TechZoneBgWebProject.Web.Tests.genruntimeconfig.cache
-C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Tests\TechZoneBgWebProject.Web.Tests\bin\Debug\net5.0\TechZoneBgWebProject.Web.StaticWebAssets.xml

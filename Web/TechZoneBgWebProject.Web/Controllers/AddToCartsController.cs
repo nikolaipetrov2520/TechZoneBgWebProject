@@ -22,8 +22,9 @@
         {
             int id = input.Id;
             int quantity = input.Quantity;
+            string userId = this.User.GetId();
 
-            string result = await this.cartsService.AddCartAsync(id, quantity);
+            string result = await this.cartsService.AddCartAsync(id, quantity, userId);
 
             var model = new CartAddModel
             {
