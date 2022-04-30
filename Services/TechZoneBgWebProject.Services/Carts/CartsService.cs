@@ -8,8 +8,7 @@
 
     using TechZoneBgWebProject.Data;
     using TechZoneBgWebProject.Data.Models;
-    using TechZoneBgWebProject.Services.Providers;
-    using TechZoneBgWebProject.Services.Users;
+
     using Microsoft.EntityFrameworkCore;
 
     public class CartsService : ICartsService
@@ -23,20 +22,48 @@
 
         public async Task<string> AddCartAsync(int id, int quantity, string userId)
         {
-            var cart = this.db.Carts.FirstOrDefault(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
+            if (quantity < 1)
+            {
+                quantity = 1;
+            }
+
+            var cart = this.db.Carts.Include(c => c.Products).FirstOrDefault(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
 
             if (cart != null)
             {
-                var product = new CartProduct
-                {
-                    ProductId = id,
-                    Quantity = quantity,
-                    CartId = cart.Id,
-                    IsDeleted = false,
-                };
+                var existedProduct = cart.Products.FirstOrDefault(x => x.ProductId == id);
 
-                await this.db.CartProduct.AddAsync(product);
-                await this.db.SaveChangesAsync();
+                if (existedProduct != null)
+                {
+                    if (existedProduct.IsDeleted == true)
+                    {
+                        existedProduct.IsDeleted = false;
+                        existedProduct.Quantity = quantity;
+
+                        await this.db.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        existedProduct.Quantity += quantity;
+                        await this.db.SaveChangesAsync();
+                    }
+                }
+                else
+                {
+                    var product = new CartProduct
+                    {
+                        ProductId = id,
+                        Quantity = quantity,
+                        CartId = cart.Id,
+                        IsDeleted = false,
+                    };
+
+                    await this.db.CartProduct.AddAsync(product);
+                    await this.db.SaveChangesAsync();
+                }
+
+
+
             }
             else
             {
