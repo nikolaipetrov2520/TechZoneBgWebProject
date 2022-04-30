@@ -26,5 +26,7 @@
         public bool IsFinished { get; set; }
 
         public bool IsSend { get; set; }
+
+        public string Comment { get; set; }
     }
 }
