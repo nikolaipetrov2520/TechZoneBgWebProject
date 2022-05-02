@@ -10,5 +10,7 @@
         Task<List<TModel>> GetAllAsync<TModel>(string search = null, int skip = 0, int? take = null);
 
         Task<TModel> GetByIdAsync<TModel>(int id);
+
+        Task<IEnumerable<TModel>> GetProductsBiCartIdAsync<TModel>(int id);
     }
 }

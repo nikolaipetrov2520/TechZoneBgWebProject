@@ -7652,6 +7652,17 @@ hr {
     box-shadow: 0px 9px 13px -4px;
     transition: transform .4s;
 }
+.tt-topic-listCart .tt-itemCart:nth-child(odd):not(.tt-itemselect):not(.tt-item-popup) {
+    margin-top: 80px;
+    background-color: #ffffff;
+    display: inline-block;
+    width: 100%;
+    border-radius: 4px;
+    border: solid 1px #cbcbcb;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0px 9px 13px -4px;
+}
 
 @media (max-width: 1447px) {
     .tt-topic-list .tt-item:nth-child(even):not(.tt-itemselect):not(.tt-item-popup) {

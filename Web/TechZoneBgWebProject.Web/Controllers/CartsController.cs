@@ -7,6 +7,7 @@
 
     using Microsoft.AspNetCore.Mvc;
     using TechZoneBgWebProject.Services.Carts;
+    using TechZoneBgWebProject.Services.Products;
     using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.ViewModels.Carts;
 
@@ -16,27 +17,27 @@
         private const int PostsPerPage = 36;
 
         private readonly ICartsService cartsService;
+        private readonly IProductsService productsService;
 
-        public CartsController(ICartsService cartsService)
+        public CartsController(ICartsService cartsService, IProductsService productsService)
         {
             this.cartsService = cartsService;
+            this.productsService = productsService;
         }
 
-        //public async Task<IActionResult> Cart()
-        //{
-        //    var carts = await this.cartsService.GetUnfinishedCartAsync(this.User.GetId());
+        public async Task<IActionResult> Cart()
+        {
+            var cart = await this.cartsService.GetUnfinishedCartAsync<CartsListingViewModel>(this.User.GetId());
 
-        //    if (carts.Count > 0)
-        //    {
-        //        var cart = carts[0];
-        //        viewModel = new CartsListingViewModel
-        //        {
-        //            Id = cart.Id,
-                    
-        //        };
-        //    }
+            if (cart == null)
+            {
+                return this.NotFound();
+            }
 
-        //    return this.View(viewModel);
-        //}
+            //cart.Products = await this.productsService.GetProductsBiCartIdAsync<CartProductsViewModel>(cart.Id);
+
+
+            return this.View(cart);
+        }
     }
 }

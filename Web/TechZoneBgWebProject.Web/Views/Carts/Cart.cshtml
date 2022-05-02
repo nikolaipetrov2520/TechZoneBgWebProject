@@ -1,0 +1,45 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Carts.CartsListingViewModel
+@{
+    ViewData["Title"] = "Количка";
+}
+
+<div class="container">
+    <nav class="tt-topic-listCart" style="word-break: break-word;">
+
+        @if (Model.Products.Any())
+        {
+            @foreach (var item in Model.Products)
+            {
+                var className = "tt-itemCart";
+
+                <div className="@className">
+                    <a id="@item.Id" asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">
+                        <div class="tt-col-description" style="height: 85px;">
+                            <div class="tt-title">
+                                <div style="font-size: 14px" asp-area=""
+                                     asp-controller="Products"
+                                     asp-action="Details"
+                                     asp-route-id="@item.Id">
+                                    @item.Name
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@item.Price лв.</div>
+                        <div class="tt-color01 tt-badge">
+                            <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px;" class="add-to-cart-span">Брой</span>
+                            <a class="add-to-cart-left">-</a>
+                            <input class="add-to-cart-quantity" type="text" name="quantity" value="@item.Quantity">
+                            <a class="add-to-cart-right">+</a>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="tt-layout-404">
+                <h6 class="tt-title">Няма продукти в кошницата</h6>
+            </div>
+        }
+    </nav>
+</div>

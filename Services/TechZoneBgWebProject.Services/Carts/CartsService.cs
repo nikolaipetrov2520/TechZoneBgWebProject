@@ -6,18 +6,21 @@
     using System.Text;
     using System.Threading.Tasks;
 
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
+    using Microsoft.EntityFrameworkCore;
     using TechZoneBgWebProject.Data;
     using TechZoneBgWebProject.Data.Models;
-
-    using Microsoft.EntityFrameworkCore;
 
     public class CartsService : ICartsService
     {
         private readonly ApplicationDbContext db;
+        private readonly IMapper mapper;
 
-        public CartsService(ApplicationDbContext db)
+        public CartsService(ApplicationDbContext db, IMapper mapper)
         {
             this.db = db;
+            this.mapper = mapper;
         }
 
         public async Task<string> AddCartAsync(int id, int quantity, string userId)
@@ -27,7 +30,7 @@
                 quantity = 1;
             }
 
-            var cart = this.db.Carts.Include(c => c.Products).FirstOrDefault(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
+            var cart = await this.db.Carts.Include(c => c.Products).FirstOrDefaultAsync(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
 
             if (cart != null)
             {
@@ -92,7 +95,7 @@
             }
 
             var result = 0m;
-            var queriable = this.db.Carts.Include(c => c.Products).ThenInclude(p => p.Product).FirstOrDefault(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
+            var queriable = await this.db.Carts.Include(c => c.Products).ThenInclude(p => p.Product).FirstOrDefaultAsync(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
             if (queriable != null)
             {
                 var products = queriable.Products.Where(p => !p.IsDeleted).ToList();
@@ -107,11 +110,15 @@
             return stringResult;
         }
 
-        public async Task<List<Cart>> GetUnfinishedCartAsync(string id)
+        public async Task<TModel> GetUnfinishedCartAsync<TModel>(string id)
         {
-            var carts = this.db.Carts.Where(x => x.AuthorId == id && !x.IsFinished && !x.IsDeleted).ToList();
+            var cart = await this.db.Carts
+                .AsNoTracking()
+                .Where(x => x.AuthorId == id && !x.IsDeleted && !x.IsFinished && !x.IsSend)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync();
 
-            return carts;
+            return cart;
         }
 
         public string GetSum(string id)

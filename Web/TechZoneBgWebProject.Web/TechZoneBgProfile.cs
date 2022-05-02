@@ -23,6 +23,7 @@
     using TechZoneBgWebProject.Web.ViewModels.Roles;
     using Microsoft.AspNetCore.Identity;
     using TechZoneBgWebProject.Web.ViewModels.Products;
+    using TechZoneBgWebProject.Web.ViewModels.Carts;
 
     public class TechZoneBgProfile : Profile
     {
@@ -177,6 +178,23 @@
                 dest => dest.MapFrom(src => src.Name.ToString()));
             this.CreateMap<Product, ProductsListingViewModel>();
             this.CreateMap<Product, ProductDetailsViewModel>();
+            this.CreateMap<Cart, CartsListingViewModel>();
+            this.CreateMap<CartProduct, CartProductsViewModel>()
+                .ForMember(
+                dest => dest.Price,
+                dest => dest.MapFrom(src => src.Product.Price))
+                .ForMember(
+                dest => dest.Barcode,
+                dest => dest.MapFrom(src => src.Product.Barcode))
+                .ForMember(
+                dest => dest.Name,
+                dest => dest.MapFrom(src => src.Product.Name))
+                .ForMember(
+                dest => dest.Id,
+                dest => dest.MapFrom(src => src.Product.Id))
+                .ForMember(
+                dest => dest.Pic,
+                dest => dest.MapFrom(src => src.Product.Pic));
         }
     }
 }

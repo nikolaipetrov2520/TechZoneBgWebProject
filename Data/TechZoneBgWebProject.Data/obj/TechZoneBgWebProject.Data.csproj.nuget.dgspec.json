@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {}
+    "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj": {
+    "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj",
+        "projectUniqueName": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj",
         "projectName": "TechZoneBgWebProject.Data.Common",
-        "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj",
+        "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\obj\\",
+        "outputPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -70,26 +72,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
+    "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj",
+        "projectUniqueName": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj",
         "projectName": "TechZoneBgWebProject.Data.Models",
-        "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj",
+        "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\obj\\",
+        "outputPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -102,8 +106,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj"
+              "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj"
               }
             }
           }
@@ -144,26 +148,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
+    "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj",
+        "projectUniqueName": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj",
         "projectName": "TechZoneBgWebProject.Data",
-        "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj",
+        "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\TechZoneBgWebProject.Data.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data\\obj\\",
+        "outputPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -176,14 +182,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj"
+              "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj"
               },
-              "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
+              "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj": {
+                "projectPath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Models\\TechZoneBgWebProject.Data.Models.csproj"
               },
-              "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj"
+              "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj": {
+                "projectPath": "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj"
               }
             }
           }
@@ -244,26 +250,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj": {
+    "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj",
+        "projectUniqueName": "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj",
         "projectName": "TechZoneBgWebProject.Common",
-        "projectPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj",
+        "projectPath": "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\TechZoneBgWebProject.Common.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\TechZoneBgWebProject.Common\\obj\\",
+        "outputPath": "D:\\TechZoneBG\\TechZoneBgWebProject.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -310,7 +318,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -30,7 +30,7 @@
             var sum = this.cartsService.GetSum(id);
             var viewModel = new CartsSumViewModel
             {
-                Sum = sum,
+                Sum = sum.ToString(),
             };
 
             return this.View(viewModel);

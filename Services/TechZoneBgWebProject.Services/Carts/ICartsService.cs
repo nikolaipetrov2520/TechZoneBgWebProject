@@ -9,7 +9,7 @@
 
     public interface ICartsService
     {
-        Task<List<Cart>> GetUnfinishedCartAsync(string id);
+        Task<TModel> GetUnfinishedCartAsync<TModel>(string id);
 
         Task<string> AddCartAsync(int id, int quantity, string userId);
 

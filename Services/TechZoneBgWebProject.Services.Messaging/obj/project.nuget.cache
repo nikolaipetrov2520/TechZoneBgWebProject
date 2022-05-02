@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "admrprP3O9cJ1UHBt17m2bcCNB/oqwLih+LnIedxYdQiN5AoSq2PbLZiOFERmYi9C87X2xXZ5Q8F5pgKjtvbOw==",
+  "dgSpecHash": "q2pCtqK8SwWDLekoQ9IAMa+rSvHqovMnjUWJrsfrobhYQmtsjWrai6oP88tRRuzUhYceDYi+Ok8CkcsoFiyFfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj",
+  "projectFilePath": "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services.Messaging\\TechZoneBgWebProject.Services.Messaging.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
