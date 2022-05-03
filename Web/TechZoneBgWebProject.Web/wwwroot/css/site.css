@@ -7694,6 +7694,7 @@ table th {
 
 .cart-product{
     max-width: 550px;
+    min-width: 545px;
 }
 
 @media(max-width: 991px) {
@@ -7717,6 +7718,7 @@ table th {
     }
     .cart-product {
         max-width: 145px;
+        min-width: 140px;
     }
 }
 
