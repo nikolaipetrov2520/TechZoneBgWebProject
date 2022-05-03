@@ -31,11 +31,11 @@
 
             if (cart == null)
             {
-                return this.NotFound();
+                cart = new CartsListingViewModel
+                {
+                    Id = 0,
+                };
             }
-
-            //cart.Products = await this.productsService.GetProductsBiCartIdAsync<CartProductsViewModel>(cart.Id);
-
 
             return this.View(cart);
         }

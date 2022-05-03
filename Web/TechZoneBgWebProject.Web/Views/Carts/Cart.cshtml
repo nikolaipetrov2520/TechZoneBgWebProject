@@ -6,7 +6,7 @@
 <div class="containerCart" style=" margin-top: 50px; margin-bottom: 50px;">
     <nav class="tt-topic-listCart" style="word-break: break-word;">
 
-        @if (Model.Products.Any())
+        @if (Model.Id > 0)
         {
             decimal totalSum = 0m;
             <h2 style="text-align:center; padding-bottom:40px;">Преглед на поръчката</h2>
@@ -74,8 +74,8 @@
         }
         else
         {
-            <div class="tt-layout-404">
-                <h6 class="tt-title">Няма продукти в кошницата</h6>
+            <div>
+                <h3 class="tt-title">Няма продукти в кошницата. Кликнете <a asp-area="" asp-controller="Products" asp-action="All">Тук</a>, за да продължите с покупките</h3>
             </div>
         }
 
