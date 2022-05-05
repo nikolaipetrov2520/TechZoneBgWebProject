@@ -80,9 +80,7 @@
 
         public async Task<IEnumerable<TModel>> GetProductsBiCartIdAsync<TModel>(int id)
             => await this.db.CartProduct
-                .AsNoTracking()
                 .Where(cp => cp.CartId == id && !cp.IsDeleted)
-                .Select(cp => cp.Product)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
     }

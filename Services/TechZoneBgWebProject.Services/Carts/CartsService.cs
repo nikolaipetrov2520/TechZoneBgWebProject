@@ -64,9 +64,6 @@
                     await this.db.CartProduct.AddAsync(product);
                     await this.db.SaveChangesAsync();
                 }
-
-
-
             }
             else
             {
@@ -119,6 +116,20 @@
                 .FirstOrDefaultAsync();
 
             return cart;
+        }
+
+        public async Task RemoveProductById(int productId, int cartId)
+        {
+            var cartProduct = await this.db.CartProduct
+                .Where(x => x.CartId == cartId && x.ProductId == productId)
+                .FirstOrDefaultAsync();
+
+            if (cartProduct != null)
+            {
+                cartProduct.IsDeleted = true;
+            }
+
+            await this.db.SaveChangesAsync();
         }
 
         public string GetSum(string id)

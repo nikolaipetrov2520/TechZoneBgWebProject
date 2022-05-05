@@ -13,6 +13,8 @@
 
         Task<string> AddCartAsync(int id, int quantity, string userId);
 
+        Task RemoveProductById(int productId, int cartId);
+
         string GetSum(string id);
     }
 }

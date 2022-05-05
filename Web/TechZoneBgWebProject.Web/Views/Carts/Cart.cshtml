@@ -63,7 +63,9 @@
                         @total
                     </td>
                     <td class="cart-text">
-                        <a>X</a>
+                        <a asp-area="" asp-controller="Carts" asp-action="Remove" asp-route-productId="@product.Id" asp-route-cartId="@Model.Id">
+                        <img src="~/images/close-icon-13574.png" style="width: 27px; height: 27px"/>
+                        </a>
                     </td>
                 </tr>                  
                 }
