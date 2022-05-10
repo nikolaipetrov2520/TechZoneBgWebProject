@@ -8560,7 +8560,7 @@ table th {
 
 .tt-badge {
     font-size: 14px;
-    padding: 2px 7px 2px;
+    padding: 1px;
     color: #ffffff;
     line-height: 1;
     font-weight: 500;
@@ -8580,7 +8580,7 @@ table th {
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
-    border-radius: 3px;
+    border-radius: 4px;
     color: #ffffff;
 }
 

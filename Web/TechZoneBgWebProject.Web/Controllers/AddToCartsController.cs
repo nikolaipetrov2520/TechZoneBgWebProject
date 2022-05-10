@@ -33,5 +33,22 @@
 
             return model;
         }
+
+        [HttpPost("update")]
+        public async Task<ActionResult<CartAddModel>> UpdateCart(InputCartModel input)
+        {
+            int id = input.Id;
+            int quantity = input.Quantity;
+            string userId = this.User.GetId();
+
+            string result = await this.cartsService.UpdateCartAsync(id, quantity, userId);
+
+            var model = new CartAddModel
+            {
+                Sum = result,
+            };
+
+            return model;
+        }
     }
 }

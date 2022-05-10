@@ -10,69 +10,70 @@
         {
             decimal totalSum = 0m;
             <h2 style="text-align:center; padding-bottom:40px;">Преглед на поръчката</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th class="Cart-min cart-text">Баркод</th>
-                    <th class="cart-text">Артикул</th>
-                    <th class="Cart-min cart-text">Единична цена</th>
-                    <th class="cart-text">Количество</th>
-                    <th class="cart-text">Крайна Цена</th>
-                    <th class="cart-text"></th>
-                </tr>
-            </thead>
-            <tbody>
-               
-                @foreach (var product in Model.Products)
-                {
-                    decimal total = product.Quantity * product.Price;
-                    totalSum += total;
-                <tr class="tt-itemCart">
-                    <td class="Cart-min cart-text">
-                        @product.Barcode
-                    </td>
-                    <td class="cart-text cart-product">
-                        <a id="@product.Id" asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
-                            <div class="tt-col-avatar"></div>
-                            <div class="tt-col-description">
-                                <div class="tt-title">
-                                    <div style="font-size: 14px" asp-area=""
-                                         asp-controller="Products"
-                                         asp-action="Details"
-                                         asp-route-id="@product.Id">
-                                        @product.Name
+            <table>
+                <thead>
+                    <tr>
+                        <th class="Cart-min cart-text">Баркод</th>
+                        <th class="cart-text">Артикул</th>
+                        <th class="Cart-min cart-text">Единична цена</th>
+                        <th class="cart-text">Количество</th>
+                        <th class="cart-text">Крайна Цена</th>
+                        <th class="cart-text"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var product in Model.Products)
+                    {
+                        decimal total = product.Quantity * product.Price;
+                        totalSum += total;
+                        <tr id="@product.Id" class="tt-itemCart">
+                            <td class="Cart-min cart-text">
+                                @product.Barcode
+                            </td>
+                            <td class="cart-text cart-product">
+                                <a id="@product.Id" asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">
+                                    <div class="tt-col-avatar"></div>
+                                    <div class="tt-col-description">
+                                        <div class="tt-title">
+                                            <div style="font-size: 14px" asp-area=""
+                                                 asp-controller="Products"
+                                                 asp-action="Details"
+                                                 asp-route-id="@product.Id">
+                                                @product.Name
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                            <td class="Cart-min cart-text">
+                                <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@product.Price лв.</div>
+                            </td>
+                            <td id="@product.Id" class="cart-text cart-quantity">
+                                <div class="tt-col-category">
+                                    <div class="tt-color01 tt-badge">
+                                        <span data-stock="1" data-pid="44977" data-prid="44769" class="add-to-cart-span"></span>
+                                        <a style="padding-left: 5px; padding-right: 5px" class="add-to-cart-left">-</a>
+                                        <input class="add-to-cart-quantity" type="text" name="quantity" value="@product.Quantity" readonly>
+                                        <a style="padding-left: 5px; padding-right: 5px" class="add-to-cart-right">+</a>
                                     </div>
                                 </div>
-                            </div>                           
-                        </a>
-                    </td>
-                    <td class="Cart-min cart-text">
-                        <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@product.Price лв.</div>
-                    </td>
-                    <td class="cart-text">
-                        <div class="tt-col-category">
-                            <div class="tt-color01 tt-badge">
-                                <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px;" class="add-to-cart-span"></span>
-                                <a class="add-to-cart-left">-</a>
-                                <input class="add-to-cart-quantity" type="text" name="quantity" value="@product.Quantity">
-                                <a class="add-to-cart-right">+</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="cart-text">
-                        @total
-                    </td>
-                    <td class="cart-text">
-                        <a asp-area="" asp-controller="Carts" asp-action="Remove" asp-route-productId="@product.Id" asp-route-cartId="@Model.Id">
-                        <img src="~/images/close-icon-13574.png" style="width: 27px; height: 27px"/>
-                        </a>
-                    </td>
-                </tr>                  
-                }
-            </tbody>
-        </table>
-        <h4 style="padding:30px; text-align:right">Крайна Сума @totalSum</h4>
-            
+                            </td>
+                            <td class="cart-text">
+                                @total лв.
+                            </td>
+                            <td class="cart-text">
+                                <a asp-area="" asp-controller="Carts" asp-action="Remove" asp-route-productId="@product.Id" asp-route-cartId="@Model.Id">
+                                    <img src="~/images/close-icon-13574.png" style="width: 27px; height: 27px" />
+                                </a>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+            <h4 id="totalSum" style="padding:30px; text-align:right">Крайна Сума @totalSum лв.</h4>
+
         }
         else
         {
@@ -83,3 +84,64 @@
 
     </nav>
 </div>
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions{
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+@section Scripts {
+    <script>
+        var token = $("#reactions-form input[name=__RequestVerificationToken]").val();
+        var cartSum = document.querySelector("#cartSum");
+        var totalSum = document.querySelector("#totalSum");
+        $("tr.tt-itemCart").click(function (e) {
+            let quantity = e.target.offsetParent.childNodes[5];
+            if (e.target.className == "add-to-cart-left" || e.target.className == "add-to-cart-right") {
+                e.preventDefault();
+                if (e.target.className == "add-to-cart-left") {
+                    if (quantity.value > 1) {
+                        quantity.value = (Number(quantity.value) - 1).toString();
+                    }
+                }
+                if (e.target.className == "add-to-cart-right") { 
+                    quantity.value = (Number(quantity.value) + 1).toString();
+                }
+
+                    if (quantity.value < 1) {
+                        quantity.value = 1;
+                    }
+                    let id = Number(e.currentTarget.id);
+                    let DTO = { "quantity": quantity.value, "id" : id };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/api/addCart/update",
+                        data: JSON.stringify(DTO),
+                        contentType: 'application/json; charset=utf-8',
+                        datatype: "json",
+                        headers: { 'X-CSRF-TOKEN': token },
+                        headers:
+                        {
+                            "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                        },
+
+                        success: function (result) {
+                            let string = Object.values(result);
+                            cartSum.textContent = `${string} лв.`
+                            e.target.offsetParent.childNodes[3].value = 1;
+                            e.currentTarget.childNodes[9].textContent = `${(quantity.value * parseFloat(e.currentTarget.childNodes[5].textContent)).toFixed(2)} лв.`;
+                            totalSum.textContent = `${string} лв.`;
+                            //alert(`поръчахте ${string}`);
+                        },
+                        error: function (xmlhttprequest, textstatus, errorthrown) {
+                            alert(" conection to the server failed ");
+                            console.log("error: " + errorthrown);
+                        }
+                    });
+            }
+        })
+    </script>
+}

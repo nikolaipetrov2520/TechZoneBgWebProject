@@ -107,6 +107,90 @@
             return stringResult;
         }
 
+        public async Task<string> UpdateCartAsync(int id, int quantity, string userId)
+        {
+            if (quantity < 1)
+            {
+                quantity = 1;
+            }
+
+            var cart = await this.db.Carts.Include(c => c.Products).FirstOrDefaultAsync(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
+
+            if (cart != null)
+            {
+                var existedProduct = cart.Products.FirstOrDefault(x => x.ProductId == id);
+
+                if (existedProduct != null)
+                {
+                    if (existedProduct.IsDeleted == true)
+                    {
+                        existedProduct.IsDeleted = false;
+                        existedProduct.Quantity = quantity;
+
+                        await this.db.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        existedProduct.Quantity = quantity;
+                        await this.db.SaveChangesAsync();
+                    }
+                }
+                else
+                {
+                    var product = new CartProduct
+                    {
+                        ProductId = id,
+                        Quantity = quantity,
+                        CartId = cart.Id,
+                        IsDeleted = false,
+                    };
+
+                    await this.db.CartProduct.AddAsync(product);
+                    await this.db.SaveChangesAsync();
+                }
+            }
+            else
+            {
+                var newcart = new Cart
+                {
+                    AuthorId = userId,
+                    CreatedOn = DateTime.Now,
+                    IsFinished = false,
+                    IsSend = false,
+                    IsDeleted = false,
+                };
+
+                await this.db.Carts.AddAsync(newcart);
+                await this.db.SaveChangesAsync();
+
+                var product = new CartProduct
+                {
+                    ProductId = id,
+                    Quantity = quantity,
+                    CartId = newcart.Id,
+                    IsDeleted = false,
+                };
+
+                await this.db.CartProduct.AddAsync(product);
+                await this.db.SaveChangesAsync();
+            }
+
+            var result = 0m;
+            var queriable = await this.db.Carts.Include(c => c.Products).ThenInclude(p => p.Product).FirstOrDefaultAsync(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
+            if (queriable != null)
+            {
+                var products = queriable.Products.Where(p => !p.IsDeleted).ToList();
+                foreach (var product in products)
+                {
+                    result += product.Quantity * product.Product.Price;
+                }
+            }
+
+            var stringResult = result.ToString();
+
+            return stringResult;
+        }
+
         public async Task<TModel> GetUnfinishedCartAsync<TModel>(string id)
         {
             var cart = await this.db.Carts

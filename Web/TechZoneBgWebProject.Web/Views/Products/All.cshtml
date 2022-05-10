@@ -341,11 +341,11 @@
 
                         </div>
                         <div class="tt-col-category">
-                            <span class="tt-color13 tt-badge">Налично</span>
+                            <span style="padding-right: 5px; padding-left: 5px" class="tt-color13 tt-badge">Налично</span>
                             @if (this.User.Identity.IsAuthenticated)
                             {
                                 <div class="tt-color01 tt-badge">
-                                    <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px;" class="add-to-cart-span">Добави в количка</span>
+                                    <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px; padding-left: 5px" class="add-to-cart-span">Добави в количка</span>
                                     <a class="add-to-cart-left">-</a>
                                     <input class="add-to-cart-quantity" type="text" name="quantity" value="1">
                                     <a class="add-to-cart-right">+</a>
@@ -725,18 +725,11 @@
                         {
                             "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
                         },
-                        //beforeSend: function () {
-                        //    Show(); // Show loader icon
-                        //},
                         success: function (result) {
                             let string = Object.values(result);
                             cartSum.textContent = `${string} лв.`
                             e.target.offsetParent.childNodes[3].value = 1;
-                            //alert(`поръчахте ${string}`);
                         },
-                        //complete: function () {
-                        //    Hide(); // Hide loader icon
-                        //},
                         error: function (xmlhttprequest, textstatus, errorthrown) {
                             alert(" conection to the server failed ");
                             console.log("error: " + errorthrown);
