@@ -34,9 +34,10 @@ $("tr.tt-itemCart").click(function (e) {
 
             success: function (result) {
                 let string = Object.values(result);
+                let price = Number(e.currentTarget.getAttribute("price"));
                 cartSum.textContent = `${string} лв.`
                 e.target.offsetParent.childNodes[3].value = 1;
-                e.currentTarget.childNodes[9].textContent = `${(quantity.value * parseFloat(e.currentTarget.childNodes[5].textContent)).toFixed(2)} лв.`;
+                e.currentTarget.childNodes[9].textContent = `${(quantity.value * price).toFixed(2)} лв.`;
                 totalSum.textContent = `${string} лв.`;
                 //alert(`поръчахте ${string}`);
             },

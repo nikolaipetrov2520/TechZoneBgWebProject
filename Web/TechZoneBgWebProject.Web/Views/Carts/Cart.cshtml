@@ -27,7 +27,7 @@
                     {
                         decimal total = product.Quantity * product.Price;
                         totalSum += total;
-                        <tr id="@product.Id" class="tt-itemCart">
+                        <tr id="@product.Id" price="@product.Price" class="tt-itemCart">
                             <td class="Cart-min cart-text">
                                 @product.Barcode
                             </td>
