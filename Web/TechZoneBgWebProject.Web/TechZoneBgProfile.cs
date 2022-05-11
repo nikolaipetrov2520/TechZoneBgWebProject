@@ -179,6 +179,7 @@
             this.CreateMap<Product, ProductsListingViewModel>();
             this.CreateMap<Product, ProductDetailsViewModel>();
             this.CreateMap<Cart, CartsListingViewModel>();
+            this.CreateMap<Cart, CartsFinishingViewModel>();
             this.CreateMap<Product, CartProductsViewModel>();
             this.CreateMap<CartProduct, CartProductsViewModel>()
                 .ForMember(

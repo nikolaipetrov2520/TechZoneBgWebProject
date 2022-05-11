@@ -1,0 +1,69 @@
+﻿
+@model TechZoneBgWebProject.Web.ViewModels.Carts.CartsFinishingViewModel
+@{
+    ViewData["Title"] = "Завършванв на поръчка";
+}
+
+<div class="containerCart" style=" margin-top: 50px; margin-bottom: 50px;">
+    <nav class="tt-topic-listCart" style="word-break: break-word;">
+
+        @if (Model.Id > 0)
+        {
+            decimal totalSum = 0m;
+            <h2 style="text-align:center; padding-bottom:40px;">Завършване на поръчката</h2>
+
+
+            @foreach (var product in Model.Products)
+            {
+                decimal total = product.Quantity * product.Price;
+                totalSum += total;
+
+            }
+
+            <h4 id="totalSum" style="padding:30px; text-align:center">Крайна Сума @totalSum лв.</h4>
+            <h4 style="padding:30px; text-align:center">Коментар към поръчката</h4>
+            <div style="text-align: center;">
+                <input style="border:none;border-bottom: solid 1px gray;" placeholder="коментар" name="comment" />
+            </div>
+
+            @if (Model.Address != null)
+            {
+                <h4 style="padding:30px; text-align:center">Адрес</h4>
+                <h4 style="padding:30px; text-align:center">@Model.Address</h4>
+            }
+            else
+            {
+                <h4 style="padding:30px; text-align:center">Въведете Адрес за доставка</h4>
+                <div class="tt-wrapper-inner">
+                    <div class="pt-editor form-default">
+                        <form class="form-default form-create-topic"
+                              asp-area=""
+                              asp-controller="Carts"
+                              asp-action="Finish"
+                              method="post">
+                            <div class="text-danger" asp-validation-summary="All"></div>
+                            <div style="text-align:center" class="form-group">
+                                <textarea asp-for="Address" placeholder="адрес...."></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            }
+
+            <div class="pt-row">
+                <div class="col-auto ml-md-auto mb-5" style="text-align: center;">
+                    <a class="btn btn-secondary" asp-area="" asp-controller="Carts" asp-action="Finish" method="post">Завърши поръчкатa</a>
+                </div>
+            </div>
+
+        }
+        else
+        {
+            <div>
+                <h3 class="tt-title">Няма продукти в кошницата. Кликнете <a asp-area="" asp-controller="Products" asp-action="All">Тук</a>, за да продължите с покупките</h3>
+            </div>
+        }
+
+    </nav>
+</div>
+

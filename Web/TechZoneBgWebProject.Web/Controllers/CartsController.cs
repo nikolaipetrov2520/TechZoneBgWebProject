@@ -47,5 +47,22 @@
             await this.cartsService.RemoveProductById(productId, cartId);
             return this.Redirect(nameof(this.Cart));
         }
+
+        public async Task<IActionResult> Finish()
+        {
+            var cart = await this.cartsService.GetUnfinishedCartAsync<CartsFinishingViewModel>(this.User.GetId());
+
+            if (cart == null)
+            {
+                cart = new CartsFinishingViewModel
+                {
+                    Id = 0,
+                };
+            }
+
+            cart.Products = await this.productsService.GetProductsBiCartIdAsync<CartProductsViewModel>(cart.Id);
+
+            return this.View(cart);
+        }
     }
 }

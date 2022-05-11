@@ -7697,12 +7697,24 @@ table th {
     min-width: 545px;
 }
 
+@media(max-width: 1600px) {
+    table td {
+        padding: 25px 10px !important;
+    }
+
+    .cart-product {
+        max-width: 245px;
+        min-width: 150px;
+    }
+}
+
 @media(max-width: 991px) {
     table td {
         padding: 25px 10px !important;
     }
     .cart-product {
         max-width: 145px;
+        min-width: 50px;
     }
 }
 
@@ -7718,7 +7730,7 @@ table th {
     }
     .cart-product {
         max-width: 145px;
-        
+        min-width: 50px;
     }
 }
 

@@ -51,11 +51,11 @@
                             </td>
                             <td id="@product.Id" class="cart-text cart-quantity">
                                 <div class="tt-col-category">
-                                    <div class="tt-color01 tt-badge">
+                                    <div class="tt-color01 tt-badge" style="height: 28px;">
                                         <span data-stock="1" data-pid="44977" data-prid="44769" class="add-to-cart-span"></span>
-                                        <a style="padding-left: 5px; padding-right: 5px" class="add-to-cart-left">-</a>
-                                        <input class="add-to-cart-quantity" type="text" name="quantity" value="@product.Quantity" readonly>
-                                        <a style="padding-left: 5px; padding-right: 5px" class="add-to-cart-right">+</a>
+                                        <a style="font-size: 18px; padding-left: 5px; padding-right: 5px; padding: 4px" class="add-to-cart-left">-</a>
+                                        <input style="font-size: 18px;" class="add-to-cart-quantity" type="text" name="quantity" value="@product.Quantity" readonly>
+                                        <a style="font-size: 18px; padding-left: 5px; padding-right: 5px; padding: 4px" class="add-to-cart-right">+</a>
                                         <input type="hidden" id="RequestVerificationToken"
                                                name="RequestVerificationToken" value="@GetAntiXsrfRequestToken()" />
                                     </div>
@@ -75,6 +75,11 @@
                 </tbody>
             </table>
             <h4 id="totalSum" style="padding:30px; text-align:right">Крайна Сума @totalSum лв.</h4>
+            <div class="pt-row">
+                <div class="col-auto ml-md-auto mb-5" style="text-align: end;">
+                    <a class="btn btn-secondary" asp-area="" asp-controller="Carts" asp-action="Finish">Поръчай</a>
+                </div>
+            </div>
 
         }
         else
