@@ -1,4 +1,5 @@
-﻿var token = $("#reactions-form input[name=__RequestVerificationToken]").val();
+﻿
+var token = $("#reactions-form input[name=__RequestVerificationToken]").val();
 var cartSum = document.querySelector("#cartSum");
 $("a").click(function (e) {
     if (e.target.className == "add-to-cart-quantity" || e.target.className == "add-to-cart-left" || e.target.className == "add-to-cart-span" || e.target.className == "add-to-cart-right") {
@@ -20,7 +21,7 @@ $("a").click(function (e) {
             }
             let id = Number(e.currentTarget.id);
             let DTO = { "quantity": quantity, "id": id };
-            
+
             $.ajax({
                 type: "POST",
                 url: "/api/addCart/add",
@@ -30,20 +31,13 @@ $("a").click(function (e) {
                 headers: { 'X-CSRF-TOKEN': token },
                 headers:
                 {
-                    "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                    "RequestVerificationToken": document.getElementById('RequestVerificationToken').value
                 },
-                //beforeSend: function () {
-                //    Show(); // Show loader icon
-                //},
                 success: function (result) {
                     let string = Object.values(result);
                     cartSum.textContent = `${string} лв.`
                     e.target.offsetParent.childNodes[3].value = 1;
-                    //alert(`поръчахте ${string}`);
                 },
-                //complete: function () {
-                //    Hide(); // Hide loader icon
-                //},
                 error: function (xmlhttprequest, textstatus, errorthrown) {
                     alert(" conection to the server failed ");
                     console.log("error: " + errorthrown);

@@ -34,12 +34,14 @@
                             <span style="padding-right: 5px; padding-left: 5px" class="tt-color13 tt-badge">Налично</span>
                             @if (this.User.Identity.IsAuthenticated)
                             {
-                                <div class="tt-color01 tt-badge" id="btn">
-                                    <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px; padding-left: 5px" class="add-to-cart-span">Добави в количка</span>
-                                    <a class="add-to-cart-left">-</a>
-                                    <input class="add-to-cart-quantity" type="text" name="quantity" value="1">
-                                    <a class="add-to-cart-right">+</a>
-                                </div>
+                        <div class="tt-color01 tt-badge" id="btn">
+                            <span data-stock="1" data-pid="44977" data-prid="44769" style="padding-right: 5px; padding-left: 5px" class="add-to-cart-span">Добави в количка</span>
+                            <a class="add-to-cart-left">-</a>
+                            <input class="add-to-cart-quantity" type="text" name="quantity" value="1">
+                            <a class="add-to-cart-right">+</a>
+                            <input type="hidden" id="RequestVerificationToken"
+                                   name="RequestVerificationToken" value="@GetAntiXsrfRequestToken()" />
+                        </div>
                             }
                             else
                             {
@@ -65,65 +67,5 @@
 }
 
 @section Scripts {
-    <script>
-        var token = $("#reactions-form input[name=__RequestVerificationToken]").val();
-        var cartSum = document.querySelector("#cartSum");
-        $("a").click(function (e) {
-            if (e.target.className == "add-to-cart-quantity" || e.target.className == "add-to-cart-left" || e.target.className == "add-to-cart-span" || e.target.className == "add-to-cart-right") {
-                e.preventDefault();
-                if (e.target.className == "add-to-cart-left") {
-                    let quantity = e.target.offsetParent.childNodes[3];
-                    quantity.value = (Number(quantity.value) - 1).toString();
-                }
-                if (e.target.className == "add-to-cart-right") {
-                    let quantity = e.target.offsetParent.childNodes[3];
-                    quantity.value = (Number(quantity.value) + 1).toString();
-                }
-                if (e.target.className == "add-to-cart-span") {
-                    let quantity = Number(e.target.offsetParent.childNodes[3].value);
-                    let id = Number(e.currentTarget.id);
-                    let DTO = { "quantity": quantity, "id" : id };
-
-                    $.ajax({
-                        type: "POST",
-                        url: "/api/addCart/add",
-                        data: JSON.stringify(DTO),
-                        contentType: 'application/json; charset=utf-8',
-                        datatype: "json",
-                        headers: { 'X-CSRF-TOKEN': token },
-                        headers:
-                        {
-                            "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
-                        },
-                        //beforeSend: function () {
-                        //    Show(); // Show loader icon
-                        //},
-                        success: function (result) {
-                            let string = Object.values(result);
-                            cartSum.textContent = `${string} лв.`
-                            //alert(`поръчахте ${string}`);
-                        },
-                        //complete: function () {
-                        //    Hide(); // Hide loader icon
-                        //},
-                        error: function (xmlhttprequest, textstatus, errorthrown) {
-                            alert(" conection to the server failed ");
-                            console.log("error: " + errorthrown);
-                        }
-                    });
-                }
-            }
-            $(document).ready(function () {
-                $("#div_Loader").hide();
-            });
-
-            function Show() {
-                $('#div_Loader').show();
-            }
-
-            function Hide() {
-                $('#div_Loader').hide();
-            }
-        })
-    </script>
+    <script src="~/js/AddToCart.js"> </script>
 }
