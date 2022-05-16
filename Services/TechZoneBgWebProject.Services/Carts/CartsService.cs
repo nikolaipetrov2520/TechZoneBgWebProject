@@ -214,6 +214,18 @@
             }
 
             await this.db.SaveChangesAsync();
+
+            var productsCount = await this.db.CartProduct
+                .Where(x => x.CartId == cartId && !x.IsDeleted).ToListAsync();
+
+            var cart = await this.db.Carts.FirstOrDefaultAsync(x => x.Id == cartId);
+
+            if (productsCount.Count < 1)
+            {
+                cart.IsDeleted = true;
+            }
+
+            await this.db.SaveChangesAsync();
         }
 
         public string GetSum(string id)
