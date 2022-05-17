@@ -11531,3 +11531,16 @@ a.add-to-cart-right {
     border: none;
     text-align: center;
 }
+.add-cart-popup {
+    display: none;
+    position: absolute;
+    padding: 50px;
+    background-color: #ffffffcc;
+    border-radius: 19px;
+    border: solid 1px #60a4eb;
+    font-size: 30px;
+    font-weight: bold;
+    color: #60a4eb;
+    box-shadow: 0px 0px 27px 5px #817f7f;
+    text-align: center;
+}

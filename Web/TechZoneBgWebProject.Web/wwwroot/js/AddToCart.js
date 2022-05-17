@@ -1,6 +1,7 @@
 ﻿
 var token = $("#reactions-form input[name=__RequestVerificationToken]").val();
 var cartSum = document.querySelector("#cartSum");
+var popup = document.querySelector(".add-cart-popup")
 $("a").click(function (e) {
     if (e.target.className == "add-to-cart-quantity" || e.target.className == "add-to-cart-left" || e.target.className == "add-to-cart-span" || e.target.className == "add-to-cart-right") {
         e.preventDefault();
@@ -21,7 +22,18 @@ $("a").click(function (e) {
             }
             let id = Number(e.currentTarget.id);
             let DTO = { "quantity": quantity, "id": id };
-
+            let top = window.scrollY;
+            popup.style.left = Math.round(e.currentTarget.offsetParent.offsetParent.offsetParent.offsetWidth / 2) - 220 + "px";
+            popup.style.right = Math.round(e.currentTarget.offsetParent.offsetParent.offsetParent.offsetWidth / 2) - 220 + "px";
+            popup.style.top = window.scrollY + 250 + "px";
+            popup.style.bottom = e.currentTarget.offsetParent.offsetParent.offsetParent.offsetHeight - window.scrollY - 459 + "px";
+            popup.style.transition = "all 6s linear";
+            popup.style.opacity = 1;
+            popup.style.display = "block";
+            setTimeout(() => {
+                popup.style.display = "none";
+                popup.style.opacity = 0;
+            }, 1600)
             $.ajax({
                 type: "POST",
                 url: "/api/addCart/add",
