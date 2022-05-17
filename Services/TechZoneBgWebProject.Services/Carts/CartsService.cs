@@ -67,6 +67,15 @@
             }
             else
             {
+                var lastCart = await this.db.Carts.Where(x => x.AuthorId == userId).OrderByDescending(c => c.Id).ToListAsync();
+
+                string address = null;
+
+                if (lastCart.Count > 0)
+                {
+                    address = lastCart[0].Address;
+                }
+
                 var newcart = new Cart
                 {
                     AuthorId = userId,
@@ -74,6 +83,7 @@
                     IsFinished = false,
                     IsSend = false,
                     IsDeleted = false,
+                    Address = address,
                 };
 
                 await this.db.Carts.AddAsync(newcart);
