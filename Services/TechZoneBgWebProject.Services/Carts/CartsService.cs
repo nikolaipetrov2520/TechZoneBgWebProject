@@ -205,7 +205,7 @@
         {
             var cart = await this.db.Carts
                 .AsNoTracking()
-                .Where(x => x.AuthorId == id && !x.IsDeleted && !x.IsFinished && !x.IsSend)
+                .Where(x => x.AuthorId == id && !x.IsDeleted && !x.IsFinished)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync();
 
@@ -214,7 +214,24 @@
 
         public async Task<bool> FinishCartAsync(int cartId, string comment, string address)
         {
-            return true;
+            var cart = await this.db.Carts.FirstOrDefaultAsync(c => c.Id == cartId);
+
+
+            if (cart != null)
+            {
+                cart.Comment = comment;
+                if (cart.Address == null && address != cart.Address)
+                {
+                    cart.Address = address;
+                }
+
+                cart.IsFinished = true;
+
+                await this.db.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
         }
 
         public async Task RemoveProductById(int productId, int cartId)

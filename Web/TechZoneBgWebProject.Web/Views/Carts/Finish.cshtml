@@ -64,14 +64,6 @@
                 </tbody>
             </table>
             <h4 id="totalSum" style="padding:30px; text-align:right; border-bottom: solid 1px #d5d5d5;">Крайна Сума @totalSum лв.</h4>
-            @if (Model.Address != null)
-            {
-                <h4 style="padding:30px; text-align:center">Адрес за доставка</h4>
-                <h4 style="padding:30px; text-align:center">@Model.Address</h4>
-            }
-            else
-            {
-
                 <div class="tt-wrapper-inner">
                     <div class="pt-editor form-default" style="padding-bottom: 30px; border-bottom: solid 1px #d5d5d5;">
                         <form id="addressform" class="form-default form-create-topic"
@@ -84,15 +76,22 @@
                             <div style="text-align: center; padding-bottom: 30px; border-bottom: solid 1px #d5d5d5;">
                                 <input style="border:none;border-bottom: solid 1px gray;" placeholder="коментар..." name="comment" />
                             </div>
-                            <h4 style="padding:30px; text-align:center">Въведете Адрес за доставка</h4>
-                            <div class="text-danger" asp-validation-summary="All"></div>
-                            <div style="text-align:center" class="form-group">
-                                <textarea asp-for="Address" placeholder="Въведете адрес...." style="width: 40%;"></textarea>
-                            </div>
+                            @if (Model.Address != null)
+                            {
+                                <h4 style="padding:30px; text-align:center">Адрес за доставка</h4>
+                                <h4 style="padding:30px; text-align:center">@Model.Address</h4>
+                            }
+                            else
+                            {
+                                <h4 style="padding:30px; text-align:center">Въведете Адрес за доставка</h4>
+                                <div class="text-danger" asp-validation-summary="All"></div>
+                                <div style="text-align:center" class="form-group">
+                                    <textarea asp-for="Address" placeholder="Въведете адрес...." style="width: 40%;"></textarea>
+                                </div>
+                            }
                         </form>
                     </div>
                 </div>
-            }
             <div class="text-center" style="padding: 30px;">
                 <input type="checkbox" id="terms" name="terms" required="" onclick="check()">
                 <label for="terms">Съгласен съм с общите условия за търговия и гаранционна политика на сайта</label>

@@ -70,7 +70,12 @@
         {
             var isFinished = await this.cartsService.FinishCartAsync(cartId, comment, address);
 
-            return this.View("Confirm");
+            return this.RedirectToAction("Confirm", isFinished);
+        }
+
+        public IActionResult Confirm(bool isFinished = true)
+        {
+            return this.View(isFinished);
         }
     }
 }

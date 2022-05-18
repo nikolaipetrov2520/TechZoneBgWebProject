@@ -46,9 +46,9 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (this.User.IsTechzoneBgEmployee())
                         {
-                            @*<li class="nav-item">
-                    <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">TechZoneBg</a>
-                </li>*@
+                            <li class="nav-item">
+                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">Поръчки</a>
+                            </li>
                         }
                         else if (this.User.IsSwipegEmployee())
                         {

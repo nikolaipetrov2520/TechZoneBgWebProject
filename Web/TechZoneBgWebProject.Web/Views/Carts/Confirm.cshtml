@@ -1,1 +1,15 @@
-﻿<h1>Потвърдено</h1>
+﻿@model bool
+@if (Model == true)
+{
+<div style=" padding-top: 100px; text-align: center;">
+    <h1>Поръчката е изпратена успешно</h1>
+    <h3 class="tt-title">Кликнете <a asp-area="" asp-controller="Products" asp-action="All">Тук</a>, за да продължите с покупките</h3>
+</div>
+
+}
+else
+{
+    <div style=" padding-top: 100px; text-align: center;">
+        <h3 class="tt-title">Няма продукти в кошницата. Кликнете <a asp-area="" asp-controller="Products" asp-action="All">Тук</a>, за да продължите с покупките</h3>
+    </div>
+}
