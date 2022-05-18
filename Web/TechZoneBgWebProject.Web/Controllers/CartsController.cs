@@ -64,5 +64,13 @@
 
             return this.View(cart);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Finish(int cartId, string comment, string address)
+        {
+            var isFinished = await this.cartsService.FinishCartAsync(cartId, comment, address);
+
+            return this.View("Confirm");
+        }
     }
 }

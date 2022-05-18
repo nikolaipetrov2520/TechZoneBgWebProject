@@ -9,49 +9,99 @@
         @if (Model.Id > 0)
         {
             decimal totalSum = 0m;
-            <h2 style="text-align:center; padding-bottom:40px;">Завършване на поръчката</h2>
+            <h2 style="text-align:center; padding-bottom:40px; margin: 70px; border-bottom: solid 1px #000000;">Завършване на поръчката</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="Cart-min cart-text">Баркод</th>
+                        <th class="cart-text">Артикул</th>
+                        <th class="Cart-min cart-text">Единична цена</th>
+                        <th class="cart-text">Количество</th>
+                        <th class="cart-text">Крайна Цена</th>
+                        <th class="cart-text"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        decimal total = product.Quantity * product.Price;
+                        totalSum += total;
+                        <tr id="@product.Id" price="@product.Price" class="tt-itemCart">
+                            <td class="Cart-min cart-text">
+                                @product.Barcode
+                            </td>
+                            <td class="cart-text cart-product">
+                                <div>
+                                    <div class="tt-col-avatar"></div>
+                                    <div class="tt-col-description">
+                                        <div class="tt-title">
+                                            <div style="font-size: 14px">
+                                                @product.Name
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="Cart-min cart-text">
+                                <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@product.Price лв.</div>
+                            </td>
+                            <td class="cart-text cart-quantity">
+                                <div class="tt-col-category">
+                                    <div style="height: 28px;">
+                                        <div style="font-size: 18px; width:30px">
+                                            @product.Quantity
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cart-text">
+                                @total лв.
+                            </td>
+                        </tr>
 
+                    }
 
-            @foreach (var product in Model.Products)
-            {
-                decimal total = product.Quantity * product.Price;
-                totalSum += total;
-
-            }
-
-            <h4 id="totalSum" style="padding:30px; text-align:center">Крайна Сума @totalSum лв.</h4>
-            <h4 style="padding:30px; text-align:center">Коментар към поръчката</h4>
-            <div style="text-align: center;">
-                <input style="border:none;border-bottom: solid 1px gray;" placeholder="коментар" name="comment" />
-            </div>
-
+                </tbody>
+            </table>
+            <h4 id="totalSum" style="padding:30px; text-align:right; border-bottom: solid 1px #d5d5d5;">Крайна Сума @totalSum лв.</h4>
             @if (Model.Address != null)
             {
-                <h4 style="padding:30px; text-align:center">Адрес</h4>
+                <h4 style="padding:30px; text-align:center">Адрес за доставка</h4>
                 <h4 style="padding:30px; text-align:center">@Model.Address</h4>
             }
             else
             {
-                <h4 style="padding:30px; text-align:center">Въведете Адрес за доставка</h4>
+
                 <div class="tt-wrapper-inner">
-                    <div class="pt-editor form-default">
-                        <form class="form-default form-create-topic"
+                    <div class="pt-editor form-default" style="padding-bottom: 30px; border-bottom: solid 1px #d5d5d5;">
+                        <form id="addressform" class="form-default form-create-topic"
                               asp-area=""
                               asp-controller="Carts"
                               asp-action="Finish"
                               method="post">
+                            <input hidden value="@Model.Id" name="cartId" />
+                            <h4 style="padding-bottom:30px; text-align:center">Коментар към поръчката:</h4>
+                            <div style="text-align: center; padding-bottom: 30px; border-bottom: solid 1px #d5d5d5;">
+                                <input style="border:none;border-bottom: solid 1px gray;" placeholder="коментар..." name="comment" />
+                            </div>
+                            <h4 style="padding:30px; text-align:center">Въведете Адрес за доставка</h4>
                             <div class="text-danger" asp-validation-summary="All"></div>
                             <div style="text-align:center" class="form-group">
-                                <textarea asp-for="Address" placeholder="адрес...."></textarea>
+                                <textarea asp-for="Address" placeholder="Въведете адрес...." style="width: 40%;"></textarea>
                             </div>
                         </form>
                     </div>
                 </div>
             }
-
+            <div class="text-center" style="padding: 30px;">
+                <input type="checkbox" id="terms" name="terms" required="" onclick="check()">
+                <label for="terms">Съгласен съм с общите условия за търговия и гаранционна политика на сайта</label>
+            </div>
             <div class="pt-row">
                 <div class="col-auto ml-md-auto mb-5" style="text-align: center;">
-                    <a class="btn btn-secondary" asp-area="" asp-controller="Carts" asp-action="Finish" method="post">Завърши поръчкатa</a>
+                    <button id="btn" form="addressform" class="btn btn-secondary" disabled="disabled" asp-area="" asp-controller="Carts" asp-action="Finish" method="post">
+                        Завърши поръчкатa
+                    </button>
                 </div>
             </div>
 
@@ -65,4 +115,17 @@
 
     </nav>
 </div>
+@section Scripts {
+    <script>
+        function check() {
+            var terms = document.querySelector("#terms");
+            var btn = document.querySelector("#btn");
+            if (terms.checked == true) {
+                btn.disabled = false;
+            } else {
+                btn.disabled = true;
+            }
+        }
+    </script>
+}
 

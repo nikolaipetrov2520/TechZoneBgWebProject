@@ -212,6 +212,11 @@
             return cart;
         }
 
+        public async Task<bool> FinishCartAsync(int cartId, string comment, string address)
+        {
+            return true;
+        }
+
         public async Task RemoveProductById(int productId, int cartId)
         {
             var cartProduct = await this.db.CartProduct

@@ -18,5 +18,7 @@
         Task RemoveProductById(int productId, int cartId);
 
         string GetSum(string id);
+
+        Task<bool> FinishCartAsync(int cartId, string comment, string address);
     }
 }
