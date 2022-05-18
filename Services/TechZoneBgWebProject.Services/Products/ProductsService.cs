@@ -83,5 +83,11 @@
                 .Where(cp => cp.CartId == id && !cp.IsDeleted)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
+
+        public async Task<IEnumerable<TModel>> GetAllProductsAsync<TModel>()
+            => await this.db.Products
+                .Where(p => p.InStock)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
     }
 }
