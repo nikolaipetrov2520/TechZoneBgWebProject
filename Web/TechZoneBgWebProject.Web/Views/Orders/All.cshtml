@@ -168,26 +168,31 @@
                 <tbody>
                     @foreach (var cart in Model.Carts)
                     {
-                    <a>
-                        <tr id="@cart.Id" class="tt-itemCart">
-                            <td class="Cart-min cart-text">
-                                @cart.FirstName @cart.LastName
-                            </td>
-                            <td>
-                                <div>
-                                    @cart.Address
-                                </div>
-                            </td>
-                            <td class="Cart-min cart-text">
-                                <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@cart.Sum лв.</div>
-                            </td>
-                            <td id="@cart.Comment" class="cart-text cart-quantity">
-                                    <div style="height: 28px;">
-                                       @cart.Comment
-                                    </div>
-                            </td>
-                        </tr>
-                    </a>
+
+                    <tr id="@cart.Id" class="tt-itemOrder">
+                        <td class="Cart-min cart-text">
+                            @cart.FirstName @cart.LastName
+                        </td>
+                        <td>
+                            <div>
+                                @cart.Address
+                            </div>
+                        </td>
+                        <td class="Cart-min cart-text">
+                            <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@cart.Sum лв.</div>
+                        </td>
+                        <td id="@cart.Comment" class="cart-text cart-quantity">
+                            <div style="height: 28px;">
+                                @cart.Comment
+                            </div>
+                        </td>
+                        <td>
+                            <a asp-area="" asp-controller="Orders" asp-action="Details" asp-route-id="@cart.Id">
+                                Детайли
+                            </a>
+                        </td>
+                    </tr>
+
 
                     }
                 </tbody>

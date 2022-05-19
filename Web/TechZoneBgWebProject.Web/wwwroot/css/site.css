@@ -11544,3 +11544,6 @@ a.add-to-cart-right {
     box-shadow: 0px 0px 27px 5px #817f7f;
     text-align: center;
 }
+.tt-itemOrder {
+    border: solid 1px #c3c3c3;
+}
