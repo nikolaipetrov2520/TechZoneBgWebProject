@@ -24,6 +24,7 @@
     using Microsoft.AspNetCore.Identity;
     using TechZoneBgWebProject.Web.ViewModels.Products;
     using TechZoneBgWebProject.Web.ViewModels.Carts;
+    using TechZoneBgWebProject.Web.ViewModels.Orders;
 
     public class TechZoneBgProfile : Profile
     {
@@ -180,6 +181,7 @@
             this.CreateMap<Product, ProductDetailsViewModel>();
             this.CreateMap<Cart, CartsListingViewModel>();
             this.CreateMap<Cart, CartsFinishingViewModel>();
+            this.CreateMap<Cart, OrdersListingViewModel>();
             this.CreateMap<Product, CartProductsViewModel>();
             this.CreateMap<Product, ProductsListModel>();
             this.CreateMap<CartProduct, CartProductsViewModel>()

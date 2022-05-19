@@ -6,6 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using TechZoneBgWebProject.Data.Models;
+    using TechZoneBgWebProject.Web.ViewModels.Orders;
 
     public interface ICartsService
     {
@@ -20,5 +21,9 @@
         string GetSum(string id);
 
         Task<bool> FinishCartAsync(int cartId, string comment, string address);
+
+        Task<int> GetCountAsync();
+
+        Task<List<OrdersListingViewModel>> GetAllAsync(int skip = 0, int? take = null);
     }
 }

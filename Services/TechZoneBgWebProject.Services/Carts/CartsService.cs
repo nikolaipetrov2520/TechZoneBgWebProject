@@ -11,6 +11,7 @@
     using Microsoft.EntityFrameworkCore;
     using TechZoneBgWebProject.Data;
     using TechZoneBgWebProject.Data.Models;
+    using TechZoneBgWebProject.Web.ViewModels.Orders;
 
     public class CartsService : ICartsService
     {
@@ -278,5 +279,54 @@
 
             return stringResult;
         }
+
+        public async Task<int> GetCountAsync()
+        {
+            var queryable = this.db.Carts
+                .Where(c => c.IsFinished && !c.IsDeleted && !c.IsSend);
+
+            var count = await queryable.CountAsync();
+
+            return count;
+        }
+
+        public async Task<List<OrdersListingViewModel>> GetAllAsync(int skip = 0, int? take = null)
+        {
+            var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(c => c.IsFinished && !c.IsDeleted && !c.IsSend).ToListAsync();
+
+            if (take.HasValue)
+            {
+                queryable = queryable.Skip(skip).Take(take.Value).ToList();
+            }
+
+            var carts = new List<OrdersListingViewModel>();
+
+            foreach (var item in queryable)
+            {
+                decimal sum = 0m;
+                foreach (var product in item.Products)
+                {
+                    sum += product.Quantity * product.Product.Price;
+                }
+
+                var cart = new OrdersListingViewModel
+                {
+                    FirstName = item.Author.FirstName,
+                    LastName = item.Author.LastName,
+                    Sum = sum,
+                    Id = item.Id,
+                    Address = item.Address,
+                    Comment = item.Comment,
+                };
+
+                carts.Add(cart);
+            }
+
+            return carts;
+        }
+
     }
 }

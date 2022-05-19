@@ -26,11 +26,13 @@
             public const string EmployeeAreaName = "TechzoneBgEmployee";
             public const string EmployeeRoleName = "TechzoneBgEmployee";
         }
+
         public class SwypeEmployee
         {
             public const string EmployeeAreaName = "SwypeEmployee";
             public const string EmployeeRoleName = "SwypeEmployee";
         }
+
         public class Moderator
         {
             public const string ModeratorAreaName = "Moderator";

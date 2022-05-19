@@ -1583,3 +1583,4 @@ D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Carts\Ca
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Carts\Cart.cshtml.g.cs
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Carts\Finish.cshtml.g.cs
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Carts\Confirm.cshtml.g.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Orders\All.cshtml.g.cs

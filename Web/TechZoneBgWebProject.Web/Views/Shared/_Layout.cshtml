@@ -47,7 +47,7 @@
                         @if (this.User.IsTechzoneBgEmployee())
                         {
                             <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All">Поръчки</a>
+                                <a class="nav-link white-text" asp-area="" asp-controller="Orders" asp-action="All">Поръчки</a>
                             </li>
                         }
                         else if (this.User.IsSwipegEmployee())
@@ -65,7 +65,7 @@
                         else if (this.User.IsAdministrator())
                         {
                             <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All">Поръчки</a>
+                                <a class="nav-link white-text" asp-area="" asp-controller="Orders" asp-action="All">Поръчки</a>
                             </li>
                             @*<li class="nav-item">
                 <a class="nav-link white-text" asp-area="" asp-controller="Products" asp-action="All" asp-route-id="@this.User.GetId()">TechZoneBg</a>
