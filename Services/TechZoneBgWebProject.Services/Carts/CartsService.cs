@@ -227,6 +227,7 @@
                 }
 
                 cart.IsFinished = true;
+                cart.ModifiedOn = DateTime.Now;
 
                 await this.db.SaveChangesAsync();
                 return true;
@@ -316,9 +317,10 @@
                 {
                     FirstName = item.Author.FirstName,
                     LastName = item.Author.LastName,
+                    PhoneNumber = item.Author.PhoneNumber,
                     Sum = sum,
                     Id = item.Id,
-                    Address = item.Address,
+                    Time = item.ModifiedOn ?? DateTime.Now,
                     Comment = item.Comment,
                 };
 

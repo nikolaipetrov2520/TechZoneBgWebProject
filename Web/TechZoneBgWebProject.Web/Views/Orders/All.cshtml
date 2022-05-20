@@ -4,216 +4,84 @@
 }
 
 <div class="container">
-    <nav class="tt-topic-list" style="word-break: break-word;">
-
-        @if (Model.Carts.Any())
+    @if (Model.Carts.Any())
+    {
+        @if (Model.TotalPages > 0)
         {
-
-
-            @if (Model.TotalPages > 0)
-            {
-                <div class="text-center">
-                    <nav>
-                        <ul class="pagination mb-4">
-                            <li>
-                                <a asp-area=""
-                                   asp-controller="Orders"
-                                   asp-action="All"
-                                   asp-route-page="@Model.PreviousPage">
-                                    &laquo;
-                                </a>
-                            </li>
-                            @if (Model.TotalPages <= 3)
-                            {
-                                @for (int i = 1; i <= Model.TotalPages; i++)
-                                {
-                                    var active = i == Model.PageIndex ? "active" : string.Empty;
-                                    <li>
-                                        <a class="@active"
-                                           asp-area=""
-                                           asp-controller="Orders"
-                                           asp-action="All"
-                                           asp-route-page="@i">
-                                            @i
-                                        </a>
-                                    </li>
-                                }
-                            }
-                            else
-                            {
-                                @if (Model.PageIndex < 3)
-                                {
-                                    @for (int i = 1; i <= 3; i++)
-                                    {
-                                        var active = i == Model.PageIndex ? "active" : string.Empty;
-                                        <li>
-                                            <a class="@active"
-                                               asp-area=""
-                                               asp-controller="Orders"
-                                               asp-action="All"
-                                               asp-route-page="@i">
-                                                @i
-                                            </a>
-                                        </li>
-                                    }
-                                    <li>
-                                        <a style="border: none; padding: 8px 0px;">
-                                            ...
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a asp-area=""
-                                           asp-controller="Orders"
-                                           asp-action="All"
-                                           asp-route-page="@Model.TotalPages">
-                                            @Model.TotalPages
-                                        </a>
-                                    </li>
-                                }
-                                else if (Model.PageIndex > Model.TotalPages - 2)
-                                {
-                                    <li>
-                                        <a asp-area=""
-                                           asp-controller="Orders"
-                                           asp-action="All"
-                                           asp-route-page="1">
-                                            1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a style="border: none; padding: 8px 0px;">
-                                            ...
-                                        </a>
-                                    </li>
-                                    @for (int i = Model.TotalPages - 2; i <= Model.TotalPages; i++)
-                                    {
-                                        var active = i == Model.PageIndex ? "active" : string.Empty;
-                                        <li>
-                                            <a class="@active"
-                                               asp-area=""
-                                               asp-controller="Orders"
-                                               asp-action="All"
-                                               asp-route-page="@i">
-                                                @i
-                                            </a>
-                                        </li>
-                                    }
-                                }
-                                else
-                                {
-                                    <li>
-                                        <a asp-area=""
-                                           asp-controller="Orders"
-                                           asp-action="All"
-                                           asp-route-page="1">
-                                            1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a style="border: none; padding: 8px 0px;">
-                                            ...
-                                        </a>
-                                    </li>
-                                    @for (int i = Model.PageIndex - 1; i <= Model.PageIndex + 1; i++)
-                                    {
-                                        var active = i == Model.PageIndex ? "active" : string.Empty;
-                                        <li>
-                                            <a class="@active"
-                                               asp-area=""
-                                               asp-controller="Orders"
-                                               asp-action="All"
-                                               asp-route-page="@i">
-                                                @i
-                                            </a>
-                                        </li>
-                                    }
-                                    <li>
-                                        <a style="border: none; padding: 8px 0px;">
-                                            ...
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a asp-area=""
-                                           asp-controller="Orders"
-                                           asp-action="All"
-                                           asp-route-page="@Model.TotalPages">
-                                            @Model.TotalPages
-                                        </a>
-                                    </li>
-                                }
-
-                            }
-                            <li>
-                                <a asp-area=""
-                                   asp-controller="Orders"
-                                   asp-action="All"
-                                   asp-route-page="@Model.NextPage">
-                                    &raquo;
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            }
-
-            <table>
-                <thead>
-                    <tr>
-                        <th class="Cart-min cart-text">Юсер</th>
-                        <th class="cart-text">Адрес</th>
-                        <th class="Cart-min cart-text">Сума</th>
-                        <th class="cart-text">Коментар</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var cart in Model.Carts)
-                    {
-
-                    <tr id="@cart.Id" class="tt-itemOrder">
-                        <td class="Cart-min cart-text">
-                            @cart.FirstName @cart.LastName
-                        </td>
-                        <td>
-                            <div>
-                                @cart.Address
-                            </div>
-                        </td>
-                        <td class="Cart-min cart-text">
-                            <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@cart.Sum лв.</div>
-                        </td>
-                        <td id="@cart.Comment" class="cart-text cart-quantity">
-                            <div style="height: 28px;">
-                                @cart.Comment
-                            </div>
-                        </td>
-                        <td>
-                            <a asp-area="" asp-controller="Orders" asp-action="Details" asp-route-id="@cart.Id">
-                                Детайли
+            <div class="text-center">
+                <nav>
+                    <ul class="pagination mb-4">
+                        <li>
+                            <a asp-area=""
+                               asp-controller="Orders"
+                               asp-action="All"
+                               asp-route-page="@Model.PreviousPage">
+                                &laquo;
                             </a>
-                        </td>
-                    </tr>
-
-
-                    }
-                </tbody>
-            </table>
-
-            @if (Model.TotalPages > 0)
-            {
-                <div class="text-center">
-                    <nav>
-                        <ul class="pagination mb-4">
-                            <li>
-                                <a asp-area=""
-                                   asp-controller="Orders"
-                                   asp-action="All"
-                                   asp-route-page="@Model.PreviousPage">
-                                    &laquo;
-                                </a>
-                            </li>
-                            @if (Model.TotalPages <= 3)
+                        </li>
+                        @if (Model.TotalPages <= 3)
+                        {
+                            @for (int i = 1; i <= Model.TotalPages; i++)
                             {
-                                @for (int i = 1; i <= Model.TotalPages; i++)
+                                var active = i == Model.PageIndex ? "active" : string.Empty;
+                                <li>
+                                    <a class="@active"
+                                       asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="@i">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            @if (Model.PageIndex < 3)
+                            {
+                                @for (int i = 1; i <= 3; i++)
+                                {
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
+                                    <li>
+                                        <a class="@active"
+                                           asp-area=""
+                                           asp-controller="Orders"
+                                           asp-action="All"
+                                           asp-route-page="@i">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                                <li>
+                                    <a style="border: none; padding: 8px 0px;">
+                                        ...
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="@Model.TotalPages">
+                                        @Model.TotalPages
+                                    </a>
+                                </li>
+                            }
+                            else if (Model.PageIndex > Model.TotalPages - 2)
+                            {
+                                <li>
+                                    <a asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="1">
+                                        1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="border: none; padding: 8px 0px;">
+                                        ...
+                                    </a>
+                                </li>
+                                @for (int i = Model.TotalPages - 2; i <= Model.TotalPages; i++)
                                 {
                                     var active = i == Model.PageIndex ? "active" : string.Empty;
                                     <li>
@@ -229,127 +97,267 @@
                             }
                             else
                             {
-                                @if (Model.PageIndex < 3)
+                                <li>
+                                    <a asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="1">
+                                        1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="border: none; padding: 8px 0px;">
+                                        ...
+                                    </a>
+                                </li>
+                                @for (int i = Model.PageIndex - 1; i <= Model.PageIndex + 1; i++)
                                 {
-                                    @for (int i = 1; i <= 3; i++)
-                                    {
-                                        var active = i == Model.PageIndex ? "active" : string.Empty;
-                                        <li>
-                                            <a class="@active"
-                                               asp-area=""
-                                               asp-controller="Orders"
-                                               asp-action="All"
-                                               asp-route-page="@i">
-                                                @i
-                                            </a>
-                                        </li>
-                                    }
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
                                     <li>
-                                        <a style="border: none; padding: 8px 0px;">
-                                            ...
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a asp-area=""
+                                        <a class="@active"
+                                           asp-area=""
                                            asp-controller="Orders"
                                            asp-action="All"
-                                           asp-route-page="@Model.TotalPages">
-                                            @Model.TotalPages
+                                           asp-route-page="@i">
+                                            @i
                                         </a>
                                     </li>
                                 }
-                                else if (Model.PageIndex > Model.TotalPages - 2)
-                                {
-                                    <li>
-                                        <a asp-area=""
-                                           asp-controller="Orders"
-                                           asp-action="All"
-                                           asp-route-page="1">
-                                            1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a style="border: none; padding: 8px 0px;">
-                                            ...
-                                        </a>
-                                    </li>
-                                    @for (int i = Model.TotalPages - 2; i <= Model.TotalPages; i++)
-                                    {
-                                        var active = i == Model.PageIndex ? "active" : string.Empty;
-                                        <li>
-                                            <a class="@active"
-                                               asp-area=""
-                                               asp-controller="Orders"
-                                               asp-action="All"
-                                               asp-route-page="@i">
-                                                @i
-                                            </a>
-                                        </li>
-                                    }
-                                }
-                                else
-                                {
-                                    <li>
-                                        <a asp-area=""
-                                           asp-controller="Orders"
-                                           asp-action="All"
-                                           asp-route-page="1">
-                                            1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a style="border: none; padding: 8px 0px;">
-                                            ...
-                                        </a>
-                                    </li>
-                                    @for (int i = Model.PageIndex - 1; i <= Model.PageIndex + 1; i++)
-                                    {
-                                        var active = i == Model.PageIndex ? "active" : string.Empty;
-                                        <li>
-                                            <a class="@active"
-                                               asp-area=""
-                                               asp-controller="Orders"
-                                               asp-action="All"
-                                               asp-route-page="@i">
-                                                @i
-                                            </a>
-                                        </li>
-                                    }
-                                    <li>
-                                        <a style="border: none; padding: 8px 0px;">
-                                            ...
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a asp-area=""
-                                           asp-controller="Orders"
-                                           asp-action="All"
-                                           asp-route-page="@Model.TotalPages">
-                                            @Model.TotalPages
-                                        </a>
-                                    </li>
-                                }
-
+                                <li>
+                                    <a style="border: none; padding: 8px 0px;">
+                                        ...
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="@Model.TotalPages">
+                                        @Model.TotalPages
+                                    </a>
+                                </li>
                             }
-                            <li>
-                                <a asp-area=""
-                                   asp-controller="Orders"
-                                   asp-action="All"
-                                   asp-route-page="@Model.NextPage">
-                                    &raquo;
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            }
-        }
-        else
-        {
-            <div class="tt-layout-404">
-                <h6 class="tt-title">Няма неизпълнени поръчки</h6>
+
+                        }
+                        <li>
+                            <a asp-area=""
+                               asp-controller="Orders"
+                               asp-action="All"
+                               asp-route-page="@Model.NextPage">
+                                &raquo;
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         }
+    }
 
-    </nav>
+<nav class="tt-topic-list cart-list" style="word-break: break-word;">
+
+    @if (Model.Carts.Any())
+    {
+        <h2 style="text-align:center; padding-bottom:40px;">Преглед на поръчките</h2>
+        <table>
+            <thead>
+                <tr class="thead-cart">
+                    <th class="cart-min cart-text order-address">Дата</th>
+                    <th class="cart-text order-name">Име</th>
+                    <th class="cart-min cart-text order-phone">Телефон</th>
+                    <th class="cart-text order-sum">Сума</th>
+                    <th class="cart-min cart-text order-comment">Коментар</th>
+                    <th class="cart-min cart-text order-comment"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cart in Model.Carts)
+                {
+
+                <tr id="@cart.Id" class="tt-itemOrder order-name">
+                    <td class="cart-min order-address" style="font-size:20px;">
+                        <div>
+                            @cart.Time
+                        </div>
+                    </td>
+                    <td class="cart-text">
+                        @cart.FirstName @cart.LastName
+                    </td>
+                    <td class="cart-min cart-text order-phone">
+                        @cart.PhoneNumber
+                    </td>
+                    <td class="cart-text order-sum">
+                        <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@cart.Sum лв.</div>
+                    </td>
+                    <td id="@cart.Comment" class="cart-min cart-text cart-quantity order-comment">
+                        <div>
+                            @cart.Comment
+                        </div>
+                    </td>
+                    <td class="order-details">
+                        <a asp-area="" asp-controller="Orders" asp-action="Details" asp-route-id="@cart.Id">
+                            Детайли
+                        </a>
+                    </td>
+                </tr>
+            }
+                </tbody>
+            </table>
+    }
+    else
+    {
+        <div class="tt-layout-404">
+            <h6 class="tt-title">Няма неизпълнени поръчки</h6>
+        </div>
+    }
+
+</nav>
+
+    @if (Model.Carts.Any())
+    {
+        @if (Model.TotalPages > 0)
+        {
+            <div class="text-center">
+                <nav>
+                    <ul class="pagination mb-4">
+                        <li>
+                            <a asp-area=""
+                               asp-controller="Orders"
+                               asp-action="All"
+                               asp-route-page="@Model.PreviousPage">
+                                &laquo;
+                            </a>
+                        </li>
+                        @if (Model.TotalPages <= 3)
+                        {
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                var active = i == Model.PageIndex ? "active" : string.Empty;
+                                <li>
+                                    <a class="@active"
+                                       asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="@i">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            @if (Model.PageIndex < 3)
+                            {
+                                @for (int i = 1; i <= 3; i++)
+                                {
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
+                                    <li>
+                                        <a class="@active"
+                                           asp-area=""
+                                           asp-controller="Orders"
+                                           asp-action="All"
+                                           asp-route-page="@i">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                                <li>
+                                    <a style="border: none; padding: 8px 0px;">
+                                        ...
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="@Model.TotalPages">
+                                        @Model.TotalPages
+                                    </a>
+                                </li>
+                            }
+                            else if (Model.PageIndex > Model.TotalPages - 2)
+                            {
+                                <li>
+                                    <a asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="1">
+                                        1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="border: none; padding: 8px 0px;">
+                                        ...
+                                    </a>
+                                </li>
+                                @for (int i = Model.TotalPages - 2; i <= Model.TotalPages; i++)
+                                {
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
+                                    <li>
+                                        <a class="@active"
+                                           asp-area=""
+                                           asp-controller="Orders"
+                                           asp-action="All"
+                                           asp-route-page="@i">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                            }
+                            else
+                            {
+                                <li>
+                                    <a asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="1">
+                                        1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="border: none; padding: 8px 0px;">
+                                        ...
+                                    </a>
+                                </li>
+                                @for (int i = Model.PageIndex - 1; i <= Model.PageIndex + 1; i++)
+                                {
+                                    var active = i == Model.PageIndex ? "active" : string.Empty;
+                                    <li>
+                                        <a class="@active"
+                                           asp-area=""
+                                           asp-controller="Orders"
+                                           asp-action="All"
+                                           asp-route-page="@i">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                                <li>
+                                    <a style="border: none; padding: 8px 0px;">
+                                        ...
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area=""
+                                       asp-controller="Orders"
+                                       asp-action="All"
+                                       asp-route-page="@Model.TotalPages">
+                                        @Model.TotalPages
+                                    </a>
+                                </li>
+                            }
+
+                        }
+                        <li>
+                            <a asp-area=""
+                               asp-controller="Orders"
+                               asp-action="All"
+                               asp-route-page="@Model.NextPage">
+                                &raquo;
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        }
+    }
 </div>
