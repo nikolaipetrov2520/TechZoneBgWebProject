@@ -7706,7 +7706,7 @@ table th {
 .cart-product {
     max-width: 550px;
     min-width: 545px;
-    width: 50%;
+    width: 48%;
 }
 
 @media(max-width: 1600px) {
@@ -7728,15 +7728,16 @@ table th {
         max-width: 145px;
         min-width: 50px;
     }
+    .cart-min {
+        display: none;
+    }
 }
 
 @media(max-width: 575px) {
     table td {
         padding: 25px 1px !important;
     }
-    .cart-min {
-        display: none;
-    }
+
     .cart-text {
         font-size: 10px
     }
