@@ -222,7 +222,7 @@
             if (cart != null)
             {
                 cart.Comment = comment;
-                if (cart.Address == null && address != cart.Address)
+                if (cart.Address == null || address != cart.Address)
                 {
                     cart.Address = address;
                 }
