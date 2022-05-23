@@ -17,5 +17,7 @@
         public string Comment { get; set; }
 
         public decimal Sum { get; set; }
+
+        public bool IsOrdered { get; set; }
     }
 }

@@ -172,8 +172,13 @@
             <tbody>
                 @foreach (var cart in Model.Carts)
                 {
+                    var style = "background - color: white;";
+                    if (cart.IsOrdered)
+                    {
+                        style = "background-color: #85e769b3;";
+                    }
 
-                <tr id="@cart.Id" class="tt-itemOrder order-name">
+                <tr id="@cart.Id" class="tt-itemOrder order-name" style="@style">
                     <td class="cart-min order-address" style="font-size:20px;">
                         <div>
                             @cart.Time

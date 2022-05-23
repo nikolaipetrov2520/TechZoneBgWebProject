@@ -27,5 +27,9 @@
         Task<int> GetCountAsync();
 
         Task<List<OrdersListingViewModel>> GetAllAsync(int skip = 0, int? take = null);
+
+        Task OrderByIdAsync(int id);
+
+        Task SendByIdAsync(int id);
     }
 }

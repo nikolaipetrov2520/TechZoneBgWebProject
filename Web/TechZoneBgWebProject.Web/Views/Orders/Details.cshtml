@@ -9,7 +9,14 @@
         @if (Model.Id > 0)
         {
             decimal totalSum = 0m;
-            <h2 style="text-align:center; padding-bottom:40px; margin: 70px; border-bottom: solid 1px #000000;">Завършване на поръчката</h2>
+            <h2 style="text-align:center; padding-bottom:40px; margin: 70px; border-bottom: solid 1px #000000;">
+                Детайли за поръчката на @Model.FirstName @Model.LastName
+            </h2>
+            @if (Model.IsOrdered)
+            {
+                <h4 style="padding-bottom:30px; color:red; text-align:center">Продуктите за тази поръчка са поръчани.</h4>
+            }
+
             <table>
                 <thead>
                     <tr class="thead-cart">
@@ -77,19 +84,29 @@
                     <input hidden value="@Model.Id" name="cartId" />
                     <h4 style="margin-bottom:30px; text-align:center; display: inline-block;width: 40%;" class="thead-cart">Коментар към поръчката:</h4>
                     <div style="text-align: center; padding-bottom: 30px; border-bottom: solid 1px #d5d5d5;">
-                        @Model.Comment
+                        <h4 style="padding:10px; text-align:center">@Model.Comment</h4>
+
                     </div>
                     <h4 style="margin:30px; text-align:center;  display: inline-block;width: 40%;" class="thead-cart">Данни на клиента</h4>
-                    <h4 style="padding:10px; text-align:center">@Model.FirstName @Model.LastName</h4>
-                    <h4 style="padding:10px; text-align:center">@Model.PhoneNumber</h4>
-                    <h4 style="padding:10px; text-align:center">@Model.Address</h4>
+                    <h4 style="padding:10px; text-align:center">Телефон: @Model.PhoneNumber</h4>
+                    <h4 style="padding:10px; text-align:center">Адрес: @Model.Address</h4>
                 </div>
             </div>
             <div class="pt-row">
                 <div class="col-auto ml-md-auto mb-5" style="text-align: center;">
-                    <a class="btn btn-secondary" asp-area="" asp-controller="Orders" asp-action="Send" asp-route-id="@Model.Id">
-                       Изпращане
-                    </a>
+                    @if (!Model.IsOrdered)
+                    {
+                        <a class="btn btn-secondary" asp-area="" asp-controller="Orders" asp-action="Order" asp-route-id="@Model.Id">
+                            Поръчвaнe
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-secondary" asp-area="" asp-controller="Orders" asp-action="Send" asp-route-id="@Model.Id">
+                            Изпращане
+                        </a>
+                    }
+
                 </div>
             </div>
 

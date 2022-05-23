@@ -22,6 +22,8 @@
 
         public string Address { get; set; }
 
+        public bool IsOrdered { get; set; }
+
         public IEnumerable<CartProductsViewModel> Products { get; set; }
     }
 }

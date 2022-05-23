@@ -31,7 +31,7 @@
                 quantity = 1;
             }
 
-            var cart = await this.db.Carts.Include(c => c.Products).FirstOrDefaultAsync(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
+            var cart = await this.db.Carts.Include(c => c.Products).FirstOrDefaultAsync(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend && !x.IsOrdered);
 
             if (cart != null)
             {
@@ -82,6 +82,7 @@
                     AuthorId = userId,
                     CreatedOn = DateTime.Now,
                     IsFinished = false,
+                    IsOrdered = false,
                     IsSend = false,
                     IsDeleted = false,
                     Address = address,
@@ -125,7 +126,7 @@
                 quantity = 1;
             }
 
-            var cart = await this.db.Carts.Include(c => c.Products).FirstOrDefaultAsync(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend);
+            var cart = await this.db.Carts.Include(c => c.Products).FirstOrDefaultAsync(x => x.AuthorId == userId && !x.IsDeleted && !x.IsFinished && !x.IsSend && !x.IsOrdered);
 
             if (cart != null)
             {
@@ -266,7 +267,7 @@
         {
             var result = 0m;
 
-            var queriable = this.db.Carts.Include(c => c.Products).ThenInclude(p => p.Product).FirstOrDefault(x => x.AuthorId == id && !x.IsDeleted && !x.IsFinished && !x.IsSend);
+            var queriable = this.db.Carts.Include(c => c.Products).ThenInclude(p => p.Product).FirstOrDefault(x => x.AuthorId == id && !x.IsDeleted && !x.IsFinished && !x.IsSend && !x.IsOrdered);
             if (queriable != null)
             {
                 var products = queriable.Products.Where(p => !p.IsDeleted).ToList();
@@ -322,6 +323,7 @@
                     Id = item.Id,
                     Time = item.ModifiedOn ?? DateTime.Now,
                     Comment = item.Comment,
+                    IsOrdered = item.IsOrdered,
                 };
 
                 carts.Add(cart);
@@ -353,9 +355,32 @@
                 Time = queryable.ModifiedOn ?? DateTime.Now,
                 Comment = queryable.Comment,
                 Address = queryable.Address,
+                IsOrdered = queryable.IsOrdered,
             };
 
             return cart;
+        }
+
+        public async Task OrderByIdAsync(int id)
+        {
+            var queryable = await this.db.Carts
+                .FirstOrDefaultAsync(c => c.Id == id);
+            if (queryable != null)
+            {
+                queryable.IsOrdered = true;
+                await this.db.SaveChangesAsync();
+            }
+        }
+
+        public async Task SendByIdAsync(int id)
+        {
+            var queryable = await this.db.Carts
+                .FirstOrDefaultAsync(c => c.Id == id);
+            if (queryable != null)
+            {
+                queryable.IsSend = true;
+                await this.db.SaveChangesAsync();
+            }
         }
     }
 }

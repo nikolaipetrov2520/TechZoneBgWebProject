@@ -59,5 +59,17 @@
 
             return this.View(cart);
         }
+
+        public async Task<IActionResult> Order(int id)
+        {
+            await this.cartsService.OrderByIdAsync(id);
+            return this.RedirectToAction("All");
+        }
+
+        public async Task<IActionResult> Send(int id)
+        {
+            await this.cartsService.SendByIdAsync(id);
+            return this.RedirectToAction("All");
+        }
     }
 }
