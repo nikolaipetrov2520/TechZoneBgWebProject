@@ -80,7 +80,14 @@
                             {
                                 <h4 style="margin:30px; text-align:center;  display: inline-block;width: 40%;" class="thead-cart">Адрес за доставка</h4>
                                 <h4 style="padding:30px; text-align:center">@Model.Address</h4>
-                                <button type="button" class="btn btn-secondary">Промени адреса</button>
+                                <button id="address-btn" type="button" class="btn btn-secondary">Промени адреса</button>
+                                <div style="display:none" id="hidden-address">
+                                    <h4 style="padding:30px; text-align:center">Въведете Адрес за доставка</h4>
+                                    <div class="text-danger" asp-validation-summary="All"></div>
+                                    <div style="text-align:center" class="form-group">
+                                        <textarea asp-for="Address" placeholder="Въведете адрес...." style="width: 40%;"></textarea>
+                                    </div>
+                                </div>
                             }
                             else
                             {
@@ -126,6 +133,11 @@
                 btn.disabled = true;
             }
         }
+        var hiddenAddress = document.querySelector("#hidden-address");
+        var addressBtn = document.querySelector("#address-btn");
+        $(addressBtn).click(function (e) {
+            hiddenAddress.style.display = "block";
+        });
     </script>
 }
 
