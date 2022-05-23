@@ -12,6 +12,8 @@
     {
         Task<TModel> GetUnfinishedCartAsync<TModel>(string id);
 
+        Task<OrderDetailsViewModel> GetFinishedCartByIdAsync(int id);
+
         Task<string> AddCartAsync(int id, int quantity, string userId);
 
         Task<string> UpdateCartAsync(int id, int quantity, string userId);

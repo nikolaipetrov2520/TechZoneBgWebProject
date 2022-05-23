@@ -1,0 +1,105 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Orders.OrderDetailsViewModel
+@{
+    ViewData["Title"] = "Преглед на поръчка";
+}
+
+<div class="containerCart" style=" margin-top: 50px; margin-bottom: 50px;">
+    <nav class="tt-topic-listCart cart-list" style="word-break: break-word;">
+
+        @if (Model.Id > 0)
+        {
+            decimal totalSum = 0m;
+            <h2 style="text-align:center; padding-bottom:40px; margin: 70px; border-bottom: solid 1px #000000;">Завършване на поръчката</h2>
+            <table>
+                <thead>
+                    <tr class="thead-cart">
+                        <th class="Cart-min cart-text">Баркод</th>
+                        <th class="cart-text">Артикул</th>
+                        <th class="Cart-min cart-text">Единична цена</th>
+                        <th class="cart-text">Количество</th>
+                        <th class="cart-text">Крайна Цена</th>
+                        <th class="cart-text"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        decimal total = product.Quantity * product.Price;
+                        totalSum += total;
+                        <tr id="@product.Id" price="@product.Price" class="tt-itemCart">
+                            <td class="Cart-min cart-text" style=" width: 14%;">
+                                <a href="@("https://cellphone-bg.com/search?search=" + product.Barcode)" target="_blank">
+                                    <div class="tt-col-description">
+                                        <div class="tt-title">
+                                            <div>
+                                                @product.Barcode
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                            <td class="cart-text cart-product" style="width: 41%;">
+                                <div>
+                                    <div class="tt-col-avatar"></div>
+                                    <div class="tt-col-description">
+                                        <div class="tt-title">
+                                            <div style="font-size: 16px">
+                                                @product.Name
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="Cart-min cart-text" style=" width: 13%;">
+                                <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@product.Price лв.</div>
+                            </td>
+                            <td class="cart-text cart-quantity" style=" width: 11%;">
+                                <div class="tt-col-category">
+                                    <div style="height: 28px;">
+                                        <div style="font-size: 18px;">
+                                            @product.Quantity
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cart-text" style=" width: 11%;">
+                                @total лв.
+                            </td>
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+            <h4 id="totalSum" style="padding:30px; text-align:right; border-bottom: solid 1px #d5d5d5; box-shadow: 0px 15px 25px -28px;">Крайна Сума @totalSum лв.</h4>
+            <div class="tt-wrapper-inner">
+                <div class="pt-editor form-default" style="padding-bottom: 30px; border-bottom: solid 1px #d5d5d5;">
+                    <input hidden value="@Model.Id" name="cartId" />
+                    <h4 style="margin-bottom:30px; text-align:center; display: inline-block;width: 40%;" class="thead-cart">Коментар към поръчката:</h4>
+                    <div style="text-align: center; padding-bottom: 30px; border-bottom: solid 1px #d5d5d5;">
+                        @Model.Comment
+                    </div>
+                    <h4 style="margin:30px; text-align:center;  display: inline-block;width: 40%;" class="thead-cart">Данни на клиента</h4>
+                    <h4 style="padding:10px; text-align:center">@Model.FirstName @Model.LastName</h4>
+                    <h4 style="padding:10px; text-align:center">@Model.PhoneNumber</h4>
+                    <h4 style="padding:10px; text-align:center">@Model.Address</h4>
+                </div>
+            </div>
+            <div class="pt-row">
+                <div class="col-auto ml-md-auto mb-5" style="text-align: center;">
+                    <a class="btn btn-secondary" asp-area="" asp-controller="Orders" asp-action="Send" asp-route-id="@Model.Id">
+                       Изпращане
+                    </a>
+                </div>
+            </div>
+
+        }
+        else
+        {
+            <div>
+                <h3 class="tt-title">Няма Поръчки за изпращане. Кликнете <a asp-area="" asp-controller="Products" asp-action="All">Тук</a>, за да продължите с покупките</h3>
+            </div>
+        }
+
+    </nav>
+</div>

@@ -9,6 +9,8 @@
     using Microsoft.AspNetCore.Mvc;
     using TechZoneBgWebProject.Common;
     using TechZoneBgWebProject.Services.Carts;
+    using TechZoneBgWebProject.Services.Products;
+    using TechZoneBgWebProject.Web.ViewModels.Carts;
     using TechZoneBgWebProject.Web.ViewModels.Orders;
 
     [Authorize(Roles = GlobalConstants.Admin.AdministratorRoleName + "," + GlobalConstants.TechzoneBgEmployee.EmployeeRoleName)]
@@ -17,10 +19,12 @@
         private const int CartsPerPage = 10;
 
         private readonly ICartsService cartsService;
+        private readonly IProductsService productsService;
 
-        public OrdersController(ICartsService cartsService)
+        public OrdersController(ICartsService cartsService, IProductsService productsService)
         {
             this.cartsService = cartsService;
+            this.productsService = productsService;
         }
 
         public async Task<IActionResult> All(int page = 1)
@@ -37,6 +41,23 @@
             };
 
             return this.View(viewModel);
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var cart = await this.cartsService.GetFinishedCartByIdAsync(id);
+
+            if (cart == null)
+            {
+                cart = new OrderDetailsViewModel
+                {
+                    Id = 0,
+                };
+            }
+
+            cart.Products = await this.productsService.GetProductsBiCartIdAsync<CartProductsViewModel>(cart.Id);
+
+            return this.View(cart);
         }
     }
 }
