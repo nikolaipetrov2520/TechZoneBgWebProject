@@ -422,7 +422,7 @@
             var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
                 .AsNoTracking()
                 .OrderByDescending(c => c.Id)
-                .Where(c => c.AuthorId == id && c.IsFinished && !c.IsDeleted && c.IsOrdered && !c.IsSend)
+                .Where(c => c.AuthorId == id && c.IsFinished && !c.IsDeleted && !c.IsSend)
                 .ToListAsync();
 
             var carts = new List<UsersExecutedViewModel>();
