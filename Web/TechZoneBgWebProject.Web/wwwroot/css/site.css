@@ -7685,7 +7685,8 @@ hr {
 }
 
 .thead-cart {
-    background: linear-gradient(90deg, rgba(96,163,235,0) 0%, rgba(96,163,235,1) 10%, rgba(96,163,235,1) 50%, rgba(96,163,235,1) 90%, rgba(96,163,235,0) 100%);
+    background-color: #60a3eb;
+    color: white;
 }
 
 table td {
