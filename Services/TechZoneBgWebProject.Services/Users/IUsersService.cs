@@ -18,6 +18,8 @@
 
         Task<TModel> GetByIdAsync<TModel>(string id);
 
+        Task<TModel> GetOrdersByIdAsync<TModel>(string id);
+
         Task<IEnumerable<TModel>> GetAllAsync<TModel>();
 
         Task<IEnumerable<TModel>> GetFollowersAsync<TModel>(string id);

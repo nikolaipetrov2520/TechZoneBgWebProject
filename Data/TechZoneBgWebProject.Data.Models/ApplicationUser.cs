@@ -39,6 +39,8 @@
 
         public ICollection<Message> SentMessages { get; set; } = new HashSet<Message>();
 
+        public ICollection<Cart> Carts { get; set; } = new HashSet<Cart>();
+
         public ICollection<Message> ReceivedMessages { get; set; } = new HashSet<Message>();
 
         public ICollection<Post> Posts { get; set; } = new HashSet<Post>();

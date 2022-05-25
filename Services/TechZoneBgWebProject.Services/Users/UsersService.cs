@@ -132,6 +132,17 @@
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
 
+        public async Task<TModel> GetOrdersByIdAsync<TModel>(string id)
+        {
+            var user = await this.db.Users
+                .Include(c => c.Carts)
+                .Where(u => u.Id == id && !u.IsDeleted)
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync();
+
+            return user;
+        }
+
         private async Task<ApplicationUser> GetByIdAsync(string id)
             => await this.db.Users.FirstOrDefaultAsync(u => u.Id == id && !u.IsDeleted);
     }

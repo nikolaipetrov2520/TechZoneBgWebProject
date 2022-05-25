@@ -5,12 +5,18 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+
     using TechZoneBgWebProject.Data.Models;
     using TechZoneBgWebProject.Web.ViewModels.Orders;
+    using TechZoneBgWebProject.Web.ViewModels.Users;
 
     public interface ICartsService
     {
         Task<TModel> GetUnfinishedCartAsync<TModel>(string id);
+
+        Task<IEnumerable<UsersExecutedViewModel>> GetExecutedCartAsync(string id);
+
+        Task<IEnumerable<UsersExecutedViewModel>> GetExecutingCartAsync(string id);
 
         Task<OrderDetailsViewModel> GetFinishedCartByIdAsync(int id);
 

@@ -12,6 +12,7 @@
     using TechZoneBgWebProject.Data;
     using TechZoneBgWebProject.Data.Models;
     using TechZoneBgWebProject.Web.ViewModels.Orders;
+    using TechZoneBgWebProject.Web.ViewModels.Users;
 
     public class CartsService : ICartsService
     {
@@ -381,6 +382,72 @@
                 queryable.IsSend = true;
                 await this.db.SaveChangesAsync();
             }
+        }
+
+        public async Task<IEnumerable<UsersExecutedViewModel>> GetExecutedCartAsync(string id)
+        {
+            var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
+                .AsNoTracking()
+                .OrderByDescending(c => c.Id)
+                .Where(c => c.AuthorId == id && c.IsFinished && !c.IsDeleted && c.IsOrdered && c.IsSend)
+                .ToListAsync();
+
+            var carts = new List<UsersExecutedViewModel>();
+
+            foreach (var cart in queryable)
+            {
+                decimal sum = 0m;
+                foreach (var product in cart.Products)
+                {
+                    sum += product.Quantity * product.Product.Price;
+                }
+
+                var result = new UsersExecutedViewModel
+                {
+                    Sum = sum,
+                    Id = cart.Id,
+                    Time = cart.ModifiedOn ?? DateTime.Now,
+                    Comment = cart.Comment,
+                    Address = cart.Address,
+                };
+
+                carts.Add(result);
+            }
+
+            return carts;
+        }
+
+        public async Task<IEnumerable<UsersExecutedViewModel>> GetExecutingCartAsync(string id)
+        {
+            var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
+                .AsNoTracking()
+                .OrderByDescending(c => c.Id)
+                .Where(c => c.AuthorId == id && c.IsFinished && !c.IsDeleted && c.IsOrdered && !c.IsSend)
+                .ToListAsync();
+
+            var carts = new List<UsersExecutedViewModel>();
+
+            foreach (var cart in queryable)
+            {
+                decimal sum = 0m;
+                foreach (var product in cart.Products)
+                {
+                    sum += product.Quantity * product.Product.Price;
+                }
+
+                var result = new UsersExecutedViewModel
+                {
+                    Sum = sum,
+                    Id = cart.Id,
+                    Time = cart.ModifiedOn ?? DateTime.Now,
+                    Comment = cart.Comment,
+                    Address = cart.Address,
+                };
+
+                carts.Add(result);
+            }
+
+            return carts;
         }
     }
 }

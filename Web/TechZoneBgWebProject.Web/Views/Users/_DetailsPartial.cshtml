@@ -1,5 +1,5 @@
 ﻿@using TechZoneBgWebProject.Web.Infrastructure.Extensions
-@model TechZoneBgWebProject.Web.ViewModels.Users.UsersDetailsViewModel
+@model TechZoneBgWebProject.Web.ViewModels.Users.UsersOrdersViewModel
 
 <div class="tt-wrapper-section">
     <div class="container">
@@ -15,7 +15,7 @@
                 <div class="tt-title">
                     <a asp-area=""
                        asp-controller="Users"
-                       asp-action="Threads"
+                       asp-action="Executed"
                        asp-route-id="@Model.Id">
                         @(Model.FirstName + " " + Model.LastName)
                     </a>
@@ -23,7 +23,7 @@
                 <ul class="tt-list-badge">
                     <li>
                         <a href="#">
-                            <span class="tt-color14 tt-badge">Points: @Model.Points</span>
+                            <span class="tt-color14 tt-badge" style="background-color:#60a3eb; padding-left:10px; padding-right:10px">Поръчки които се обработват: @Model.ExecutingCount</span>
                         </a>
                     </li>
                 </ul>
@@ -34,10 +34,6 @@
             <a href="/Identity/Account/Manage" class="tt-icon-btn" style="color: #666f74">
                 <i class="fas fa-cog"></i>
             </a> }
-            else
-            {
-            <vc:users-follow-button user-id="@Model.Id"></vc:users-follow-button>}
-
         </div>
-                    </div>
+    </div>
 </div>

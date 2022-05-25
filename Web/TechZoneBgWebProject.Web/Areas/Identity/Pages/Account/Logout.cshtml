@@ -1,11 +1,11 @@
 ﻿@page
 @model LogoutModel
 @{
-    ViewData["Title"] = "Log out";
+    ViewData["Title"] = "Изход";
 }
 
-<header>
-    <div class="row">
+<header style="text-align: center;">
+    <div class="row" style="display:inline-block; margin-top:50px;">
         <div class="text-center">
             <h1>@ViewData["Title"]</h1>
             @{
@@ -13,7 +13,7 @@
                 {
 
                     <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                        <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+                        <button type="submit" class="nav-link btn btn-secondary">Кликнете тук за да излезете от акаунта си</button>
                     </form>
 
                 }

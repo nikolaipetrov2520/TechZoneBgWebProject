@@ -36,6 +36,10 @@
                     dest => dest.ThreadsCount,
                     dest => dest.MapFrom(src => src.Posts.Count(p => !p.IsDeleted)));
             this.CreateMap<ApplicationUser, ChatUserViewModel>();
+            this.CreateMap<ApplicationUser, UsersOrdersViewModel>()
+                .ForMember(
+                    dest => dest.ExecutingCount,
+                    dest => dest.MapFrom(src => src.Carts.Count(c => !c.IsSend && !c.IsDeleted && c.IsFinished && c.IsOrdered)));
             this.CreateMap<ApplicationUser, ChatViewModel>();
             this.CreateMap<ApplicationUser, UsersDetailsViewModel>();
 

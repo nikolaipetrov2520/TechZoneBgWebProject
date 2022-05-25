@@ -1,0 +1,61 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Users.UsersOrdersViewModel
+@{ ViewData["Title"] = Model.FirstName; }
+
+<partial name="_DetailsPartial" model="Model" />
+
+<div class="container">
+    <div class="tt-tab-wrapper">
+
+        <vc:users-details user-id="@Model.Id"></vc:users-details>
+
+        <div style="margin-top: 50px;" class="tab-pane tt-indent-none" id="tt-tab-03" role="tabpanel">
+            <div class="tt-topic-list" style="word-break: break-word;">
+                @if (Model.Executed.Any())
+                {
+                    <table>
+                        <thead>
+                            <tr class="thead-cart">
+                                <th class="cart-min cart-text order-address">Дата</th>
+                                <th class="cart-text order-sum">Сума</th>
+                                <th class="cart-min cart-text order-comment">Коментар</th>
+                                <th class="cart-min cart-text order-comment"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var cart in Model.Executed)
+                            {
+                                <tr id="@cart.Id" class="tt-itemOrder order-name">
+                                    <td class="cart-min order-address" style="font-size:20px;">
+                                        <div>
+                                            @cart.Time
+                                        </div>
+                                    </td>
+                                    <td class="cart-text order-sum">
+                                        <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@cart.Sum лв.</div>
+                                    </td>
+                                    <td id="@cart.Comment" class="cart-min cart-text cart-quantity order-comment">
+                                        <div>
+                                            @cart.Comment
+                                        </div>
+                                    </td>
+                                    <td class="order-details">
+                                        <a asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@cart.Id">
+                                            Детайли
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="tt-layout-404">
+                        <h6 class="tt-title">@(Model.FirstName + " " + Model.LastName) Нямате Изпълнени поръчки.</h6>
+                    </div>}
+
+            </div>
+        </div>
+    </div>
+</div>
+
