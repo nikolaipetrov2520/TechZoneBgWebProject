@@ -259,6 +259,7 @@
             if (productsCount.Count < 1)
             {
                 cart.IsDeleted = true;
+                cart.DeletedOn = DateTime.Now;
             }
 
             await this.db.SaveChangesAsync();
