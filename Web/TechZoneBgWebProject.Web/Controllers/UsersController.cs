@@ -39,24 +39,6 @@
             this.productsService = productsService;
         }
 
-        public async Task<IActionResult> Threads(string id)
-        {
-            var user = await this.usersService.GetByIdAsync<UsersDetailsViewModel>(id);
-            if (user == null)
-            {
-                return this.NotFound();
-            }
-
-            user.Threads = await this.postsService.GetAllByUserIdAsync<UsersThreadsViewModel>(id);
-            foreach (var thread in user.Threads)
-            {
-                thread.Activity = await this.postsService.GetLatestActivityByIdAsync(thread.Id);
-                thread.Tags = await this.tagsService.GetAllByPostIdAsync<UsersThreadsTagsViewModel>(thread.Id);
-            }
-
-            return this.View(user);
-        }
-
         public async Task<IActionResult> Executing(string id)
         {
             var user = await this.usersService.GetOrdersByIdAsync<UsersOrdersViewModel>(id);
@@ -66,11 +48,6 @@
             }
 
             user.Executing = await this.cartsService.GetExecutingCartAsync(id);
-
-            foreach (var item in user.Executing)
-            {
-                item.Products = await this.productsService.GetProductsBiCartIdAsync<CartProductsViewModel>(item.Id);
-            }
 
             return this.View(user);
         }
@@ -85,64 +62,24 @@
 
             user.Executed = await this.cartsService.GetExecutedCartAsync(id);
 
-            foreach (var item in user.Executed)
-            {
-                item.Products = await this.productsService.GetProductsBiCartIdAsync<CartProductsViewModel>(item.Id);
-            }
-
             return this.View(user);
         }
 
-        public async Task<IActionResult> Following(string id)
+        public async Task<IActionResult> Details(int id)
         {
-            var user = await this.usersService.GetByIdAsync<UsersDetailsViewModel>(id);
-            if (user == null)
+            var cart = await this.cartsService.GetCartDetailsByIdAsync(id);
+
+            if (cart == null)
             {
-                return this.NotFound();
+                cart = new UsersExecutedViewModel
+                {
+                    Id = 0,
+                };
             }
 
-            user.Following = await this.usersService.GetFollowingAsync<UsersViewModel>(id);
+            cart.Products = await this.productsService.GetProductsBiCartIdAsync<CartProductsViewModel>(cart.Id);
 
-            return this.View(user);
-        }
-
-        public async Task<IActionResult> Followers(string id)
-        {
-            var user = await this.usersService.GetByIdAsync<UsersDetailsViewModel>(id);
-            if (user == null)
-            {
-                return this.NotFound();
-            }
-
-            user.Followers = await this.usersService.GetFollowersAsync<UsersViewModel>(id);
-
-            return this.View(user);
-        }
-
-        public async Task<IActionResult> Follow(string id)
-        {
-            var followerId = this.User.GetId();
-            if (followerId == id)
-            {
-                return this.BadRequest();
-            }
-
-            var isFollowed = await this.usersService.FollowAsync(id, followerId);
-
-            return this.Ok(isFollowed);
-        }
-
-        public async Task<IActionResult> Replies(string id)
-        {
-            var user = await this.usersService.GetByIdAsync<UsersDetailsViewModel>(id);
-            if (user == null)
-            {
-                return this.NotFound();
-            }
-
-            user.Replies = await this.repliesService.GetAllByUserIdAsync<UsersRepliesViewModel>(id);
-
-            return this.View(user);
+            return this.View(cart);
         }
     }
 }

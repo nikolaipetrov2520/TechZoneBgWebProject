@@ -18,6 +18,8 @@
 
         public string Address { get; set; }
 
+        public string AuthorId { get; set; }
+
         public IEnumerable<CartProductsViewModel> Products { get; set; }
     }
 }

@@ -20,6 +20,8 @@
 
         Task<OrderDetailsViewModel> GetFinishedCartByIdAsync(int id);
 
+        Task<UsersExecutedViewModel> GetCartDetailsByIdAsync(int id);
+
         Task<string> AddCartAsync(int id, int quantity, string userId);
 
         Task<string> UpdateCartAsync(int id, int quantity, string userId);

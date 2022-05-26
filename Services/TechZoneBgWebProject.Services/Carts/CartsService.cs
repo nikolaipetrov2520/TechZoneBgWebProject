@@ -362,6 +362,32 @@
             return cart;
         }
 
+        public async Task<UsersExecutedViewModel> GetCartDetailsByIdAsync(int id)
+        {
+            var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            decimal sum = 0m;
+            foreach (var product in queryable.Products)
+            {
+                sum += product.Quantity * product.Product.Price;
+            }
+
+            var cart = new UsersExecutedViewModel
+            {
+                Sum = sum,
+                Id = queryable.Id,
+                Time = queryable.ModifiedOn ?? DateTime.Now,
+                Comment = queryable.Comment,
+                Address = queryable.Address,
+                AuthorId = queryable.AuthorId,
+            };
+
+            return cart;
+        }
+
         public async Task OrderByIdAsync(int id)
         {
             var queryable = await this.db.Carts

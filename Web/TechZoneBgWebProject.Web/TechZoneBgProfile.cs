@@ -39,7 +39,7 @@
             this.CreateMap<ApplicationUser, UsersOrdersViewModel>()
                 .ForMember(
                     dest => dest.ExecutingCount,
-                    dest => dest.MapFrom(src => src.Carts.Count(c => !c.IsSend && !c.IsDeleted && c.IsFinished && c.IsOrdered)));
+                    dest => dest.MapFrom(src => src.Carts.Count(c => !c.IsSend && !c.IsDeleted && c.IsFinished)));
             this.CreateMap<ApplicationUser, ChatViewModel>();
             this.CreateMap<ApplicationUser, UsersDetailsViewModel>();
 
