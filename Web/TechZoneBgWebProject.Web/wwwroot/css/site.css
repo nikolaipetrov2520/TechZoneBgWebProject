@@ -5650,6 +5650,70 @@ select:disabled.simple-control::-ms-expand {
         margin-top: -4px;
     }
 
+.custom-select-02 {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+}
+
+    .custom-select-02 select {
+        outline: none;
+        border: none;
+        border-color: transparent;
+        background: transparent;
+        font-weight: 500;
+        line-height: 22px;
+        font-size: 16px;
+        padding: 8px 22px 5px 10px;
+        color: white;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-transition: color 0.2s linear;
+        transition: color 0.2s linear;
+        letter-spacing: 0.01em;
+    }
+
+        .custom-select-02 select option {
+            background-color: #ffffff;
+            border: 0;
+            color: #333333;
+            padding: 10px;
+        }
+
+        .custom-select-02 select:hover {
+            color: #2172cd;
+        }
+
+    .custom-select-02::before, .custom-select-01::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .custom-select-02::before {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        background: rgb(96, 163, 235);
+    }
+
+    .custom-select-02::after {
+        content: "";
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_25' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 81 45' style='enable-background:new 0 0 81 45;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23666F74;%7D%0A%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M40.5,45c-1.15,0-2.3-0.44-3.18-1.32l-36-36c-1.76-1.76-1.76-4.61,0-6.36c1.76-1.76,4.61-1.76,6.36,0 L40.5,34.13L73.32,1.32c1.76-1.76,4.61-1.76,6.36,0c1.76,1.76,1.76,4.61,0,6.36l-36,36C42.8,44.56,41.65,45,40.5,45z'/%3E%3C/g%3E%3C/svg%3E%0A");
+        width: 12px;
+        height: 7px;
+        line-height: 1;
+        right: 0px;
+        position: absolute;
+        top: 50%;
+        margin-top: -4px;
+    }
 .form-create-topic.form-default .form-group label:not(.error) {
     padding-bottom: 22px;
 }

@@ -1,11 +1,21 @@
-﻿<div class="tt-search">
+﻿@model TechZoneBgWebProject.Web.ViewModels.Products.ProductAllViewModel
+
+<div class="tt-search">
     <form class="search-wrapper"
           asp-area=""
           asp-controller="Products"
           asp-action="All"
           method="get">
         <div class="search-form">
-            <input type="text" name="search" class="tt-search__input" placeholder="Търси..." />
+            @if (Model.Search != null)
+            {
+                <input type="text" name="search" class="tt-search__input" placeholder="Търси..." value="@Model.Search" />
+            }
+            else
+            {
+                <input type="text" name="search" class="tt-search__input" placeholder="Търси..." />
+            }
+
             <button class="tt-search__btn" type="submit">
                 <svg class="tt-icon">
                     <use xlink:href="#icon-search"></use>

@@ -22,11 +22,11 @@
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> All(int page = 1, string search = null)
+        public async Task<IActionResult> All(int page = 1, string search = null, string sort = null)
         {
             var skip = (page - 1) * ProductsPerPage;
             var count = await this.productsService.GetCountAsync(search);
-            var products = await this.productsService.GetAllAsync<ProductsListingViewModel>(search, skip, ProductsPerPage);
+            var products = await this.productsService.GetAllAsync<ProductsListingViewModel>(search, sort, skip, ProductsPerPage);
 
             var viewModel = new ProductAllViewModel
             {
@@ -34,6 +34,7 @@
                 Search = search,
                 PageIndex = page,
                 TotalPages = (int)Math.Ceiling(count / (decimal)ProductsPerPage),
+                Sort = sort,
             };
 
             return this.View(viewModel);

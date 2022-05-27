@@ -22,7 +22,7 @@
             this.mapper = mapper;
         }
 
-        public Task<List<TModel>> GetAllAsync<TModel>(string search = null, int skip = 0, int? take = null)
+        public Task<List<TModel>> GetAllAsync<TModel>(string search = null, string sort = null, int skip = 0, int? take = null)
         {
             var queryable = this.db.Products
                 .AsNoTracking()
@@ -37,6 +37,30 @@
                     queryable = queryable
                     .Where(t => t.Name.Contains(filter));
                 }
+            }
+
+            if (sort != null)
+            {
+                if (sort == "id")
+                {
+                    queryable = queryable.OrderByDescending(p => p.ProductId);
+                }
+
+                if (sort == "name")
+                {
+                    queryable = queryable.OrderBy(p => p.Name);
+                }
+
+                if (sort == "price")
+                {
+                    queryable = queryable.OrderBy(p => p.Price);
+                }
+
+                if (sort == "price_desc")
+                {
+                    queryable = queryable.OrderByDescending(p => p.Price);
+                }
+
             }
 
             if (take.HasValue)

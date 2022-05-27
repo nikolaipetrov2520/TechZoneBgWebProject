@@ -7,7 +7,7 @@
     {
         Task<int> GetCountAsync(string searchFilter = null);
 
-        Task<List<TModel>> GetAllAsync<TModel>(string search = null, int skip = 0, int? take = null);
+        Task<List<TModel>> GetAllAsync<TModel>(string search = null, string sort = null, int skip = 0, int? take = null);
 
         Task<TModel> GetByIdAsync<TModel>(int id);
 
