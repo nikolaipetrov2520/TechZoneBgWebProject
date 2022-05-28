@@ -26,7 +26,7 @@
 
 @if (Model.Search != null)
 {
-    <form>
+    <form style="text-align:right">
         <select id="sort" class="select" onchange="location = this.value;">
             <option value="">@select</option>
             <option value="/Products/All?search=@Model.Search">По подразбиране</option>
@@ -39,7 +39,7 @@
 }
 else
 {
-    <form>
+    <form style="text-align:right">
         <select id="sort" class="select" onchange="location = this.value;">
             <option value="">@select</option>
             <option value="/Products/All">По подразбиране</option>
