@@ -11655,3 +11655,8 @@ a.add-to-cart-right {
     width: 12%;
     text-align: center;
 }
+
+.select {
+    border-radius: 21px;
+    padding: 5px 15px;
+}

@@ -1,13 +1,34 @@
 ﻿@using TechZoneBgWebProject.Web.Infrastructure.Extensions
 @model TechZoneBgWebProject.Web.ViewModels.Products.ProductAllViewModel
 
+@{string select = "";
+    if (Model.Sort == null)
+    {
+        select = "По подразбиране";
+    }
+    else if (Model.Sort == "name")
+    {
+        select = "По име";
+    }
+    else if (Model.Sort == "id")
+    {
+        select = "Първо най-новите";
+    }
+    else if (Model.Sort == "price")
+    {
+        select = "Първо най-евтините";
+    }
+    else if (Model.Sort == "price_desc")
+    {
+        select = "Първо най-скъпите";
+    }
+    }
+
 @if (Model.Search != null)
 {
     <form>
-        <label for="sort">
-            Сортиране
-        </label>
-        <select id="sort" onchange="location = this.value;">
+        <select id="sort" class="select" onchange="location = this.value;">
+            <option value="">@select</option>
             <option value="/Products/All?search=@Model.Search">По подразбиране</option>
             <option value="/Products/All?search=@(Model.Search)&sort=name">По име</option>
             <option value="/Products/All?search=@(Model.Search)&sort=id">Първо най-новите</option>
@@ -19,10 +40,8 @@
 else
 {
     <form>
-        <label for="sort">
-            Сортиране
-        </label>
-        <select id="sort" onchange="location = this.value;">
+        <select id="sort" class="select" onchange="location = this.value;">
+            <option value="">@select</option>
             <option value="/Products/All">По подразбиране</option>
             <option value="/Products/All?sort=name">По име</option>
             <option value="/Products/All?sort=id">Първо най-новите</option>
