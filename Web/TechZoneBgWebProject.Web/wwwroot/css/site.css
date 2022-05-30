@@ -8175,7 +8175,7 @@ table th {
 
 @media (max-width: 991px) {
     .tt-topic-list .hide-mobile {
-        display: in;
+        font-size:13px;
     }
 }
 
@@ -11644,6 +11644,11 @@ a.add-to-cart-right {
 .order-sum {
     width: 16%;
     text-align: center;
+}
+
+.order-cart-sum {
+    font-size: 22px;
+    padding: 5px;
 }
 
 .order-comment {
