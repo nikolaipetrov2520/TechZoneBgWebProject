@@ -24,6 +24,8 @@
 
         public bool IsOrdered { get; set; }
 
+        public bool IsSend { get; set; }
+
         public IEnumerable<CartProductsViewModel> Products { get; set; }
     }
 }

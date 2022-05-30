@@ -357,6 +357,7 @@
                 Comment = queryable.Comment,
                 Address = queryable.Address,
                 IsOrdered = queryable.IsOrdered,
+                IsSend = queryable.IsSend,
             };
 
             return cart;

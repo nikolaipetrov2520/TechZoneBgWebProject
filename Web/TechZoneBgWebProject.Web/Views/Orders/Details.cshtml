@@ -12,9 +12,13 @@
             <h2 style="text-align:center; padding-bottom:40px; margin: 70px; border-bottom: solid 1px #000000;">
                 Детайли за поръчката на @Model.FirstName @Model.LastName
             </h2>
-            @if (Model.IsOrdered)
+            @if (Model.IsOrdered && !Model.IsSend)
             {
                 <h4 style="padding-bottom:30px; color:red; text-align:center">Продуктите за тази поръчка са поръчани.</h4>
+            }
+            @if (Model.IsSend)
+            {
+                <h4 style="padding-bottom:30px; color:red; text-align:center">Поръчката е изпратена към клиента.</h4>
             }
 
             <table align="center">
@@ -94,17 +98,21 @@
             </div>
             <div class="pt-row">
                 <div class="col-auto ml-md-auto mb-5" style="text-align: center;">
-                    @if (!Model.IsOrdered)
+                    @if (!Model.IsSend)
                     {
-                        <a class="btn btn-secondary" asp-area="" asp-controller="Orders" asp-action="Order" asp-route-id="@Model.Id">
-                            Поръчвaнe
-                        </a>
-                    }
-                    else
-                    {
-                        <a class="btn btn-secondary" asp-area="" asp-controller="Orders" asp-action="Send" asp-route-id="@Model.Id">
-                            Изпращане
-                        </a>
+                        @if (!Model.IsOrdered)
+                        {
+                            <a class="btn btn-secondary" asp-area="" asp-controller="Orders" asp-action="Order" asp-route-id="@Model.Id">
+                                Поръчвaнe
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-secondary" asp-area="" asp-controller="Orders" asp-action="Send" asp-route-id="@Model.Id">
+                                Изпращане
+                            </a>
+                        }
+
                     }
 
                 </div>
