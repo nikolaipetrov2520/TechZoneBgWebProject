@@ -510,7 +510,7 @@
         {
             var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
                 .AsNoTracking()
-                .OrderBy(c => c.Id)
+                .OrderByDescending(c => c.Id)
                 .Where(c => c.IsFinished && !c.IsDeleted && !c.IsSend && !c.IsOrdered).ToListAsync();
 
             if (take.HasValue)
@@ -550,7 +550,7 @@
         {
             var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
                 .AsNoTracking()
-                .OrderBy(c => c.Id)
+                .OrderByDescending(c => c.Id)
                 .Where(c => c.IsFinished && !c.IsDeleted && !c.IsSend && c.IsOrdered).ToListAsync();
 
             if (take.HasValue)
@@ -590,7 +590,7 @@
         {
             var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
                 .AsNoTracking()
-                .OrderBy(c => c.Id)
+                .OrderByDescending(c => c.Id)
                 .Where(c => c.IsFinished && !c.IsDeleted && c.IsSend && c.IsOrdered).ToListAsync();
 
             if (take.HasValue)
