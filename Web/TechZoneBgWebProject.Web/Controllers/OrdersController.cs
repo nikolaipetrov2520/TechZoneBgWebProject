@@ -43,6 +43,54 @@
             return this.View(viewModel);
         }
 
+        public async Task<IActionResult> New(int page = 1)
+        {
+            var skip = (page - 1) * CartsPerPage;
+            var count = await this.cartsService.GetNewCountAsync();
+            var carts = await this.cartsService.GetNewAsync(skip, CartsPerPage);
+
+            var viewModel = new OrdersAllViewModel
+            {
+                Carts = carts,
+                PageIndex = page,
+                TotalPages = (int)Math.Ceiling(count / (decimal)CartsPerPage),
+            };
+
+            return this.View(viewModel);
+        }
+
+        public async Task<IActionResult> Executing(int page = 1)
+        {
+            var skip = (page - 1) * CartsPerPage;
+            var count = await this.cartsService.GetExecutingCountAsync();
+            var carts = await this.cartsService.GetExecutingAsync(skip, CartsPerPage);
+
+            var viewModel = new OrdersAllViewModel
+            {
+                Carts = carts,
+                PageIndex = page,
+                TotalPages = (int)Math.Ceiling(count / (decimal)CartsPerPage),
+            };
+
+            return this.View(viewModel);
+        }
+
+        public async Task<IActionResult> Executed(int page = 1)
+        {
+            var skip = (page - 1) * CartsPerPage;
+            var count = await this.cartsService.GetExecutedCountAsync();
+            var carts = await this.cartsService.GetExecutedAsync(skip, CartsPerPage);
+
+            var viewModel = new OrdersAllViewModel
+            {
+                Carts = carts,
+                PageIndex = page,
+                TotalPages = (int)Math.Ceiling(count / (decimal)CartsPerPage),
+            };
+
+            return this.View(viewModel);
+        }
+
         public async Task<IActionResult> Details(int id)
         {
             var cart = await this.cartsService.GetFinishedCartByIdAsync(id);
@@ -63,13 +111,13 @@
         public async Task<IActionResult> Order(int id)
         {
             await this.cartsService.OrderByIdAsync(id);
-            return this.RedirectToAction("All");
+            return this.RedirectToAction("New");
         }
 
         public async Task<IActionResult> Send(int id)
         {
             await this.cartsService.SendByIdAsync(id);
-            return this.RedirectToAction("All");
+            return this.RedirectToAction("New");
         }
     }
 }

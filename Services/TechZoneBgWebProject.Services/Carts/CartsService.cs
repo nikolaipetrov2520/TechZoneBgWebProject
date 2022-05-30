@@ -219,7 +219,6 @@
         {
             var cart = await this.db.Carts.FirstOrDefaultAsync(c => c.Id == cartId);
 
-
             if (cart != null)
             {
                 cart.Comment = comment;
@@ -472,6 +471,156 @@
                 };
 
                 carts.Add(result);
+            }
+
+            return carts;
+        }
+
+        public async Task<int> GetNewCountAsync()
+        {
+            var queryable = this.db.Carts
+                .Where(c => c.IsFinished && !c.IsDeleted && !c.IsSend && !c.IsOrdered);
+
+            var count = await queryable.CountAsync();
+
+            return count;
+        }
+
+        public async Task<int> GetExecutingCountAsync()
+        {
+            var queryable = this.db.Carts
+                .Where(c => c.IsFinished && !c.IsDeleted && !c.IsSend && c.IsOrdered);
+
+            var count = await queryable.CountAsync();
+
+            return count;
+        }
+
+        public async Task<int> GetExecutedCountAsync()
+        {
+            var queryable = this.db.Carts
+                .Where(c => c.IsFinished && !c.IsDeleted && c.IsSend && c.IsOrdered);
+
+            var count = await queryable.CountAsync();
+
+            return count;
+        }
+
+        public async Task<List<OrdersListingViewModel>> GetNewAsync(int skip = 0, int? take = null)
+        {
+            var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(c => c.IsFinished && !c.IsDeleted && !c.IsSend && !c.IsOrdered).ToListAsync();
+
+            if (take.HasValue)
+            {
+                queryable = queryable.Skip(skip).Take(take.Value).ToList();
+            }
+
+            var carts = new List<OrdersListingViewModel>();
+
+            foreach (var item in queryable)
+            {
+                decimal sum = 0m;
+                foreach (var product in item.Products)
+                {
+                    sum += product.Quantity * product.Product.Price;
+                }
+
+                var cart = new OrdersListingViewModel
+                {
+                    FirstName = item.Author.FirstName,
+                    LastName = item.Author.LastName,
+                    PhoneNumber = item.Author.PhoneNumber,
+                    Sum = sum,
+                    Id = item.Id,
+                    Time = item.ModifiedOn ?? DateTime.Now,
+                    Comment = item.Comment,
+                    IsOrdered = item.IsOrdered,
+                };
+
+                carts.Add(cart);
+            }
+
+            return carts;
+        }
+
+        public async Task<List<OrdersListingViewModel>> GetExecutingAsync(int skip = 0, int? take = null)
+        {
+            var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(c => c.IsFinished && !c.IsDeleted && !c.IsSend && c.IsOrdered).ToListAsync();
+
+            if (take.HasValue)
+            {
+                queryable = queryable.Skip(skip).Take(take.Value).ToList();
+            }
+
+            var carts = new List<OrdersListingViewModel>();
+
+            foreach (var item in queryable)
+            {
+                decimal sum = 0m;
+                foreach (var product in item.Products)
+                {
+                    sum += product.Quantity * product.Product.Price;
+                }
+
+                var cart = new OrdersListingViewModel
+                {
+                    FirstName = item.Author.FirstName,
+                    LastName = item.Author.LastName,
+                    PhoneNumber = item.Author.PhoneNumber,
+                    Sum = sum,
+                    Id = item.Id,
+                    Time = item.ModifiedOn ?? DateTime.Now,
+                    Comment = item.Comment,
+                    IsOrdered = item.IsOrdered,
+                };
+
+                carts.Add(cart);
+            }
+
+            return carts;
+        }
+
+        public async Task<List<OrdersListingViewModel>> GetExecutedAsync(int skip = 0, int? take = null)
+        {
+            var queryable = await this.db.Carts.Include(c => c.Products).ThenInclude(c => c.Product).Include(c => c.Author)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(c => c.IsFinished && !c.IsDeleted && c.IsSend && c.IsOrdered).ToListAsync();
+
+            if (take.HasValue)
+            {
+                queryable = queryable.Skip(skip).Take(take.Value).ToList();
+            }
+
+            var carts = new List<OrdersListingViewModel>();
+
+            foreach (var item in queryable)
+            {
+                decimal sum = 0m;
+                foreach (var product in item.Products)
+                {
+                    sum += product.Quantity * product.Product.Price;
+                }
+
+                var cart = new OrdersListingViewModel
+                {
+                    FirstName = item.Author.FirstName,
+                    LastName = item.Author.LastName,
+                    PhoneNumber = item.Author.PhoneNumber,
+                    Sum = sum,
+                    Id = item.Id,
+                    Time = item.ModifiedOn ?? DateTime.Now,
+                    Comment = item.Comment,
+                    IsOrdered = item.IsOrdered,
+                };
+
+                carts.Add(cart);
             }
 
             return carts;

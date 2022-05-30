@@ -1,0 +1,92 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions;
+
+<div class="tt-wrapper-inner">
+    <ul class="nav nav-tab pt-tabs-default" role="tablist">
+        @{
+            if (this.Context.Request.GetEncodedUrl().Contains("New"))
+            {
+                <li class="nav-item show">
+                    <a class="nav-link active"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="New">
+                        <span>Нови Поръчки</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="Executing">
+                        <span>В Изпълнение</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="Executed">
+                        <span>Изпълнени</span>
+                    </a>
+                </li>
+            }
+            else if (this.Context.Request.GetEncodedUrl().Contains("Executing"))
+            {
+                <li class="nav-item show">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="New">
+                        <span>Нови Поръчки</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="Executing">
+                        <span>В Изпълнение</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="Executed">
+                        <span>Изпълнени</span>
+                    </a>
+                </li>
+            }
+            else if (this.Context.Request.GetEncodedUrl().Contains("Executed"))
+            {
+                <li class="nav-item show">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="New">
+                        <span>Нови Поръчки</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="Executing">
+                        <span>В Изпълнение</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       asp-area=""
+                       asp-controller="Orders"
+                       asp-action="Executed">
+                        <span>Изпълнени</span>
+                    </a>
+                </li>
+            }
+        }
+
+    </ul>
+</div>
+
+

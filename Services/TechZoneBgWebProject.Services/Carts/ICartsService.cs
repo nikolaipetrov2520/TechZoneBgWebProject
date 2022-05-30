@@ -34,7 +34,19 @@
 
         Task<int> GetCountAsync();
 
+        Task<int> GetNewCountAsync();
+
+        Task<int> GetExecutingCountAsync();
+
+        Task<int> GetExecutedCountAsync();
+
         Task<List<OrdersListingViewModel>> GetAllAsync(int skip = 0, int? take = null);
+
+        Task<List<OrdersListingViewModel>> GetNewAsync(int skip = 0, int? take = null);
+
+        Task<List<OrdersListingViewModel>> GetExecutingAsync(int skip = 0, int? take = null);
+
+        Task<List<OrdersListingViewModel>> GetExecutedAsync(int skip = 0, int? take = null);
 
         Task OrderByIdAsync(int id);
 
