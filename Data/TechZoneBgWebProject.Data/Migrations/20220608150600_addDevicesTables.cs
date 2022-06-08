@@ -13,7 +13,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -25,7 +25,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
+                        .Annotation("SqlServer:Identity", "1, 1"),
                 },
                 constraints: table =>
                 {
@@ -38,7 +38,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -51,7 +51,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -65,7 +65,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BrandId = table.Column<int>(type: "int", nullable: false)
+                    BrandId = table.Column<int>(type: "int", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -85,10 +85,9 @@ namespace TechZoneBgWebProject.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Condition = table.Column<bool>(type: "bit", nullable: false),
+                    Condition = table.Column<bool>(type: "bit", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ChecListId = table.Column<int>(type: "int", nullable: false),
-                    CheckListId = table.Column<int>(type: "int", nullable: true)
+                    CheckListId = table.Column<int>(type: "int", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -118,7 +117,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                     ConditionId = table.Column<int>(type: "int", nullable: false),
                     StatusId = table.Column<int>(type: "int", nullable: false),
                     CreatedFrom = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AuthorId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    AuthorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -154,7 +153,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                 columns: table => new
                 {
                     CheckListsId = table.Column<int>(type: "int", nullable: false),
-                    DevicesId = table.Column<int>(type: "int", nullable: false)
+                    DevicesId = table.Column<int>(type: "int", nullable: false),
                 },
                 constraints: table =>
                 {

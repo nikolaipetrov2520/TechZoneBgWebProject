@@ -10,7 +10,7 @@
 
         public string Description { get; set; }
 
-        public int ChecListId { get; set; }
+        public int CheckListId { get; set; }
 
         public CheckList CheckList { get; set; }
     }
