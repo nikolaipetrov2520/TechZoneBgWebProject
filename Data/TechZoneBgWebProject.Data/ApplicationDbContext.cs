@@ -56,6 +56,20 @@
 
         public DbSet<MainNews> MainNews { get; set; }
 
+        public DbSet<Devices> Devices { get; set; }
+
+        public DbSet<Conditions> Conditions { get; set; }
+
+        public DbSet<DevicesModels> DevicesModels { get; set; }
+
+        public DbSet<Brands> Brands { get; set; }
+
+        public DbSet<Status> Status { get; set; }
+
+        public DbSet<CheckList> CheckList { get; set; }
+
+        public DbSet<Checks> Checks { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
