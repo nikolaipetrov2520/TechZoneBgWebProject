@@ -6,7 +6,7 @@
     {
         public int Id { get; set; }
 
-        public IEnumerable<Checks> Checks { get; set; }
+        public IEnumerable<CheckListsChecks> CheckListChecks { get; set; }
 
         public IEnumerable<Devices> Devices { get; set; }
     }

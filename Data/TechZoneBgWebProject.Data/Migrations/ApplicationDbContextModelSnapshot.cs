@@ -400,6 +400,27 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.ToTable("CheckList");
                 });
 
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.CheckListsChecks", b =>
+                {
+                    b.Property<int>("CheckListId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CheckId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CheckListId", "CheckId");
+
+                    b.HasIndex("CheckId");
+
+                    b.ToTable("CheckListsChecks");
+                });
+
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Checks", b =>
                 {
                     b.Property<int>("Id")
@@ -407,24 +428,10 @@ namespace TechZoneBgWebProject.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("ChecListId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CheckListId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Condition")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CheckListId");
 
                     b.ToTable("Checks");
                 });
@@ -1106,11 +1113,21 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Checks", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.CheckListsChecks", b =>
                 {
+                    b.HasOne("TechZoneBgWebProject.Data.Models.Checks", "Check")
+                        .WithMany("CheckListChecks")
+                        .HasForeignKey("CheckId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("TechZoneBgWebProject.Data.Models.CheckList", "CheckList")
-                        .WithMany("Checks")
-                        .HasForeignKey("CheckListId");
+                        .WithMany("CheckListChecks")
+                        .HasForeignKey("CheckListId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Check");
 
                     b.Navigation("CheckList");
                 });
@@ -1394,7 +1411,12 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.CheckList", b =>
                 {
-                    b.Navigation("Checks");
+                    b.Navigation("CheckListChecks");
+                });
+
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Checks", b =>
+                {
+                    b.Navigation("CheckListChecks");
                 });
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Conditions", b =>

@@ -70,6 +70,8 @@
 
         public DbSet<Checks> Checks { get; set; }
 
+        public DbSet<CheckListsChecks> CheckListsChecks { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
