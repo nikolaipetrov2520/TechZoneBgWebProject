@@ -32,6 +32,9 @@
                               new NewsSeeder(),
                               new CategoriesSeeder(),
                               new TagsSeeder(),
+                              new BrandsSeeder(),
+                              new ConditionsSeeder(),
+                              new StatusSeeder(),
                           };
 
             foreach (var seeder in seeders)

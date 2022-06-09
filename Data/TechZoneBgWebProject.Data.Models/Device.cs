@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class Devices
+    public class Device
     {
         public int Id { get; set; }
 
@@ -19,7 +19,7 @@
 
         public int DeviceModelId { get; set; }
 
-        public DevicesModels DeviceModel { get; set; }
+        public DeviceModel DeviceModel { get; set; }
 
         public string Color { get; set; }
 
@@ -27,7 +27,7 @@
 
         public int ConditionId { get; set; }
 
-        public Conditions Condition { get; set; }
+        public Condition Condition { get; set; }
 
         public int StatusId { get; set; }
 
@@ -35,7 +35,11 @@
 
         public string CreatedFrom { get; set; }
 
-        public IEnumerable<CheckList> CheckLists { get; set; }
+        public string Seller { get; set; }
+
+        public int CheckListId { get; set; }
+
+        public CheckList CheckList { get; set; }
 
         public ApplicationUser Author { get; set; }
 

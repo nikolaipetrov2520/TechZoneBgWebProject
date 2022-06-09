@@ -6,8 +6,8 @@
     {
         public int Id { get; set; }
 
-        public IEnumerable<CheckListsChecks> CheckListChecks { get; set; }
+        public ICollection<CheckListsChecks> CheckListChecks { get; set; } = new HashSet<CheckListsChecks>();
 
-        public IEnumerable<Devices> Devices { get; set; }
+        public ICollection<Device> Devices { get; set; } = new HashSet<Device>();
     }
 }

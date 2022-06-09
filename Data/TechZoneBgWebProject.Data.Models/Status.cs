@@ -8,6 +8,6 @@
 
         public string Name { get; set; }
 
-        public IEnumerable<Devices> Devices { get; set; }
+        public ICollection<Device> Devices { get; set; } = new HashSet<Device>();
     }
 }

@@ -2,12 +2,12 @@
 {
     using System.Collections.Generic;
 
-    public class Brands
+    public class Brand
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public IEnumerable<DevicesModels> DevicesModels { get; set; }
+        public ICollection<DeviceModel> DevicesModels { get; set; } = new HashSet<DeviceModel>();
     }
 }

@@ -10,7 +10,7 @@ namespace TechZoneBgWebProject.Data.Models
 
         public int CheckListId { get; set; }
 
-        public Checks Check { get; set; }
+        public Check Check { get; set; }
 
         public int CheckId { get; set; }
 

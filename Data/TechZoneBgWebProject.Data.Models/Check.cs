@@ -2,16 +2,12 @@
 {
     using System.Collections.Generic;
 
-    public class DevicesModels
+    public class Check
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public int BrandId { get; set; }
-
-        public Brands Brand { get; set; }
-
-        public IEnumerable<Devices> Devices { get; set; }
+        public ICollection<CheckListsChecks> CheckListChecks { get; set; } = new HashSet<CheckListsChecks>();
     }
 }

@@ -19,21 +19,6 @@ namespace TechZoneBgWebProject.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("CheckListDevices", b =>
-                {
-                    b.Property<int>("CheckListsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DevicesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CheckListsId", "DevicesId");
-
-                    b.HasIndex("DevicesId");
-
-                    b.ToTable("CheckListDevices");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -277,7 +262,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Brands", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Brand", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -388,6 +373,21 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Check", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Checks");
+                });
+
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.CheckList", b =>
                 {
                     b.Property<int>("Id")
@@ -421,22 +421,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.ToTable("CheckListsChecks");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Checks", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Checks");
-                });
-
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Conditions", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Condition", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -451,7 +436,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.ToTable("Conditions");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Devices", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Device", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -460,6 +445,9 @@ namespace TechZoneBgWebProject.Data.Migrations
 
                     b.Property<string>("AuthorId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("CheckListId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
@@ -491,12 +479,17 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Seller")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("StatusId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("CheckListId");
 
                     b.HasIndex("ConditionId");
 
@@ -507,7 +500,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.ToTable("Devices");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.DevicesModels", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.DeviceModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1019,21 +1012,6 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.ToTable("UsersFollowers");
                 });
 
-            modelBuilder.Entity("CheckListDevices", b =>
-                {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.CheckList", null)
-                        .WithMany()
-                        .HasForeignKey("CheckListsId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("TechZoneBgWebProject.Data.Models.Devices", null)
-                        .WithMany()
-                        .HasForeignKey("DevicesId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationRole", null)
@@ -1115,7 +1093,7 @@ namespace TechZoneBgWebProject.Data.Migrations
 
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.CheckListsChecks", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.Checks", "Check")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.Check", "Check")
                         .WithMany("CheckListChecks")
                         .HasForeignKey("CheckId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1132,19 +1110,25 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Navigation("CheckList");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Devices", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Device", b =>
                 {
                     b.HasOne("TechZoneBgWebProject.Data.Models.ApplicationUser", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
 
-                    b.HasOne("TechZoneBgWebProject.Data.Models.Conditions", "Condition")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.CheckList", "CheckList")
+                        .WithMany("Devices")
+                        .HasForeignKey("CheckListId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TechZoneBgWebProject.Data.Models.Condition", "Condition")
                         .WithMany("Devices")
                         .HasForeignKey("ConditionId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("TechZoneBgWebProject.Data.Models.DevicesModels", "DeviceModel")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.DeviceModel", "DeviceModel")
                         .WithMany("Devices")
                         .HasForeignKey("DeviceModelId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1158,6 +1142,8 @@ namespace TechZoneBgWebProject.Data.Migrations
 
                     b.Navigation("Author");
 
+                    b.Navigation("CheckList");
+
                     b.Navigation("Condition");
 
                     b.Navigation("DeviceModel");
@@ -1165,9 +1151,9 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Navigation("Status");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.DevicesModels", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.DeviceModel", b =>
                 {
-                    b.HasOne("TechZoneBgWebProject.Data.Models.Brands", "Brand")
+                    b.HasOne("TechZoneBgWebProject.Data.Models.Brand", "Brand")
                         .WithMany("DevicesModels")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1394,7 +1380,7 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Navigation("SentMessages");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Brands", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Brand", b =>
                 {
                     b.Navigation("DevicesModels");
                 });
@@ -1409,22 +1395,24 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Navigation("Posts");
                 });
 
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Check", b =>
+                {
+                    b.Navigation("CheckListChecks");
+                });
+
             modelBuilder.Entity("TechZoneBgWebProject.Data.Models.CheckList", b =>
                 {
                     b.Navigation("CheckListChecks");
+
+                    b.Navigation("Devices");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Checks", b =>
-                {
-                    b.Navigation("CheckListChecks");
-                });
-
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Conditions", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.Condition", b =>
                 {
                     b.Navigation("Devices");
                 });
 
-            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.DevicesModels", b =>
+            modelBuilder.Entity("TechZoneBgWebProject.Data.Models.DeviceModel", b =>
                 {
                     b.Navigation("Devices");
                 });

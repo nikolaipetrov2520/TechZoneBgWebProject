@@ -56,19 +56,19 @@
 
         public DbSet<MainNews> MainNews { get; set; }
 
-        public DbSet<Devices> Devices { get; set; }
+        public DbSet<Device> Devices { get; set; }
 
-        public DbSet<Conditions> Conditions { get; set; }
+        public DbSet<Condition> Conditions { get; set; }
 
-        public DbSet<DevicesModels> DevicesModels { get; set; }
+        public DbSet<DeviceModel> DevicesModels { get; set; }
 
-        public DbSet<Brands> Brands { get; set; }
+        public DbSet<Brand> Brands { get; set; }
 
         public DbSet<Status> Status { get; set; }
 
         public DbSet<CheckList> CheckList { get; set; }
 
-        public DbSet<Checks> Checks { get; set; }
+        public DbSet<Check> Checks { get; set; }
 
         public DbSet<CheckListsChecks> CheckListsChecks { get; set; }
 
