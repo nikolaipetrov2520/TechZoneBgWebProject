@@ -35,6 +35,7 @@
                               new BrandsSeeder(),
                               new ConditionsSeeder(),
                               new StatusSeeder(),
+                              new ChecksSeeder(),
                           };
 
             foreach (var seeder in seeders)
