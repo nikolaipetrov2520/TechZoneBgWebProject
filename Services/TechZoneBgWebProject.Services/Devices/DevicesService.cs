@@ -1,0 +1,53 @@
+﻿namespace TechZoneBgWebProject.Services.Devices
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using AutoMapper;
+    using Microsoft.EntityFrameworkCore;
+    using TechZoneBgWebProject.Data;
+    using TechZoneBgWebProject.Web.ViewModels.Devices;
+
+    public class DevicesService : IDevicesService
+    {
+        private readonly ApplicationDbContext db;
+        private readonly IMapper mapper;
+
+        public DevicesService(ApplicationDbContext db, IMapper mapper)
+        {
+            this.db = db;
+            this.mapper = mapper;
+        }
+
+        public async Task<List<DevicesListingViewModel>> GetAllAsync()
+        {
+            var querable = await this.db.Devices
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted)
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Imei = item.Imei,
+                    Brand = item.DeviceModel.Brand.Name,
+                    Model = item.DeviceModel.Name,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Status = item.Status.Name,
+                    Seller = item.Seller,
+                };
+            }
+
+            return devices;
+        }
+    }
+}

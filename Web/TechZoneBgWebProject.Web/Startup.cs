@@ -20,6 +20,7 @@
     using TechZoneBgWebProject.Data.Seeding;
     using TechZoneBgWebProject.Services.Carts;
     using TechZoneBgWebProject.Services.Categories;
+    using TechZoneBgWebProject.Services.Devices;
     using TechZoneBgWebProject.Services.Mapping;
     using TechZoneBgWebProject.Services.Messages;
     using TechZoneBgWebProject.Services.Messaging;
@@ -88,6 +89,7 @@
             services.AddTransient<IRolesService, RolesService>();
             services.AddTransient<IProductsService, ProductsService>();
             services.AddTransient<ICartsService, CartsService>();
+            services.AddTransient<IDevicesService, DevicesService>();
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TechZoneBgProfile());

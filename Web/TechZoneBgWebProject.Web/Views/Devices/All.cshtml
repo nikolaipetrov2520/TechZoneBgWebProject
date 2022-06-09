@@ -1,0 +1,76 @@
+﻿@model List<TechZoneBgWebProject.Web.ViewModels.Devices.DevicesListingViewModel>
+@{
+    ViewData["Title"] = "Устройства";
+}
+
+
+<div class="container">
+
+    <vc:devices-details user-id="1"></vc:devices-details>
+
+    <nav class="tt-topic-list cart-list" style="word-break: break-word;">
+
+        @*@if (Model.Carts.Any())
+        {
+
+            <h2 style="text-align:center; padding-bottom:40px;">Преглед на поръчките</h2>
+            <table align="center">
+                <thead>
+                    <tr class="thead-cart">
+                        <th class="cart-min cart-text order-address">Дата</th>
+                        <th class="cart-text order-name">Име</th>
+                        <th class="cart-min cart-text order-phone">Телефон</th>
+                        <th class="cart-text order-sum">Сума</th>
+                        <th class="cart-min cart-text order-comment">Коментар</th>
+                        <th class="cart-min cart-text order-comment"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cart in Model.Carts)
+                    {
+                        var style = "background - color: white;";
+                        if (cart.IsOrdered)
+                        {
+                            style = "background-color: #85e769b3;";
+                        }
+
+                        <tr id="@cart.Id" class="tt-itemOrder order-name" style="@style">
+                            <td class="cart-min order-address" style="font-size:20px;">
+                                <div>
+                                    @cart.Time
+                                </div>
+                            </td>
+                            <td class="cart-text">
+                                @cart.FirstName @cart.LastName
+                            </td>
+                            <td class="cart-min cart-text order-phone">
+                                @cart.PhoneNumber
+                            </td>
+                            <td class="cart-text order-sum">
+                                <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@cart.Sum лв.</div>
+                            </td>
+                            <td id="@cart.Comment" class="cart-min cart-text cart-quantity order-comment">
+                                <div>
+                                    @cart.Comment
+                                </div>
+                            </td>
+                            <td class="order-details">
+                                <a asp-area="" asp-controller="Orders" asp-action="Details" asp-route-id="@cart.Id">
+                                    Детайли
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="tt-layout-404">
+                <h6 class="tt-title">Няма Устройства</h6>
+            </div>
+        }*@
+
+    </nav>
+
+</div>
