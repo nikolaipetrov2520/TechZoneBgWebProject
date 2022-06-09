@@ -28,5 +28,10 @@
 
             return this.View(devices);
         }
+
+        public IActionResult Create()
+        {
+            return this.View();
+        }
     }
 }

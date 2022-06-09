@@ -1,0 +1,91 @@
+﻿@using TechZoneBgWebProject.Common
+@using TechZoneBgWebProject.Data.Models.Enums
+@model TechZoneBgWebProject.Web.InputModels.Devices.DeviceCreateInputModel
+@{
+    ViewData["Title"] = "Ново устройство";
+}
+
+<div class="tt-tab-wrapper">
+
+    <vc:devices-details user-id="1"></vc:devices-details>
+
+    <div class="tt-wrapper-inner">
+        <br />
+        <h1 class="tt-title-border">
+            Данни за Устройството
+        </h1>
+        <form class="form-default form-create-topic mb-5" asp-action="Create">
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Brand">Марка</label>
+                <div class="tt-value-wrapper">
+                    <input asp-for="Brand"
+                           type="text"
+                           class="form-control"
+                           id="inputTopicTitle"
+                           placeholder="Samsung"
+                           onkeyup="changeRemainingLength()" />
+                    <span class="text-danger" asp-validation-for="Brand"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DeviceModel">Модел</label>
+                <div class="tt-value-wrapper">
+                    <input asp-for="DeviceModel"
+                           type="text"
+                           class="form-control"
+                           id="inputTopicTitle"
+                           placeholder="S22 Ultra"
+                           onkeyup="changeRemainingLength()" />
+                    <span class="text-danger" asp-validation-for="DeviceModel"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Color">Цвят</label>
+                <div class="tt-value-wrapper">
+                    <input asp-for="Color"
+                           type="text"
+                           class="form-control"
+                           id="inputTopicTitle"
+                           placeholder="Cosmic Blue"
+                           onkeyup="changeRemainingLength()" />
+                    <span class="text-danger" asp-validation-for="Color"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Memory">Памет</label>
+                <div class="tt-value-wrapper">
+                    <input asp-for="Memory"
+                           type="text"
+                           class="form-control"
+                           id="inputTopicTitle"
+                           placeholder="256GB"
+                           onkeyup="changeRemainingLength()" />
+                    <span class="text-danger" asp-validation-for="Memory"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Seller">Продавач</label>
+                <div class="tt-value-wrapper">
+                    <input asp-for="Seller"
+                           type="text"
+                           class="form-control"
+                           id="inputTopicTitle"
+                           placeholder="Георги Георгиев"
+                           onkeyup="changeRemainingLength()" />
+                    <span class="text-danger" asp-validation-for="Seller"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-auto mb-5 mt-5 mr-auto">
+                    <button type="submit" class="btn btn-secondary btn-width-lg">Въведи устройство</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

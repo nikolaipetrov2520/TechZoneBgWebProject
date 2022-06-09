@@ -50,7 +50,7 @@
                                 <a class="nav-link white-text" asp-area="" asp-controller="Orders" asp-action="New">Поръчки</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Devices" asp-action="All">Swipe</a>
+                                <a class="nav-link white-text" asp-area="" asp-controller="Devices" asp-action="Create">Swipe</a>
                             </li>
                         }
                         else if (this.User.IsSwipegEmployee())
@@ -59,7 +59,7 @@
                                 <a class="nav-link white-text" href="https://shop.techzone-bg.com/api/products/swipe">API</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link white-text" asp-area="" asp-controller="Devices" asp-action="All">Swipe</a>
+                                <a class="nav-link white-text" asp-area="" asp-controller="Devices" asp-action="Create">Swipe</a>
                             </li>
                         }
                         else if (this.User.IsModerator())
