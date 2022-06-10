@@ -25,7 +25,6 @@
             this.dateTimeProvider = dateTimeProvider;
         }
 
-
         public async Task<IEnumerable<TModel>> GetAllAsync<TModel>(string search = null)
         {
             var queryable = this.db.Categories

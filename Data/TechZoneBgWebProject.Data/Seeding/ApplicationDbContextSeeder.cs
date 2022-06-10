@@ -36,6 +36,7 @@
                               new ConditionsSeeder(),
                               new StatusSeeder(),
                               new ChecksSeeder(),
+                              new DevicesModelsSeeder(),
                           };
 
             foreach (var seeder in seeders)

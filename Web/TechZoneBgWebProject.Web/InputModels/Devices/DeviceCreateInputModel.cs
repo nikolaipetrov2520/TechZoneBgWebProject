@@ -1,11 +1,13 @@
 ﻿namespace TechZoneBgWebProject.Web.InputModels.Devices
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using TechZoneBgWebProject.Web.ViewModels.Devices;
 
     public class DeviceCreateInputModel
     {
         [Required]
-        public string Brand { get; set; }
+        public int BrandId { get; set; }
 
         [Required]
         public string DeviceModel { get; set; }
@@ -18,5 +20,7 @@
 
         [Required]
         public string Seller { get; set; }
+
+        public IEnumerable<DevicesBrandsDetailsViewModel> Brands { get; set; }
     }
 }

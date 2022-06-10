@@ -25,6 +25,7 @@
     using TechZoneBgWebProject.Web.ViewModels.Products;
     using TechZoneBgWebProject.Web.ViewModels.Carts;
     using TechZoneBgWebProject.Web.ViewModels.Orders;
+    using TechZoneBgWebProject.Web.ViewModels.Devices;
 
     public class TechZoneBgProfile : Profile
     {
@@ -204,6 +205,7 @@
                 .ForMember(
                 dest => dest.Pic,
                 dest => dest.MapFrom(src => src.Product.Pic));
+            this.CreateMap<Brand, DevicesBrandsDetailsViewModel>();
         }
     }
 }
