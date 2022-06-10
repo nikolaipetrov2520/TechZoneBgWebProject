@@ -11,5 +11,7 @@
     public interface IDevicesService
     {
         Task<List<DevicesListingViewModel>> GetAllAsync();
+
+        Task<List<DevicesListingViewModel>> GetAllInspectingAsync();
     }
 }

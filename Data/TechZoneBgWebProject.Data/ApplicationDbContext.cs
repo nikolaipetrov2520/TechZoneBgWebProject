@@ -98,6 +98,11 @@
 
             builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
 
+            builder.Entity<Device>()
+               .HasOne(d => d.CheckList)
+               .WithOne(c => c.Devices)
+               .HasForeignKey<CheckList>(b => b.DeviceId);
+
             this.ConfigureUserIdentityRelations(builder);
 
             EntityIndexesConfiguration.Configure(builder);

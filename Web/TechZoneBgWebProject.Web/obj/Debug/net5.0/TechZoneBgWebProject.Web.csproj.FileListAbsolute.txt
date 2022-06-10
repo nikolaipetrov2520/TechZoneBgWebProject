@@ -1596,3 +1596,4 @@ C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProjec
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\All.cshtml.g.cs
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\DevicesDetails\Default.cshtml.g.cs
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Create.cshtml.g.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Inspecting.cshtml.g.cs

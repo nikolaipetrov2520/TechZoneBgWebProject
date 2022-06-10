@@ -17,7 +17,7 @@
                     <a class="nav-link"
                        asp-area=""
                        asp-controller="Devices"
-                       asp-action="Create">
+                       asp-action="Inspecting">
                         <span>За инспекция</span>
                     </a>
                 </li>
@@ -79,30 +79,78 @@
                 </li>
 
             }
-            else if (this.Context.Request.GetEncodedUrl().Contains("Executing"))
+            else if (this.Context.Request.GetEncodedUrl().Contains("Inspecting"))
             {
                 <li class="nav-item show">
                     <a class="nav-link"
                        asp-area=""
-                       asp-controller="Orders"
+                       asp-controller="Devices"
                        asp-action="Create">
-                        <span>Нов телефон</span>
+                        <span>Ново устройство</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active"
                        asp-area=""
-                       asp-controller="Orders"
-                       asp-action="Executing">
-                        <span>В Изпълнение</span>
+                       asp-controller="Devices"
+                       asp-action="Create">
+                        <span>За инспекция</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"
                        asp-area=""
-                       asp-controller="Orders"
-                       asp-action="Executed">
-                        <span>Изпълнени</span>
+                       asp-controller="Devices"
+                       asp-action="Create">
+                        <span>Проверени</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Create">
+                        <span>В продажба</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Create">
+                        <span>Незакупени</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Create">
+                        <span>Рекламация</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Create">
+                        <span>В ремонт</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Create">
+                        <span>Архив</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Create">
+                        <span>Outlets</span>
                     </a>
                 </li>
             }

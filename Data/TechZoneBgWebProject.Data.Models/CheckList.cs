@@ -8,6 +8,8 @@
 
         public ICollection<CheckListsChecks> CheckListChecks { get; set; } = new HashSet<CheckListsChecks>();
 
-        public ICollection<Device> Devices { get; set; } = new HashSet<Device>();
+        public int DeviceId { get; set; }
+
+        public Device Devices { get; set; }
     }
 }

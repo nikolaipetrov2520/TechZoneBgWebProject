@@ -39,8 +39,6 @@
 
         public string Seller { get; set; }
 
-        public int CheckListId { get; set; }
-
         public CheckList CheckList { get; set; }
 
         public ApplicationUser Author { get; set; }

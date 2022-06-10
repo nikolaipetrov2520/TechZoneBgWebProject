@@ -39,12 +39,41 @@
                     Id = item.Id,
                     Imei = item.Imei,
                     Brand = item.DeviceModel.Brand.Name,
-                    Model = item.DeviceModel.Name,
+                    DeviceModel = item.DeviceModel.Name,
                     Color = item.Color,
                     Memory = item.Memory,
                     Status = item.Status.Name,
                     Seller = item.Seller,
                 };
+            }
+
+            return devices;
+        }
+
+        public async Task<List<DevicesListingViewModel>> GetAllInspectingAsync()
+        {
+            var querable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted && d.Status.Name == "За проверка")
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Brand = item.DeviceModel.Brand.Name,
+                    DeviceModel = item.DeviceModel.Name,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Seller = item.Seller,
+                    CreatedOn = item.CreatedOn,
+                };
+
+                devices.Add(device);
             }
 
             return devices;

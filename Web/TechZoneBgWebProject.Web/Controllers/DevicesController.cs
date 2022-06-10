@@ -55,5 +55,17 @@
 
             return this.RedirectToAction("All");
         }
+
+        public async Task<IActionResult> Inspecting()
+        {
+            var devices = await this.devicesService.GetAllInspectingAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
     }
 }
