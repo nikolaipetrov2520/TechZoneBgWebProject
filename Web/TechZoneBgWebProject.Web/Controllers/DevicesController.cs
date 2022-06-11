@@ -7,7 +7,10 @@
 
     using Microsoft.AspNetCore.Mvc;
     using TechZoneBgWebProject.Services.Brands;
+    using TechZoneBgWebProject.Services.Checks;
+    using TechZoneBgWebProject.Services.Conditions;
     using TechZoneBgWebProject.Services.Devices;
+    using TechZoneBgWebProject.Services.Statuses;
     using TechZoneBgWebProject.Web.InputModels.Devices;
     using TechZoneBgWebProject.Web.ViewModels.Devices;
 
@@ -15,11 +18,22 @@
     {
         private readonly IDevicesService devicesService;
         private readonly IBrandsService brandsService;
+        private readonly IConditionsService conditionsService;
+        private readonly IChecksService checksService;
+        private readonly IStatusesService statusesService;
 
-        public DevicesController(IDevicesService devicesService, IBrandsService brandsService)
+        public DevicesController(
+            IDevicesService devicesService,
+            IBrandsService brandsService,
+            IConditionsService conditionsService,
+            IChecksService checksService,
+            IStatusesService statusesService)
         {
             this.devicesService = devicesService;
             this.brandsService = brandsService;
+            this.conditionsService = conditionsService;
+            this.checksService = checksService;
+            this.statusesService = statusesService;
         }
 
         public async Task<IActionResult> All()
@@ -66,6 +80,22 @@
             }
 
             return this.View(devices);
+        }
+
+        public async Task<IActionResult> Inspect(int id)
+        {
+            var device = await this.devicesService.GetNotInspectedByIdAsync(id);
+
+            if (device == null)
+            {
+                return this.NotFound();
+            }
+
+            device.Conditions = await this.conditionsService.GetAllAsync<DevicesConditionsDetailsViewModel>();
+            device.Status = await this.statusesService.GetAllAsync<DevicesStatusDetailsViewModel>();
+            device.Checks = await this.checksService.GetAllAsync<DevicesChecksDetailsViewModel>(id);
+
+            return this.View(device);
         }
     }
 }

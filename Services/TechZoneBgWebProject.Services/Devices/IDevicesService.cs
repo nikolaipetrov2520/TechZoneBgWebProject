@@ -13,5 +13,7 @@
         Task<List<DevicesListingViewModel>> GetAllAsync();
 
         Task<List<DevicesListingViewModel>> GetAllInspectingAsync();
+
+        Task<DeviceNotInspectedImputModel> GetNotInspectedByIdAsync(int id);
     }
 }

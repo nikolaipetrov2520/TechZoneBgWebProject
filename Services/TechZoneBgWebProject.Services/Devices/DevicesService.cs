@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
 
     using AutoMapper;
+    using AutoMapper.QueryableExtensions;
     using Microsoft.EntityFrameworkCore;
     using TechZoneBgWebProject.Data;
     using TechZoneBgWebProject.Web.ViewModels.Devices;
@@ -77,6 +78,25 @@
             }
 
             return devices;
+        }
+
+        public async Task<DeviceNotInspectedImputModel> GetNotInspectedByIdAsync(int id)
+        {
+            var queryable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .AsNoTracking()
+                .Where(p => p.Id == id && !p.IsDeleted)
+                .FirstOrDefaultAsync();
+
+            var device = new DeviceNotInspectedImputModel
+            {
+                Id = queryable.Id,
+                DeviceModel = $"{queryable.DeviceModel.Brand.Name} {queryable.DeviceModel.Name}",
+                Color = queryable.Color,
+                Memory = queryable.Memory,
+                Seller = queryable.Seller,
+            };
+
+            return device;
         }
     }
 }

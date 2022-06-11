@@ -21,6 +21,8 @@
     using TechZoneBgWebProject.Services.Brands;
     using TechZoneBgWebProject.Services.Carts;
     using TechZoneBgWebProject.Services.Categories;
+    using TechZoneBgWebProject.Services.Checks;
+    using TechZoneBgWebProject.Services.Conditions;
     using TechZoneBgWebProject.Services.Devices;
     using TechZoneBgWebProject.Services.Mapping;
     using TechZoneBgWebProject.Services.Messages;
@@ -32,6 +34,7 @@
     using TechZoneBgWebProject.Services.Replies;
     using TechZoneBgWebProject.Services.Reports;
     using TechZoneBgWebProject.Services.Roles;
+    using TechZoneBgWebProject.Services.Statuses;
     using TechZoneBgWebProject.Services.Tags;
     using TechZoneBgWebProject.Services.Users;
     using TechZoneBgWebProject.Web.Hubs;
@@ -92,6 +95,9 @@
             services.AddTransient<ICartsService, CartsService>();
             services.AddTransient<IDevicesService, DevicesService>();
             services.AddTransient<IBrandsService, BrandsService>();
+            services.AddTransient<IConditionsService, ConditionsService>();
+            services.AddTransient<IChecksService, ChecksService>();
+            services.AddTransient<IStatusesService, StatusesService>();
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TechZoneBgProfile());
