@@ -1,0 +1,75 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Devices.DeviceNotInspectedImputModel
+@{
+    ViewData["Title"] = Model.DeviceModel;
+}
+
+<div>
+    <div>
+        <h1>@Model.DeviceModel @Model.Memory</h1>
+    </div>
+    <div>
+        <h3>Закупен от: @Model.Seller</h3>
+    </div>
+    <div>
+        <form>
+            <label for="imei">IMEI</label>
+            <input id="imei" placeholder="въведете имеи" />
+            <br />
+            <ul>
+                @foreach (var check in Model.Checks)
+                {
+                    <li>
+                        <label>@check.Name</label>
+                        <input type="radio" name="@check.Condition" />
+                        <label>да</label>
+                        <input type="radio" name="@check.Condition" />
+                        <label>не</label>
+                        <input type="text" name="@check.Description" />
+                    </li>
+
+                }
+            </ul>
+            <br /><br />
+            <label for="description">Описание на състоянието</label>
+            <textarea id="description" placeholder="въведете състоянието на устройството" rows="3" cols="50" name="@Model.Description"></textarea>
+            <br />
+
+            <br /><br />
+            <label for="repairs">Ремонти</label>
+            <textarea id="repairs" placeholder="въведете ремонт от който се нуждае устройството" rows="3" cols="50" name="@Model.Repairs"></textarea>
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="brand-label" asp-for="ConditionId">Състояние на устройството</label>
+                        <select class="brand-select" asp-for="ConditionId" id="input-condition">
+                            @foreach (var condition in Model.Conditions)
+                            {
+                                <option value="@condition.Id">@condition.Name</option>
+                            }
+                        </select>
+                        <span class="text-danger" asp-validation-for="ConditionId"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto mb-5 mt-5 mr-auto">
+                    <button type="submit" class="btn btn-secondary btn-width-lg">Готово</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        var $select = $('#input-condition').selectize({
+            create: false,
+            sortField: 'text',
+            placeholder: 'Моля изберете...'
+        });
+
+    </script>
+
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -12,6 +12,10 @@
     {
         public int Id { get; set; }
 
+        public int ConditionId { get; set; }
+
+        public int StatusId { get; set; }
+
         public string Imei { get; set; }
 
         public string DeviceModel { get; set; }
@@ -23,6 +27,8 @@
         public string Description { get; set; }
 
         public string Seller { get; set; }
+
+        public string Repairs { get; set; }
 
         public IEnumerable<DevicesConditionsDetailsViewModel> Conditions { get; set; }
 

@@ -16,33 +16,41 @@
         </h1>
         <form class="form-default form-create-topic mb-5" asp-action="Create" method="POST">
             <div class="text-danger" asp-validation-summary="All"></div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label class="brand-label" asp-for="BrandId">Марка</label>
-                        <select class="brand-select" asp-for="BrandId" id="input-brand">
-                            @foreach (var brand in Model.Brands)
-                            {
-                                <option value="@brand.Id">@brand.Name</option>
-                            }
-                        </select>
-                        <span class="text-danger" asp-validation-for="BrandId"></span>
+            <div class="create-device">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="brand-label" asp-for="BrandId">Марка</label>
+                            <select onchange="changeBrand()" class="brand-select" asp-for="BrandId" id="input-brand">
+                                @foreach (var brand in Model.Brands)
+                                {
+                                    <option value="@brand.Id">@brand.Name</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="BrandId"></span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label asp-for="DeviceModel">Модел</label>
-                <div class="tt-value-wrapper">
-                    <input asp-for="DeviceModel"
-                           type="text"
-                           class="form-control"
-                           placeholder="S22 Ultra" />
-                    <span class="text-danger" asp-validation-for="DeviceModel"></span>
+            <div class="create-device">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="brand-label" asp-for="DeviceModelId">Модел</label>
+                            <select class="brand-select" asp-for="DeviceModelId" id="input-device-Model">
+                                <option  value="0">Моля изберете</option>
+                                @foreach (var deviceModel in Model.DeviceModels)
+                                {
+                                    <option class="@deviceModel.BrandId deviceModelOptions" hidden value="@deviceModel.Id">@deviceModel.Name</option>
+
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="DeviceModelId"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
             <div class="form-group">
                 <label asp-for="Color">Цвят</label>
                 <div class="tt-value-wrapper">
@@ -87,14 +95,32 @@
 
 @section Scripts {
     <script>
-        var $select = $('#input-brand').selectize({
+        var $select1 = $('#input-brand').selectize({
+            create: false,
+            sortField: 'text',
+            placeholder: 'Моля изберете...'
+        });
+        var $select2 = $('#input-deviceModel').selectize({
             create: false,
             sortField: 'text',
             placeholder: 'Моля изберете...'
         });
 
-    </script>
-       
-        <partial name="_ValidationScriptsPartial" />
+        var brand = document.querySelector('#input-brand').value;
+        document.querySelectorAll("." + CSS.escape(brand)).forEach(function (o) {
+            o.hidden = false;
+        });
 
+        function changeBrand(){
+            var brand = document.querySelector('#input-brand').value;
+            document.querySelectorAll(".deviceModelOptions").forEach(function (o) {
+                o.hidden = true;
+            });
+            document.querySelectorAll("." + CSS.escape(brand)).forEach(function (o) {
+                o.hidden = false;
+            });
+        };
+        
+    </script>      
+        <partial name="_ValidationScriptsPartial" />
 }

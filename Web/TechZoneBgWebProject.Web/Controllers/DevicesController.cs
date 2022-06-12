@@ -10,6 +10,7 @@
     using TechZoneBgWebProject.Services.Checks;
     using TechZoneBgWebProject.Services.Conditions;
     using TechZoneBgWebProject.Services.Devices;
+    using TechZoneBgWebProject.Services.DevicesModels;
     using TechZoneBgWebProject.Services.Statuses;
     using TechZoneBgWebProject.Web.InputModels.Devices;
     using TechZoneBgWebProject.Web.ViewModels.Devices;
@@ -21,19 +22,22 @@
         private readonly IConditionsService conditionsService;
         private readonly IChecksService checksService;
         private readonly IStatusesService statusesService;
+        private readonly IDevicesModelsService devicesModelsService;
 
         public DevicesController(
             IDevicesService devicesService,
             IBrandsService brandsService,
             IConditionsService conditionsService,
             IChecksService checksService,
-            IStatusesService statusesService)
+            IStatusesService statusesService,
+            IDevicesModelsService devicesModelsService)
         {
             this.devicesService = devicesService;
             this.brandsService = brandsService;
             this.conditionsService = conditionsService;
             this.checksService = checksService;
             this.statusesService = statusesService;
+            this.devicesModelsService = devicesModelsService;
         }
 
         public async Task<IActionResult> All()
@@ -52,6 +56,7 @@
             var viewModel = new DeviceCreateInputModel
             {
                 Brands = await this.brandsService.GetAllAsync<DevicesBrandsDetailsViewModel>(),
+                DeviceModels = await this.devicesModelsService.GetAllAsync<DevicesModelsDetailsViewModel>(),
             };
 
             return this.View(viewModel);
@@ -63,6 +68,7 @@
             if (!this.ModelState.IsValid)
             {
                 input.Brands = await this.brandsService.GetAllAsync<DevicesBrandsDetailsViewModel>();
+                input.DeviceModels = await this.devicesModelsService.GetAllAsync<DevicesModelsDetailsViewModel>();
 
                 return this.View(input);
             }

@@ -24,6 +24,7 @@
     using TechZoneBgWebProject.Services.Checks;
     using TechZoneBgWebProject.Services.Conditions;
     using TechZoneBgWebProject.Services.Devices;
+    using TechZoneBgWebProject.Services.DevicesModels;
     using TechZoneBgWebProject.Services.Mapping;
     using TechZoneBgWebProject.Services.Messages;
     using TechZoneBgWebProject.Services.Messaging;
@@ -98,6 +99,7 @@
             services.AddTransient<IConditionsService, ConditionsService>();
             services.AddTransient<IChecksService, ChecksService>();
             services.AddTransient<IStatusesService, StatusesService>();
+            services.AddTransient<IDevicesModelsService, DevicesModelsService>();
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TechZoneBgProfile());

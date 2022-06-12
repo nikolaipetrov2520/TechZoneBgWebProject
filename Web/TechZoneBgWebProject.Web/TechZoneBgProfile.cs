@@ -209,6 +209,7 @@
             this.CreateMap<Brand, DevicesBrandsDetailsViewModel>();
             this.CreateMap<Condition, DevicesConditionsDetailsViewModel>();
             this.CreateMap<Status, DevicesStatusDetailsViewModel>();
+            this.CreateMap<DeviceModel, DevicesModelsDetailsViewModel>();
             this.CreateMap<CheckListsChecks, DevicesChecksDetailsViewModel>()
                 .ForMember(
                 dest => dest.Name,

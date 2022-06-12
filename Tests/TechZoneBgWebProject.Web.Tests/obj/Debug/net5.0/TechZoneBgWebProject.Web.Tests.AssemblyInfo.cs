@@ -12,16 +12,12 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProjec" +
-    "t.Data", "TechZoneBgWebProject.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data", "TechZoneBgWebProject.Data.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=n" +
-    "ull", "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Services\\TechZoneBgWebPr" +
-    "oject.Services", "TechZoneBgWebProject.Services.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject" +
-    ".Web", "TechZoneBgWebProject.Web.csproj", "0")]
+    "ull", "D:\\TechZoneBG\\Services\\TechZoneBgWebProject.Services", "TechZoneBgWebProject.Services.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web", "TechZoneBgWebProject.Web.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("TechZoneBgWebProject.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, Public" +
-    "KeyToken=null", "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject" +
-    ".Web.Infrastructure", "TechZoneBgWebProject.Web.Infrastructure.csproj", "0")]
+    "KeyToken=null", "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web.Infrastructure", "TechZoneBgWebProject.Web.Infrastructure.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechZoneBgWebProject.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

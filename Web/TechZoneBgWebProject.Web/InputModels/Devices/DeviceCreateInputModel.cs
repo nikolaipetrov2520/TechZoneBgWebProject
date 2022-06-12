@@ -10,7 +10,7 @@
         public int BrandId { get; set; }
 
         [Required]
-        public string DeviceModel { get; set; }
+        public int DeviceModelId { get; set; }
 
         [Required]
         public string Color { get; set; }
@@ -22,5 +22,7 @@
         public string Seller { get; set; }
 
         public IEnumerable<DevicesBrandsDetailsViewModel> Brands { get; set; }
+
+        public IEnumerable<DevicesModelsDetailsViewModel> DeviceModels { get; set; }
     }
 }
