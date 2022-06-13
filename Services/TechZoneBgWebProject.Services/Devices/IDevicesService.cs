@@ -14,6 +14,12 @@
 
         Task<List<DevicesListingViewModel>> GetAllInspectingAsync();
 
+        Task<List<DevicesListingViewModel>> GetAllInspectedAsync();
+
         Task<DeviceNotInspectedImputModel> GetNotInspectedByIdAsync(int id);
+
+        Task InspectAsync(DeviceNotInspectedImputModel input, string userId);
+
+        Task CreateAsync(DeviceCreateInputModel input);
     }
 }

@@ -503,6 +503,9 @@ namespace TechZoneBgWebProject.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Repair")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Seller")
                         .HasColumnType("nvarchar(max)");
 

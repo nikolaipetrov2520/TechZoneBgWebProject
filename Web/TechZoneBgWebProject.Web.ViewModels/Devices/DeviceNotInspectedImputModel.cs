@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -14,8 +15,13 @@
 
         public int ConditionId { get; set; }
 
+        public int Condition { get; set; }
+
+        public string ConditionName { get; set; }
+
         public int StatusId { get; set; }
 
+        [Required]
         public string Imei { get; set; }
 
         public string DeviceModel { get; set; }
@@ -29,6 +35,8 @@
         public string Seller { get; set; }
 
         public string Repairs { get; set; }
+
+        public IEnumerable<DevicesChecksDetailsViewModel> InputChecks { get; set; }
 
         public IEnumerable<DevicesConditionsDetailsViewModel> Conditions { get; set; }
 

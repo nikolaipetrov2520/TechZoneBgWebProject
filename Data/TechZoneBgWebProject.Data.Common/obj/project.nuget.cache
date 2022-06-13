@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g41Zn7M6JOrw43IFmqVYpO3V1r5zr67ibxo+n8YmZz8k6ceLMJ8nwqZCb0XvdpCLcqiltzEacVZJ2iym0Vhm0g==",
+  "dgSpecHash": "nxYlXNMLP5sj4sp0RsM5K7CZ3f32pJaXp1A5408PD/Gg64QILiWCh0oeY5TKmeaQXGMX59LM2txVc1sBqXCDgA==",
   "success": true,
-  "projectFilePath": "D:\\TechZoneBG\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Data\\TechZoneBgWebProject.Data.Common\\TechZoneBgWebProject.Data.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512",

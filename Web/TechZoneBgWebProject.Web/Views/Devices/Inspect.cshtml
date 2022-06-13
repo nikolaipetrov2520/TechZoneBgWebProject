@@ -11,32 +11,56 @@
         <h3>Закупен от: @Model.Seller</h3>
     </div>
     <div>
-        <form>
+        <form method="POST">
             <label for="imei">IMEI</label>
-            <input id="imei" placeholder="въведете имеи" />
+            <input id="imei" name="Imei" placeholder="въведете имеи" value="@Model.Imei" />
             <br />
             <ul>
+                @{int inputIndex = 0; }
+
                 @foreach (var check in Model.Checks)
                 {
-                    <li>
-                        <label>@check.Name</label>
-                        <input type="radio" name="@check.Condition" />
+                <li>
+                    <label>@check.Name</label>
+                    @if (check.Condition == true)
+                    {
+                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" checked />
                         <label>да</label>
-                        <input type="radio" name="@check.Condition" />
+                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
                         <label>не</label>
-                        <input type="text" name="@check.Description" />
-                    </li>
+                    }
+                    else if (check.Condition == false)
+                    {
+                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
+                        <label>да</label>
+                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" checked />
+                        <label>не</label>
+                    }
+                    else
+                    {
+                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
+                        <label>да</label>
+                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
+                        <label>не</label>
+                    }
 
+                    <input type="text" name="InputChecks[@(inputIndex)].Description" value="@check.Description" />
+                    <input type="text" name="InputChecks[@(inputIndex)].Id" value="@check.Id" hidden />
+                    <input type="text" name="InputChecks[@(inputIndex)].Name" value="@check.Name" hidden />
+
+                </li>
+                    inputIndex++;
                 }
-            </ul>
+
+                </ul>
             <br /><br />
             <label for="description">Описание на състоянието</label>
-            <textarea id="description" placeholder="въведете състоянието на устройството" rows="3" cols="50" name="@Model.Description"></textarea>
+            <textarea id="description" placeholder="въведете състоянието на устройството" rows="3" cols="50" name="Description">@Model.Description</textarea>
             <br />
 
             <br /><br />
             <label for="repairs">Ремонти</label>
-            <textarea id="repairs" placeholder="въведете ремонт от който се нуждае устройството" rows="3" cols="50" name="@Model.Repairs"></textarea>
+            <textarea id="repairs" placeholder="въведете ремонт от който се нуждае устройството" rows="3" cols="50" name="Repairs">@Model.Repairs</textarea>
             <br />
 
             <div class="row">
@@ -44,6 +68,7 @@
                     <div class="form-group">
                         <label class="brand-label" asp-for="ConditionId">Състояние на устройството</label>
                         <select class="brand-select" asp-for="ConditionId" id="input-condition">
+                            <option value="@Model.Condition">@Model.ConditionName</option>
                             @foreach (var condition in Model.Conditions)
                             {
                                 <option value="@condition.Id">@condition.Name</option>

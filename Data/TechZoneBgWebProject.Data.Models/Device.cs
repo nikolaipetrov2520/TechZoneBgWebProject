@@ -39,7 +39,11 @@
 
         public string Seller { get; set; }
 
+        public string Repair { get; set; }
+
         public CheckList CheckList { get; set; }
+
+        public string AuthorId { get; set; }
 
         public ApplicationUser Author { get; set; }
 

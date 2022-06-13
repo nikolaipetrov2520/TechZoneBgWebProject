@@ -12,7 +12,7 @@
     using TechZoneBgWebProject.Services.Devices;
     using TechZoneBgWebProject.Services.DevicesModels;
     using TechZoneBgWebProject.Services.Statuses;
-    using TechZoneBgWebProject.Web.InputModels.Devices;
+    using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.ViewModels.Devices;
 
     public class DevicesController : BaseController
@@ -73,7 +73,9 @@
                 return this.View(input);
             }
 
-            return this.RedirectToAction("All");
+            await this.devicesService.CreateAsync(input);
+
+            return this.RedirectToAction("Inspecting");
         }
 
         public async Task<IActionResult> Inspecting()
@@ -102,6 +104,35 @@
             device.Checks = await this.checksService.GetAllAsync<DevicesChecksDetailsViewModel>(id);
 
             return this.View(device);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Inspect(DeviceNotInspectedImputModel input)
+        {
+            await this.devicesService.InspectAsync(input, this.User.GetId());
+
+            if (!this.ModelState.IsValid)
+            {
+                input.Conditions = await this.conditionsService.GetAllAsync<DevicesConditionsDetailsViewModel>();
+                input.Status = await this.statusesService.GetAllAsync<DevicesStatusDetailsViewModel>();
+                input.Checks = await this.checksService.GetAllAsync<DevicesChecksDetailsViewModel>(input.Id);
+
+                return this.View(input);
+            }
+
+            return this.RedirectToAction("Inspecting");
+        }
+
+        public async Task<IActionResult> Inspected()
+        {
+            var devices = await this.devicesService.GetAllInspectedAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
         }
     }
 }

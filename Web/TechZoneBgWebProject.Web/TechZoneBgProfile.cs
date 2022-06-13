@@ -26,7 +26,6 @@
     using TechZoneBgWebProject.Web.ViewModels.Carts;
     using TechZoneBgWebProject.Web.ViewModels.Orders;
     using TechZoneBgWebProject.Web.ViewModels.Devices;
-    using TechZoneBgWebProject.Web.InputModels.Devices;
 
     public class TechZoneBgProfile : Profile
     {
@@ -213,7 +212,16 @@
             this.CreateMap<CheckListsChecks, DevicesChecksDetailsViewModel>()
                 .ForMember(
                 dest => dest.Name,
-                dest => dest.MapFrom(src => src.Check.Name));
+                dest => dest.MapFrom(src => src.Check.Name))
+                .ForMember(
+                dest => dest.Id,
+                dest => dest.MapFrom(src => src.Check.Id))
+                .ForMember(
+                dest => dest.Condition,
+                dest => dest.MapFrom(src => src.Condition))
+                .ForMember(
+                dest => dest.Description,
+                dest => dest.MapFrom(src => src.Description));
         }
     }
 }
