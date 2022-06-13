@@ -186,20 +186,22 @@
 
             var checklistCheck = new List<CheckListsChecks>
             {
-                new CheckListsChecks{ CheckList = checkList, CheckId = 1},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 2},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 3},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 4},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 5},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 6},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 7},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 8},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 9},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 10},
-                new CheckListsChecks{ CheckList = checkList, CheckId = 11},
+                new CheckListsChecks{ CheckList = checkList, CheckId = 1 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 2 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 3 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 4 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 5 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 6 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 7 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 8 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 9 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 10 },
+                new CheckListsChecks{ CheckList = checkList, CheckId = 11 },
             };
 
             await this.db.Devices.AddAsync(device);
+            await this.db.CheckList.AddAsync(checkList);
+            await this.db.CheckListsChecks.AddRangeAsync(checklistCheck);
             await this.db.SaveChangesAsync();
         }
 
