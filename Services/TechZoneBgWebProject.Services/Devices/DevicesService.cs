@@ -164,8 +164,8 @@
 
         public async Task CreateAsync(DeviceCreateInputModel input)
         {
-            var condition = this.db.Conditions.FirstOrDefaultAsync(c => !c.IsDeleted && c.Name == "Преглежда се").Id;
-            var status = this.db.Status.FirstOrDefaultAsync(c => !c.IsDeleted && c.Name == "За проверка").Id;
+            var condition = await this.db.Conditions.FirstOrDefaultAsync(c => !c.IsDeleted && c.Name == "Преглежда се");
+            var status = await this.db.Status.FirstOrDefaultAsync(c => !c.IsDeleted && c.Name == "За проверка");
 
             var device = new Device
             {
@@ -174,8 +174,8 @@
                 Color = input.Color,
                 Memory = input.Memory,
                 Seller = input.Seller,
-                ConditionId = condition,
-                StatusId = status,
+                ConditionId = condition.Id,
+                StatusId = status.Id,
 
             };
 
@@ -186,17 +186,17 @@
 
             var checklistCheck = new List<CheckListsChecks>
             {
-                new CheckListsChecks{ CheckList = checkList, CheckId = 1 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 2 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 3 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 4 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 5 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 6 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 7 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 8 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 9 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 10 },
-                new CheckListsChecks{ CheckList = checkList, CheckId = 11 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 1 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 2 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 3 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 4 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 5 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 6 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 7 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 8 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 9 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 10 },
+                new CheckListsChecks { CheckList = checkList, CheckId = 11 },
             };
 
             await this.db.Devices.AddAsync(device);
