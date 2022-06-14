@@ -134,5 +134,20 @@
 
             return this.View(devices);
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var device = await this.devicesService.GetByIdAsync(id);
+
+            if (device == null)
+            {
+                return this.NotFound();
+            }
+
+            device.Status = await this.statusesService.GetAllAsync<DevicesStatusDetailsViewModel>();
+            device.Checks = await this.checksService.GetAllAsync<DevicesChecksDetailsViewModel>(id);
+
+            return this.View(device);
+        }
     }
 }

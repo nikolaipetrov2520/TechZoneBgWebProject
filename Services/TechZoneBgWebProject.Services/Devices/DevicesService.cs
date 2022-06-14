@@ -105,6 +105,34 @@
             return device;
         }
 
+        public async Task<DeviceDetailsViewModel> GetByIdAsync(int id)
+        {
+            var queryable = await this.db.Devices
+                .Include(d => d.DeviceModel)
+                .ThenInclude(dm => dm.Brand)
+                .Include(c => c.Condition)
+                .Include(a => a.Author)
+                .AsNoTracking()
+                .Where(p => p.Id == id && !p.IsDeleted)
+                .FirstOrDefaultAsync();
+
+            var device = new DeviceDetailsViewModel
+            {
+                Id = queryable.Id,
+                DeviceModel = $"{queryable.DeviceModel.Brand.Name} {queryable.DeviceModel.Name}",
+                Color = queryable.Color,
+                Memory = queryable.Memory,
+                Seller = queryable.Seller,
+                Condition = queryable.Condition.Name,
+                Repairs = queryable.Repair,
+                Imei = queryable.Imei,
+                Description = queryable.Description,
+                Author = $"{queryable.Author.FirstName} {queryable.Author.LastName}",
+            };
+
+            return device;
+        }
+
         public async Task InspectAsync(DeviceNotInspectedImputModel input, string userId)
         {
             var device = await this.db.Devices

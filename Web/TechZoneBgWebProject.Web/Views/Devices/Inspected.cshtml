@@ -13,7 +13,7 @@
         @if (Model.Any())
         {
 
-            <h2 style="text-align:center; padding-bottom:40px;">Устройства за инспекция</h2>
+            <h2 style="text-align:center; padding-bottom:40px;">Инспектирани устройства</h2>
             <table align="center">
                 <thead>
                     <tr class="thead-cart">
@@ -35,7 +35,7 @@
                             </td>
                             <td class="cart-min order-address" style="font-size:20px;">
                                 <div>
-                                    @device.Brand @device.DeviceModel @device.Color @device.Memory
+                                    @device.Brand @device.DeviceModel @device.Memory @device.Color
                                 </div>
                             </td>
                             <td class="cart-min cart-text cart-quantity order-comment">
@@ -44,7 +44,7 @@
                                 </div>
                             </td>
                             <td class="order-details">
-                                <a asp-area="" asp-controller="Devices" asp-action="Inspect" asp-route-id="@device.Id">
+                                <a asp-area="" asp-controller="Devices" asp-action="Details" asp-route-id="@device.Id">
                                     Детайли
                                 </a>
                             </td>

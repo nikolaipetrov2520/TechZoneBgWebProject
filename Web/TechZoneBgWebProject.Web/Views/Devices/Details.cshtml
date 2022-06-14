@@ -1,0 +1,77 @@
+﻿@model TechZoneBgWebProject.Web.ViewModels.Devices.DeviceDetailsViewModel
+@{
+    ViewData["Title"] = Model.DeviceModel;
+}
+
+<div>
+    <div>
+        <h1>@Model.DeviceModel @Model.Memory @Model.Color</h1>
+    </div>
+    <div>
+        <h3>Закупен от: @Model.Seller</h3>
+    </div>
+    <div>
+        <div>
+            <div>IMEI</div>
+            <div>@Model.Imei</div>
+            <ul>
+                @foreach (var check in Model.Checks)
+                {
+                <li>
+                    <div>@check.Name</div>
+                    @if (check.Condition == true)
+                    {
+                        <div>да</div>
+
+                        <div>@check.Description</div>
+                    }
+                    else if (check.Condition == false)
+                    {
+                        <div>не</div>
+
+                        <div>@check.Description</div>
+                    }
+                    else
+                    {
+                        <div>не е проверен</div>
+
+                        <div>@check.Description</div>
+                    }
+
+                </li>
+                }
+
+            </ul>
+            <div>Описание на състоянието</div>
+            <div>@Model.Description</div>
+
+            <div>Ремонти</div>
+            <div>@Model.Repairs</div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div>Състояние на устройството</div>                 
+                        <div>@Model.Condition</div>                 
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto mb-5 mt-5 mr-auto">
+                    <button type="submit" class="btn btn-secondary btn-width-lg">Готово</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        var $select = $('#input-condition').selectize({
+            create: false,
+            sortField: 'text',
+            placeholder: 'Моля изберете...'
+        });
+
+    </script>
+
+    <partial name="_ValidationScriptsPartial" />
+}

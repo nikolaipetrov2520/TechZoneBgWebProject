@@ -10,6 +10,7 @@
     <vc:devices-details user-id="1"></vc:devices-details>
 
     <div class="tt-wrapper-inner">
+        <h2 style="text-align:center; padding:40px;">Регистрация на ново устройствo</h2>
         <br />
         <h1 class="tt-title-border">
             Данни за Устройството
@@ -36,10 +37,10 @@
             <div class="create-device">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
+                        <div class="form-group" style="position:relative">
                             <label class="brand-label" asp-for="DeviceModelId">Модел</label>
-                            <select class="brand-select" asp-for="DeviceModelId" id="input-device-Model">
-                                <option  value="0">Моля изберете</option>
+                            <select class="device-model-select" asp-for="DeviceModelId" id="input-device-мodel">
+                                <option value="0">Моля изберете</option>
                                 @foreach (var deviceModel in Model.DeviceModels)
                                 {
                                     <option class="@deviceModel.BrandId deviceModelOptions" hidden value="@deviceModel.Id">@deviceModel.Name</option>
@@ -100,7 +101,7 @@
             sortField: 'text',
             placeholder: 'Моля изберете...'
         });
-        var $select2 = $('#input-deviceModel').selectize({
+        var $select2 = $('#input-deviceмodel').selectize({
             create: false,
             sortField: 'text',
             placeholder: 'Моля изберете...'
