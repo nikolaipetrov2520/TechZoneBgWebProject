@@ -11666,3 +11666,19 @@ a.add-to-cart-right {
     padding: 5px 15px;
 }
 
+.select-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.select-list-item {
+    min-width: 300px;
+    padding: 6px;
+    border: 1px solid #d5d5d5;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.text-input{
+    min-width:300px;
+}
