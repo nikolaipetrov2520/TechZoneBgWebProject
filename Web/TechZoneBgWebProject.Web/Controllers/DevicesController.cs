@@ -109,7 +109,6 @@
         [HttpPost]
         public async Task<IActionResult> Inspect(DeviceNotInspectedImputModel input)
         {
-            await this.devicesService.InspectAsync(input, this.User.GetId());
 
             if (!this.ModelState.IsValid)
             {
@@ -119,6 +118,8 @@
 
                 return this.View(input);
             }
+
+            await this.devicesService.InspectAsync(input, this.User.GetId());
 
             return this.RedirectToAction("Inspecting");
         }
