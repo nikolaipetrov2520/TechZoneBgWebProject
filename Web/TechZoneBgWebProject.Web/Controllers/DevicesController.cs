@@ -109,9 +109,9 @@
         [HttpPost]
         public async Task<IActionResult> Inspect(DeviceNotInspectedImputModel input)
         {
-
             if (!this.ModelState.IsValid)
             {
+                input = await this.devicesService.GetNotInspectedByIdAsync(input.Id);
                 input.Conditions = await this.conditionsService.GetAllAsync<DevicesConditionsDetailsViewModel>();
                 input.Status = await this.statusesService.GetAllAsync<DevicesStatusDetailsViewModel>();
                 input.Checks = await this.checksService.GetAllAsync<DevicesChecksDetailsViewModel>(input.Id);
