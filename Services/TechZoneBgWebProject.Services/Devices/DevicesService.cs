@@ -128,6 +128,7 @@
                 Imei = queryable.Imei,
                 Description = queryable.Description,
                 Author = $"{queryable.Author.FirstName} {queryable.Author.LastName}",
+                StatusId = queryable.StatusId,
             };
 
             return device;

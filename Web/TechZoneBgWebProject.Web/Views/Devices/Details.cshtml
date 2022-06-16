@@ -3,75 +3,117 @@
     ViewData["Title"] = Model.DeviceModel;
 }
 
-<div>
-    <div>
-        <h1>@Model.DeviceModel @Model.Memory @Model.Color</h1>
-    </div>
-    <div>
-        <h3>Закупен от: @Model.Seller</h3>
-    </div>
-    <div>
+<div class="tt-tab-wrapper">
+
+    <vc:devices-details user-id="1"></vc:devices-details>
+
+    <nav class="tt-topic-list cart-list" style="word-break: break-word; margin: 40px 0px;">
+        <h2 style="text-align:center; padding-bottom:40px;">Досие на устройството</h2>
         <div>
-            <div>IMEI</div>
-            <div>@Model.Imei</div>
-            <ul>
-                @foreach (var check in Model.Checks)
-                {
-                <li>
-                    <div>@check.Name</div>
-                    @if (check.Condition == true)
-                    {
-                        <div>да</div>
-
-                        <div>@check.Description</div>
-                    }
-                    else if (check.Condition == false)
-                    {
-                        <div>не</div>
-
-                        <div>@check.Description</div>
-                    }
-                    else
-                    {
-                        <div>не е проверен</div>
-
-                        <div>@check.Description</div>
-                    }
-
-                </li>
-                }
-
-            </ul>
-            <div>Описание на състоянието</div>
-            <div>@Model.Description</div>
-
-            <div>Ремонти</div>
-            <div>@Model.Repairs</div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <div>Състояние на устройството</div>                 
-                        <div>@Model.Condition</div>                 
-                    </div>
-                </div>
+            <div>
+                <h1>@Model.DeviceModel @Model.Memory @Model.Color</h1>
             </div>
-            <div class="row">
-                <div class="col-auto mb-5 mt-5 mr-auto">
-                    <button type="submit" class="btn btn-secondary btn-width-lg">Готово</button>
+            <div>
+                <h3>Закупен от: @Model.Seller</h3>
+            </div>
+            <div>
+                <div>
+                    <div>IMEI</div>
+                    <div>@Model.Imei</div>
+                    <ul>
+                        @foreach (var check in Model.Checks)
+                        {
+                            <li>
+                                <div>@check.Name</div>
+                                @if (check.Condition == true)
+                                {
+                                    <div>да</div>
+
+                                    <div>@check.Description</div>
+                                }
+                                else if (check.Condition == false)
+                                {
+                                    <div>не</div>
+
+                                    <div>@check.Description</div>
+                                }
+                                else
+                                {
+                                    <div>не е проверен</div>
+
+                                    <div>@check.Description</div>
+                                }
+
+                            </li>
+                        }
+
+                    </ul>
+                    <div>Описание на състоянието</div>
+                    <div>@Model.Description</div>
+
+                    <div>Ремонти</div>
+                    <div>@Model.Repairs</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div>Състояние на устройството</div>
+                                <div>@Model.Condition</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select-list">
+                        <div class="create-device">
+                            <div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="brand-label" asp-for="StatusId">Статус</label>
+                                        <select onchange="changeBrand()" class="brand-select select-list-item" asp-for="StatusId" id="input-brand">
+                                            @foreach (var status in Model.Status)
+                                            {
+                                                if (status.Id == Model.StatusId)
+                                                {
+                                                    <option value="@status.Id" selected>@status.Name</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@status.Id">@status.Name</option>
+                                                }
+
+                                            }
+                                        </select>
+                                        <span class="text-danger" asp-validation-for="StatusId"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select-list">
+                        <div class="row">
+                            <div class="col-auto mb-5 mt-5 mr-auto">
+                                <button type="submit" class="btn btn-secondary btn-width-lg">Запис</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-auto mb-5 mt-5 mr-auto">
+                                <button type="submit" class="btn btn-secondary btn-width-lg">Редактиране</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+    </nav>
     </div>
-</div>
-@section Scripts {
-    <script>
-        var $select = $('#input-condition').selectize({
-            create: false,
-            sortField: 'text',
-            placeholder: 'Моля изберете...'
-        });
+        @section Scripts {
+            <script>
+                var $select = $('#input-condition').selectize({
+                    create: false,
+                    sortField: 'text',
+                    placeholder: 'Моля изберете...'
+                });
 
-    </script>
+            </script>
 
-    <partial name="_ValidationScriptsPartial" />
-}
+            <partial name="_ValidationScriptsPartial" />
+        }

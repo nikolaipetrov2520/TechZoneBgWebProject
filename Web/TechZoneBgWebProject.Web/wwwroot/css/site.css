@@ -11682,3 +11682,53 @@ a.add-to-cart-right {
 .text-input{
     min-width:300px;
 }
+
+.checkList-input-text {
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+.checkList-list {
+    border: 1px solid #dddbdb;
+    padding: 37px 12px;
+    margin: 20px;
+    list-style: none;
+}
+
+.checkList-header {
+    background-color: #60a3eb;
+    display: flex;
+    padding: 8px;
+    font-size: 19px;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+li.checList-item:nth-child(2n+1) {
+    background-color: #e1ecedad;
+    padding: 7px 20px;
+    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+}
+
+li.checList-item:nth-child(2n+2) {
+    padding: 7px 20px;
+    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkList-label {
+    margin-right: auto;
+}
+
+.checkList-radio {
+    margin-right: 100px;
+}
+
+
+.checkList-head-condition {
+    margin-left: 535px;
+}

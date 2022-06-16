@@ -3,99 +3,116 @@
     ViewData["Title"] = Model.DeviceModel;
 }
 
-<div>
-    <div>
-        <h1>@Model.DeviceModel @Model.Memory @Model.Color</h1>
-    </div>
-    <div>
-        <h3>Закупен от: @Model.Seller</h3>
-    </div>
-    <div>
-        <form method="POST">
-            <label for="imei">IMEI</label>
-            <input id="imei" name="Imei" placeholder="въведете имеи" value="@Model.Imei" />
-            <span class="text-danger" asp-validation-for="Imei"></span>
-            <br />
-            <ul>
-                @{int inputIndex = 0; }
+<div class="tt-tab-wrapper">
 
-                @foreach (var check in Model.Checks)
-                {
-                    <li>
-                        <label>@check.Name</label>
-                        @if (check.Condition == true)
+    <vc:devices-details user-id="1"></vc:devices-details>
+
+    <nav class="tt-topic-list cart-list" style="word-break: break-word; margin: 40px 0px;">
+        <h2 style="text-align:center; padding-bottom:40px;">Инспекция на устройството</h2>
+        <div>
+            <div>
+                <h1>@Model.DeviceModel @Model.Memory @Model.Color</h1>
+            </div>
+            <div>
+                <h3>Закупен от: @Model.Seller</h3>
+            </div>
+            <div>
+                <form method="POST">
+                    <label style="font-size: 20px;" for="imei">IMEI</label>
+                    <input style="font-size: 20px;" id="imei" class="checkList-input-text" name="Imei" placeholder="въведете имеи" value="@Model.Imei" />
+                    <span class="text-danger" asp-validation-for="Imei"></span>
+                    <br />
+                    <ul class="checkList-list">
+                        @{int inputIndex = 0; }
+                        <li class="checkList-header">
+                            <div>Проверка за:</div>
+                            <div class="checkList-head-condition">Състояние</div>
+                            <div>Бележка</div>
+                        </li>
+
+                        @foreach (var check in Model.Checks)
                         {
-                            <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" checked />
-                            <label>да</label>
-                            <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
-                            <label>не</label>
+                        <li class="checList-item">
+                            <div class="checkList-label">
+                                <label style="margin-right: 20px;">@check.Name :</label>
+                            </div>
+                            <div class="checkList-radio">
+                                @if (check.Condition == true)
+                                {
+                                    <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" checked />
+                                    <label>да</label>
+                                    <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
+                                    <label>не</label>
+                                }
+                                else if (check.Condition == false)
+                                {
+                                    <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
+                                    <label>да</label>
+                                    <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" checked />
+                                    <label>не</label>
+                                }
+                                else
+                                {
+                                    <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
+                                    <label>да</label>
+                                    <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
+                                    <label>не</label>
+                                }
+                            </div>
+                            <div class="checkList-description">
+                                <input type="text" class="checkList-input-text" name="InputChecks[@(inputIndex)].Description" value="@check.Description" />
+                                <input type="text" name="InputChecks[@(inputIndex)].Id" value="@check.Id" hidden />
+                                <input type="text" name="InputChecks[@(inputIndex)].Name" value="@check.Name" hidden />
+                            </div>
+                        </li>
+                            inputIndex++;
                         }
-                        else if (check.Condition == false)
-                        {
-                            <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
-                            <label>да</label>
-                            <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" checked />
-                            <label>не</label>
-                        }
-                        else
-                        {
-                            <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
-                            <label>да</label>
-                            <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
-                            <label>не</label>
-                        }
 
-                        <input type="text" name="InputChecks[@(inputIndex)].Description" value="@check.Description" />
-                        <input type="text" name="InputChecks[@(inputIndex)].Id" value="@check.Id" hidden />
-                        <input type="text" name="InputChecks[@(inputIndex)].Name" value="@check.Name" hidden />
+                    </ul>
+                    <br /><br />
+                    <label for="description">Описание на състоянието</label>
+                    <textarea id="description" placeholder="въведете състоянието на устройството" rows="3" cols="50" name="Description">@Model.Description</textarea>
+                    <br />
 
-                    </li>
-                    inputIndex++;
-                }
+                    <br /><br />
+                    <label for="repairs">Ремонти</label>
+                    <textarea id="repairs" placeholder="въведете ремонт от който се нуждае устройството" rows="3" cols="50" name="Repairs">@Model.Repairs</textarea>
+                    <br />
 
-            </ul>
-            <br /><br />
-            <label for="description">Описание на състоянието</label>
-            <textarea id="description" placeholder="въведете състоянието на устройството" rows="3" cols="50" name="Description">@Model.Description</textarea>
-            <br />
-
-            <br /><br />
-            <label for="repairs">Ремонти</label>
-            <textarea id="repairs" placeholder="въведете ремонт от който се нуждае устройството" rows="3" cols="50" name="Repairs">@Model.Repairs</textarea>
-            <br />
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label class="brand-label" asp-for="ConditionId">Състояние на устройството</label>
-                        <select class="brand-select" asp-for="ConditionId" id="input-condition">
-                            <option value="@Model.Condition">@Model.ConditionName</option>
-                            @foreach (var condition in Model.Conditions)
-                            {
-                                <option value="@condition.Id">@condition.Name</option>
-                            }
-                        </select>
-                        <span class="text-danger" asp-validation-for="ConditionId"></span>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="brand-label" asp-for="ConditionId">Състояние на устройството</label>
+                                <select class="brand-select" asp-for="ConditionId" id="input-condition">
+                                    <option value="@Model.Condition">@Model.ConditionName</option>
+                                    @foreach (var condition in Model.Conditions)
+                                    {
+                                        <option value="@condition.Id">@condition.Name</option>
+                                    }
+                                </select>
+                                <span class="text-danger" asp-validation-for="ConditionId"></span>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-auto mb-5 mt-5 mr-auto">
+                            <button type="submit" class="btn btn-secondary btn-width-lg">Готово</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="row">
-                <div class="col-auto mb-5 mt-5 mr-auto">
-                    <button type="submit" class="btn btn-secondary btn-width-lg">Готово</button>
-                </div>
-            </div>
-        </form>
+        </div>
+        </nav>
     </div>
-</div>
-@section Scripts {
-    <script>
-        var $select = $('#input-condition').selectize({
-            create: false,
-            sortField: 'text',
-            placeholder: 'Моля изберете...'
-        });
+        @section Scripts {
+            <script>
+                var $select = $('#input-condition').selectize({
+                    create: false,
+                    sortField: 'text',
+                    placeholder: 'Моля изберете...'
+                });
 
-    </script>
+            </script>
 
-    <partial name="_ValidationScriptsPartial" />
-}
+            <partial name="_ValidationScriptsPartial" />
+        }
