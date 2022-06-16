@@ -1,0 +1,66 @@
+﻿@model List<TechZoneBgWebProject.Web.ViewModels.Devices.DevicesListingViewModel>
+@{
+    ViewData["Title"] = "Устройства";
+}
+
+
+<div class="tt-tab-wrapper">
+
+    <vc:devices-details user-id="1"></vc:devices-details>
+
+    <nav class="tt-topic-list cart-list" style="word-break: break-word;">
+
+        @if (Model.Any())
+        {
+
+            <h2 style="text-align:center; padding-bottom:40px;">Инспектирани устройства</h2>
+            <table align="center">
+                <thead>
+                    <tr class="thead-cart">
+                        <th class="cart-min cart-text order-address">Дата</th>
+                        <th class="cart-min cart-text order-address">Устройство</th>
+                        <th class="cart-text order-name">Продавач</th>
+                        <th class="cart-min cart-text order-comment"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var device in Model)
+                    {
+
+                        <tr id="@device.Id" class="tt-itemOrder order-name">
+                            <td class="cart-min order-address" style="font-size:20px;">
+                                <div>
+                                    @device.CreatedOn
+                                </div>
+                            </td>
+                            <td class="cart-min order-address" style="font-size:20px;">
+                                <div>
+                                    @device.Brand @device.DeviceModel @device.Memory @device.Color
+                                </div>
+                            </td>
+                            <td class="cart-min cart-text cart-quantity order-comment">
+                                <div>
+                                    @device.Seller
+                                </div>
+                            </td>
+                            <td class="order-details">
+                                <a asp-area="" asp-controller="Devices" asp-action="Details" asp-route-id="@device.Id">
+                                    Детайли
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="tt-layout-404">
+                <h6 class="tt-title">Няма прегледани устройства</h6>
+            </div>
+        }
+
+    </nav>
+
+</div>
+

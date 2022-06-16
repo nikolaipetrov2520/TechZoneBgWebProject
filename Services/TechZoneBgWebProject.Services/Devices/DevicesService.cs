@@ -140,6 +140,8 @@
                 .Include(d => d.CheckList)
                 .FirstOrDefaultAsync(d => d.Id == input.Id);
 
+            int status = this.db.Status.FirstOrDefault(s => s.Name == "Проверен").Id;
+
             if (device.Imei == null)
             {
                 device.Imei = input.Imei;
@@ -185,10 +187,10 @@
 
             if (isAllChecked == true)
             {
-                device.StatusId = 5;
+                device.StatusId = status;
             }
 
-            this.db.SaveChanges();
+            await this.db.SaveChangesAsync();
         }
 
         public async Task CreateAsync(DeviceCreateInputModel input)
@@ -240,6 +242,190 @@
                 .AsNoTracking()
                 .OrderBy(c => c.Id)
                 .Where(d => !d.IsDeleted && d.Status.Name == "Проверен")
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Brand = item.DeviceModel.Brand.Name,
+                    DeviceModel = item.DeviceModel.Name,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Seller = item.Seller,
+                    CreatedOn = item.ModifiedOn ?? DateTime.Now,
+                };
+
+                devices.Add(device);
+            }
+
+            return devices;
+        }
+
+        public async Task ChangeStatusByIdAsync(int id, int statusId)
+        {
+            var queryable = await this.db.Devices
+                .Where(p => p.Id == id && !p.IsDeleted)
+                .FirstOrDefaultAsync();
+
+            queryable.StatusId = statusId;
+            await this.db.SaveChangesAsync();
+        }
+
+        public async Task<List<DevicesListingViewModel>> GetAllInSaleAsync()
+        {
+            var querable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted && d.Status.Name == "За продажба")
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Brand = item.DeviceModel.Brand.Name,
+                    DeviceModel = item.DeviceModel.Name,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Seller = item.Seller,
+                    CreatedOn = item.ModifiedOn ?? DateTime.Now,
+                };
+
+                devices.Add(device);
+            }
+
+            return devices;
+        }
+
+        public async Task<List<DevicesListingViewModel>> GetAllNotBayedAsync()
+        {
+            var querable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted && d.Status.Name == "Незакупен")
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Brand = item.DeviceModel.Brand.Name,
+                    DeviceModel = item.DeviceModel.Name,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Seller = item.Seller,
+                    CreatedOn = item.ModifiedOn ?? DateTime.Now,
+                };
+
+                devices.Add(device);
+            }
+
+            return devices;
+        }
+
+        public async Task<List<DevicesListingViewModel>> GetAllComplaintAsync()
+        {
+            var querable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted && d.Status.Name == "Рекламация")
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Brand = item.DeviceModel.Brand.Name,
+                    DeviceModel = item.DeviceModel.Name,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Seller = item.Seller,
+                    CreatedOn = item.ModifiedOn ?? DateTime.Now,
+                };
+
+                devices.Add(device);
+            }
+
+            return devices;
+        }
+
+        public async Task<List<DevicesListingViewModel>> GetAllInRepairAsync()
+        {
+            var querable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted && d.Status.Name == "В ремонт")
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Brand = item.DeviceModel.Brand.Name,
+                    DeviceModel = item.DeviceModel.Name,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Seller = item.Seller,
+                    CreatedOn = item.ModifiedOn ?? DateTime.Now,
+                };
+
+                devices.Add(device);
+            }
+
+            return devices;
+        }
+
+        public async Task<List<DevicesListingViewModel>> GetAllArchiveAsync()
+        {
+            var querable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted && d.Status.Name == "Архив")
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Brand = item.DeviceModel.Brand.Name,
+                    DeviceModel = item.DeviceModel.Name,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Seller = item.Seller,
+                    CreatedOn = item.ModifiedOn ?? DateTime.Now,
+                };
+
+                devices.Add(device);
+            }
+
+            return devices;
+        }
+
+        public async Task<List<DevicesListingViewModel>> GetAllOutletAsync()
+        {
+            var querable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted && d.Status.Name == "Outlet")
                 .ToListAsync();
 
             var devices = new List<DevicesListingViewModel>();

@@ -61,44 +61,56 @@
                             </div>
                         </div>
                     </div>
-                    <div class="select-list">
-                        <div class="create-device">
-                            <div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="brand-label" asp-for="StatusId">Статус</label>
-                                        <select onchange="changeBrand()" class="brand-select select-list-item" asp-for="StatusId" id="input-brand">
-                                            @foreach (var status in Model.Status)
-                                            {
-                                                if (status.Id == Model.StatusId)
+                    <form method="POST">
+                        <div class="select-list">
+                            <div class="create-device">
+                                <div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="brand-label" asp-for="StatusId">Статус</label>
+                                            <select onchange="changeBrand()" class="brand-select select-list-item" asp-for="StatusId" id="input-status">
+                                                @foreach (var status in Model.Status)
                                                 {
-                                                    <option value="@status.Id" selected>@status.Name</option>
-                                                }
-                                                else
-                                                {
-                                                    <option value="@status.Id">@status.Name</option>
-                                                }
+                                                    if (status.Id == Model.StatusId)
+                                                    {
+                                                        <option value="@status.Id" selected>@status.Name</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@status.Id">@status.Name</option>
+                                                    }
 
-                                            }
-                                        </select>
-                                        <span class="text-danger" asp-validation-for="StatusId"></span>
+                                                }
+                                            </select>
+                                            <span class="text-danger" asp-validation-for="StatusId"></span>
+                                            <input type="text" name="Id" value="@Model.Id" hidden />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="select-list">
+
+                            <div class="row">
+                                <div class="col-auto mb-5 mt-5 mr-auto">
+                                    <button type="submit" class="btn btn-secondary btn-width-lg">Запис</button>
+                                </div>
+                            </div>
+
+                    </form>
+
                         <div class="row">
                             <div class="col-auto mb-5 mt-5 mr-auto">
-                                <button type="submit" class="btn btn-secondary btn-width-lg">Запис</button>
+                                <a class="btn btn-secondary"
+                                        asp-area=""
+                                        asp-controller="Devices"
+                                        asp-action="Edit"
+                                        asp-route-id="@Model.Id">
+                                            Редактиране
+                                </a>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-auto mb-5 mt-5 mr-auto">
-                                <button type="submit" class="btn btn-secondary btn-width-lg">Редактиране</button>
-                            </div>
-                        </div>
-                    </div>
+
+
 
                 </div>
             </div>

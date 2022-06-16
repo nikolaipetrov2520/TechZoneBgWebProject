@@ -150,5 +150,85 @@
 
             return this.View(device);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Details(DeviceDetailsViewModel input)
+        {
+            await this.devicesService.ChangeStatusByIdAsync(input.Id, input.StatusId);
+
+            return this.RedirectToAction("Inspected");
+        }
+
+        public async Task<IActionResult> InSale()
+        {
+            var devices = await this.devicesService.GetAllInSaleAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
+
+        public async Task<IActionResult> NotBayed()
+        {
+            var devices = await this.devicesService.GetAllNotBayedAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
+
+        public async Task<IActionResult> Complaint()
+        {
+            var devices = await this.devicesService.GetAllComplaintAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
+
+        public async Task<IActionResult> InRepair()
+        {
+            var devices = await this.devicesService.GetAllInRepairAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
+
+        public async Task<IActionResult> Archive()
+        {
+            var devices = await this.devicesService.GetAllArchiveAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
+
+        public async Task<IActionResult> Outlet()
+        {
+            var devices = await this.devicesService.GetAllOutletAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
     }
 }
