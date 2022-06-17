@@ -105,6 +105,30 @@
             return device;
         }
 
+        public async Task<DeviceNotInspectedImputModel> GetNotInspectedWithNotWalidEmaiByIdAsync(int id)
+        {
+            var queryable = await this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand).Include(c => c.Condition)
+                .AsNoTracking()
+                .Where(p => p.Id == id && !p.IsDeleted)
+                .FirstOrDefaultAsync();
+
+            var device = new DeviceNotInspectedImputModel
+            {
+                Id = queryable.Id,
+                DeviceModel = $"{queryable.DeviceModel.Brand.Name} {queryable.DeviceModel.Name}",
+                Color = queryable.Color,
+                Memory = queryable.Memory,
+                Seller = queryable.Seller,
+                Condition = queryable.Condition.Id,
+                ConditionName = queryable.Condition.Name,
+                Repairs = queryable.Repair,
+                Imei = queryable.Imei,
+                Description = queryable.Description,
+            };
+
+            return device;
+        }
+
         public async Task<DeviceDetailsViewModel> GetByIdAsync(int id)
         {
             var queryable = await this.db.Devices

@@ -8,12 +8,12 @@
 
     <vc:devices-details user-id="1"></vc:devices-details>
 
-    <nav class="tt-topic-list cart-list" style="word-break: break-word;">
+    <nav class="tt-topic-list cart-list" style="word-break: break-word; margin: 40px 0px;">
 
         @if (Model.Any())
         {
 
-            <h2 style="text-align:center; padding-bottom:40px;">Инспектирани устройства</h2>
+            <h2 style="text-align:center; padding-bottom:40px;">Устройства за поправка</h2>
             <table align="center">
                 <thead>
                     <tr class="thead-cart">
@@ -56,7 +56,7 @@
         else
         {
             <div class="tt-layout-404">
-                <h6 class="tt-title">Няма прегледани устройства</h6>
+                <h6 class="tt-title">Няма устройства за поправка</h6>
             </div>
         }
 

@@ -111,10 +111,11 @@
         {
             if (!this.ModelState.IsValid)
             {
+                var checks = input.InputChecks;
                 input = await this.devicesService.GetNotInspectedByIdAsync(input.Id);
                 input.Conditions = await this.conditionsService.GetAllAsync<DevicesConditionsDetailsViewModel>();
                 input.Status = await this.statusesService.GetAllAsync<DevicesStatusDetailsViewModel>();
-                input.Checks = await this.checksService.GetAllAsync<DevicesChecksDetailsViewModel>(input.Id);
+                input.Checks = checks;
 
                 return this.View(input);
             }

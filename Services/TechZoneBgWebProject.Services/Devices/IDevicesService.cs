@@ -18,6 +18,8 @@
 
         Task<DeviceNotInspectedImputModel> GetNotInspectedByIdAsync(int id);
 
+        Task<DeviceNotInspectedImputModel> GetNotInspectedWithNotWalidEmaiByIdAsync(int id);
+
         Task<DeviceDetailsViewModel> GetByIdAsync(int id);
 
         Task ChangeStatusByIdAsync(int id, int statusId);
