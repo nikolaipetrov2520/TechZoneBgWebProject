@@ -11755,8 +11755,8 @@ li.checList-item:nth-child(2n+2) {
     display: block;
     width: 650px;
     position: absolute;
-    top: 330px;
-    left: 45px;
+    top: 305px;
+    left: 40px;
 }
 
 .hiden-info-text {
@@ -11765,6 +11765,7 @@ li.checList-item:nth-child(2n+2) {
     border-radius: 10px;
     padding: 20px;
     border-bottom-right-radius: 60px;
+    text-align: left;
 }
 
     .hiden-info-text span {
@@ -11774,4 +11775,6 @@ li.checList-item:nth-child(2n+2) {
 .hidden-text-header {
     font-weight: bold;
     font-size: 18px;
+    border-bottom: 1px solid #b3b2b2;
+    color: #c13838;
 }

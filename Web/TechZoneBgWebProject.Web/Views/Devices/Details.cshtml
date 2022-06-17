@@ -16,35 +16,41 @@
             <div>
                 <h3>Закупен от: @Model.Seller</h3>
             </div>
-            <div>
+            <div class="form-group-conteiner">
                 <div>
-                    <div>IMEI</div>
-                    <div>@Model.Imei</div>
-                    <ul>
+                    <div style="font-size: 20px; display:inline-block">IMEI</div>
+                    <div class="checkList-input-text" style="font-size: 20px; display:inline-block; border:none">@Model.Imei</div>
+                    <ul class="checkList-list">
+                        <li class="checkList-header">
+                            <div>Проверка за:</div>
+                            <div class="checkList-head-condition">Състояние</div>
+                            <div>Бележка</div>
+                        </li>
                         @foreach (var check in Model.Checks)
                         {
-                            <li>
-                                <div>@check.Name</div>
-                                @if (check.Condition == true)
-                                {
-                                    <div>да</div>
+                    <li class="checList-item">
+                        <div class="checkList-label">@check.Name</div>
+                        <div class="checkList-radio">
+                            @if (check.Condition == true)
+                            {
+                            <div>
+                                <img src="~/images/checkedIcon.png" width="20" />
+                            </div>
+                            }
+                            else if (check.Condition == false)
+                            {
+                        <div>
+                            <img src="~/images/NotCheckedIcon.png" width="20" />
+                        </div>
+                            }
+                            else
+                            {
+                                <div>не е проверен</div>
+                            }
+                        </div>
+                        <div class="checkList-description" style="width: 220px;">@check.Description</div>
 
-                                    <div>@check.Description</div>
-                                }
-                                else if (check.Condition == false)
-                                {
-                                    <div>не</div>
-
-                                    <div>@check.Description</div>
-                                }
-                                else
-                                {
-                                    <div>не е проверен</div>
-
-                                    <div>@check.Description</div>
-                                }
-
-                            </li>
+                    </li>
                         }
 
                     </ul>
