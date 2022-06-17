@@ -11788,3 +11788,7 @@ li.checList-item:nth-child(2n+2) {
     border-bottom: 1px solid #b3b2b2;
     color: #c13838;
 }
+
+.details-label {
+    font-weight: bold;
+}

@@ -28,47 +28,57 @@
                         </li>
                         @foreach (var check in Model.Checks)
                         {
-                    <li class="checList-item">
-                        <div class="checkList-label">@check.Name</div>
-                        <div class="checkList-radio">
-                            @if (check.Condition == true)
-                            {
-                            <div>
-                                <img src="~/images/checkedIcon.png" width="20" />
-                            </div>
-                            }
-                            else if (check.Condition == false)
-                            {
-                        <div>
-                            <img src="~/images/NotCheckedIcon.png" width="20" />
-                        </div>
-                            }
-                            else
-                            {
-                                <div>не е проверен</div>
-                            }
-                        </div>
-                        <div class="checkList-description" style="width: 220px;">@check.Description</div>
+                            <li class="checList-item">
+                                <div class="checkList-label">@check.Name</div>
+                                <div class="checkList-radio">
+                                    @if (check.Condition == true)
+                                    {
+                                        <div>
+                                            <img src="~/images/checkedIcon.png" width="20" />
+                                        </div>
+                                    }
+                                    else if (check.Condition == false)
+                                    {
+                                        <div>
+                                            <img src="~/images/NotCheckedIcon.png" width="20" />
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div>не е проверен</div>
+                                    }
+                                </div>
+                                <div class="checkList-description" style="width: 220px;">@check.Description</div>
 
-                    </li>
+                            </li>
                         }
 
                     </ul>
-                    <div>Описание на състоянието</div>
-                    <div>@Model.Description</div>
-
-                    <div>Ремонти</div>
-                    <div>@Model.Repairs</div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <div>Състояние на устройството</div>
-                                <div>@Model.Condition</div>
-                            </div>
+                    <div class="select-list" style="border-bottom: 1px solid #ebe9e9;">
+                        <div class="create-device">
+                            <div class="details-label">Описание на състоянието</div>
+                            <div>@Model.Description</div>
                         </div>
                     </div>
+                    <div class="select-list" style="border-bottom: 1px solid #ebe9e9;">
+                        <div class="create-device">
+                            <div class="details-label">Състояние на устройството</div>
+                            <div>@Model.Condition</div>
+                        </div>
+                        <div class="create-device">
+                            <div class="details-label">Ремонти</div>
+                            <div>@Model.Repairs</div>
+                        </div>
+
+                    </div>
+
                     <form method="POST">
-                        <div class="select-list">
+                        <div class="select-condition-list">
+                            <div class="row">
+                                <div class="col-auto mb-5 mt-5 mr-auto">
+                                    <button type="submit" class="btn btn-secondary btn-width-lg">Запис</button>
+                                </div>
+                            </div>
                             <div class="create-device">
                                 <div>
                                     <div class="col-md-4">
@@ -94,30 +104,9 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-
-                            <div class="row">
-                                <div class="col-auto mb-5 mt-5 mr-auto">
-                                    <button type="submit" class="btn btn-secondary btn-width-lg">Запис</button>
-                                </div>
-                            </div>
-
                     </form>
-
-                        <div class="row">
-                            <div class="col-auto mb-5 mt-5 mr-auto">
-                                <a class="btn btn-secondary"
-                                        asp-area=""
-                                        asp-controller="Devices"
-                                        asp-action="Edit"
-                                        asp-route-id="@Model.Id">
-                                            Редактиране
-                                </a>
-                            </div>
-                        </div>
-
-
-
                 </div>
             </div>
         </div>
