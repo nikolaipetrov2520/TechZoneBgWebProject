@@ -5,7 +5,9 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using TechZoneBgWebProject.Common;
     using TechZoneBgWebProject.Services.Brands;
     using TechZoneBgWebProject.Services.Checks;
     using TechZoneBgWebProject.Services.Conditions;
@@ -15,6 +17,7 @@
     using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.ViewModels.Devices;
 
+    [Authorize(Roles = GlobalConstants.Admin.AdministratorRoleName + "," + GlobalConstants.TechzoneBgEmployee.EmployeeRoleName + "," + GlobalConstants.SwypeEmployee.EmployeeRoleName)]
     public class DevicesController : BaseController
     {
         private readonly IDevicesService devicesService;

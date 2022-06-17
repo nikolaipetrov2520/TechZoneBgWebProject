@@ -11758,6 +11758,7 @@ li.checList-item:nth-child(2n+2) {
 }
 .hiden-info {
     display: none;
+    transition: width 2s;
 }
 
 .Info-icon:hover + .hiden-info {

@@ -1623,3 +1623,11 @@ C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProjec
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\InSale.cshtml.g.cs
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\NotBayed.cshtml.g.cs
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Outlet.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Archive.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Complaint.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Details.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\InRepair.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\InSale.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Inspected.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\NotBayed.cshtml.g.cs
+D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Outlet.cshtml.g.cs
