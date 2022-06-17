@@ -27,28 +27,28 @@
                         @foreach (var device in Model)
                         {
 
-                        <tr id="@device.Id" class="tt-itemOrder order-name">
-                            <td class="cart-min order-address" style="font-size:20px;">
-                                <div>
-                                    @device.CreatedOn
-                                </div>
-                            </td>
-                            <td class="order-address" style="font-size:20px;">
-                                <div>
-                                    @device.Brand @device.DeviceModel @device.Memory @device.Color
-                                </div>
-                            </td>
-                            <td class="cart-min cart-text cart-quantity order-comment">
-                                <div>
-                                    @device.Seller
-                                </div>
-                            </td>
-                            <td class="order-details">
-                                <a asp-area="" asp-controller="Devices" asp-action="Inspect" asp-route-id="@device.Id">
-                                    Преглед
-                                </a>
-                            </td>
-                        </tr>
+                            <tr id="@device.Id" class="tt-itemOrder order-name">
+                                <td class="cart-min order-address" style="font-size:20px;">
+                                    <div>
+                                        @device.CreatedOn
+                                    </div>
+                                </td>
+                                <td class="order-address" style="font-size:20px;">
+                                    <div>
+                                        @device.Brand @device.DeviceModel @device.Memory @device.Color
+                                    </div>
+                                </td>
+                                <td class="cart-min cart-text cart-quantity order-comment">
+                                    <div>
+                                        @device.Seller
+                                    </div>
+                                </td>
+                                <td class="order-details">
+                                    <a asp-area="" asp-controller="Devices" asp-action="Inspect" asp-route-id="@device.Id">
+                                        Преглед
+                                    </a>
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
