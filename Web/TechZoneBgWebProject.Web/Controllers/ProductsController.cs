@@ -51,5 +51,12 @@
 
             return this.View(product);
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.productsService.DeleteByIdAsync(id);
+
+            return this.RedirectToAction("All");
+        }
     }
 }

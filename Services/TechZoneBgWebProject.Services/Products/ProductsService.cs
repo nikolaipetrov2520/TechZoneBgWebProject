@@ -27,7 +27,7 @@
             var queryable = this.db.Products
                 .AsNoTracking()
                 .OrderByDescending(p => p.ProductId)
-                    .Where(p => p.InStock);
+                    .Where(p => p.InStock && !p.IsDeleted);
 
             if (!string.IsNullOrWhiteSpace(search))
             {
@@ -85,7 +85,7 @@
         public async Task<int> GetCountAsync(string searchFilter = null)
         {
             var queryable = this.db.Products
-                .Where(p => p.InStock);
+                .Where(p => p.InStock && !p.IsDeleted);
 
             if (!string.IsNullOrWhiteSpace(searchFilter))
             {
@@ -113,5 +113,15 @@
                 .Where(p => p.InStock)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
+
+        public async Task DeleteByIdAsync(int id)
+        {
+            var product = this.db.Products
+                .Where(p => p.Id == id)
+                .FirstOrDefault();
+
+            product.IsDeleted = true;
+            await this.db.SaveChangesAsync();
+        }
     }
 }

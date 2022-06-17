@@ -22,7 +22,7 @@
         public int StatusId { get; set; }
 
         [Required]
-        [RegularExpression("[^0-9]", ErrorMessage = "Неправилен IMEI")]
+        [RegularExpression("(^[0-9]{15}$)", ErrorMessage = "Неправилен IMEI")]
         public string Imei { get; set; }
 
         public string DeviceModel { get; set; }

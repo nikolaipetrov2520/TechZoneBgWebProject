@@ -14,5 +14,7 @@
         Task<IEnumerable<TModel>> GetProductsBiCartIdAsync<TModel>(int id);
 
         Task<IEnumerable<TModel>> GetAllProductsAsync<TModel>();
+
+        Task DeleteByIdAsync(int id);
     }
 }
