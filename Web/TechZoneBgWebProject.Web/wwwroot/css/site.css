@@ -437,6 +437,7 @@ input[type="month"] {
 textarea {
     overflow: auto;
     resize: vertical;
+    box-shadow: 1px 2px 5px 0px;
 }
 
 fieldset {
@@ -11687,6 +11688,7 @@ a.add-to-cart-right {
     border: 1px solid #d5d5d5;
     cursor: pointer;
     border-radius: 4px;
+    box-shadow: 2px 1px 5px 0px;
 }
 .text-input{
     min-width:300px;
@@ -11845,6 +11847,7 @@ li.checList-item:nth-child(2n+2) {
     background-color: #f6fdb2f7;
     color: #000;
     cursor: pointer;
+    box-shadow: 1px 2px 5px 0px;
 }
 .hiden-info {
     display: none;
@@ -11860,13 +11863,14 @@ li.checList-item:nth-child(2n+2) {
 }
 
 .hiden-info-text {
-    background-color: #f6fdb2f7;
-    border: 1px solid;
+    background-color: #f6fdb2;
+    border: 1px solid #c9c9c9;
     border-radius: 15px;
     padding: 20px;
     border-bottom-right-radius: 3px;
     text-align: left;
-    transform: translate(10%, -40%);
+    transform: translate(10%,-40%);
+    box-shadow: 2px 6px 16px 0px;
 }
 
     .hiden-info-text span {
