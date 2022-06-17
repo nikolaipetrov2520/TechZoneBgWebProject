@@ -54,6 +54,17 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group text-input">
+                    <label asp-for="Memory">Памет</label>
+                    <div class="tt-value-wrapper">
+                        <input asp-for="Memory"
+                               type="text"
+                               class="form-control"
+                               placeholder="256GB..." />
+                        <span class="text-danger" asp-validation-for="Memory"></span>
+                    </div>
+                </div>
             </div>
             <div class="select-list">
                 <div class="form-group text-input">
@@ -62,21 +73,12 @@
                         <input asp-for="Color"
                                type="text"
                                class="form-control"
-                               placeholder="Cosmic Blue" />
+                               placeholder="Cosmic Blue..." />
                         <span class="text-danger" asp-validation-for="Color"></span>
                     </div>
                 </div>
 
-                <div class="form-group text-input">
-                    <label asp-for="Memory">Памет</label>
-                    <div class="tt-value-wrapper">
-                        <input asp-for="Memory"
-                               type="text"
-                               class="form-control"
-                               placeholder="256GB" />
-                        <span class="text-danger" asp-validation-for="Memory"></span>
-                    </div>
-                </div>
+
 
                 <div class="form-group text-input">
                     <label asp-for="Seller">Продавач</label>
@@ -84,7 +86,7 @@
                         <input asp-for="Seller"
                                type="text"
                                class="form-control"
-                               placeholder="Георги Георгиев" />
+                               placeholder="Георги Георгиев..." />
                         <span class="text-danger" asp-validation-for="Seller"></span>
                     </div>
                 </div>

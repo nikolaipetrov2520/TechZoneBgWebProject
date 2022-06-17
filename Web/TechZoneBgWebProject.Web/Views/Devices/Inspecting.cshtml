@@ -18,9 +18,9 @@
                     <thead>
                         <tr class="thead-cart">
                             <th class="cart-min cart-text order-address">Дата</th>
-                            <th class="cart-min cart-text order-address">Устройство</th>
-                            <th class="cart-text order-name">Продавач</th>
-                            <th class="cart-min cart-text order-comment"></th>
+                            <th class="cart-text order-address">Устройство</th>
+                            <th class="cart-min cart-text order-name">Продавач</th>
+                            <th class="cart-text order-comment"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,7 +33,7 @@
                                     @device.CreatedOn
                                 </div>
                             </td>
-                            <td class="cart-min order-address" style="font-size:20px;">
+                            <td class="order-address" style="font-size:20px;">
                                 <div>
                                     @device.Brand @device.DeviceModel @device.Memory @device.Color
                                 </div>

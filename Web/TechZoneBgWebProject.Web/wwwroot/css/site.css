@@ -11670,6 +11670,7 @@ a.add-to-cart-right {
     display: flex;
     justify-content: space-around;
     padding: 40px;
+    flex-wrap: wrap;
 }
 
 .select-list-item {
