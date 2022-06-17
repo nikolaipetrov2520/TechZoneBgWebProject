@@ -11673,6 +11673,14 @@ a.add-to-cart-right {
     flex-wrap: wrap;
 }
 
+.select-condition-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    flex-wrap: wrap;
+    align-items:center;
+}
+
 .select-list-item {
     min-width: 300px;
     padding: 6px;
@@ -11739,14 +11747,14 @@ li.checList-item:nth-child(2n+2) {
 }
 
 .Info-icon {
-    border: 1px solid gray;
+    border: 1px solid #f50505;
     border-radius: 50%;
     display: inline-block;
-    padding: 0px 10px;
+    padding: 0 10px;
     font-size: 18px;
-    background-color: yellow;
-    color: red;
-    cursor:pointer;
+    background-color: #f6fdb2f7;
+    color: #000;
+    cursor: pointer;
 }
 .hiden-info {
     display: none;
@@ -11754,19 +11762,20 @@ li.checList-item:nth-child(2n+2) {
 
 .Info-icon:hover + .hiden-info {
     display: block;
-    width: 650px;
+    width: 700px;
     position: absolute;
-    top: 305px;
-    left: 40px;
+    top: 50%;
+    left: 30%;
 }
 
 .hiden-info-text {
     background-color: #f6fdb2f7;
     border: 1px solid;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 20px;
-    border-bottom-right-radius: 60px;
+    border-bottom-right-radius: 3px;
     text-align: left;
+    transform: translate(10%, -40%);
 }
 
     .hiden-info-text span {
