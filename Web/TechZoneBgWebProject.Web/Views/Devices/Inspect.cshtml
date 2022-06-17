@@ -45,24 +45,24 @@
                                 <div class="checkList-radio">
                                     @if (check.Condition == true)
                                     {
-                                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" checked />
-                                        <label>да</label>
-                                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
-                                        <label>не</label>
+                                        <input class="input-radio" id="yes-button@(inputIndex)" type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" checked />
+                                        <label class="button-label option-1" for="yes-button@(inputIndex)"><span>ДА</span></label>
+                                        <input class="input-radio" id="no-button@(inputIndex)" type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
+                                        <label class="button-label option-2" for="no-button@(inputIndex)"><span>НЕ</span></label>
                                     }
                                     else if (check.Condition == false)
                                     {
-                                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
-                                        <label>да</label>
-                                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" checked />
-                                        <label>не</label>
+                                        <input class="input-radio" id="yes-button@(inputIndex)" type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
+                                        <label class="button-label option-1" for="yes-button@(inputIndex)"><span>ДА</span></label>
+                                        <input class="input-radio " id="no-button@(inputIndex)" type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" checked />
+                                        <label class="button-label option-2" for="no-button@(inputIndex)"><span>НЕ</span></label>
                                     }
                                     else
                                     {
-                                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
-                                        <label>да</label>
-                                        <input type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
-                                        <label>не</label>
+                                        <input class="input-radio" id="yes-button@(inputIndex)" type="radio" name="InputChecks[@(inputIndex)].Condition" value="true" />
+                                        <label class="button-label option-1" for="yes-button@(inputIndex)"><span>ДА</span></label>
+                                        <input class="input-radio" id="no-button@(inputIndex)" type="radio" name="InputChecks[@(inputIndex)].Condition" value="false" />
+                                        <label class="button-label option-2" for="no-button@(inputIndex)"><span>НЕ</span></label>
                                     }
                                 </div>
                                 <div class="checkList-description">

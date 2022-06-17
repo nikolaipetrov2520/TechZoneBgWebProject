@@ -11712,6 +11712,8 @@ a.add-to-cart-right {
     font-size: 19px;
     justify-content: space-around;
     font-weight: bold;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 li.checList-item:nth-child(2n+1) {
@@ -11720,6 +11722,7 @@ li.checList-item:nth-child(2n+1) {
     text-align: left;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 li.checList-item:nth-child(2n+2) {
@@ -11727,19 +11730,106 @@ li.checList-item:nth-child(2n+2) {
     text-align: left;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .checkList-label {
     margin-right: auto;
 }
-
+ /*Radio*/
 .checkList-radio {
     margin-right: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 160px;
+    min-width: 160px;
+}
+
+.button-label {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 15px;
+    border: 1px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+.input-radio {
+    display: none;
+}
+
+#yes-button0:checked:checked ~ .option-1,
+#yes-button1:checked:checked ~ .option-1,
+#yes-button2:checked:checked ~ .option-1,
+#yes-button3:checked:checked ~ .option-1,
+#yes-button4:checked:checked ~ .option-1,
+#yes-button5:checked:checked ~ .option-1,
+#yes-button6:checked:checked ~ .option-1,
+#yes-button7:checked:checked ~ .option-1,
+#yes-button8:checked:checked ~ .option-1,
+#yes-button9:checked:checked ~ .option-1,
+#yes-button10:checked:checked ~ .option-1 {
+    border-color: #00d957;
+    background: #00d957;
 }
 
 
+#no-button0:checked:checked ~ .option-2,
+#no-button1:checked:checked ~ .option-2,
+#no-button2:checked:checked ~ .option-2,
+#no-button3:checked:checked ~ .option-2,
+#no-button4:checked:checked ~ .option-2,
+#no-button5:checked:checked ~ .option-2,
+#no-button6:checked:checked ~ .option-2,
+#no-button7:checked:checked ~ .option-2,
+#no-button8:checked:checked ~ .option-2,
+#no-button9:checked:checked ~ .option-2,
+#no-button10:checked:checked ~ .option-2 {
+    border-color: #d93611;
+    background: #d93611;
+}
+
+
+    #yes-button0:checked:checked ~ .option-1 span,
+    #no-button0:checked:checked ~ .option-2 span,
+    #yes-button1:checked:checked ~ .option-1 span,
+    #no-button1:checked:checked ~ .option-2 span,
+    #yes-button2:checked:checked ~ .option-1 span,
+    #no-button2:checked:checked ~ .option-2 span,
+    #yes-button3:checked:checked ~ .option-1 span,
+    #no-button3:checked:checked ~ .option-2 span,
+    #yes-button4:checked:checked ~ .option-1 span,
+    #no-button4:checked:checked ~ .option-2 span,
+    #yes-button5:checked:checked ~ .option-1 span,
+    #no-button5:checked:checked ~ .option-2 span,
+    #yes-button6:checked:checked ~ .option-1 span,
+    #no-button6:checked:checked ~ .option-2 span,
+    #yes-button7:checked:checked ~ .option-1 span,
+    #no-button7:checked:checked ~ .option-2 span,
+    #yes-button8:checked:checked ~ .option-1 span,
+    #no-button8:checked:checked ~ .option-2 span,
+    #yes-button9:checked:checked ~ .option-1 span,
+    #no-button9:checked:checked ~ .option-2 span,
+    #yes-button10:checked:checked ~ .option-1 span,
+    #no-button10:checked:checked ~ .option-2 span {
+        color: #fff;
+    }
+
+.button-label span {
+    font-size: 15px;
+    color: #5e5e5e;
+}
+
+/*end Radio*/
 .checkList-head-condition {
-    margin-left: 535px;
+    margin-left: 460px;
 }
 
 .form-group-conteiner {
