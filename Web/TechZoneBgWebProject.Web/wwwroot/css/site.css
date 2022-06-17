@@ -11732,3 +11732,46 @@ li.checList-item:nth-child(2n+2) {
 .checkList-head-condition {
     margin-left: 535px;
 }
+
+.form-group-conteiner {
+    position: relative;
+}
+
+.Info-icon {
+    border: 1px solid gray;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 18px;
+    background-color: yellow;
+    color: red;
+    cursor:pointer;
+}
+.hiden-info {
+    display: none;
+}
+
+.Info-icon:hover + .hiden-info {
+    display: block;
+    width: 650px;
+    position: absolute;
+    top: 330px;
+    left: 45px;
+}
+
+.hiden-info-text {
+    background-color: #f6fdb2f7;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+    border-bottom-right-radius: 60px;
+}
+
+    .hiden-info-text span {
+        font-weight: bold;
+    }
+
+.hidden-text-header {
+    font-weight: bold;
+    font-size: 18px;
+}
