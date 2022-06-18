@@ -1,19 +1,75 @@
-﻿@model List<TechZoneBgWebProject.Web.ViewModels.Users.UsersRolesViewModel>
+﻿@model TechZoneBgWebProject.Web.ViewModels.Users.UsersRolesInfoViewModel
     @{
         ViewData["Title"] = "Потребители";
     }
 
-<div>
-    @foreach (var user in Model)
-    {
-    <div>
-        @user.FirstName @user.LastName
-        @foreach (var role in user.Roles)
-        {
-        <div>@role.Name</div>
-        }
-    </div>
 
+<div class="tt-custom-mobile-indent container">
+    <div class="tt-categories-title">
+        <div class="tt-title">@ViewData["Title"]</div>
         
-    }
+        &nbsp;
+        <div class="tt-search">
+            <form class="search-wrapper"
+                  asp-area="Administration"
+                  asp-controller="Users"
+                  asp-action="All"
+                  method="get">
+                <div class="search-form">
+                    <input type="text"
+                           asp-for="Search"
+                           class="tt-search__input"
+                           placeholder="Search Users" />
+                    <button class="tt-search__btn" type="submit">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-search"></use>
+                        </svg>
+                    </button>
+                    <button class="tt-search__close">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-cancel"></use>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="tt-categories-list">
+        <div>
+            @foreach (var user in Model.Users)
+            {
+                <div class="col-md-6 col-lg-12">
+                    <div class="tt-item">
+                        <div class="tt-item-header">
+                            <ul class="tt-list-badge">
+                                <li>
+                                    <span class="tt-color01 tt-badge">@user.FirstName @user.LastName</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tt-item-layout">
+                            <div class="innerwrapper">
+                                @foreach (var role in user.Roles)
+                                {
+                                    <div>@role.Name</div>
+                                }
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-auto">
+                                    <a asp-area="Administration"
+                                       asp-controller="Users"
+                                       asp-action="Edit"
+                                       asp-route-id="@user.Id"
+                                       class="btn btn-secondary">
+                                        Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>

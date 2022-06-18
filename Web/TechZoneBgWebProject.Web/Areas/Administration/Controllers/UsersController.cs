@@ -30,7 +30,13 @@
                 user.Roles = await this.rolesService.GetAllByUserIdAsync(user.Id);
             }
 
-            return this.View(users);
+            var viewModel = new UsersRolesInfoViewModel
+            {
+                Search = search,
+                Users = users,
+            };
+
+            return this.View(viewModel);
         }
     }
 }

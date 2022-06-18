@@ -1,4 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
   <ContentRoot BasePath="/Identity" Path="C:\Users\user\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.6\staticwebassets\V4\" />
-  <ContentRoot BasePath="_content/TechZoneBgWebProject.Web" Path="C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\wwwroot\" />
+  <ContentRoot BasePath="_content/TechZoneBgWebProject.Web" Path="D:\TechZoneBG\Web\TechZoneBgWebProject.Web\wwwroot\" />
 </StaticWebAssets>
