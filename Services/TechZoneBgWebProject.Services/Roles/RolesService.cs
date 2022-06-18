@@ -55,6 +55,31 @@
             return users.ToList();
         }
 
+        public async Task<List<RolesUsersViewModel>> GetAllByUserIdAsync(string id)
+        {
+            var userRoles = await this.db.UserRoles
+                .Where(ur => ur.UserId == id)
+                .ToListAsync();
+            var roles = new List<RolesUsersViewModel>();
+
+            foreach (var userRole in userRoles)
+            {
+                var queryable = this.db.Roles.Where(r => r.Id == userRole.RoleId);
+                foreach (var item in queryable)
+                {
+                    var role = new RolesUsersViewModel
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                    };
+
+                    roles.Add(role);
+                }
+            }
+
+            return roles;
+        }
+
         public async Task<int> GetCountAsync(string searchFilter = null)
         {
             var queryable = this._userManager.Users

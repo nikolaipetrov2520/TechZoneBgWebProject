@@ -22,6 +22,8 @@
 
         Task<IEnumerable<TModel>> GetAllAsync<TModel>();
 
+        Task<IEnumerable<TModel>> GetAllSearchAsync<TModel>(string search = null);
+
         Task<IEnumerable<TModel>> GetFollowersAsync<TModel>(string id);
 
         Task<IEnumerable<TModel>> GetFollowingAsync<TModel>(string id);

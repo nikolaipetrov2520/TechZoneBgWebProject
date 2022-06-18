@@ -1,5 +1,6 @@
 ﻿namespace TechZoneBgWebProject.Services.Users
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -131,6 +132,30 @@
                 .Where(u => !u.IsDeleted)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
+
+        public async Task<IEnumerable<TModel>> GetAllSearchAsync<TModel>(string search = null)
+        {
+            var queryable = this.db.Users
+                           .AsNoTracking()
+                           .OrderBy(x => x.FirstName)
+                           .Where(u => !u.IsDeleted);
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                var filters = search.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                foreach (var filter in filters)
+                {
+                    queryable = queryable
+                    .Where(t => t.UserName.Contains(filter) || t.FirstName.Contains(filter) || t.LastName.Contains(filter));
+                }
+            }
+
+            var users = await queryable
+                .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
+
+            return users;
+        }
 
         public async Task<TModel> GetOrdersByIdAsync<TModel>(string id)
         {

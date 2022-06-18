@@ -1,0 +1,19 @@
+﻿@model List<TechZoneBgWebProject.Web.ViewModels.Users.UsersRolesViewModel>
+    @{
+        ViewData["Title"] = "Потребители";
+    }
+
+<div>
+    @foreach (var user in Model)
+    {
+    <div>
+        @user.FirstName @user.LastName
+        @foreach (var role in user.Roles)
+        {
+        <div>@role.Name</div>
+        }
+    </div>
+
+        
+    }
+</div>

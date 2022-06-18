@@ -43,6 +43,8 @@
                     dest => dest.MapFrom(src => src.Carts.Count(c => !c.IsSend && !c.IsDeleted && c.IsFinished)));
             this.CreateMap<ApplicationUser, ChatViewModel>();
             this.CreateMap<ApplicationUser, UsersDetailsViewModel>();
+            this.CreateMap<ApplicationUser, UsersRolesViewModel>();
+            this.CreateMap<IdentityUserRole<string>, RolesUsersViewModel>();
 
             this.CreateMap<Post, PostsDeleteViewModel>();
             this.CreateMap<Post, PostsDeleteConfirmedViewModel>();
