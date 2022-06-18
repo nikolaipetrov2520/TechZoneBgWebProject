@@ -68,7 +68,7 @@
                     </div>
                     <div class="select-list" style="border-bottom: 1px solid #ebe9e9;">
                         <div class="create-device">
-                            <div class="details-label">Състояние на устройството</div>
+                            <div class="details-label">Категория на устройството</div>
                             <div>@Model.Condition</div>
                         </div>
                         <div class="create-device">
@@ -89,7 +89,7 @@
                                 <div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="brand-label" asp-for="StatusId">Статус</label>
+                                            <label class="brand-label details-label" asp-for="StatusId">Статус</label>
                                             <select onchange="changeBrand()" class="brand-select select-list-item" asp-for="StatusId" id="input-status">
                                                 @foreach (var status in Model.Status)
                                                 {
