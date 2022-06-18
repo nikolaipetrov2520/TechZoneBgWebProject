@@ -221,6 +221,7 @@
         {
             var condition = await this.db.Conditions.FirstOrDefaultAsync(c => !c.IsDeleted && c.Name == "Преглежда се");
             var status = await this.db.Status.FirstOrDefaultAsync(c => !c.IsDeleted && c.Name == "За проверка");
+            var checksCount = this.db.Checks.Count();
 
             var device = new Device
             {
@@ -239,24 +240,17 @@
                 Devices = device,
             };
 
-            var checklistCheck = new List<CheckListsChecks>
+            var checkListChecks = new List<CheckListsChecks>();
+
+            for (int i = 1; i <= checksCount; i++)
             {
-                new CheckListsChecks { CheckList = checkList, CheckId = 1 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 2 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 3 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 4 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 5 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 6 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 7 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 8 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 9 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 10 },
-                new CheckListsChecks { CheckList = checkList, CheckId = 11 },
-            };
+                var checkListCheck = new CheckListsChecks { CheckList = checkList, CheckId = i };
+                checkListChecks.Add(checkListCheck);
+            }
 
             await this.db.Devices.AddAsync(device);
             await this.db.CheckList.AddAsync(checkList);
-            await this.db.CheckListsChecks.AddRangeAsync(checklistCheck);
+            await this.db.CheckListsChecks.AddRangeAsync(checkListChecks);
             await this.db.SaveChangesAsync();
         }
 

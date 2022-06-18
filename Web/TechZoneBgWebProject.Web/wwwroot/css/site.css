@@ -437,7 +437,7 @@ input[type="month"] {
 textarea {
     overflow: auto;
     resize: vertical;
-    box-shadow: 1px 2px 5px 0px;
+    box-shadow: 1px 1px 3px 0px;
 }
 
 fieldset {
@@ -11688,7 +11688,7 @@ a.add-to-cart-right {
     border: 1px solid #d5d5d5;
     cursor: pointer;
     border-radius: 4px;
-    box-shadow: 2px 1px 5px 0px;
+    box-shadow: 1px 1px 3px 0px;
 }
 .text-input{
     min-width:300px;
