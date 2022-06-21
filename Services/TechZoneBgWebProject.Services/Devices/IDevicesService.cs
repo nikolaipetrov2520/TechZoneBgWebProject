@@ -39,5 +39,7 @@
         Task<List<DevicesListingViewModel>> GetAllArchiveAsync();
 
         Task<List<DevicesListingViewModel>> GetAllOutletAsync();
+
+        Task<List<DevicesListingViewModel>> GetAllStatusChangedAsync();
     }
 }

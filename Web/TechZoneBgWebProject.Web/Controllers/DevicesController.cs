@@ -235,5 +235,17 @@
 
             return this.View(devices);
         }
+
+        public async Task<IActionResult> StatusChanged()
+        {
+            var devices = await this.devicesService.GetAllStatusChangedAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
     }
 }

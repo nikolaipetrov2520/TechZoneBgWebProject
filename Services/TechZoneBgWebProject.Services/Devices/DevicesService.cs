@@ -498,5 +498,41 @@
 
             return devices;
         }
+
+        public async Task<List<DevicesListingViewModel>> GetAllStatusChangedAsync()
+        {
+            var beforTuedays = DateTime.Now.AddDays(-2);
+
+            var querable = await this.db.Devices
+                .Include(d => d.DeviceModel)
+                .ThenInclude(dm => dm.Brand)
+                .Include(d => d.Status)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(d => !d.IsDeleted && d.ModifiedOn >= beforTuedays)
+                .ToListAsync();
+
+            var devices = new List<DevicesListingViewModel>();
+
+            foreach (var item in querable)
+            {
+                var device = new DevicesListingViewModel
+                {
+                    Id = item.Id,
+                    Brand = item.DeviceModel.Brand.Name,
+                    DeviceModel = item.DeviceModel.Name,
+                    Imei = item.Imei,
+                    Color = item.Color,
+                    Memory = item.Memory,
+                    Seller = item.Seller,
+                    CreatedOn = item.ModifiedOn ?? DateTime.Now,
+                    Status = item.Status.Name,
+                };
+
+                devices.Add(device);
+            }
+
+            return devices;
+        }
     }
 }
