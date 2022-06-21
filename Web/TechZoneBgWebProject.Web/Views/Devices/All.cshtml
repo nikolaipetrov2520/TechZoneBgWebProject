@@ -8,58 +8,59 @@
 
     <vc:devices-details user-id="1"></vc:devices-details>
 
-    <nav class="tt-topic-list cart-list" style="word-break: break-word;">
+    <nav class="tt-topic-list cart-list" style="word-break: break-word; margin: 40px 0px;">
 
-        @*@if (Model.Carts.Any())
+        @if (Model.Any())
         {
 
-            <h2 style="text-align:center; padding-bottom:40px;">Преглед на поръчките</h2>
+            <h2 style="text-align:center; padding-bottom:40px;">Намерени устройства</h2>
             <table align="center">
                 <thead>
                     <tr class="thead-cart">
-                        <th class="cart-min cart-text order-address">Дата</th>
-                        <th class="cart-text order-name">Име</th>
-                        <th class="cart-min cart-text order-phone">Телефон</th>
-                        <th class="cart-text order-sum">Сума</th>
-                        <th class="cart-min cart-text order-comment">Коментар</th>
-                        <th class="cart-min cart-text order-comment"></th>
+                        <th class="cart-min cart-text order-address-all">Дата</th>
+                        <th class="cart-text order-address">Устройство</th>
+                        <th class="cart-text order-address">Имеи</th>
+                        <th class="cart-min cart-text  order-address">Продавач</th>
+                        <th class="cart-text order-address-all">Статус</th>
+                        <th class="cart-text order-address-all"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var cart in Model.Carts)
+                    @foreach (var device in Model)
                     {
-                        var style = "background - color: white;";
-                        if (cart.IsOrdered)
-                        {
-                            style = "background-color: #85e769b3;";
-                        }
 
-                        <tr id="@cart.Id" class="tt-itemOrder order-name" style="@style">
-                            <td class="cart-min order-address" style="font-size:20px;">
-                                <div>
-                                    @cart.Time
-                                </div>
-                            </td>
-                            <td class="cart-text">
-                                @cart.FirstName @cart.LastName
-                            </td>
-                            <td class="cart-min cart-text order-phone">
-                                @cart.PhoneNumber
-                            </td>
-                            <td class="cart-text order-sum">
-                                <div style="font-size: 22px; padding: 5px;" class="tt-col-value hide-mobile">@cart.Sum лв.</div>
-                            </td>
-                            <td id="@cart.Comment" class="cart-min cart-text cart-quantity order-comment">
-                                <div>
-                                    @cart.Comment
-                                </div>
-                            </td>
-                            <td class="order-details">
-                                <a asp-area="" asp-controller="Orders" asp-action="Details" asp-route-id="@cart.Id">
-                                    Детайли
-                                </a>
-                            </td>
-                        </tr>
+                    <tr id="@device.Id" class="tt-itemOrder order-name">
+                        <td class="cart-min order-address-all" style="font-size:20px">
+                            <div>
+                                @device.CreatedOn
+                            </div>
+                        </td>
+                        <td class="cart-text order-address" style="font-size:20px;">
+                            <div>
+                                @device.Brand @device.DeviceModel @device.Memory @device.Color
+                            </div>
+                        </td>
+                        <td class="cart-text order-address">
+                            <div>
+                                @device.Imei
+                            </div>
+                        </td>
+                        <td class="cart-min cart-text  order-address">
+                            <div>
+                                @device.Seller
+                            </div>
+                        </td>
+                        <td class="order-address-all" style="font-size:20px;">
+                            <div>
+                                @device.Status
+                            </div>
+                        </td>
+                        <td class="order-address-all">
+                            <a asp-area="" asp-controller="Devices" asp-action="Details" asp-route-id="@device.Id">
+                                Детайли
+                            </a>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>
@@ -67,10 +68,12 @@
         else
         {
             <div class="tt-layout-404">
-                <h6 class="tt-title">Няма Устройства</h6>
+                <h6 class="tt-title">Няма намерени устройства по този критерий</h6>
             </div>
-        }*@
+        }
 
     </nav>
 
 </div>
+
+

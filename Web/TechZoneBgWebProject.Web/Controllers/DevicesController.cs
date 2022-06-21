@@ -49,6 +49,7 @@
 
             if (devices == null)
             {
+                return this.NotFound();
             }
 
             return this.View(devices);

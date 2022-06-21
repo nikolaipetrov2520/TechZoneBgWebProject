@@ -26,7 +26,9 @@
 
         public async Task<List<DevicesListingViewModel>> GetAllAsync(string search = null)
         {
-            var queryable = this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+            var queryable = this.db.Devices
+                .Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
+                .Include(d => d.Status)
                 .AsNoTracking()
                 .OrderBy(c => c.Id)
                 .Where(d => !d.IsDeleted);
@@ -58,7 +60,11 @@
                     Color = item.Color,
                     Memory = item.Memory,
                     Seller = item.Seller,
+                    CreatedOn = item.ModifiedOn ?? DateTime.Now,
+                    Status = item.Status.Name,
                 };
+
+                devices.Add(device);
             }
 
             return devices;
@@ -283,6 +289,7 @@
                     Id = item.Id,
                     Brand = item.DeviceModel.Brand.Name,
                     DeviceModel = item.DeviceModel.Name,
+                    Imei = item.Imei,
                     Color = item.Color,
                     Memory = item.Memory,
                     Seller = item.Seller,
@@ -301,7 +308,14 @@
                 .Where(p => p.Id == id && !p.IsDeleted)
                 .FirstOrDefaultAsync();
 
+            if (queryable.StatusId != statusId)
+            {
+                queryable.ModifiedOn = DateTime.Now;
+            }
+
             queryable.StatusId = statusId;
+
+
             await this.db.SaveChangesAsync();
         }
 
@@ -322,6 +336,7 @@
                     Id = item.Id,
                     Brand = item.DeviceModel.Brand.Name,
                     DeviceModel = item.DeviceModel.Name,
+                    Imei = item.Imei,
                     Color = item.Color,
                     Memory = item.Memory,
                     Seller = item.Seller,
@@ -351,6 +366,7 @@
                     Id = item.Id,
                     Brand = item.DeviceModel.Brand.Name,
                     DeviceModel = item.DeviceModel.Name,
+                    Imei = item.Imei,
                     Color = item.Color,
                     Memory = item.Memory,
                     Seller = item.Seller,
@@ -380,6 +396,7 @@
                     Id = item.Id,
                     Brand = item.DeviceModel.Brand.Name,
                     DeviceModel = item.DeviceModel.Name,
+                    Imei = item.Imei,
                     Color = item.Color,
                     Memory = item.Memory,
                     Seller = item.Seller,
@@ -409,6 +426,7 @@
                     Id = item.Id,
                     Brand = item.DeviceModel.Brand.Name,
                     DeviceModel = item.DeviceModel.Name,
+                    Imei = item.Imei,
                     Color = item.Color,
                     Memory = item.Memory,
                     Seller = item.Seller,
@@ -438,6 +456,7 @@
                     Id = item.Id,
                     Brand = item.DeviceModel.Brand.Name,
                     DeviceModel = item.DeviceModel.Name,
+                    Imei = item.Imei,
                     Color = item.Color,
                     Memory = item.Memory,
                     Seller = item.Seller,
@@ -467,6 +486,7 @@
                     Id = item.Id,
                     Brand = item.DeviceModel.Brand.Name,
                     DeviceModel = item.DeviceModel.Name,
+                    Imei = item.Imei,
                     Color = item.Color,
                     Memory = item.Memory,
                     Seller = item.Seller,

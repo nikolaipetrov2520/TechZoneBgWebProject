@@ -1,6 +1,6 @@
 ﻿@model List<TechZoneBgWebProject.Web.ViewModels.Devices.DevicesListingViewModel>
 @{
-    ViewData["Title"] = "Устройства";
+    ViewData["Title"] = "Устройства върнати за рекламация";
 }
 
 
@@ -19,6 +19,7 @@
                     <tr class="thead-cart">
                         <th class="cart-min cart-text order-address">Дата</th>
                         <th class="cart-text order-address">Устройство</th>
+                        <th class="cart-min cart-text order-address">Имеи</th>
                         <th class="cart-min cart-text order-name">Продавач</th>
                         <th class="cart-text order-comment"></th>
                     </tr>
@@ -27,28 +28,33 @@
                     @foreach (var device in Model)
                     {
 
-                        <tr id="@device.Id" class="tt-itemOrder order-name">
-                            <td class="cart-min order-address" style="font-size:20px;">
-                                <div>
-                                    @device.CreatedOn
-                                </div>
-                            </td>
-                            <td class="order-address" style="font-size:20px;">
-                                <div>
-                                    @device.Brand @device.DeviceModel @device.Memory @device.Color
-                                </div>
-                            </td>
-                            <td class="cart-min cart-text cart-quantity order-comment">
-                                <div>
-                                    @device.Seller
-                                </div>
-                            </td>
-                            <td class="order-details">
-                                <a asp-area="" asp-controller="Devices" asp-action="Details" asp-route-id="@device.Id">
-                                    Детайли
-                                </a>
-                            </td>
-                        </tr>
+                    <tr id="@device.Id" class="tt-itemOrder order-name">
+                        <td class="cart-min order-address" style="font-size:20px;">
+                            <div>
+                                @device.CreatedOn
+                            </div>
+                        </td>
+                        <td class="order-address" style="font-size:20px;">
+                            <div>
+                                @device.Brand @device.DeviceModel @device.Memory @device.Color
+                            </div>
+                        </td>
+                        <td class="cart-min cart-text cart-quantity order-comment">
+                            <div>
+                                @device.Imei
+                            </div>
+                        </td>
+                        <td class="cart-min cart-text cart-quantity order-comment">
+                            <div>
+                                @device.Seller
+                            </div>
+                        </td>
+                        <td class="order-details">
+                            <a asp-area="" asp-controller="Devices" asp-action="Details" asp-route-id="@device.Id">
+                                Детайли
+                            </a>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>

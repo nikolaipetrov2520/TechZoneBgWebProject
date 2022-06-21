@@ -7755,7 +7755,7 @@ hr {
 }
 
 table td {
-    padding: 25px 35px !important;
+    padding: 15px 35px !important;
 }
 table th {
     text-align: center;
@@ -11630,6 +11630,11 @@ a.add-to-cart-right {
 .order-name {
     width: 20%;
     text-align:center;
+}
+
+.order-address-all {
+    width: 15%;
+    text-align: center;
 }
 
 .order-phone {
