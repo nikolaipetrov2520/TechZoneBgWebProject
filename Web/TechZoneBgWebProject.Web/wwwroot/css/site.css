@@ -11676,6 +11676,8 @@ a.add-to-cart-right {
     display: flex;
     justify-content: space-around;
     padding: 40px;
+    max-width: 88%;
+    margin: auto;
     flex-wrap: wrap;
 }
 
@@ -11895,8 +11897,8 @@ li.checList-item:nth-child(2n+2) {
 
 .back-btn {
     position: fixed;
-    bottom: 18vh;
-    right: 28vw;
+    bottom: 5vh;
+    right: 10vw;
     z-index: 99;
     font-size: 18px;
     border: none;
@@ -11919,20 +11921,20 @@ li.checList-item:nth-child(2n+2) {
 
 @media (max-width: 1850px) {
     .back-btn {
-        right: 26vw;
+        right: 15vw;
     }
 }
 
 @media (max-width: 1750px) {
     .back-btn {
-        right: 23vw;
+        right: 10vw;
     }
 }
 
 
 @media (max-width: 1200px) {
     .back-btn {
-        right: 3vw;
+        right: 1vw;
     }
 }
 
@@ -11950,3 +11952,4 @@ li.checList-item:nth-child(2n+2) {
 .tt-search__input:hover {
     box-shadow: 0px 0px 4px -1px;
 }
+
