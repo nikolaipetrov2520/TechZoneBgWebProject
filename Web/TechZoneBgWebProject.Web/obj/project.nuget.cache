@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z+6fvHG9/2yW2zASlMnT0qZtmkh2fXGnDW1kCi1ot63LB/HblqwlMWhNDBuuNGN2Wkbccz3lQeRBk2d6k9144g==",
+  "dgSpecHash": "DF8shp2X8XAteD71cJ21awpcFtyWk/ykpDDSs2JVeJ6aN37BT1xF9VHoLBDh2e99G9G29pBoC6ABMB1aUsB4Ww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Web\\TechZoneBgWebProject.Web\\TechZoneBgWebProject.Web.csproj",
+  "projectFilePath": "D:\\TechZoneBG\\Web\\TechZoneBgWebProject.Web\\TechZoneBgWebProject.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\anglesharp\\0.16.0\\anglesharp.0.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\anglesharp.css\\0.16.0\\anglesharp.css.0.16.0.nupkg.sha512",

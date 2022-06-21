@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "90h/gpwx3xZdzH14iI7sFFpPdWorfTAA0RdDf/xzrxxImu9vWmDO3sBmvMwepJGdKR1PxPWoUkrxv1J/vJR52A==",
+  "dgSpecHash": "tRA03KWTLWPcZUPtA+L143iquLmoFyIaMAPLYpbskolDmW/SOxOP8oTYwZI3fujpL+FqF+YIcdgQc+TucpBZTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\TechZoneBgWeb\\TechZoneBgWebProject\\Tests\\Sandbox\\Sandbox.csproj",
+  "projectFilePath": "D:\\TechZoneBG\\Tests\\Sandbox\\Sandbox.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\anglesharp\\0.16.0\\anglesharp.0.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\anglesharp.css\\0.16.0\\anglesharp.css.0.16.0.nupkg.sha512",

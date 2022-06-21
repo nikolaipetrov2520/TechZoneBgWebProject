@@ -11935,3 +11935,18 @@ li.checList-item:nth-child(2n+2) {
         right: 3vw;
     }
 }
+
+.devices-menu {
+    background-color: #e2e7ea;
+    border-radius: 6px;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.tt-search__input {
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.devices-menu:hover,
+.tt-search__input:hover {
+    box-shadow: 0px 0px 4px -1px;
+}
