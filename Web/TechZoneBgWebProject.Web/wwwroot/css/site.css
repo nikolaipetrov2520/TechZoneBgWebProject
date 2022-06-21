@@ -11887,3 +11887,46 @@ li.checList-item:nth-child(2n+2) {
 .details-label {
     font-weight: bold;
 }
+
+.back-btn {
+    position: fixed;
+    bottom: 18vh;
+    right: 28vw;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.back-btn img {
+    width:70px;
+    opacity: 0.8;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.back-btn img:hover {
+   opacity: 1;
+}
+
+@media (max-width: 1850px) {
+    .back-btn {
+        right: 26vw;
+    }
+}
+
+@media (max-width: 1750px) {
+    .back-btn {
+        right: 23vw;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .back-btn {
+        right: 3vw;
+    }
+}

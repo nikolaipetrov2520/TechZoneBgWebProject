@@ -24,17 +24,30 @@
             this.mapper = mapper;
         }
 
-        public async Task<List<DevicesListingViewModel>> GetAllAsync()
+        public async Task<List<DevicesListingViewModel>> GetAllAsync(string search = null)
         {
-            var querable = await this.db.Devices
+            var queryable = this.db.Devices.Include(d => d.DeviceModel).ThenInclude(dm => dm.Brand)
                 .AsNoTracking()
                 .OrderBy(c => c.Id)
-                .Where(d => !d.IsDeleted)
-                .ToListAsync();
+                .Where(d => !d.IsDeleted);
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                var filters = search.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                foreach (var filter in filters)
+                {
+                    queryable = queryable
+                    .Where(t => t.Imei.Contains(filter)
+                    || t.DeviceModel.Name.Contains(filter)
+                    || t.DeviceModel.Brand.Name.Contains(filter)
+                    || t.Color.Contains(filter)
+                    || t.Seller.Contains(filter));
+                }
+            }
 
             var devices = new List<DevicesListingViewModel>();
 
-            foreach (var item in querable)
+            foreach (var item in queryable)
             {
                 var device = new DevicesListingViewModel
                 {
@@ -44,7 +57,6 @@
                     DeviceModel = item.DeviceModel.Name,
                     Color = item.Color,
                     Memory = item.Memory,
-                    Status = item.Status.Name,
                     Seller = item.Seller,
                 };
             }

@@ -43,9 +43,9 @@
             this.devicesModelsService = devicesModelsService;
         }
 
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(string search = null)
         {
-            var devices = await this.devicesService.GetAllAsync();
+            var devices = await this.devicesService.GetAllAsync(search);
 
             if (devices == null)
             {

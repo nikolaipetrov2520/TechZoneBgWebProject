@@ -10,7 +10,7 @@
 
     public interface IDevicesService
     {
-        Task<List<DevicesListingViewModel>> GetAllAsync();
+        Task<List<DevicesListingViewModel>> GetAllAsync(string search = null);
 
         Task<List<DevicesListingViewModel>> GetAllInspectingAsync();
 
