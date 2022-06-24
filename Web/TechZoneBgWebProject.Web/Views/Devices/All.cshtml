@@ -22,14 +22,13 @@
                         <th class="cart-text order-address">Имеи</th>
                         <th class="cart-min cart-text  order-address">Продавач</th>
                         <th class="cart-text order-address-all">Статус</th>
-                        <th class="cart-text order-address-all"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var device in Model)
                     {
 
-                    <tr id="@device.Id" class="tt-itemOrder order-name">
+                    <tr id="@device.Id" class="tt-itemOrder order-name clickable" onclick="location.href='/Devices/Details/@device.Id';" style="cursor:pointer">
                         <td class="cart-min order-address-all" style="font-size:20px">
                             <div>
                                 @device.CreatedOn
@@ -54,11 +53,6 @@
                             <div>
                                 @device.Status
                             </div>
-                        </td>
-                        <td class="order-address-all">
-                            <a asp-area="" asp-controller="Devices" asp-action="Details" asp-route-id="@device.Id">
-                                Детайли
-                            </a>
                         </td>
                     </tr>
                     }

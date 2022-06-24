@@ -110,7 +110,7 @@
 
         public async Task<IEnumerable<TModel>> GetAllProductsAsync<TModel>()
             => await this.db.Products
-                .Where(p => p.InStock)
+                .Where(p => p.InStock && !p.IsDeleted)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
 

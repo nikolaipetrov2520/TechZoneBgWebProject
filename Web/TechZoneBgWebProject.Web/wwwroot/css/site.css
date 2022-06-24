@@ -11953,3 +11953,8 @@ li.checList-item:nth-child(2n+2) {
     box-shadow: 0px 0px 4px -1px;
 }
 
+
+tr.clickable:hover {
+    background-color: #dfecf7;
+}
+
