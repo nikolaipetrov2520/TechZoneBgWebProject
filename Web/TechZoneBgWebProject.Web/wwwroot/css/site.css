@@ -11956,5 +11956,15 @@ li.checList-item:nth-child(2n+2) {
 
 tr.clickable:hover {
     background-color: #dfecf7;
+    color: #68b2f1;
+}
+
+.device-menu-list .nav-item {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.device-menu-list .nav-item .nav-link {
+    padding: 0.5rem 0.5rem;
 }
 

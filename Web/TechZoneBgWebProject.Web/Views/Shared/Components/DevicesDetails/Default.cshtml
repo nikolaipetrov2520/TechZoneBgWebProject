@@ -36,7 +36,7 @@
 </div>
 
 <div class="tt-wrapper-inner devices-menu">
-    <ul class="nav nav-tab pt-tabs-default" role="tablist" style="border-bottom: unset;">
+    <ul class="nav nav-tab pt-tabs-default device-menu-list" role="tablist" style="border-bottom: unset;">
         @{
             if (this.Context.Request.GetEncodedUrl().Contains("Inspecting"))
             {
@@ -110,6 +110,14 @@
                        asp-controller="Devices"
                        asp-action="StatusChanged">
                         <span>Активности</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
                     </a>
                 </li>
             }
@@ -187,6 +195,14 @@
                         <span>Активности</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
+                    </a>
+                </li>
             }
             else if (this.Context.Request.GetEncodedUrl().Contains("InSale"))
             {
@@ -260,6 +276,14 @@
                        asp-controller="Devices"
                        asp-action="StatusChanged">
                         <span>Активности</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
                     </a>
                 </li>
             }
@@ -337,6 +361,14 @@
                         <span>Активности</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
+                    </a>
+                </li>
             }
             else if (this.Context.Request.GetEncodedUrl().Contains("Complaint"))
             {
@@ -410,6 +442,14 @@
                        asp-controller="Devices"
                        asp-action="StatusChanged">
                         <span>Активности</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
                     </a>
                 </li>
             }
@@ -487,6 +527,14 @@
                         <span>Активности</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
+                    </a>
+                </li>
             }
             else if (this.Context.Request.GetEncodedUrl().Contains("Archive"))
             {
@@ -560,6 +608,14 @@
                        asp-controller="Devices"
                        asp-action="StatusChanged">
                         <span>Активности</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
                     </a>
                 </li>
             }
@@ -637,6 +693,14 @@
                         <span>Активности</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
+                    </a>
+                </li>
             }
             else if (this.Context.Request.GetEncodedUrl().Contains("StatusChanged"))
             {
@@ -712,6 +776,97 @@
                         <span>Активности</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
+                    </a>
+                </li>
+            }
+            else if (this.Context.Request.GetEncodedUrl().Contains("Shooting"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Inspecting">
+                        <span>За инспекция</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Inspected">
+                        <span>Проверени</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="InSale">
+                        <span>В продажба</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="NotBayed">
+                        <span>Незакупени</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Complaint">
+                        <span>Рекламация</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="InRepair">
+                        <span>В ремонт</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Archive">
+                        <span>Архив</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Outlet">
+                        <span>Преоценени</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="StatusChanged">
+                        <span>Активности</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
+                    </a>
+                </li>
             }
             else
             {
@@ -785,6 +940,14 @@
                        asp-controller="Devices"
                        asp-action="StatusChanged">
                         <span>Активности</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Devices"
+                       asp-action="Shooting">
+                        <span>За снимки</span>
                     </a>
                 </li>
             }

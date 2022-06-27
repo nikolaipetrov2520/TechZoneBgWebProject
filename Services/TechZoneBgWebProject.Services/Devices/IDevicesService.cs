@@ -40,6 +40,8 @@
 
         Task<List<DevicesListingViewModel>> GetAllOutletAsync();
 
+        Task<List<DevicesListingViewModel>> GetAllShootingAsync();
+
         Task<List<DevicesListingViewModel>> GetAllStatusChangedAsync();
     }
 }

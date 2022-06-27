@@ -236,6 +236,18 @@
             return this.View(devices);
         }
 
+        public async Task<IActionResult> Shooting()
+        {
+            var devices = await this.devicesService.GetAllShootingAsync();
+
+            if (devices == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(devices);
+        }
+
         public async Task<IActionResult> StatusChanged()
         {
             var devices = await this.devicesService.GetAllStatusChangedAsync();
