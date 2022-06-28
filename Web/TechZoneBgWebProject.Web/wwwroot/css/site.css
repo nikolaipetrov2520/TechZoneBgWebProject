@@ -11716,6 +11716,7 @@ a.add-to-cart-right {
 
 .checkList-header {
     background-color: #60a3eb;
+    color: white;
     display: flex;
     padding: 8px;
     font-size: 19px;
@@ -11966,5 +11967,36 @@ tr.clickable:hover {
 
 .device-menu-list .nav-item .nav-link {
     padding: 0.5rem 0.5rem;
+}
+
+.details-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-status .details-btn{
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+}
+
+.details-status.export{
+    width: 15%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-status .details-btn a {
+    background-color: gray;
+    color:white;
+}
+
+.details-status .details-btn div div{
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
 }
 

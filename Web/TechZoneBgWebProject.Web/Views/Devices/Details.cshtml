@@ -77,42 +77,56 @@
                         </div>
 
                     </div>
-
-                    <form method="POST">
-                        <div class="select-condition-list">
-                            <div class="row">
-                                <div class="col-auto mb-5 mt-5 mr-auto">
-                                    <button type="submit" class="btn btn-secondary btn-width-lg">Запис</button>
+                    <div class="details-status">
+                        <form method="POST" style="width:75%">
+                            <div class="select-condition-list">
+                                <div class="row">
+                                    <div class="col-auto mb-5 mt-5 mr-auto">
+                                        <button type="submit" class="btn btn-secondary btn-width-lg">Запис</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="create-device">
-                                <div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="brand-label details-label" asp-for="StatusId">Статус</label>
-                                            <select onchange="changeBrand()" class="brand-select select-list-item" asp-for="StatusId" id="input-status">
-                                                @foreach (var status in Model.Status)
-                                                {
-                                                    if (status.Id == Model.StatusId)
+                                <div class="create-device">
+                                    <div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="brand-label details-label" asp-for="StatusId">Статус</label>
+                                                <select onchange="changeBrand()" class="brand-select select-list-item" asp-for="StatusId" id="input-status">
+                                                    @foreach (var status in Model.Status)
                                                     {
-                                                        <option value="@status.Id" selected>@status.Name</option>
-                                                    }
-                                                    else
-                                                    {
-                                                        <option value="@status.Id">@status.Name</option>
-                                                    }
+                                                        if (status.Id == Model.StatusId)
+                                                        {
+                                                            <option value="@status.Id" selected>@status.Name</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="@status.Id">@status.Name</option>
+                                                        }
 
-                                                }
-                                            </select>
-                                            <span class="text-danger" asp-validation-for="StatusId"></span>
-                                            <input type="text" name="Id" value="@Model.Id" hidden />
+                                                    }
+                                                </select>
+                                                <span class="text-danger" asp-validation-for="StatusId"></span>
+                                                <input type="text" name="Id" value="@Model.Id" hidden />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
+                            </div>
+                        </form>
+                        <div class="export">
+                            <div style="font-weight:bold">Експорт</div>
+                            <div class="details-btn">
+                                <div class="row">
+                                    <div class="col-auto mb-5 mt-5 mr-auto">
+                                        <a asp-area="" asp-controller="Devices" asp-action="PDF" asp-route-Id="@Model.Id" class="btn btn-secondary btn-width-lg">PDF</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </form>
+                        
+                    </div>
+
+                    
                 </div>
             </div>
         </div>
