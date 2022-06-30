@@ -289,7 +289,7 @@
                 Orientation = Orientation.Portrait,
                 PaperSize = PaperKind.A4,
                 Margins = new MarginSettings { Top = 10 },
-                DocumentTitle = "PDF Report",
+                DocumentTitle = "PDF Досие",
                 Out = @$"{path}\Downloads\{device.DeviceModel}_{device.Imei}.pdf",
             };
 
@@ -310,8 +310,11 @@
 
             this.converter.Convert(pdf);
 
-            return this.RedirectToAction($"Details", new { id = device.Id });
+            //return this.RedirectToAction($"Details", new { id = device.Id });
             //return this.PartialView(device);
+
+            var stream = new FileStream(@$"{path}\Downloads\{device.DeviceModel}_{device.Imei}.pdf", FileMode.Open);
+            return new FileStreamResult(stream, "application/pdf");
         }
     }
 }
