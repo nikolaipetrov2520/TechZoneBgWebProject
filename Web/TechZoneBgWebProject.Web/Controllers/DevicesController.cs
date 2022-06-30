@@ -2,9 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using DinkToPdf;
+    using DinkToPdf.Contracts;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using TechZoneBgWebProject.Common;
@@ -13,6 +15,7 @@
     using TechZoneBgWebProject.Services.Conditions;
     using TechZoneBgWebProject.Services.Devices;
     using TechZoneBgWebProject.Services.DevicesModels;
+    using TechZoneBgWebProject.Services.PDF;
     using TechZoneBgWebProject.Services.Statuses;
     using TechZoneBgWebProject.Web.Infrastructure.Extensions;
     using TechZoneBgWebProject.Web.ViewModels.Devices;
@@ -26,6 +29,8 @@
         private readonly IChecksService checksService;
         private readonly IStatusesService statusesService;
         private readonly IDevicesModelsService devicesModelsService;
+        private readonly ITemplateGenerator templateGenerator;
+        private readonly IConverter converter;
 
         public DevicesController(
             IDevicesService devicesService,
@@ -33,7 +38,9 @@
             IConditionsService conditionsService,
             IChecksService checksService,
             IStatusesService statusesService,
-            IDevicesModelsService devicesModelsService)
+            IDevicesModelsService devicesModelsService,
+            ITemplateGenerator templateGenerator,
+            IConverter converter)
         {
             this.devicesService = devicesService;
             this.brandsService = brandsService;
@@ -41,6 +48,8 @@
             this.checksService = checksService;
             this.statusesService = statusesService;
             this.devicesModelsService = devicesModelsService;
+            this.templateGenerator = templateGenerator;
+            this.converter = converter;
         }
 
         public async Task<IActionResult> All(string search = null)
@@ -272,7 +281,37 @@
             device.Status = await this.statusesService.GetAllAsync<DevicesStatusDetailsViewModel>();
             device.Checks = await this.checksService.GetAllAsync<DevicesChecksDetailsViewModel>(id);
 
-            return this.PartialView(device);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+            var globalSettings = new GlobalSettings
+            {
+                ColorMode = ColorMode.Color,
+                Orientation = Orientation.Portrait,
+                PaperSize = PaperKind.A4,
+                Margins = new MarginSettings { Top = 10 },
+                DocumentTitle = "PDF Report",
+                Out = @$"{path}\Downloads\{device.DeviceModel}_{device.Imei}.pdf",
+            };
+
+            var objectSettings = new ObjectSettings
+            {
+                PagesCount = true,
+                HtmlContent = this.templateGenerator.Generate(device),
+                WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\css", "site.min.css") },
+                HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]", Line = true },
+                FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Report Footer" },
+            };
+
+            var pdf = new HtmlToPdfDocument()
+            {
+                GlobalSettings = globalSettings,
+                Objects = { objectSettings },
+            };
+
+            this.converter.Convert(pdf);
+
+            return this.RedirectToAction($"Details", new { id = device.Id });
+            //return this.PartialView(device);
         }
     }
 }

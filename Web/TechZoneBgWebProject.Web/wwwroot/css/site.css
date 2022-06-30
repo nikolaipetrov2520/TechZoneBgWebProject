@@ -11667,6 +11667,31 @@ a.add-to-cart-right {
     text-align: center;
 }
 
+.order-name-check {
+    width: 55%;
+    text-align: left;
+    padding: 5px 20px !important;
+    font-size: 12px;
+}
+
+.order-condition-check {
+    width: 18%;
+    text-align: center;
+    padding: 5px 20px !important;
+    font-size: 12px;
+}
+
+.order-description-check {
+    width: 25%;
+    text-align: center;
+    padding: 5px 20px !important;
+    font-size: 15px;
+}
+
+.tt-itemOrder-check:nth-child(2n+1) {
+    background-color: #e1ecedad;
+}
+
 .select {
     border-radius: 21px;
     padding: 5px 15px;

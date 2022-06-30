@@ -3,6 +3,8 @@
     using System.Reflection;
 
     using AutoMapper;
+    using DinkToPdf;
+    using DinkToPdf.Contracts;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -28,6 +30,7 @@
     using TechZoneBgWebProject.Services.Mapping;
     using TechZoneBgWebProject.Services.Messages;
     using TechZoneBgWebProject.Services.Messaging;
+    using TechZoneBgWebProject.Services.PDF;
     using TechZoneBgWebProject.Services.Posts;
     using TechZoneBgWebProject.Services.Products;
     using TechZoneBgWebProject.Services.Providers;
@@ -100,6 +103,8 @@
             services.AddTransient<IChecksService, ChecksService>();
             services.AddTransient<IStatusesService, StatusesService>();
             services.AddTransient<IDevicesModelsService, DevicesModelsService>();
+            services.AddTransient<ITemplateGenerator, TemplateGenerator>();
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TechZoneBgProfile());

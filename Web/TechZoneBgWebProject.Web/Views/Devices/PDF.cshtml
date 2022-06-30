@@ -3,16 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ремонт на смартфони, ремонт на таблети, ремонт на компютри, смяна на счупено стъкло на дисплей цена, ремонт на лаптопи, сервиз за телефони,">
-    <meta name="keyword" content="Ремонт на смартфони, ремонт на таблети, ремонт на компютри, смяна на счупено стъкло на дисплей цена, ремонт на лаптопи, сервиз за телефони,">
-    <meta property="og:title" content="TechZoneBG" />
-    <meta property="og:image" content="~/images/itech Logo1.png" />
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="300" />
-
-    <title>TechZoneBG</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 
@@ -41,40 +31,51 @@
                                 <div>
                                     <div style="font-size: 20px; display:inline-block">IMEI</div>
                                     <div class="checkList-input-text" style="font-size: 20px; display:inline-block; border:none">@Model.Imei</div>
-                                    <ul class="checkList-list">
-                                        <li class="checkList-header">
-                                            <div>Проверка за:</div>
-                                            <div class="checkList-head-condition">Състояние</div>
-                                            <div>Бележка</div>
-                                        </li>
-                                        @foreach (var check in Model.Checks)
-                                        {
-                                            <li class="checList-item">
-                                                <div class="checkList-label">@check.Name</div>
-                                                <div class="checkList-radio">
-                                                    @if (check.Condition == true)
-                                                    {
-                                                        <div>
-                                                            <img src="~/images/checkedIcon.png" width="20" />
-                                                        </div>
-                                                    }
-                                                    else if (check.Condition == false)
-                                                    {
-                                                        <div>
-                                                            <img src="~/images/NotCheckedIcon.png" width="20" />
-                                                        </div>
-                                                    }
-                                                    else
-                                                    {
-                                                        <div>не е проверен</div>
-                                                    }
-                                                </div>
-                                                <div class="checkList-description" style="width: 220px;">@check.Description</div>
+                                    <div style="border: 1px solid #dfdfdf; width: 90%; margin: 20px auto; padding: 20px;">
+                                        <table align="center" style="margin:0px;">
+                                            <thead>
+                                                <tr class="thead-cart">
+                                                    <th class="order-name-check">Проверка за:</th>
+                                                    <th class="order-condition-check">Състояние</th>
+                                                    <th class="order-description-check">Бележка</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var check in Model.Checks)
+                                                {
 
-                                            </li>
-                                        }
-
-                                    </ul>
+                                                    <tr class="tt-itemOrder-check order-name">
+                                                        <td class="order-name-check" ">
+                                                            <div class="checkList-label">@check.Name</div>
+                                                        </td>
+                                                        <td class="order-condition-check" ">
+                                                            <div>
+                                                                @if (check.Condition == true)
+                                                                {
+                                                                    <div>
+                                                                        <img src="~/images/checkedIcon.png" width="20" />
+                                                                    </div>
+                                                                }
+                                                                else if (check.Condition == false)
+                                                                {
+                                                                    <div>
+                                                                        <img src="~/images/NotCheckedIcon.png" width="20" />
+                                                                    </div>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <div>не е проверен</div>
+                                                                }
+                                                            </div>
+                                                        </td>
+                                                        <td class="cart-text cart-quantity order-description-check">
+                                                            <div class="checkList-description">@check.Description</div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
                                     <div class="select-list" style="border-bottom: 1px solid #ebe9e9;">
                                         <div class="create-device">
                                             <div class="details-label">Описание на състоянието</div>
@@ -102,7 +103,7 @@
 
     </div>
   
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" asp-append-version="true"></script>
+   <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" asp-append-version="true"></script>
    
 </body>
 </html>

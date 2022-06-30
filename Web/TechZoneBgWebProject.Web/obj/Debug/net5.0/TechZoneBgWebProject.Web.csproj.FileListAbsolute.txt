@@ -1637,3 +1637,7 @@ C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProjec
 D:\TechZoneBG\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\StatusChanged.cshtml.g.cs
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\Shooting.cshtml.g.cs
 C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\obj\Debug\net5.0\Razor\Views\Devices\PDF.cshtml.g.cs
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\DinkToPdf.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\libwkhtmltox.dll
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\libwkhtmltox.dylib
+C:\Users\user\Desktop\TechZoneBgWeb\TechZoneBgWebProject\Web\TechZoneBgWebProject.Web\bin\Debug\net5.0\libwkhtmltox.so

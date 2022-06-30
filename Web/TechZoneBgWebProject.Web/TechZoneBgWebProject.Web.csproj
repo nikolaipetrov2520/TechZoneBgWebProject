@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="DinkToPdf" Version="1.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.tools" Version="5.0.6">
@@ -41,5 +42,17 @@
     <ProjectReference Include="..\..\Services\TechZoneBgWebProject.Services\TechZoneBgWebProject.Services.csproj" />
     <ProjectReference Include="..\TechZoneBgWebProject.Web.Infrastructure\TechZoneBgWebProject.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\TechZoneBgWebProject.Web.ViewModels\TechZoneBgWebProject.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="libwkhtmltox.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="libwkhtmltox.dylib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="libwkhtmltox.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
