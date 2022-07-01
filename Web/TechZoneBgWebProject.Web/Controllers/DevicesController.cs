@@ -281,7 +281,7 @@
             device.Status = await this.statusesService.GetAllAsync<DevicesStatusDetailsViewModel>();
             device.Checks = await this.checksService.GetAllAsync<DevicesChecksDetailsViewModel>(id);
 
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             var globalSettings = new GlobalSettings
             {
@@ -290,7 +290,7 @@
                 PaperSize = PaperKind.A4,
                 Margins = new MarginSettings { Top = 10 },
                 DocumentTitle = "PDF Досие",
-                Out = @$"{path}\Downloads\{device.DeviceModel}_{device.Imei}.pdf",
+                Out = @$"{path}\PDF\{device.DeviceModel}_{device.Imei}.pdf",
             };
 
             var objectSettings = new ObjectSettings
@@ -313,7 +313,7 @@
             //return this.RedirectToAction($"Details", new { id = device.Id });
             //return this.PartialView(device);
 
-            var stream = new FileStream(@$"{path}\Downloads\{device.DeviceModel}_{device.Imei}.pdf", FileMode.Open);
+            var stream = new FileStream(@$"{path}\PDF\{device.DeviceModel}_{device.Imei}.pdf", FileMode.Open);
             return new FileStreamResult(stream, "application/pdf");
         }
     }
