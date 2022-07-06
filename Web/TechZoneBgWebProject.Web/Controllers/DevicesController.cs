@@ -310,11 +310,11 @@
 
             this.converter.Convert(pdf);
 
-            return this.RedirectToAction($"Details", new { id = device.Id });
-            //return this.PartialView(device);
+            //return this.RedirectToAction($"Details", new { id = device.Id });
+            return this.PartialView(device);
 
-            var stream = new FileStream(@$"{path}\PDF\{device.DeviceModel}_{device.Imei}.pdf", FileMode.Open);
-            //return new FileStreamResult(pdf, "application/pdf");
+            //var stream = new FileStream(@$"{path}\PDF\{device.DeviceModel}_{device.Imei}.pdf", FileMode.Open);
+            //return new FileStreamResult(stream, "application/pdf");
         }
     }
 }

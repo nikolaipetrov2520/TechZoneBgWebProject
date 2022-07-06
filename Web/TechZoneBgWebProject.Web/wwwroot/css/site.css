@@ -11714,6 +11714,12 @@ a.add-to-cart-right {
     align-items:center;
 }
 
+@media (max-width: 840px){
+    .select-condition-list {
+        flex-direction:column-reverse;
+    }
+}
+
 .select-list-item {
     min-width: 300px;
     padding: 6px;
@@ -11733,9 +11739,7 @@ a.add-to-cart-right {
 }
 
 .checkList-list {
-    border: 1px solid #dddbdb;
-    padding: 37px 12px;
-    margin: 20px;
+    margin: 10px;
     list-style: none;
 }
 

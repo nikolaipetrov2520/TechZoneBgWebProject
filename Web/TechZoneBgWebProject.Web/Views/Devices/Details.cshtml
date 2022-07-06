@@ -26,40 +26,52 @@
                 <div>
                     <div style="font-size: 20px; display:inline-block">IMEI</div>
                     <div class="checkList-input-text" style="font-size: 20px; display:inline-block; border:none">@Model.Imei</div>
-                    <ul class="checkList-list">
-                        <li class="checkList-header">
-                            <div>Проверка за:</div>
-                            <div class="checkList-head-condition">Състояние</div>
-                            <div>Бележка</div>
-                        </li>
-                        @foreach (var check in Model.Checks)
-                        {
-                            <li class="checList-item">
-                                <div class="checkList-label">@check.Name</div>
-                                <div class="checkList-radio">
-                                    @if (check.Condition == true)
-                                    {
-                                        <div>
-                                            <img src="~/images/checkedIcon.png" width="20" />
-                                        </div>
-                                    }
-                                    else if (check.Condition == false)
-                                    {
-                                        <div>
-                                            <img src="~/images/NotCheckedIcon.png" width="20" />
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div>не е проверен</div>
-                                    }
-                                </div>
-                                <div class="checkList-description" style="width: 220px;">@check.Description</div>
+                    <div style="padding: 10px; border: 1px solid #dddbdb; margin: 10px; border-radius: 6px;">
+                        <table align="center" class="checkList-list">
+                            <thead>
+                                <tr class="thead-cart">
+                                    <th style="font-size: 16px;" class="order-name-check">Проверка за:</th>
+                                    <th style="font-size: 16px;" class="order-condition-check">Състояние</th>
+                                    <th style="font-size: 16px;" class="order-description-check">Бележка</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var check in Model.Checks)
+                                {
 
-                            </li>
-                        }
-
-                    </ul>
+                                    <tr class="tt-itemOrder-check order-name">
+                                        <td style="font-size: 16px;" class="order-name-check" ">
+                                            <div class="checkList-label">@check.Name</div>
+                                        </td>
+                                        <td class="order-condition-check" ">
+                                            <div>
+                                                @if (check.Condition == true)
+                                                {
+                                                    <div>
+                                                        <img src="~/images/checkedIcon.png" width="20" />
+                                                    </div>
+                                                }
+                                                else if (check.Condition == false)
+                                                {
+                                                    <div>
+                                                        <img src="~/images/NotCheckedIcon.png" width="20" />
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div>не е проверен</div>
+                                                }
+                                            </div>
+                                        </td>
+                                        <td class="cart-text cart-quantity order-description-check">
+                                            <div class="checkList-description">@check.Description</div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    
                     <div class="select-list" style="border-bottom: 1px solid #ebe9e9;">
                         <div class="create-device">
                             <div class="details-label">Описание на състоянието</div>
@@ -123,10 +135,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
 
-                    
+
                 </div>
             </div>
         </div>
