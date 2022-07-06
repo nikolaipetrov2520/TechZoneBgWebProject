@@ -11811,8 +11811,8 @@ li.checList-item:nth-child(2n+2) {
 #yes-button8:checked:checked ~ .option-1,
 #yes-button9:checked:checked ~ .option-1,
 #yes-button10:checked:checked ~ .option-1 {
-    border-color: #00d957;
-    background: #00d957;
+    border-color: #5cab05;
+    background: #5cab05;
 }
 
 
@@ -11827,8 +11827,8 @@ li.checList-item:nth-child(2n+2) {
 #no-button8:checked:checked ~ .option-2,
 #no-button9:checked:checked ~ .option-2,
 #no-button10:checked:checked ~ .option-2 {
-    border-color: #d93611;
-    background: #d93611;
+    border-color: #e94236;
+    background: #e94236
 }
 
 
