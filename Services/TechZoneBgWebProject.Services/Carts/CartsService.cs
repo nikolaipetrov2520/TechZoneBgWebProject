@@ -239,6 +239,13 @@
 
         public async Task RemoveProductById(int productId, int cartId)
         {
+            var currentcart = this.db.Carts.FirstOrDefault(c => c.Id == cartId);
+
+            if (currentcart.IsFinished)
+            {
+                return;
+            }
+
             var cartProduct = await this.db.CartProduct
                 .Where(x => x.CartId == cartId && x.ProductId == productId)
                 .FirstOrDefaultAsync();
