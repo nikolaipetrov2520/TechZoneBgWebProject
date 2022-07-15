@@ -35,7 +35,7 @@
             }
 
             var categories = await queryable
-                .OrderBy(c => c.Id)
+                .OrderBy(c => c.Name)
                 .ProjectTo<TModel>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
 

@@ -11927,7 +11927,7 @@ li.checList-item:nth-child(2n+2) {
 
 .back-btn {
     position: fixed;
-    bottom: 5vh;
+    bottom: 7vh;
     right: 10vw;
     z-index: 99;
     font-size: 18px;
